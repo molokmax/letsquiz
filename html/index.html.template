@@ -9,15 +9,186 @@
 		<title>Let's QUIZ!</title>
 	</head>
 	<body>
-		<nav>
-			<a href="#main">Главная</a>
-			<a href="#terms">Правила</a>
-			<a href="#friends">Друзья и партнеры</a>
-			<a href="#gallery">Галерея</a>
-			<a href="#corp">Корпоративы</a>
-			<a href="#feedback">Отзывы</a>
+		<nav class="navbar navbar-expand-lg navbar-light">
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav nav">
+					<li class="nav-item">
+						<a class="nav-link" href="#main">Главная</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#terms">Правила</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#gallery">Галерея</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#friends">Друзья и партнеры</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#corp">Корпоративы</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#feedback">Отзывы</a>
+					</li>
+				</ul>
+			</div>
 		</nav>
-		<h1>LET'S QUIZ!</h1>
+		<div class="main container">
+			<a name="main"></a>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<div>8-800-555-55-55</div>
+						<div>quiz@letsquiz.ru</div>
+						<div>Оставь заявку на обратный звонок и мы перезвоним</div>
+					</div>
+					<div class="col-md-6">
+						<div>Ближайшая игра состоится 21 декабря в 18:00</div>
+						<div>Зарегистрируйся на игру прямо сейчас!</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">ВК, Инст</div>
+					<div class="col-md-6">Ты можешь приобрести подарочные сертификаты на наши игры</div>
+				</div>
+			</div>
+		</div>
+		<div class="terms container">
+			<a name="terms"></a>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						Что такое LET'S QUIZ?
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						2,5 часа игры каждые 2 недели по воскресеньям
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						От 2 до 9 человек в команде
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						7 раундов с интересными вопросами на логику, интуицию и удачу!
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						Крутые призы от наших партнеров для победителей и призеров
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						Еда, напитки, неповторимая атмосфера и заряд позитива
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						Повод встретиться с друзьями не только на День Рождения
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						Наша цель - позитивный вечер, а не взрыв мозга!
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						Хочешь сыграть в LET'S QUIZ?
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="gallery container">
+			<a name="gallery"></a>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						А ТЕПЕРЬ ПОДРОБНЕЕ
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						Для вашей команды забронирован стол, на котором лежит все необходимое для игры
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						В зале находится более 15-ти команд
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						Вы пьете, кушаете и весело проводите время в своей компании
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						Ведущий зачитывает вопросы, которые дублируются на экранах
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						После жаркого командного обсуждения, правильный ответ записывается в бланк
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						Сдаем бланки и узнаем правильные ответы
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						Победитель определяется после 7-ми раундов игры (39 вопросов)
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<div>Что нужно взять с собой?</div>
+						<div>1) компанию друзей</div>
+						<div>2) хорошее настроение</div>
+					</div>
+					<div class="col-md-6">
+						<div>Что не нужно брать с собой?</div>
+						<div>1) энциклопедии</div>
+						<div>2) успокоительные</div>
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						КАРУСЕЛЬ
+					</div>
+					<div class="col-md-12">
+						Примеры вопросов
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="friends container">
+			<a name="friends"></a>
+		</div>
+		<div class="corp container">
+			<a name="corp"></a>
+		</div>
+		<div class="feedback container">
+			<a name="feedback"></a>
+		</div>
+		<div class="footer container">
+			<a name="footer"></a>
+		</div>
 	
 		<!-- Optional JavaScript -->
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -1,2 +1,2 @@
 # letsquiz
-site of game Let's QUIZ
+Site of game Let's QUIZ
