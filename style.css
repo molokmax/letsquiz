@@ -1,0 +1,49 @@
+body {
+	font-family: Verdana;
+	background: #000033;
+}
+
+div.quiz-header {
+	font-size: 200%;
+	font-weight: bold;
+	text-align: center;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+nav.quiz-menu {
+	height: 70px;
+	background: #330066;
+}
+nav.quiz-menu .nav-link {
+	color: #FFFFFF;
+}
+
+div.main {
+	background: #330066;
+	color: #FFFFFF;
+	background-image: url("image/main_background.jpg");
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-size: cover;
+	padding-top: 115px;
+}
+div.main .contacts {
+	padding-top: 15px;
+}
+div.main .signup {
+	/* padding-top: 15px; */
+}
+div.main .socialbuttons {
+	padding-top: 230px;
+	padding-bottom: 100px;
+}
+div.main .cert {
+	padding-top: 180px;
+	padding-bottom: 100px;
+}
+
+div.terms {
+	background: #330066;
+	color: #FFFFFF;
+}

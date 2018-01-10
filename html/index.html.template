@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="ru">
 	<head>
+		<base href="../">
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+		<link rel="stylesheet" href="style.css">
 		
 		<title>Let's QUIZ!</title>
 	</head>
 	<body>
-		<nav class="navbar navbar-expand-lg navbar-light">
+		<nav class="quiz-menu navbar navbar-expand-lg">
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
@@ -40,19 +42,21 @@
 			<a name="main"></a>
 			<div class="container">
 				<div class="row">
-					<div class="col-md-6">
+					<div class="contacts col-md-3 offset-md-1">
 						<div>8-800-555-55-55</div>
 						<div>quiz@letsquiz.ru</div>
 						<div>Оставь заявку на обратный звонок и мы перезвоним</div>
 					</div>
-					<div class="col-md-6">
+					<div class="col-md-4"></div>
+					<div class="signup col-md-4">
 						<div>Ближайшая игра состоится 21 декабря в 18:00</div>
 						<div>Зарегистрируйся на игру прямо сейчас!</div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-6">ВК, Инст</div>
-					<div class="col-md-6">Ты можешь приобрести подарочные сертификаты на наши игры</div>
+					<div class="socialbuttons col-md-3 offset-md-1">ВК, Инст</div>
+					<div class="col-md-4"></div>
+					<div class="cert col-md-4">Ты можешь приобрести подарочные сертификаты на наши игры</div>
 				</div>
 			</div>
 		</div>
@@ -61,7 +65,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
-						Что такое LET'S QUIZ?
+						<div class="quiz-header">ЧТО ТАКОЕ LET'S QUIZ?</div>
 					</div>
 				</div>
 				<div class="row">
@@ -179,15 +183,118 @@
 		</div>
 		<div class="friends container">
 			<a name="friends"></a>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						НАШИ ДРУЗЬЯ И ПАРТНЕРЫ
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						МосИгра Ступино
+					</div>
+					<div class="col-md-6">
+						Шизгара
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						Артико принт
+					</div>
+					<div class="col-md-6">
+						Победа 22
+					</div>
+				</div>
+			</div>
 		</div>
 		<div class="corp container">
 			<a name="corp"></a>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						КВИЗ НА КОРПОРАТИВ
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						LET'S QUIZ - отличный вариант для корпоратива или сплочения команды (team building)! Это могут подтвердить компании, которые уже работали с нами:
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						MARS Chocolate
+					</div>
+					<div class="col-md-6">
+						Kimberly-Clark
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						ДОЛ им. Ю.А. Гагарина
+					</div>
+					<div class="col-md-6">
+						MARS Food
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						Мастокройф
+					</div>
+					<div class="col-md-6">
+						Радиал-С
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						Оставь заявку чтобы узнать подробности
+					</div>
+				</div>
+			</div>
 		</div>
 		<div class="feedback container">
 			<a name="feedback"></a>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						ОТЗЫВЫ НАШИХ УЧАСТНИКОВ
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						КАРУСЕЛЬ
+					</div>
+				</div>
+			</div>
 		</div>
 		<div class="footer container">
 			<a name="footer"></a>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						Наши контакты:
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						8-800-555-55-55
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						quiz@letsquiz.ru
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						Мы в соц. сетях:
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						ВК Инст
+					</div>
+				</div>
+			</div>
 		</div>
 	
 		<!-- Optional JavaScript -->
@@ -195,5 +302,6 @@
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+		<script src="app.js"></script>
 	</body>
 </html>
