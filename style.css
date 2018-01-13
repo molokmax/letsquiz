@@ -4,7 +4,7 @@ body {
 }
 
 div.quiz-header {
-	font-size: 200%;
+	font-size: 350%;
 	font-weight: bold;
 	text-align: center;
 	margin-top: 50px;
@@ -19,8 +19,42 @@ nav.quiz-menu .nav-link {
 	color: #FFFFFF;
 }
 
-div.main {
+div.quiz-block-container {
+	padding-left: 0;
+	padding-right: 0;
+	width: 100%;
+    max-width: 100%;
+}
+div.quiz-block-container div.quiz-block {
+	padding-bottom: 50px;
+	width: 100%;
+    max-width: 100%;
+}
+div.quiz-block.block-dark {
 	background: #330066;
+	color: #FFFFFF;
+}
+div.quiz-block.block-light {
+	background: #E3E3FE;
+	color: #000033;
+}
+
+div.quiz-block.block-footer {
+	background: #000033;
+	color: #FFFFFF;
+}
+
+
+div.quiz-item {
+	font-size: 150%;
+	padding-bottom: 45px;
+}
+div.quiz-item .quiz-icon {
+	padding-right: 40px;
+	font-size: 200%;
+}
+
+div.main {
 	color: #FFFFFF;
 	background-image: url("image/main_background.jpg");
 	background-repeat: no-repeat;
@@ -29,21 +63,38 @@ div.main {
 	padding-top: 115px;
 }
 div.main .contacts {
-	padding-top: 15px;
+	padding-top: 100px;
+}
+div.main .contacts .phone {
+	font-size: 180%;
+	font-weight: bold;
+}
+div.main .contacts .email {
+	font-size: 150%;
+	padding-bottom: 40px;
+}
+div.main .contacts .email a {
+	color: #FFFFFF;
+}
+div.main .contacts .email a:hover {
+	color: #FFFFFF;
+}
+div.main .contacts .email a:visited {
+	color: #FFFFFF;
+}
+div.main .text {
+	font-size: 120%;
 }
 div.main .signup {
-	/* padding-top: 15px; */
+	padding-top: 100px;
 }
 div.main .socialbuttons {
-	padding-top: 230px;
+	padding-top: 400px;
 	padding-bottom: 100px;
 }
 div.main .cert {
-	padding-top: 180px;
+	padding-top: 400px;
 	padding-bottom: 100px;
 }
 
-div.terms {
-	background: #330066;
-	color: #FFFFFF;
-}
+
