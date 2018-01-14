@@ -12,11 +12,22 @@ div.quiz-header {
 }
 
 nav.quiz-menu {
-	height: 70px;
+	/*height: 70px;*/
 	background: #330066;
 }
 nav.quiz-menu .nav-link {
 	color: #FFFFFF;
+}
+nav.quiz-menu #navbarNav {
+	padding-top: 10px;
+    padding-bottom: 10px;
+}
+nav.quiz-menu .quiz-menu-button {
+	color: #FFFFFF;
+	font-size: 3rem;
+}
+nav.quiz-menu .navbar-toggler:focus {
+	outline: none !important;
 }
 
 div.quiz-block-container {
@@ -26,6 +37,7 @@ div.quiz-block-container {
     max-width: 100%;
 }
 div.quiz-block-container div.quiz-block {
+	padding-top: 50px;
 	padding-bottom: 50px;
 	width: 100%;
     max-width: 100%;
@@ -43,6 +55,11 @@ div.quiz-block.block-footer {
 	background: #000033;
 	color: #FFFFFF;
 }
+div.quiz-block-container div.quiz-block .main-text {
+	padding-bottom: 50px;
+	text-align: center;
+	font-size: 200%;
+}
 
 
 div.quiz-item {
@@ -54,7 +71,86 @@ div.quiz-item .quiz-icon {
 	font-size: 200%;
 }
 
-div.main {
+div.quiz-block-container .text {
+	font-size: 120%;
+}
+div.quiz-block-container .text-right {
+	text-align: right;
+}
+
+div.quiz-panel {
+	font-size: 180%;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+div.quiz-panel.panel-light {
+	color: #000033;
+}
+div.quiz-panel.panel-light a {
+	color: #000033;
+}
+div.quiz-panel.panel-light a:hover {
+	color: #000033;
+}
+div.quiz-panel.panel-light a:visited {
+	color: #000033;
+}
+div.quiz-panel.panel-dark {
+	color: #000033;
+}
+div.quiz-panel.panel-dark a {
+	color: #FFFFFF;
+}
+div.quiz-panel.panel-dark a:hover {
+	color: #FFFFFF;
+}
+div.quiz-panel.panel-dark a:visited {
+	color: #FFFFFF;
+}
+
+
+div.quiz-panel img {
+	padding-right: 50px;
+}
+
+.quiz-button {
+	margin-top: 30px;
+	border-radius: 0px;
+	width: 300px;
+	font-size: larger;
+	border-style: none;
+	border-bottom-style: solid;
+    border-bottom-width: 3px;
+}
+.quiz-button:active {
+	box-shadow: inherit !important;
+	transform: translateY(3px)
+}
+.quiz-button:focus {
+	box-shadow: inherit;
+}
+.quiz-button.btn-light {
+	color: #FFFFFF;
+	background-color: #FF5FB2;
+    border-bottom-color: #CC6699;
+}
+.quiz-button.btn-light:active {
+	color: #FFFFFF !important;
+	background-color: #FF5FB2 !important;
+    border-bottom-color: #CC6699 !important;
+}
+.quiz-button.btn-dark {
+	color: #FFFFFF;
+	background-color: #330066;
+    border-bottom-color: #000033;
+}
+.quiz-button.btn-dark:active {
+	color: #FFFFFF !important;
+	background-color: #330066 !important;
+    border-bottom-color: #000033 !important;
+}
+
+div.quiz-block-container.main {
 	color: #FFFFFF;
 	background-image: url("image/main_background.jpg");
 	background-repeat: no-repeat;
@@ -62,39 +158,46 @@ div.main {
 	background-size: cover;
 	padding-top: 115px;
 }
-div.main .contacts {
-	padding-top: 100px;
+div.quiz-block-container.main .contacts {
+	padding-top: 50px;
 }
-div.main .contacts .phone {
+div.quiz-block-container.main .contacts .phone {
 	font-size: 180%;
 	font-weight: bold;
 }
-div.main .contacts .email {
+div.quiz-block-container.main .contacts .email {
 	font-size: 150%;
 	padding-bottom: 40px;
 }
-div.main .contacts .email a {
+div.quiz-block-container.main .contacts .email a {
 	color: #FFFFFF;
 }
-div.main .contacts .email a:hover {
+div.quiz-block-container.main .contacts .email a:hover {
 	color: #FFFFFF;
 }
-div.main .contacts .email a:visited {
+div.quiz-block-container.main .contacts .email a:visited {
 	color: #FFFFFF;
 }
-div.main .text {
-	font-size: 120%;
+div.quiz-block-container.main .signup {
+	padding-top: 50px;
 }
-div.main .signup {
-	padding-top: 100px;
-}
-div.main .socialbuttons {
+div.quiz-block-container.main .socialbuttons {
 	padding-top: 400px;
 	padding-bottom: 100px;
 }
-div.main .cert {
+div.quiz-block-container.main .cert {
 	padding-top: 400px;
 	padding-bottom: 100px;
 }
 
-
+div.quiz-block-container.gallery div.quiz-block.faq .quiz-title {
+	font-size: 200%;
+	padding-bottom: 60px;
+}
+div.quiz-block-container.gallery div.quiz-block.faq .quiz-item {
+	padding-left: 100px;
+}
+div.quiz-block-container.gallery div.quiz-block.faq .quiz-icon {
+	padding-right: 40px;
+	font-size: 200%;
+}

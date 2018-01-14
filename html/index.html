@@ -12,9 +12,9 @@
 		<title>Let's QUIZ!</title>
 	</head>
 	<body>
-		<nav class="quiz-menu navbar navbar-expand-lg">
+		<nav class="quiz-menu navbar navbar-expand-lg sticky-top">
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
+				<span class="quiz-menu-button mdi mdi-menu"></span>
 			</button>
 			<div class="collapse navbar-collapse" id="navbarNav">
 				<ul class="navbar-nav nav">
@@ -47,18 +47,21 @@
 						<div class="phone">8-800-555-55-55</div>
 						<div class="email"><a href="mailto:quiz@letsquiz.ru">quiz@letsquiz.ru</a></div>
 						<div class="text">Оставь заявку на обратный звонок и мы перезвоним</div>
+						<button type="button" class="btn btn-light quiz-button">Обратный звонок</button>
 					</div>
 					<div class="col-md-4"></div>
 					<div class="signup col-md-2">
-						<div class="text">Ближайшая игра состоится 21 декабря в 18:00</div>
-						<div class="text">Зарегистрируйся на игру прямо сейчас!</div>
+						<div class="text text-right">Ближайшая игра состоится 21 декабря в 18:00</div>
+						<div class="text text-right">Зарегистрируйся на игру прямо сейчас!</div>
+						<button type="button" class="btn btn-light quiz-button float-right">Онлайн-регистрация</button>
 					</div>
 				</div>
 				<div class="row">
 					<div class="socialbuttons col-md-2 offset-md-2">ВК, Инст</div>
 					<div class="col-md-4"></div>
 					<div class="cert col-md-2">
-						<div class="text">Ты можешь приобрести подарочные сертификаты на наши игры</div>
+						<div class="text text-right">Ты можешь приобрести подарочные сертификаты на наши игры</div>
+						<button type="button" class="btn btn-light quiz-button float-right">Сертификаты</button>
 					</div>
 				</div>
 			</div>
@@ -104,14 +107,19 @@
 			</div>
 			<div class="container quiz-block block-light">
 				<div class="row">
+					<!--<div class="col-md-4"></div>-->
 					<div class="col-md-12">
-						Наша цель - позитивный вечер, а не взрыв мозга!
+						<div class="main-text">Наша цель - позитивный вечер, а не взрыв мозга!</div>
 					</div>
+					<!--<div class="col-md-4"></div>-->
 				</div>
 				<div class="row">
-					<div class="col-md-12">
-						Хочешь сыграть в LET'S QUIZ?
+					<div class="col-md-7"></div>
+					<div class="col-md-3 text-right">
+						<div class="text">Хочешь сыграть в LET'S QUIZ?</div>
+						<button type="button" class="btn btn-dark quiz-button float-right">Онлайн-регистрация</button>
 					</div>
+					<div class="col-md-2"></div>
 				</div>
 			</div>
 		</div>
@@ -124,52 +132,52 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-10 offset-md-2">
-						<div class="quiz-item"><i class="quiz-icon mdi mdi-timer"></i> Для вашей команды забронирован стол, на котором лежит все необходимое для игры</div>
+					<div class="col-md-9 offset-md-3">
+						<div class="quiz-item"><i class="quiz-icon mdi mdi-lead-pencil"></i> Для вашей команды забронирован стол, на котором лежит все необходимое для игры</div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-10 offset-md-2">
-						<div class="quiz-item"><i class="quiz-icon mdi mdi-timer"></i> В зале находится более 15-ти команд</div>
+					<div class="col-md-9 offset-md-3">
+						<div class="quiz-item"><i class="quiz-icon mdi mdi-account-multiple-plus-outline"></i> В зале находится более 15-ти команд</div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-10 offset-md-2">
-						<div class="quiz-item"><i class="quiz-icon mdi mdi-timer"></i> Вы пьете, кушаете и весело проводите время в своей компании</div>
+					<div class="col-md-9 offset-md-3">
+						<div class="quiz-item"><i class="quiz-icon mdi mdi-emoticon-excited"></i> Вы пьете, кушаете и весело проводите время в своей компании</div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-10 offset-md-2">
-						<div class="quiz-item"><i class="quiz-icon mdi mdi-timer"></i> Ведущий зачитывает вопросы, которые дублируются на экранах</div>
+					<div class="col-md-9 offset-md-3">
+						<div class="quiz-item"><i class="quiz-icon mdi mdi-voice"></i> Ведущий зачитывает вопросы, которые дублируются на экранах</div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-10 offset-md-2">
-						<div class="quiz-item"><i class="quiz-icon mdi mdi-timer"></i> После жаркого командного обсуждения, правильный ответ записывается в бланк</div>
+					<div class="col-md-9 offset-md-3">
+						<div class="quiz-item"><i class="quiz-icon mdi mdi-wallet-membership"></i> После жаркого командного обсуждения, правильный ответ записывается в бланк</div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-10 offset-md-2">
-						<div class="quiz-item"><i class="quiz-icon mdi mdi-timer"></i> Сдаем бланки и узнаем правильные ответы</div>
+					<div class="col-md-9 offset-md-3">
+						<div class="quiz-item"><i class="quiz-icon mdi mdi-information-outline"></i> Сдаем бланки и узнаем правильные ответы</div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-10 offset-md-2">
-						<div class="quiz-item"><i class="quiz-icon mdi mdi-timer"></i> Победитель определяется после 7-ми раундов игры (39 вопросов)</div>
+					<div class="col-md-9 offset-md-3">
+						<div class="quiz-item"><i class="quiz-icon mdi mdi-trophy-outline"></i> Победитель определяется после 7-ми раундов игры (39 вопросов)</div>
 					</div>
 				</div>
 			</div>
 			<div class="faq container quiz-block block-light">
 				<div class="row">
-					<div class="col-md-6">
-						<div>Что нужно взять с собой?</div>
-						<div>1) компанию друзей</div>
-						<div>2) хорошее настроение</div>
+					<div class="col-md-4 offset-md-2">
+						<div class="quiz-title"><i class="quiz-icon mdi mdi-check-circle-outline"></i>Что нужно взять с собой?</div>
+						<div class="quiz-item">1) компанию друзей</div>
+						<div class="quiz-item">2) хорошее настроение</div>
 					</div>
-					<div class="col-md-6">
-						<div>Что не нужно брать с собой?</div>
-						<div>1) энциклопедии</div>
-						<div>2) успокоительные</div>
+					<div class="col-md-4">
+						<div class="quiz-title"><i class="quiz-icon mdi mdi-close-circle-outline"></i>Что не нужно брать с собой?</div>
+						<div class="quiz-item">1) энциклопедии</div>
+						<div class="quiz-item">2) успокоительные</div>
 					</div>
 				</div>
 			</div>
@@ -178,9 +186,13 @@
 					<div class="col-md-12">
 						КАРУСЕЛЬ
 					</div>
-					<div class="col-md-12">
-						Примеры вопросов
+				</div>
+				<div class="row">
+					<div class="col-md-8"></div>
+					<div class="col-md-2">
+						<button type="button" class="btn btn-light quiz-button float-right">Примеры вопросов</button>
 					</div>
+					<div class="col-md-2"></div>
 				</div>
 			</div>
 		</div>
@@ -193,19 +205,19 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-6">
-						МосИгра Ступино
+					<div class="col-md-3 offset-md-3">
+						<div class="quiz-panel panel-light"><a href="#"><img src="image/#.png">МосИгра Ступино</a></div>
 					</div>
-					<div class="col-md-6">
-						Шизгара
+					<div class="col-md-3">
+						<div class="quiz-panel panel-light"><a href="#"><img src="image/#.png">Шизгара</a></div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-6">
-						Артико принт
+					<div class="col-md-3 offset-md-3">
+						<div class="quiz-panel panel-light"><a href="#"><img src="image/#.png">Артико принт</a></div>
 					</div>
-					<div class="col-md-6">
-						Победа 22
+					<div class="col-md-3">
+						<div class="quiz-panel panel-light"><a href="#"><img src="image/#.png">Победа 22</a></div>
 					</div>
 				</div>
 			</div>
@@ -219,38 +231,41 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-12">
-						LET'S QUIZ - отличный вариант для корпоратива или сплочения команды (team building)! Это могут подтвердить компании, которые уже работали с нами:
+					<div class="col-md-6 offset-md-3">
+						<div class="main-text">LET'S QUIZ - отличный вариант для корпоратива или сплочения команды (team building)! Это могут подтвердить компании, которые уже работали с нами:</div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-6">
-						MARS Chocolate
+					<div class="col-md-3 offset-md-3">
+						<div class="quiz-panel panel-dark"><a href="#"><img src="image/#.png">MARS Chocolate</a></div>
 					</div>
-					<div class="col-md-6">
-						Kimberly-Clark
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-6">
-						ДОЛ им. Ю.А. Гагарина
-					</div>
-					<div class="col-md-6">
-						MARS Food
+					<div class="col-md-3">
+						<div class="quiz-panel panel-dark"><a href="#"><img src="image/#.png">Kimberly-Clark</a></div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-6">
-						Мастокройф
+					<div class="col-md-3 offset-md-3">
+						<div class="quiz-panel panel-dark"><a href="#"><img src="image/#.png">ДОЛ им. Ю.А. Гагарина</a></div>
 					</div>
-					<div class="col-md-6">
-						Радиал-С
+					<div class="col-md-3">
+						<div class="quiz-panel panel-dark"><a href="#"><img src="image/#.png">MARS Food</a></div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-12">
-						Оставь заявку чтобы узнать подробности
+					<div class="col-md-3 offset-md-3">
+						<div class="quiz-panel panel-dark"><a href="#"><img src="image/#.png">Мастокройф</a></div>
 					</div>
+					<div class="col-md-3">
+						<div class="quiz-panel panel-dark"><a href="#"><img src="image/#.png">Радиал-С</a></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-8"></div>
+					<div class="col-md-2">
+						<div class="text text-right">Оставь заявку чтобы узнать подробности</div>
+						<button type="button" class="btn btn-light quiz-button float-right">Обратный звонок</button>
+					</div>
+					<div class="col-md-2"></div>
 				</div>
 			</div>
 		</div>
