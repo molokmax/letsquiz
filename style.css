@@ -1,10 +1,17 @@
+@font-face {
+	font-family: "IntroRegular";
+	src: url("fonts/intro.otf");
+	font-style: normal;
+	font-weight: normal;
+}
+
 body {
-	font-family: Verdana;
+	font-family: 'Verdana';
 	background: #000033;
 }
 
 div.quiz-header {
-	font-size: 350%;
+	font-size: 3.5rem;
 	font-weight: bold;
 	text-align: center;
 	margin-top: 50px;
@@ -12,8 +19,7 @@ div.quiz-header {
 }
 
 nav.quiz-menu {
-	/*height: 70px;*/
-	background: #330066;
+	background: #000033;
 }
 nav.quiz-menu .nav-link {
 	color: #FFFFFF;
@@ -22,6 +28,16 @@ nav.quiz-menu #navbarNav {
 	padding-top: 10px;
     padding-bottom: 10px;
 }
+
+nav.quiz-menu #navbarNav ul.nav {
+    width: 100%;
+	font-size: 1.2rem;
+    display: flex;
+    justify-content: space-around;
+	padding-left: 15rem;
+	padding-right: 15rem;
+}
+
 nav.quiz-menu .quiz-menu-button {
 	color: #FFFFFF;
 	font-size: 3rem;
@@ -51,10 +67,6 @@ div.quiz-block.block-light {
 	color: #000033;
 }
 
-div.quiz-block.block-footer {
-	background: #000033;
-	color: #FFFFFF;
-}
 div.quiz-block-container div.quiz-block .main-text {
 	padding-bottom: 50px;
 	text-align: center;
@@ -116,7 +128,7 @@ div.quiz-panel img {
 .quiz-button {
 	margin-top: 30px;
 	border-radius: 0px;
-	width: 300px;
+	width: 265px;
 	font-size: larger;
 	border-style: none;
 	border-bottom-style: solid;
@@ -152,12 +164,26 @@ div.quiz-panel img {
 
 div.quiz-block-container.main {
 	color: #FFFFFF;
-	background-image: url("image/main_background.jpg");
+	background-image: url("image/main_background.png");
 	background-repeat: no-repeat;
 	background-position: center top;
 	background-size: cover;
-	padding-top: 115px;
 }
+div.quiz-block-container.main .quiz-block {
+	background-image: url("image/main-logo.png");
+	background-repeat: no-repeat;
+	background-position: center -7rem;
+    background-size: 75rem;
+	width: 100%;
+	height: 100%;
+}
+
+div.quiz-block-container.main .main-header {
+	text-align: center;
+	font-family: 'IntroRegular', 'Verdana';
+	font-size: 4rem;
+}
+
 div.quiz-block-container.main .contacts {
 	padding-top: 50px;
 }
@@ -182,12 +208,16 @@ div.quiz-block-container.main .signup {
 	padding-top: 50px;
 }
 div.quiz-block-container.main .socialbuttons {
-	padding-top: 400px;
-	padding-bottom: 100px;
+	padding-top: 15rem;
+	padding-bottom: 50px;
 }
 div.quiz-block-container.main .cert {
-	padding-top: 400px;
-	padding-bottom: 100px;
+	padding-top: 20rem;
+	padding-bottom: 50px;
+}
+
+div.quiz-block-container.main .socialbuttons img {
+	padding: 5px;
 }
 
 div.quiz-block-container.gallery div.quiz-block.faq .quiz-title {
@@ -200,4 +230,68 @@ div.quiz-block-container.gallery div.quiz-block.faq .quiz-item {
 div.quiz-block-container.gallery div.quiz-block.faq .quiz-icon {
 	padding-right: 40px;
 	font-size: 200%;
+}
+
+div.quiz-block-container.footer .quiz-block.block-footer {
+	background: #000033;
+	color: #FFFFFF;
+	padding-bottom: 10rem;
+}
+div.quiz-block-container.footer .socialbuttons img {
+	padding: 5px;
+}
+div.quiz-block-container.footer .footer-text {
+	text-align: center;
+}
+div.quiz-block-container.footer .text {
+	padding-bottom: 1rem;
+}
+div.quiz-block-container.footer .phone {
+	font-size: 2rem;
+	font-weight: bold;
+}
+div.quiz-block-container.footer .email {
+	font-size: 1.5rem;
+	padding-bottom: 1.5rem;
+}
+div.quiz-block-container.footer .email a {
+	color: #FFFFFF;
+}
+div.quiz-block-container.footer .email a:hover {
+	color: #FFFFFF;
+}
+div.quiz-block-container.footer .email a:visited {
+	color: #FFFFFF;
+}
+
+
+@media (max-width: 992px) {
+	nav.quiz-menu #navbarNav ul.nav {
+		padding-left: 1.1rem;
+	}
+	div.quiz-header {
+		font-size: 2rem;
+	}
+	div.quiz-item {
+		padding-left: 1rem;
+	}
+	div.quiz-block-container.gallery div.quiz-block.faq .quiz-title {
+		padding-left: 1rem;
+	}
+	div.quiz-block-container.main {
+		background-image: url("image/main_background_mobile.png");
+		background-position: right top;
+	}
+	div.quiz-block-container.main .main-header {
+		font-size: 2rem;
+	}
+	div.quiz-block-container.main .quiz-block {
+		background-image: none;
+	}
+	div.quiz-block-container.main .socialbuttons {
+		display: none;
+	}
+	div.quiz-block-container.main .cert {
+		padding-top: 8rem;
+	}
 }
