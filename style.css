@@ -94,6 +94,9 @@ div.quiz-panel {
 	font-size: 180%;
 	padding-top: 50px;
 	padding-bottom: 50px;
+	text-align: center;
+	/*vertical-align: middle;
+	height: 100%;*/
 }
 div.quiz-panel.panel-light {
 	color: #000033;
@@ -230,6 +233,24 @@ div.quiz-block-container.gallery div.quiz-block.faq .quiz-item {
 div.quiz-block-container.gallery div.quiz-block.faq .quiz-icon {
 	padding-right: 40px;
 	font-size: 200%;
+}
+
+div.feedback-item {
+	height: 10rem;
+}
+div.feedback .carousel .carousel-inner {
+	width: 70%;
+	margin: auto;
+}
+div.feedback .feedback-quote {
+	/*content: '\201C';*/
+    /*font-family: sans-serif;*/
+    /*color: #fe6e41;*/
+    font-size: 4rem;
+	padding-right: 2rem;
+    /*position: absolute;
+    left: -2rem;
+    top: -2rem;*/
 }
 
 div.quiz-block-container.footer .quiz-block.block-footer {
