@@ -8,6 +8,7 @@
 body {
 	font-family: 'Verdana';
 	background: #000033;
+	position: relative;
 }
 
 div.quiz-header {
@@ -20,13 +21,21 @@ div.quiz-header {
 
 nav.quiz-menu {
 	background: #000033;
+	padding: 0;
 }
 nav.quiz-menu .nav-link {
 	color: #FFFFFF;
+	padding-top: 1.5rem;
+    padding-bottom: 1rem;
 }
 nav.quiz-menu #navbarNav {
-	padding-top: 10px;
-    padding-bottom: 10px;
+	/*padding-top: 10px;
+    padding-bottom: 10px;*/
+}
+nav.quiz-menu .nav-item .nav-link.active {
+    border-bottom-style: solid;
+    border-bottom-width: 5px;
+    border-bottom-color: #FF5FB2;
 }
 
 nav.quiz-menu #navbarNav ul.nav {
@@ -34,8 +43,8 @@ nav.quiz-menu #navbarNav ul.nav {
 	font-size: 1.2rem;
     display: flex;
     justify-content: space-around;
-	padding-left: 15rem;
-	padding-right: 15rem;
+	padding-left: 10rem;
+	padding-right: 10rem;
 }
 
 nav.quiz-menu .quiz-menu-button {
@@ -223,34 +232,50 @@ div.quiz-block-container.main .socialbuttons img {
 	padding: 5px;
 }
 
-div.quiz-block-container.gallery div.quiz-block.faq .quiz-title {
+div.quiz-block.faq .quiz-title {
 	font-size: 200%;
 	padding-bottom: 60px;
 }
-div.quiz-block-container.gallery div.quiz-block.faq .quiz-item {
+div.quiz-block.faq .quiz-item {
 	padding-left: 100px;
 }
-div.quiz-block-container.gallery div.quiz-block.faq .quiz-icon {
+div.quiz-block.faq .quiz-icon {
 	padding-right: 40px;
 	font-size: 200%;
 }
+div.quiz-block-container.gallery .carousel .carousel-inner {
+	width: 80%;
+	margin: auto;
+}
+div.quiz-block-container.gallery .carousel .carousel-inner img {
+	max-height: 50rem;
+}
 
 div.feedback-item {
-	height: 10rem;
+	height: 12rem;
 }
 div.feedback .carousel .carousel-inner {
 	width: 70%;
 	margin: auto;
 }
-div.feedback .feedback-quote {
-	/*content: '\201C';*/
-    /*font-family: sans-serif;*/
-    /*color: #fe6e41;*/
+div.feedback-item .feedback-text {
+	font-size: 2rem;
+}
+div.feedback-item .feedback-author {
+	font-size: 1.5rem;
+}
+div.feedback-item .feedback-text::before {
+    content: "\201C"; /* Непечатаемый символ слева */
+	font-family: Georgia, "Times New Roman", Times, serif;
     font-size: 4rem;
-	padding-right: 2rem;
-    /*position: absolute;
-    left: -2rem;
-    top: -2rem;*/
+    margin-right: 1rem;
+}
+div.feedback-item .feedback-text::after {
+    content: "\201D"; /* Непечатаемый символ справа */
+	font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 4rem;
+    margin-left: 1rem;
+    vertical-align: -3rem;
 }
 
 div.quiz-block-container.footer .quiz-block.block-footer {
@@ -285,6 +310,15 @@ div.quiz-block-container.footer .email a:visited {
 	color: #FFFFFF;
 }
 
+@media (max-width: 1200px) and (min-width: 992px) {
+	nav.quiz-menu #navbarNav ul.nav {
+		padding-left: 3rem;
+		padding-right: 3rem;
+	}
+	div.quiz-block-container.gallery .carousel .carousel-inner {
+		width: 100%;
+	}
+}
 
 @media (max-width: 992px) {
 	nav.quiz-menu #navbarNav ul.nav {
@@ -296,7 +330,7 @@ div.quiz-block-container.footer .email a:visited {
 	div.quiz-item {
 		padding-left: 1rem;
 	}
-	div.quiz-block-container.gallery div.quiz-block.faq .quiz-title {
+	div.quiz-block.faq .quiz-title {
 		padding-left: 1rem;
 	}
 	div.quiz-block-container.main {
@@ -314,5 +348,11 @@ div.quiz-block-container.footer .email a:visited {
 	}
 	div.quiz-block-container.main .cert {
 		padding-top: 8rem;
+	}
+	div.quiz-block-container.gallery .carousel .carousel-inner {
+		width: 100%;
+	}
+	nav.quiz-menu .nav-item .nav-link.active {
+		border-bottom: none;
 	}
 }

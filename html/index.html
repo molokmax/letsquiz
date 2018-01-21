@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 	<head>
-		<base href="../">
+		<base href="..">
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -11,7 +11,7 @@
 		
 		<title>Let's QUIZ!</title>
 	</head>
-	<body>
+	<body data-spy="scroll" data-target=".quiz-menu">
 		<nav class="quiz-menu navbar navbar-expand-lg sticky-top">
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="quiz-menu-button mdi mdi-menu"></span>
@@ -39,8 +39,7 @@
 				</ul>
 			</div>
 		</nav>
-		<div class="main container quiz-block-container">
-			<a name="main"></a>
+		<div id="main" class="main container quiz-block-container">
 			<div class="container quiz-block">
 				<div class="row">
 					<div class="col-md-12">
@@ -77,8 +76,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="terms container quiz-block-container">
-			<a name="terms"></a>
+		<div id="terms" class="terms container quiz-block-container">
 			<div class="container quiz-block block-dark">
 				<div class="row">
 					<div class="col-md-12">
@@ -133,9 +131,6 @@
 					<div class="col-md-2"></div>
 				</div>
 			</div>
-		</div>
-		<div class="gallery container quiz-block-container">
-			<a name="gallery"></a>
 			<div class="details container quiz-block block-dark">
 				<div class="row">
 					<div class="col-md-12">
@@ -192,10 +187,29 @@
 					</div>
 				</div>
 			</div>
+		</div>
+		<div id="gallery" class="gallery container quiz-block-container">
 			<div class="photos container quiz-block block-dark">
 				<div class="row">
-					<div class="col-md-12">
-						КАРУСЕЛЬ
+					<div class="col-md-8 offset-md-2">
+						<div id="carousel-gallery" class="carousel slide" data-ride="carousel" data-interval=10000>
+							<div class="carousel-inner" role="listbox">
+								<div class="carousel-item active">
+									<img class="d-block img-fluid" src="photo/0XaWojqhyxQ.jpg">
+								</div>
+								<div class="carousel-item">
+									<img class="d-block img-fluid" src="photo/1bW6I69yYBE.jpg">
+								</div>
+							</div>
+							<a class="carousel-control-prev" href="#carousel-gallery" role="button" data-slide="prev">
+								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+								<span class="sr-only">Previous</span>
+							</a>
+							<a class="carousel-control-next" href="#carousel-gallery" role="button" data-slide="next">
+								<span class="carousel-control-next-icon" aria-hidden="true"></span>
+								<span class="sr-only">Next</span>
+							</a>
+						</div>
 					</div>
 				</div>
 				<div class="row">
@@ -207,8 +221,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="friends container quiz-block-container">
-			<a name="friends"></a>
+		<div id="friends" class="friends container quiz-block-container">
 			<div class="container quiz-block block-light">
 				<div class="row">
 					<div class="col-md-12">
@@ -233,8 +246,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="corp container quiz-block-container">
-			<a name="corp"></a>
+		<div id="corp" class="corp container quiz-block-container">
 			<div class="container quiz-block block-dark">
 				<div class="row">
 					<div class="col-md-12">
@@ -280,8 +292,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="feedback container quiz-block-container">
-			<a name="feedback"></a>
+		<div id="feedback" class="feedback container quiz-block-container">
 			<div class="container quiz-block block-dark">
 				<div class="row">
 					<div class="col-md-12">
@@ -294,14 +305,14 @@
 							<div class="carousel-inner" role="listbox">
 								<div class="carousel-item active">
 									<div class="d-block feedback-item">
-										<span class="feedback-quote">"</span><span class="feedback-text">Классно провели вечер! Большое спасибо!</span><div class="feedback-author">Маша</div>
+										<div class="feedback-text">Классно провели вечер! Большое спасибо!</div><div class="feedback-author float-right">Маша</div>
 									</div>
 								</div>
-								<!--<div class="carousel-item">
+								<div class="carousel-item">
 									<div class="d-block feedback-item">
-										<span class="feedback-quote">"</span><span class="feedback-text">Классно провели вечер! Большое спасибо!</span><div class="feedback-author">Даша</div>
+										<div class="feedback-text">Все было очень круто и весело</div><div class="feedback-author float-right">Аня</div>
 									</div>
-								</div>-->
+								</div>
 							</div>
 							<a class="carousel-control-prev" href="#carousel-feedback" role="button" data-slide="prev">
 								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -316,8 +327,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="footer container quiz-block-container">
-			<a name="footer"></a>
+		<div id="footer" class="footer container quiz-block-container">
 			<div class="container quiz-block block-footer">
 				<div class="row">
 					<div class="col-md-12">
