@@ -28,10 +28,6 @@ nav.quiz-menu .nav-link {
 	padding-top: 1.5rem;
     padding-bottom: 1rem;
 }
-nav.quiz-menu #navbarNav {
-	/*padding-top: 10px;
-    padding-bottom: 10px;*/
-}
 nav.quiz-menu .nav-item .nav-link.active {
     border-bottom-style: solid;
     border-bottom-width: 5px;
@@ -104,8 +100,6 @@ div.quiz-panel {
 	padding-top: 50px;
 	padding-bottom: 50px;
 	text-align: center;
-	/*vertical-align: middle;
-	height: 100%;*/
 }
 div.quiz-panel.panel-light {
 	color: #000033;
@@ -232,6 +226,25 @@ div.quiz-block-container.main .socialbuttons img {
 	padding: 5px;
 }
 
+div.terms div.quiz-block.intro {
+	background-image: url("image/background4.png");
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-size: cover;
+}
+div.terms div.quiz-block.details {
+	background-image: url("image/background2.png");
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-size: cover;
+}
+div.corp div.quiz-block.corp-block {
+	background-image: url("image/background3.png");
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-size: cover;
+}
+
 div.quiz-block.faq .quiz-title {
 	font-size: 200%;
 	padding-bottom: 60px;
@@ -265,13 +278,13 @@ div.feedback-item .feedback-author {
 	font-size: 1.5rem;
 }
 div.feedback-item .feedback-text::before {
-    content: "\201C"; /* Непечатаемый символ слева */
+    content: "\201C";
 	font-family: Georgia, "Times New Roman", Times, serif;
     font-size: 4rem;
     margin-right: 1rem;
 }
 div.feedback-item .feedback-text::after {
-    content: "\201D"; /* Непечатаемый символ справа */
+    content: "\201D";
 	font-family: Georgia, "Times New Roman", Times, serif;
     font-size: 4rem;
     margin-left: 1rem;
