@@ -52,7 +52,7 @@
 							<div class="phone">8-800-555-55-55</div>
 							<div class="email"><a href="mailto:quiz@letsquiz.ru">quiz@letsquiz.ru</a></div>
 							<div class="text">Оставь заявку на обратный звонок и мы перезвоним</div>
-							<button type="button" class="btn btn-light quiz-button">Обратный звонок</button>
+							<button type="button" class="btn btn-light quiz-button" data-toggle="modal" data-target="#callbackWindow">Обратный звонок</button>
 						</div>
 						<div class="socialbuttons hidden-md-down">
 							<a href="#"><img src="image/vk.png"></a>
@@ -66,11 +66,11 @@
 						<div class="signup">
 							<div class="text text-right">Ближайшая игра состоится 21 декабря в 18:00</div>
 							<div class="text text-right">Зарегистрируйся на игру прямо сейчас!</div>
-							<button type="button" class="btn btn-light quiz-button float-right">Онлайн-регистрация</button>
+							<button type="button" class="btn btn-light quiz-button float-right" data-toggle="modal" data-target="#registrationWindow">Онлайн-регистрация</button>
 						</div>
 					<div class="cert">
 						<div class="text text-right">Ты можешь приобрести подарочные сертификаты на наши игры</div>
-						<button type="button" class="btn btn-light quiz-button float-right">Сертификаты</button>
+						<button type="button" class="btn btn-light quiz-button float-right" data-toggle="modal" data-target="#certificateWindow">Сертификаты</button>
 					</div>
 					</div>
 				</div>
@@ -126,7 +126,7 @@
 					<div class="col-md-7"></div>
 					<div class="col-md-3 text-right">
 						<div class="text">Хочешь сыграть в LET'S QUIZ?</div>
-						<button type="button" class="btn btn-dark quiz-button float-right">Онлайн-регистрация</button>
+						<button type="button" class="btn btn-dark quiz-button float-right" data-toggle="modal" data-target="#registrationWindow">Онлайн-регистрация</button>
 					</div>
 					<div class="col-md-2"></div>
 				</div>
@@ -215,7 +215,7 @@
 				<div class="row">
 					<div class="col-md-8"></div>
 					<div class="col-md-2">
-						<button type="button" class="btn btn-light quiz-button float-right">Примеры вопросов</button>
+						<button type="button" class="btn btn-light quiz-button float-right" data-toggle="modal" data-target="#questionWindow">Примеры вопросов</button>
 					</div>
 					<div class="col-md-2"></div>
 				</div>
@@ -260,33 +260,33 @@
 				</div>
 				<div class="row">
 					<div class="col-md-3 offset-md-3">
-						<div class="quiz-panel panel-dark"><a href="#"><img src="image/#.png">MARS Chocolate</a></div>
+						<div class="quiz-panel quiz-panel-no-img panel-dark"><a href="#">MARS Chocolate</a></div>
 					</div>
 					<div class="col-md-3">
-						<div class="quiz-panel panel-dark"><a href="#"><img src="image/#.png">Kimberly-Clark</a></div>
+						<div class="quiz-panel quiz-panel-no-img panel-dark"><a href="#">Kimberly-Clark</a></div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-md-3 offset-md-3">
-						<div class="quiz-panel panel-dark"><a href="#"><img src="image/#.png">ДОЛ им. Ю.А. Гагарина</a></div>
+						<div class="quiz-panel quiz-panel-no-img panel-dark"><a href="#">ДОЛ им. Ю.А. Гагарина</a></div>
 					</div>
 					<div class="col-md-3">
-						<div class="quiz-panel panel-dark"><a href="#"><img src="image/#.png">MARS Food</a></div>
+						<div class="quiz-panel quiz-panel-no-img panel-dark"><a href="#">MARS Food</a></div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-md-3 offset-md-3">
-						<div class="quiz-panel panel-dark"><a href="#"><img src="image/#.png">Мастокройф</a></div>
+						<div class="quiz-panel quiz-panel-no-img panel-dark"><a href="#">Мастокройф</a></div>
 					</div>
 					<div class="col-md-3">
-						<div class="quiz-panel panel-dark"><a href="#"><img src="image/#.png">Радиал-С</a></div>
+						<div class="quiz-panel quiz-panel-no-img panel-dark"><a href="#">Радиал-С</a></div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-md-8"></div>
 					<div class="col-md-2">
 						<div class="text text-right">Оставь заявку чтобы узнать подробности</div>
-						<button type="button" class="btn btn-light quiz-button float-right">Обратный звонок</button>
+						<button type="button" class="btn btn-light quiz-button float-right" data-toggle="modal" data-target="#callbackWindow">Обратный звонок</button>
 					</div>
 					<div class="col-md-2"></div>
 				</div>
@@ -359,6 +359,185 @@
 				</div>
 			</div>
 		</div>
+
+
+
+<!--  Modal windows  -->
+
+		<!-- Callback Window -->
+		<div class="quiz-window modal fade" id="callbackWindow" tabindex="-1" role="dialog" aria-labelledby="CallbackWindowTitle" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="callbackWindowTitle">ОБРАТНЫЙ ЗВОНОК</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span class="mdi mdi-close" aria-hidden="true"></span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<div class="quiz-window-title">Оставь номер телефона и мы перезвоним</div>
+						<label for="callback-name">Имя:</label>
+						<input type="text" class="form-control" id="callback-name" aria-describedby="callback-name" placeholder="Как к тебе обращаться">
+						<label for="callback-phone">Телефон:</label>
+						<input type="tel" class="form-control" id="callback-phone" aria-describedby="callback-phone" placeholder="Как с тобой связаться">
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-light quiz-button" data-dismiss="modal">Отправить</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Certificate Window -->
+		<div class="quiz-window modal fade" id="certificateWindow" tabindex="-1" role="dialog" aria-labelledby="CertificateWindowTitle" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="certificateWindowTitle">СЕРТИФИКАТЫ</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span class="mdi mdi-close" aria-hidden="true"></span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<div class="quiz-window-title">Ты можешь приобрести подарочный сертификат. Оставь заявку и мы перезвоним</div>
+						<label for="cert-name">Имя:</label>
+    					<input type="text" class="form-control" id="cert-name" aria-describedby="cert-name" placeholder="Как к тебе обращаться">
+						<label for="cert-phone">Телефон:</label>
+    					<input type="tel" class="form-control" id="cert-phone" aria-describedby="cert-phone" placeholder="Как с тобой связаться">
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-light quiz-button" data-dismiss="modal">Отправить</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Question Example Window -->
+		<div class="quiz-window modal fade" id="questionWindow" tabindex="-1" role="dialog" aria-labelledby="QuestionWindowTitle" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="questionWindowTitle">ПРИМЕРЫ ВОПРОСОВ</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span class="mdi mdi-close" aria-hidden="true"></span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<div id="carousel-question" class="carousel slide" data-ride="carousel" data-interval=10000>
+							<div class="carousel-inner" role="listbox">
+								<div class="carousel-item active">
+									<div class="d-block question-item">
+										<div class="question-text">Почему стандартная длина рулона туалетной бумаги - 72 метра?</div>
+										<div class="question-answer-link-wrapper"><span class="question-answer-link">Ответ</span></div>
+										<div class="question-answer-text">Вот потому что так придумали!</div>
+									</div>
+								</div>
+								<div class="carousel-item">
+									<div class="d-block question-item">
+										<div class="question-text">Почему стандартная длина рулона туалетной бумаги - 72 метра?</div>
+										<div class="question-answer-link-wrapper"><span class="question-answer-link">Ответ</span></div>
+										<div class="question-answer-text">Вот потому что так придумали и это еще более длинный текст ответа!</div>
+									</div>
+								</div>
+							</div>
+							<a class="carousel-control-prev" href="#carousel-question" role="button" data-slide="prev">
+								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+								<span class="sr-only">Previous</span>
+							</a>
+							<a class="carousel-control-next" href="#carousel-question" role="button" data-slide="next">
+								<span class="carousel-control-next-icon" aria-hidden="true"></span>
+								<span class="sr-only">Next</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Registration Window -->
+		<div class="quiz-window modal fade" id="registrationWindow" tabindex="-1" role="dialog" aria-labelledby="RegistrationWindowTitle" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="registrationWindowTitle">ЗАПИСАТЬСЯ НА ИГРУ</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span class="mdi mdi-close" aria-hidden="true"></span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<div class="quiz-window-title">Выбери игру на которую хочешь записаться</div>
+						<div id="carousel-registration" class="carousel slide" data-ride="carousel" data-interval=false>
+							<div class="carousel-inner" role="listbox">
+								<div class="carousel-item active">
+									<div class="d-block registration-item container">
+										<div class="row">
+											<div class="quiz-game-card col-md-5 col-12" data-game-id="1">
+												<div class="registration-date">21 декабря</div>
+												<div class="registration-day">Пятница</div>
+												<div class="registration-time">13:00</div>
+											</div>
+											<div class="col-md-2 hidden-md-down"></div>
+											<div class="quiz-game-card col-md-5 col-12" data-game-id="2">
+												<div class="registration-date">21 декабря</div>
+												<div class="registration-day">Пятница</div>
+												<div class="registration-time">18:00</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="carousel-item">
+									<div class="d-block registration-item container">
+										<div class="row">
+											<div class="quiz-game-card col-md-5 col-12" data-game-id="3">
+												<div class="registration-date">22 декабря</div>
+												<div class="registration-day">Суббота</div>
+												<div class="registration-time">13:00</div>
+											</div>
+											<div class="col-md-2 hidden-md-down"></div>
+											<div class="quiz-game-card col-md-5 col-12" data-game-id="4">
+												<div class="registration-date">22 декабря</div>
+												<div class="registration-day">Суббота</div>
+												<div class="registration-time">18:00</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<a class="carousel-control-prev" href="#carousel-registration" role="button" data-slide="prev">
+								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+								<span class="sr-only">Previous</span>
+							</a>
+							<a class="carousel-control-next" href="#carousel-registration" role="button" data-slide="next">
+								<span class="carousel-control-next-icon" aria-hidden="true"></span>
+								<span class="sr-only">Next</span>
+							</a>
+						</div>
+						<label for="reg-name">Название команды</label>
+    					<input type="text" class="form-control" id="reg-name" aria-describedby="reg-name" placeholder="">
+						<label for="reg-count">Количество человек</label>
+    					<select class="form-control" id="reg-count">
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+							<option>6</option>
+							<option>7</option>
+							<option>8</option>
+							<option>9</option>
+						</select>
+						<label for="reg-capitan">Капитан</label>
+    					<input type="text" class="form-control" id="reg-capitan" aria-describedby="reg-phone" placeholder="">
+						<label for="reg-phone">Телефон</label>
+    					<input type="tel" class="form-control" id="reg-phone" aria-describedby="reg-phone" placeholder="">
+						<div class="quiz-window-text">Стоимость участия - 300 руб/чел</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-light quiz-button" data-dismiss="modal">Отправить</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		
 	
 		<!-- Optional JavaScript -->
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
