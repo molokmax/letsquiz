@@ -27,13 +27,13 @@
             if ($result) {
                 $answer = array(
                     "success" => true, 
-                    "message" => "Письмо отправлено"
+                    "message" => "Запрос отправлен"
                 );
                 echo(json_encode($answer));
             } else {
                 $answer = array(
                     "success" => false, 
-                    "message" => "Не удалось отправить письмо"
+                    "message" => "Не удалось отправить запрос"
                 );
                 echo(json_encode($answer));
             }
