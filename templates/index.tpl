@@ -500,7 +500,7 @@
 								<div class="carousel-item {if $smarty.foreach.games.first}active{/if}">
 									<div class="d-block registration-item container">
 										<div class="row">
-											<div class="quiz-game-card col-md-12 col-12" data-game-id="{$game->id}">
+											<div class="quiz-game-card col-md-12 col-12" data-game-id="{$game->id}" data-game-fulldate="$game->full_date">
 												<div class="registration-city">{$game->city}</div>
 												<div class="registration-date">{$game->date}</div>
 												<div class="registration-day">{$game->day_name}</div>

@@ -51,6 +51,7 @@
     class GameViewModel {
 
         public $id;
+        public $full_date;
         public $date;
         public $day_name;
         public $time;
@@ -58,13 +59,10 @@
 
         function __construct($db_game, $formatter) {
             $this->id = $db_game->id;
-
+            $this->full_date = $db_game->date->format('Y-m-d H:i:s');
             $this->date = $db_game->date->format('j') . ' ' . $formatter->getMonthName($db_game->date);
-
             $this->day_name = $formatter->getDayName($db_game->date);
-
             $this->time = $db_game->date->format('H:i');
-
             $this->city = $db_game->city;
         }
     }
