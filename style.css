@@ -271,17 +271,22 @@ div.quiz-block-container.gallery .carousel .carousel-inner img {
 }
 
 div.feedback-item {
-	height: 12rem;
+	min-height: 21rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
 }
 div.feedback .carousel .carousel-inner {
 	width: 70%;
 	margin: auto;
 }
 div.feedback-item .feedback-text {
-	font-size: 2rem;
+	font-size: 1.5rem;
 }
 div.feedback-item .feedback-author {
-	font-size: 1.5rem;
+	font-size: 1rem;
+	align-self: flex-end;
 }
 div.feedback-item .feedback-text::before {
     content: "\201C";
@@ -387,8 +392,12 @@ div.quiz-block-container.footer .email a:visited {
 	margin: auto;
 	width: 70%;
 }
-.quiz-window .question-item {
-	height: 13rem;
+#questionWindow.quiz-window .question-item {
+	min-height: 23rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
 }
 .quiz-window .question-item .question-text {
 	padding-bottom: 1rem;
@@ -400,7 +409,11 @@ div.quiz-block-container.footer .email a:visited {
 	border-bottom: 1px dashed #FFFFFF;
 }
 .quiz-window .question-answer-link-wrapper {
-	text-align: right;
+	align-self: flex-end;
+}
+.quiz-window .question-answer-text-wrapper {
+	height: 2rem;
+	margin-top: 1rem;
 }
 .quiz-window .question-item .question-answer-link:hover {
 	cursor: pointer;
@@ -410,7 +423,7 @@ div.quiz-block-container.footer .email a:visited {
 }
 
 #questionWindow .modal-dialog {
-	max-width: 40rem;
+	max-width: 70rem;
 }
 
 #registrationWindow label {
@@ -426,7 +439,7 @@ div.quiz-block-container.footer .email a:visited {
 	padding-top: 1rem;
 	padding-bottom: 1rem;
 	border-style: dashed;
-	border-width: 1px;
+	border-width: 2px;
 }
 .quiz-game-card:hover {
 	cursor: pointer;
@@ -434,15 +447,22 @@ div.quiz-block-container.footer .email a:visited {
 .quiz-game-card .registration-date {
 	text-align: center;
 }
+.quiz-game-card .registration-city {
+	text-align: center;
+	font-size: 1.5rem;
+    padding-bottom: 0.7rem;
+}
 .quiz-game-card .registration-day {
 	text-align: center;
 }
 .quiz-game-card .registration-time {
 	text-align: center;
 	padding-top: 1rem;
+	font-size: 1.5rem;
 }
 .quiz-game-card.selected {
 	background-color: #ff6699;
+	border-color: #330066;
 }
 
 @media (max-width: 1200px) and (min-width: 992px) {

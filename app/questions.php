@@ -1,6 +1,13 @@
 <?php
 
-    class PhotoRepository {
+
+    class QuestionModel {
+        public $id;
+        public $question;
+        public $answer;
+    }
+
+    class QuestionRepository {
 
         public function GetAll() {
             $config = include('config.php');
@@ -14,11 +21,15 @@
 
 	        mysql_select_db($config['DB_CONFIG_DATABASENAME'], $con);
 	
-	        $query = 'SELECT `id`, `url`, `order` FROM `photo` ORDER BY  `order`';
+	        $query = 'SELECT `id`, `question`, `answer` FROM `question` ORDER BY `order`';
 	        $db_result = mysql_query($query);
             if ($db_result) {
                 while($row = mysql_fetch_array($db_result)) {
-                    array_push($result, $row['url']);
+                    $rec = new QuestionModel();
+                    $rec->id = $row['id'];
+                    $rec->question = $row['question'];
+                    $rec->answer = $row['answer'];
+                    array_push($result, $rec);
                 }
             }
 

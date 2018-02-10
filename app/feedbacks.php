@@ -1,6 +1,13 @@
 <?php
 
-    class PhotoRepository {
+
+    class FeedbackModel {
+        public $id;
+        public $text;
+        public $author;
+    }
+
+    class FeedbackRepository {
 
         public function GetAll() {
             $config = include('config.php');
@@ -14,11 +21,15 @@
 
 	        mysql_select_db($config['DB_CONFIG_DATABASENAME'], $con);
 	
-	        $query = 'SELECT `id`, `url`, `order` FROM `photo` ORDER BY  `order`';
+	        $query = 'SELECT `id`, `text`, `author` FROM `feedback` ORDER BY `order`';
 	        $db_result = mysql_query($query);
             if ($db_result) {
                 while($row = mysql_fetch_array($db_result)) {
-                    array_push($result, $row['url']);
+                    $rec = new FeedbackModel();
+                    $rec->id = $row['id'];
+                    $rec->text = $row['text'];
+                    $rec->author = $row['author'];
+                    array_push($result, $rec);
                 }
             }
 

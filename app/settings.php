@@ -23,7 +23,7 @@
 
 	        mysql_select_db($config['DB_CONFIG_DATABASENAME'], $con);
 	
-	        $query = 'select `id`, `name`, `prefix`, `type`, `value` from `setting`';
+	        $query = 'SELECT `id`, `name`, `prefix`, `type`, `value` FROM `setting`';
 	        $db_result = mysql_query($query);
             if ($db_result) {
                 while($row = mysql_fetch_array($db_result)) {
@@ -36,9 +36,8 @@
                     array_push($result, $rec);
                 }
             }
-            // else {
-            //     echo('no db_result');
-            // }
+            
+            mysql_close($con);
 
             return $result;
         }

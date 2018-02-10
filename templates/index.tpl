@@ -77,7 +77,7 @@
 					</div>
 					<div class="col-md-2">
 						<div class="signup">
-							<div class="text text-right">Ближайшая игра состоится 21 декабря в 18:00</div>
+							<div class="text text-right">Ближайшая игра состоится {$NEXT_GAME}</div>
 							<div class="text text-right">Зарегистрируйся на игру прямо сейчас!</div>
 							<button type="button" class="btn btn-light quiz-button float-right" data-toggle="modal" data-target="#registrationWindow">Онлайн-регистрация</button>
 						</div>
@@ -212,7 +212,7 @@
 						<div id="carousel-gallery" class="carousel slide" data-ride="carousel" data-interval=10000>
 							<div class="carousel-inner" role="listbox">
 {foreach from=$PHOTO_LIST item=url name=gallery}
-								<div class="carousel-item {if $smarty.foreach.gallery.index == 0}active{/if}">
+								<div class="carousel-item {if $smarty.foreach.gallery.first}active{/if}">
 									<img class="d-block img-fluid" src="{$url}">
 								</div>
 {/foreach}
@@ -333,16 +333,16 @@
 					<div class="col-md-8 offset-md-2">
 						<div id="carousel-feedback" class="carousel slide" data-ride="carousel" data-interval=10000>
 							<div class="carousel-inner" role="listbox">
-								<div class="carousel-item active">
-									<div class="d-block feedback-item">
-										<div class="feedback-text">Классно провели вечер! Большое спасибо!</div><div class="feedback-author float-right">Маша</div>
+{foreach from=$FEEDBACK_LIST item=feedback name=feedbacks}
+								<div class="carousel-item {if $smarty.foreach.feedbacks.first}active{/if}">
+									<div class="d-block">
+										<div class="feedback-item">
+											<div class="feedback-text">{$feedback->text}</div>
+											<div class="feedback-author">{$feedback->author}</div>
+										</div>
 									</div>
 								</div>
-								<div class="carousel-item">
-									<div class="d-block feedback-item">
-										<div class="feedback-text">Все было очень круто и весело</div><div class="feedback-author float-right">Аня</div>
-									</div>
-								</div>
+{/foreach}
 							</div>
 							<a class="carousel-control-prev" href="#carousel-feedback" role="button" data-slide="prev">
 								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -456,20 +456,17 @@
 					<div class="modal-body">
 						<div id="carousel-question" class="carousel slide" data-ride="carousel" data-interval=10000>
 							<div class="carousel-inner" role="listbox">
-								<div class="carousel-item active">
-									<div class="d-block question-item">
-										<div class="question-text">Почему стандартная длина рулона туалетной бумаги - 72 метра?</div>
-										<div class="question-answer-link-wrapper"><span class="question-answer-link">Ответ</span></div>
-										<div class="question-answer-text">Вот потому что так придумали!</div>
+{foreach from=$QUESTION_LIST item=question name=questions}
+								<div class="carousel-item {if $smarty.foreach.questions.first}active{/if}">
+									<div class="d-block">
+										<div class="question-item">
+											<div class="question-text">{$question->question}</div>
+											<div class="question-answer-link-wrapper"><span class="question-answer-link">Ответ</span></div>
+											<div class="question-answer-text-wrapper"><div class="question-answer-text">{$question->answer}</div></div>
+										</div>
 									</div>
 								</div>
-								<div class="carousel-item">
-									<div class="d-block question-item">
-										<div class="question-text">Почему стандартная длина рулона туалетной бумаги - 72 метра?</div>
-										<div class="question-answer-link-wrapper"><span class="question-answer-link">Ответ</span></div>
-										<div class="question-answer-text">Вот потому что так придумали и это еще более длинный текст ответа!</div>
-									</div>
-								</div>
+{/foreach}
 							</div>
 							<a class="carousel-control-prev" href="#carousel-question" role="button" data-slide="prev">
 								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -499,40 +496,20 @@
 						<div class="quiz-window-title">Выбери игру на которую хочешь записаться</div>
 						<div id="carousel-registration" class="carousel slide" data-ride="carousel" data-interval=false>
 							<div class="carousel-inner" role="listbox">
-								<div class="carousel-item active">
+{foreach from=$GAME_LIST item=game name=games}
+								<div class="carousel-item {if $smarty.foreach.games.first}active{/if}">
 									<div class="d-block registration-item container">
 										<div class="row">
-											<div class="quiz-game-card col-md-5 col-12" data-game-id="1">
-												<div class="registration-date">21 декабря</div>
-												<div class="registration-day">Пятница</div>
-												<div class="registration-time">13:00</div>
-											</div>
-											<div class="col-md-2 hidden-md-down"></div>
-											<div class="quiz-game-card col-md-5 col-12" data-game-id="2">
-												<div class="registration-date">21 декабря</div>
-												<div class="registration-day">Пятница</div>
-												<div class="registration-time">18:00</div>
+											<div class="quiz-game-card col-md-12 col-12" data-game-id="{$game->id}">
+												<div class="registration-city">{$game->city}</div>
+												<div class="registration-date">{$game->date}</div>
+												<div class="registration-day">{$game->day_name}</div>
+												<div class="registration-time">{$game->time}</div>
 											</div>
 										</div>
 									</div>
 								</div>
-								<div class="carousel-item">
-									<div class="d-block registration-item container">
-										<div class="row">
-											<div class="quiz-game-card col-md-5 col-12" data-game-id="3">
-												<div class="registration-date">22 декабря</div>
-												<div class="registration-day">Суббота</div>
-												<div class="registration-time">13:00</div>
-											</div>
-											<div class="col-md-2 hidden-md-down"></div>
-											<div class="quiz-game-card col-md-5 col-12" data-game-id="4">
-												<div class="registration-date">22 декабря</div>
-												<div class="registration-day">Суббота</div>
-												<div class="registration-time">18:00</div>
-											</div>
-										</div>
-									</div>
-								</div>
+{/foreach}
 							</div>
 							<a class="carousel-control-prev" href="#carousel-registration" role="button" data-slide="prev">
 								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
