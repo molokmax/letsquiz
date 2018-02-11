@@ -79,6 +79,7 @@
                 die('Db connect error: ' . mysql_error());
             }
 
+            mysql_set_charset($config['DB_CONFIG_CHARSET'], $con);
 	        mysql_select_db($config['DB_CONFIG_DATABASENAME'], $con);
 	
 	        $query = "SELECT g.`id` AS  `id` , g.`date` AS  `date` , c.`name` AS  `city` FROM  `game` AS g JOIN  `city` AS c ON ( g.`city_id` = c.`id` ) WHERE g.`date` > '{$date->format('Y-m-d H:i:s')}' ORDER BY g.`date` LIMIT 0, $limit";

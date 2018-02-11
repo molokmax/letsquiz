@@ -415,7 +415,7 @@
 						<input type="tel" class="form-control" id="callback-phone" aria-describedby="callback-phone" placeholder="Как с тобой связаться">
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-light quiz-button call-send-button" data-dismiss="modal">Отправить</button>
+						<button type="button" class="btn btn-light quiz-button call-send-button">Отправить</button>
 					</div>
 				</div>
 			</div>
@@ -439,7 +439,8 @@
     					<input type="tel" class="form-control" id="cert-phone" aria-describedby="cert-phone" placeholder="Как с тобой связаться">
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-light quiz-button cert-send-button" data-dismiss="modal">Отправить</button>
+						<!--data-dismiss="modal"-->
+						<button type="button" class="btn btn-light quiz-button cert-send-button" >Отправить</button>
 					</div>
 				</div>
 			</div>
@@ -502,7 +503,7 @@
 								<div class="carousel-item {if $smarty.foreach.games.first}active{/if}">
 									<div class="d-block registration-item container">
 										<div class="row">
-											<div class="quiz-game-card col-md-12 col-12" data-game-id="{$game->id}" data-game-fulldate="$game->full_date">
+											<div class="quiz-game-card col-md-12 col-12" data-game-id="{$game->id}" data-game-fulldate="{$game->full_date}">
 												<div class="registration-city">{$game->city}</div>
 												<div class="registration-date">{$game->date}</div>
 												<div class="registration-day">{$game->day_name}</div>
@@ -542,7 +543,7 @@
 						<div class="quiz-window-text">Стоимость участия - 300 руб/чел</div>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-light quiz-button reg-send-button" data-dismiss="modal">Отправить</button>
+						<button type="button" class="btn btn-light quiz-button reg-send-button">Отправить</button>
 					</div>
 				</div>
 			</div>

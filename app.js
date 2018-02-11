@@ -56,7 +56,7 @@ $(document).ready(function() {
             });
         },
 
-        sendRequest: function(data) {
+        sendRequest: function(data, dialogId) {
             $.post('send.php', data)
                 .done(function(resp) {
                     if (resp) {
@@ -64,6 +64,9 @@ $(document).ready(function() {
                             var json = JSON.parse(resp);
                             if (json.success) {
                                 MessageUtils.showSuccess(json.message || "Запрос отправлен");
+                                if (dialogId) {
+                                    $('#' + dialogId).modal('toggle');
+                                }
                             } else {
                                 MessageUtils.showError(json.message || "Не удалось отправить запрос");
                             }
@@ -81,6 +84,7 @@ $(document).ready(function() {
     }
 
     $(".cert-send-button").click(function(btn) {
+        var winId = "certificateWindow";
         var name = $("#cert-name").val();
         var phone = $("#cert-phone").val();
         var isValid = name && phone;
@@ -90,17 +94,58 @@ $(document).ready(function() {
                 Name: name,
                 Phone: phone
             };
-            MessageUtils.sendRequest(data);
+            MessageUtils.sendRequest(data, winId);
         } else {
             MessageUtils.showInfo("Заполнены не все поля");
         }
     });
 
     $(".call-send-button").click(function(btn) {
-
+        var winId = "callbackWindow";
+        var name = $("#callback-name").val();
+        var phone = $("#callback-phone").val();
+        var isValid = name && phone;
+        if (isValid) {
+            var data = {
+                NotifyType: 'CALLBACK',
+                Name: name,
+                Phone: phone
+            };
+            MessageUtils.sendRequest(data, winId);
+        } else {
+            MessageUtils.showInfo("Заполнены не все поля");
+        }
     });
 
     $(".reg-send-button").click(function(btn) {
-
+        var winId = "registrationWindow";
+        var selectedGame = $(".quiz-game-card.selected")[0];
+        if (selectedGame) {
+            var selectedGameJQElement = $(selectedGame);
+            var gameDate = selectedGameJQElement.data('game-fulldate');
+            var cityElement = selectedGameJQElement.find('.registration-city');
+            var gameCity = cityElement.text();
+            var teamName = $("#reg-name").val();
+            var count = $("#reg-count").val();
+            var leader = $("#reg-capitan").val();
+            var phone = $("#reg-phone").val();
+            var isValid = gameCity && gameDate && teamName && count && leader && phone;
+            if (isValid) {
+                var data = {
+                    NotifyType: 'REGISTRATION',
+                    City: gameCity,
+                    Date: gameDate,
+                    TeamName: teamName,
+                    Count: count,
+                    Leader: leader,
+                    Phone: phone
+                };
+                MessageUtils.sendRequest(data, winId);
+            } else {
+                MessageUtils.showInfo("Заполнены не все поля");
+            }
+        } else {
+            MessageUtils.showInfo("Не выбрана игра");
+        }
     });
 });

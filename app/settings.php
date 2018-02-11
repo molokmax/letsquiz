@@ -21,6 +21,7 @@
                 die('Db connect error: ' . mysql_error());
             }
 
+            mysql_set_charset($config['DB_CONFIG_CHARSET'], $con);
 	        mysql_select_db($config['DB_CONFIG_DATABASENAME'], $con);
 	
 	        $query = 'SELECT `id`, `name`, `prefix`, `type`, `value` FROM `setting`';
