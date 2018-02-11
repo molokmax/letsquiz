@@ -39,7 +39,7 @@
             'CERTIFICATE' => 'Сертификат'
         );
 
-        public buildModel($notify_type, $params) {
+        public function buildModel($notify_type, $params) {
             if ($notify_type == $this->NOTIFY_TYPES['REG']) {
                 $result = new RegistrationModel();
                 $result->game_city = $params["City"];
@@ -64,7 +64,7 @@
             }
         }
 
-        public buildMessage($notify_type, $model) {
+        public function buildMessage($notify_type, $model) {
 
             $config = include('config.php');
             
@@ -76,7 +76,7 @@
             return $result;
         }
 
-        private formatData($notify_type, $model) {
+        private function formatData($notify_type, $model) {
             if ($notify_type == $this->NOTIFY_TYPES['REG']) {
                 return "
                 <p>
@@ -118,7 +118,7 @@
             }
         }
 
-        private formatMessage($notify_type, $model) {
+        private function formatMessage($notify_type, $model) {
             $subject = $this->SUBJECTS[$notify_type];
             $data_text = $this->formatData($notify_type, $model);
             $text = "
@@ -144,7 +144,7 @@
 
     class Sender {
 
-        public send($message) {
+        public function send($message) {
             $config = include('config.php');
             $send_method = $config['MAIL_SEND_METHOD'];
             if ($send_method == 'PHP') {
@@ -162,6 +162,7 @@
                 $headers[] = "From: Lets's quiz site <" . $message->from . ">";
                 $headers[] = "Subject: {$message->subject}"; 
                 $headers[] = "X-Mailer: PHP/".phpversion();
+                //print_r($message);
                 return mail($message->to, $message->subject, $message->body, implode("\r\n", $headers));
             } else {
                 return true;

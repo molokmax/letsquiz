@@ -8,7 +8,7 @@
 
         'MAIL_SEND_METHOD' => 'PHP',
         'MAIL_FROM_ADDRESS' => 'info@letsquiz.ru',
-        'MAIL_TO_ADDRESS' => 'info@letsquiz.ru'
+        'MAIL_TO_ADDRESS' => 'yglerod@rambler.ru'//'info@letsquiz.ru'
     );
 
 ?>
