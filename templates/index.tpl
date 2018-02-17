@@ -11,7 +11,7 @@
 		<link href="pnotify.custom.min.css" media="all" rel="stylesheet" type="text/css" />
 		<link rel="stylesheet" href="style.css">
 		
-		<title>Let's QUIZ!</title>
+		<title>LET'S КВИЗ!</title>
 	</head>
 	<body data-spy="scroll" data-target=".quiz-menu">
 		<nav class="quiz-menu navbar navbar-expand-lg sticky-top">
@@ -65,8 +65,6 @@
 					<div class="col-md-2 offset-md-2">
 						<div class="contacts">
 							<div class="phone">{$SETTING_PHONE}</div>
-							<div class="email"><a href="mailto:{$SETTING_EMAIL}">{$SETTING_EMAIL}</a></div>
-							<div class="text">Оставь заявку на обратный звонок и мы перезвоним</div>
 							<button type="button" class="btn btn-light quiz-button" data-toggle="modal" data-target="#callbackWindow">Обратный звонок</button>
 						</div>
 						<div class="socialbuttons hidden-md-down">
@@ -79,13 +77,12 @@
 					</div>
 					<div class="col-md-2">
 						<div class="signup">
-							<div class="text text-right">Ближайшая игра состоится {$NEXT_GAME}</div>
-							<div class="text text-right">Зарегистрируйся на игру прямо сейчас!</div>
-							<button type="button" class="btn btn-light quiz-button float-right" data-toggle="modal" data-target="#registrationWindow">Онлайн-регистрация</button>
+							<div class="text text-right">Расписание игр и регистрация</div>
+							<button type="button" class="btn btn-light quiz-button float-right" data-toggle="modal" data-target="#registrationWindow">Хочу играть</button>
 						</div>
 					<div class="cert">
-						<div class="text text-right">Ты можешь приобрести подарочные сертификаты на наши игры</div>
-						<button type="button" class="btn btn-light quiz-button float-right" data-toggle="modal" data-target="#certificateWindow">Сертификаты</button>
+						<div class="text text-right">Подарочный сертификат</div>
+						<button type="button" class="btn btn-light quiz-button float-right" data-toggle="modal" data-target="#certificateWindow">Приобрести</button>
 					</div>
 					</div>
 				</div>
@@ -97,7 +94,7 @@
 			<div class="intro container quiz-block block-dark">
 				<div class="row">
 					<div class="col-md-12">
-						<div class="quiz-header">ЧТО ТАКОЕ LET'S QUIZ?</div>
+						<div class="quiz-header">ЧТО ТАКОЕ LET'S КВИЗ?</div>
 					</div>
 				</div>
 				<div class="row">
@@ -142,7 +139,7 @@
 				<div class="row">
 					<div class="col-md-7"></div>
 					<div class="col-md-3 text-right">
-						<div class="text">Хочешь сыграть в LET'S QUIZ?</div>
+						<div class="text">Хочешь сыграть в LET'S КВИЗ?</div>
 						<button type="button" class="btn btn-dark quiz-button float-right" data-toggle="modal" data-target="#registrationWindow">Онлайн-регистрация</button>
 					</div>
 					<div class="col-md-2"></div>
@@ -166,7 +163,7 @@
 				</div>
 				<div class="row">
 					<div class="col-md-9 offset-md-3">
-						<div class="quiz-item"><i class="quiz-icon mdi mdi-emoticon-excited"></i> Вы пьете, кушаете и весело проводите время в своей компании</div>
+						<div class="quiz-item"><i class="quiz-icon mdi mdi-emoticon-excited"></i> Вы думаете, пьёте, кушаете и весело проводите время в компании друзей</div>
 					</div>
 				</div>
 				<div class="row">
@@ -258,7 +255,7 @@
 				</div>
 				<div class="row">
 					<div class="col-md-3 offset-md-3">
-						<div class="quiz-panel panel-light"><a href="https://www.instagram.com/artiko_print/" target="_blank"><img src="image/logo-artiko.png"></a></div>
+						<div class="quiz-panel panel-light"><a href="https://vk.com/m.ugli" target="_blank"><img src="image/logo-mugli.png"></a></div>
 					</div>
 					<div class="col-md-3">
 						<div class="quiz-panel panel-light"><a href="https://vk.com/pobeda22_stupino" target="_blank"><img src="image/logo-pobeda.png"></a></div>
@@ -269,7 +266,7 @@
 						<div class="quiz-panel panel-light"><a href="https://fotopodarkist.ru/" target="_blank"><img src="image/logo-photo.png"></a></div>
 					</div>
 					<div class="col-md-3">
-						<div class="quiz-panel panel-light"><a href="https://vk.com/m.ugli" target="_blank"><img src="image/logo-mugli.png"></a></div>
+						<div class="quiz-panel panel-light"><a href="https://www.instagram.com/artiko_print/" target="_blank"><img src="image/logo-artiko.png"></a></div>
 					</div>
 				</div>
 			</div>
@@ -285,7 +282,7 @@
 				</div>
 				<div class="row">
 					<div class="col-md-6 offset-md-3">
-						<div class="main-text">LET'S QUIZ - отличный вариант для корпоратива или сплочения команды (team building)! Это могут подтвердить компании, которые уже работали с нами:</div>
+						<div class="main-text">LET'S КВИЗ - отличный вариант для корпоратива или сплочения команды (team building)! Это могут подтвердить компании, которые уже работали с нами:</div>
 					</div>
 				</div>
 				<div class="row">
