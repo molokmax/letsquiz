@@ -50,6 +50,9 @@
 						<a class="nav-link" href="#feedback">Отзывы</a>
 					</li>
 {/if}
+					<li class="nav-item">
+						<a class="nav-link" href="#footer">Контакты</a>
+					</li>
 				</ul>
 			</div>
 		</nav>
