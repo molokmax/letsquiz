@@ -61,11 +61,11 @@
 			<div class="container quiz-block">
 				<div class="row">
 					<div class="col-md-12">
-						<div class="main-header">ИНТЕЛЛЕКТУАЛЬНО-РАЗВЛЕКАТЕЛЬНАЯ БИТВА</div>
+						<div class="main-header">ИНТЕЛЛЕКТУАЛЬНО-РАЗВЛЕКАТЕЛЬНАЯ </br> БИТВА</div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-2 offset-md-2">
+					<div class="col-md-4 offset-md-2">
 						<div class="contacts">
 							<div class="phone">{$SETTING_PHONE}</div>
 							<button type="button" class="btn btn-light quiz-button" data-toggle="modal" data-target="#callbackWindow">Обратный звонок</button>
@@ -76,17 +76,14 @@
 						</div>
 					</div>
 					<div class="col-md-4">
-						<div class="main-logo"></div>
-					</div>
-					<div class="col-md-2">
 						<div class="signup">
 							<div class="text text-right">Расписание игр и регистрация</div>
 							<button type="button" class="btn btn-light quiz-button float-right" data-toggle="modal" data-target="#registrationWindow">Хочу играть</button>
 						</div>
-					<div class="cert">
-						<div class="text text-right">Подарочный сертификат</div>
-						<button type="button" class="btn btn-light quiz-button float-right" data-toggle="modal" data-target="#certificateWindow">Приобрести</button>
-					</div>
+						<div class="cert">
+							<div class="text text-right">Подарочный сертификат</div>
+							<button type="button" class="btn btn-light quiz-button float-right" data-toggle="modal" data-target="#certificateWindow">Приобрести</button>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -102,32 +99,32 @@
 				</div>
 				<div class="row">
 					<div class="col-md-9 offset-md-3">
-						<div class="quiz-item"><i class="quiz-icon mdi mdi-timer"></i> 2,5 часа игры каждые 2 недели по воскресеньям</div>
+						<div class="quiz-item"><i class="quiz-icon mdi mdi-timer"></i>2,5 часа игры каждые 2 недели по воскресеньям</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-md-9 offset-md-3">
-						<div class="quiz-item"><i class="quiz-icon mdi mdi-account-multiple-outline"></i> От 2 до 9 человек в команде</div>
+						<div class="quiz-item"><i class="quiz-icon mdi mdi-account-multiple-outline"></i>От 2 до 9 человек в команде</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-md-9 offset-md-3">
-						<div class="quiz-item"><i class="quiz-icon mdi mdi-comment-question-outline"></i> 7 раундов с интересными вопросами на логику, интуицию и удачу!</div>
+						<div class="quiz-item"><i class="quiz-icon mdi mdi-comment-question-outline"></i>7 раундов с интересными вопросами на логику, интуицию и удачу!</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-md-9 offset-md-3">
-						<div class="quiz-item"><i class="quiz-icon mdi mdi-gift"></i> Крутые призы от наших партнеров для победителей и призеров</div>
+						<div class="quiz-item"><i class="quiz-icon mdi mdi-gift"></i>Крутые призы от наших партнеров для победителей и призеров</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-md-9 offset-md-3">
-						<div class="quiz-item"><i class="quiz-icon mdi mdi-food"></i> Еда, напитки, неповторимая атмосфера и заряд позитива</div>
+						<div class="quiz-item"><i class="quiz-icon mdi mdi-food"></i>Еда, напитки, неповторимая атмосфера и заряд позитива</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-md-9 offset-md-3">
-						<div class="quiz-item"><i class="quiz-icon mdi mdi-cake"></i> Повод встретиться с друзьями не только на День Рождения</div>
+						<div class="quiz-item"><i class="quiz-icon mdi mdi-cake"></i>Повод встретиться с друзьями не только на День Рождения</div>
 					</div>
 				</div>
 			</div>
@@ -140,8 +137,7 @@
 					<!--<div class="col-md-4"></div>-->
 				</div>
 				<div class="row">
-					<div class="col-md-7"></div>
-					<div class="col-md-3 text-right">
+					<div class="col-md-10 text-right">
 						<div class="text">Хочешь сыграть в LET'S КВИЗ?</div>
 						<button type="button" class="btn btn-dark quiz-button float-right" data-toggle="modal" data-target="#registrationWindow">Онлайн-регистрация</button>
 					</div>
@@ -193,14 +189,18 @@
 			<div class="faq container quiz-block block-light">
 				<div class="row">
 					<div class="col-md-4 offset-md-2">
-						<div class="quiz-title"><i class="quiz-icon mdi mdi-check-circle-outline"></i>Что нужно взять с собой?</div>
-						<div class="quiz-item">1) компанию друзей</div>
-						<div class="quiz-item">2) хорошее настроение</div>
+						<div class="faq-block good">
+							<div class="quiz-title"></i>Что нужно взять с собой?</div>  <!-- <i class="quiz-icon mdi mdi-check-circle-outline"> -->
+							<div class="quiz-item"><i class="quiz-icon mdi mdi-plus"></i>компанию друзей</div>
+							<div class="quiz-item"><i class="quiz-icon mdi mdi-plus"></i>хорошее настроение</div>
+						</div>
 					</div>
 					<div class="col-md-4">
-						<div class="quiz-title"><i class="quiz-icon mdi mdi-close-circle-outline"></i>Что не нужно брать с собой?</div>
-						<div class="quiz-item">1) энциклопедии</div>
-						<div class="quiz-item">2) успокоительные</div>
+						<div class="faq-block bad">
+							<div class="quiz-title"></i>Что не нужно брать с собой?</div> <!-- <i class="quiz-icon mdi mdi-close-circle-outline"> -->
+							<div class="quiz-item"><i class="quiz-icon mdi mdi-minus"></i>энциклопедии</div>
+							<div class="quiz-item"><i class="quiz-icon mdi mdi-minus"></i>успокоительные</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -313,8 +313,7 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-8"></div>
-					<div class="col-md-2">
+					<div class="col-md-10">
 						<div class="text text-right">Оставь заявку чтобы узнать подробности</div>
 						<button type="button" class="btn btn-light quiz-button float-right" data-toggle="modal" data-target="#callbackWindow">Обратный звонок</button>
 					</div>

@@ -1,0 +1,31 @@
+{
+  "name": "letsquiz",
+  "version": "1.0.0",
+  "description": "Site of game Let's QUIZ",
+  "main": "index.php",
+  "scripts": {
+    "dist": "gulp dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/molokmax/letsquiz.git"
+  },
+  "keywords": [
+    "website",
+    "quiz",
+    "letsquiz"
+  ],
+  "author": "maxim.molokanov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/molokmax/letsquiz/issues"
+  },
+  "homepage": "https://github.com/molokmax/letsquiz#readme",
+  "devDependencies": {
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-copy": "^1.1.0",
+    "gulp-shell": "^0.6.5",
+    "gulp-watch": "^5.0.0"
+  }
+}
