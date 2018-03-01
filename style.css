@@ -257,6 +257,7 @@ div.quiz-block.faq .faq-block {
 	border-width: 7px;
     border-style: solid;
 	padding: 1.5rem;
+	margin-bottom: 1rem;
 }
 div.quiz-block.faq .faq-block.good {
     border-color: #63C130;/*#709000;*/

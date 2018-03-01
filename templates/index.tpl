@@ -93,37 +93,37 @@
 		<div id="terms" class="terms container quiz-block-container">
 			<div class="intro container quiz-block block-dark">
 				<div class="row">
-					<div class="col-md-12">
+					<div class="col-12">
 						<div class="quiz-header">ЧТО ТАКОЕ LET'S КВИЗ?</div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-9 offset-md-3">
+					<div class="col-12 col-sm-10 offset-sm-1 col-md-6 offset-md-3">
 						<div class="quiz-item"><i class="quiz-icon mdi mdi-timer"></i>2,5 часа игры каждые 2 недели по воскресеньям</div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-9 offset-md-3">
+					<div class="col-12 col-sm-10 offset-sm-1 col-md-6 offset-md-3">
 						<div class="quiz-item"><i class="quiz-icon mdi mdi-account-multiple-outline"></i>От 2 до 9 человек в команде</div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-9 offset-md-3">
+					<div class="col-12 col-sm-10 offset-sm-1 col-md-6 offset-md-3">
 						<div class="quiz-item"><i class="quiz-icon mdi mdi-comment-question-outline"></i>7 раундов с интересными вопросами на логику, интуицию и удачу!</div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-9 offset-md-3">
+					<div class="col-12 col-sm-10 offset-sm-1 col-md-6 offset-md-3">
 						<div class="quiz-item"><i class="quiz-icon mdi mdi-gift"></i>Крутые призы от наших партнеров для победителей и призеров</div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-9 offset-md-3">
+					<div class="col-12 col-sm-10 offset-sm-1 col-md-6 offset-md-3">
 						<div class="quiz-item"><i class="quiz-icon mdi mdi-food"></i>Еда, напитки, неповторимая атмосфера и заряд позитива</div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-9 offset-md-3">
+					<div class="col-12 col-sm-10 offset-sm-1 col-md-6 offset-md-3">
 						<div class="quiz-item"><i class="quiz-icon mdi mdi-cake"></i>Повод встретиться с друзьями не только на День Рождения</div>
 					</div>
 				</div>
@@ -131,71 +131,71 @@
 			<div class="container quiz-block block-light">
 				<div class="row">
 					<!--<div class="col-md-4"></div>-->
-					<div class="col-md-12">
+					<div class="col-12">
 						<div class="main-text">Наша цель - позитивный вечер, а не взрыв мозга!</div>
 					</div>
 					<!--<div class="col-md-4"></div>-->
 				</div>
 				<div class="row">
-					<div class="col-md-10 text-right">
+					<div class="col-12 col-md-10 text-right">
 						<div class="text">Хочешь сыграть в LET'S КВИЗ?</div>
 						<button type="button" class="btn btn-dark quiz-button float-right" data-toggle="modal" data-target="#registrationWindow">Онлайн-регистрация</button>
 					</div>
-					<div class="col-md-2"></div>
+					<div class="hidden-md-down col-md-2"></div>
 				</div>
 			</div>
 			<div class="details container quiz-block block-dark">
 				<div class="row">
-					<div class="col-md-12">
+					<div class="col-12">
 						<div class="quiz-header light">А ТЕПЕРЬ ПОДРОБНЕЕ</div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-9 offset-md-3">
+					<div class="col-12 col-sm-10 offset-sm-1 col-md-6 offset-md-3">
 						<div class="quiz-item"><i class="quiz-icon mdi mdi-lead-pencil"></i> Для вашей команды забронирован стол, на котором лежит все необходимое для игры</div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-9 offset-md-3">
+					<div class="col-12 col-sm-10 offset-sm-1 col-md-6 offset-md-3">
 						<div class="quiz-item"><i class="quiz-icon mdi mdi-account-multiple-plus-outline"></i> В зале находится более 15-ти команд</div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-9 offset-md-3">
+					<div class="col-12 col-sm-10 offset-sm-1 col-md-6 offset-md-3">
 						<div class="quiz-item"><i class="quiz-icon mdi mdi-emoticon-excited"></i> Вы думаете, пьёте, кушаете и весело проводите время в компании друзей</div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-9 offset-md-3">
+					<div class="col-12 col-sm-10 offset-sm-1 col-md-6 offset-md-3">
 						<div class="quiz-item"><i class="quiz-icon mdi mdi-voice"></i> Ведущий зачитывает вопросы, которые дублируются на экранах</div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-9 offset-md-3">
+					<div class="col-12 col-sm-10 offset-sm-1 col-md-6 offset-md-3">
 						<div class="quiz-item"><i class="quiz-icon mdi mdi-wallet-membership"></i> После жаркого командного обсуждения, правильный ответ записывается в бланк</div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-9 offset-md-3">
+					<div class="col-12 col-sm-10 offset-sm-1 col-md-6 offset-md-3">
 						<div class="quiz-item"><i class="quiz-icon mdi mdi-information-outline"></i> Сдаем бланки и узнаем правильные ответы</div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-9 offset-md-3">
+					<div class="col-12 col-sm-10 offset-sm-1 col-md-6 offset-md-3">
 						<div class="quiz-item"><i class="quiz-icon mdi mdi-trophy-outline"></i> Победитель определяется после 7-ми раундов игры (39 вопросов)</div>
 					</div>
 				</div>
 			</div>
 			<div class="faq container quiz-block block-light">
 				<div class="row">
-					<div class="col-md-4 offset-md-2">
+					<div class="col-12 col-md-4 offset-md-2">
 						<div class="faq-block good">
 							<div class="quiz-title"></i>Что нужно взять с собой?</div>  <!-- <i class="quiz-icon mdi mdi-check-circle-outline"> -->
 							<div class="quiz-item"><i class="quiz-icon mdi mdi-plus"></i>компанию друзей</div>
 							<div class="quiz-item"><i class="quiz-icon mdi mdi-plus"></i>хорошее настроение</div>
 						</div>
 					</div>
-					<div class="col-md-4">
+					<div class="col-12 col-md-4">
 						<div class="faq-block bad">
 							<div class="quiz-title"></i>Что не нужно брать с собой?</div> <!-- <i class="quiz-icon mdi mdi-close-circle-outline"> -->
 							<div class="quiz-item"><i class="quiz-icon mdi mdi-minus"></i>энциклопедии</div>
@@ -231,11 +231,10 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-8"></div>
-					<div class="col-md-2">
+					<div class="col-12 col-md-10">
 						<button type="button" class="btn btn-light quiz-button float-right" data-toggle="modal" data-target="#questionWindow">Примеры вопросов</button>
 					</div>
-					<div class="col-md-2"></div>
+					<div class="hidden-md-down col-md-2"></div>
 				</div>
 			</div>
 		</div>
@@ -244,31 +243,31 @@
 		<div id="friends" class="friends container quiz-block-container">
 			<div class="friends-block container quiz-block block-light">
 				<div class="row">
-					<div class="col-md-12">
+					<div class="col-12">
 						<div class="quiz-header dark">НАШИ ДРУЗЬЯ И ПАРТНЕРЫ</div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-3 offset-md-3">
+					<div class="col-12 col-sm-4 offset-sm-2 col-md-3 offset-md-3">
 						<div class="quiz-panel panel-light"><a href="https://stupino.mosigra.ru/" target="_blank"><img src="image/logo-mosigra.png"></a></div>
 					</div>
-					<div class="col-md-3">
+					<div class="col-12 col-sm-4 col-md-3">
 						<div class="quiz-panel panel-light"><a href="https://vk.com/shizgarastupino" target="_blank"><img src="image/logo-shizgara.png"></a></div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-3 offset-md-3">
+					<div class="col-12 col-sm-4 offset-sm-2 col-md-3 offset-md-3">
 						<div class="quiz-panel panel-light"><a href="https://vk.com/m.ugli" target="_blank"><img src="image/logo-mugli.png"></a></div>
 					</div>
-					<div class="col-md-3">
+					<div class="col-12 col-sm-4 col-md-3">
 						<div class="quiz-panel panel-light"><a href="https://vk.com/pobeda22_stupino" target="_blank"><img src="image/logo-pobeda.png"></a></div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-3 offset-md-3">
+					<div class="col-12 col-sm-4 offset-sm-2 col-md-3 offset-md-3">
 						<div class="quiz-panel panel-light"><a href="https://fotopodarkist.ru/" target="_blank"><img src="image/logo-photo.png"></a></div>
 					</div>
-					<div class="col-md-3">
+					<div class="col-12 col-sm-4 col-md-3">
 						<div class="quiz-panel panel-light"><a href="https://www.instagram.com/artiko_print/" target="_blank"><img src="image/logo-artiko.png"></a></div>
 					</div>
 				</div>
@@ -279,45 +278,45 @@
 		<div id="corp" class="corp container quiz-block-container">
 			<div class="corp-block container quiz-block block-dark">
 				<div class="row">
-					<div class="col-md-12">
+					<div class="col-12">
 						<div class="quiz-header">КВИЗ НА КОРПОРАТИВ</div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-6 offset-md-3">
+					<div class="col-12 col-sm-10 offset-sm-1 col-md-6 offset-md-3">
 						<div class="main-text">LET'S КВИЗ - отличный вариант для корпоратива или сплочения команды (team building)! Это могут подтвердить компании, которые уже работали с нами:</div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-3 offset-md-3">
+					<div class="col-12 col-sm-4 offset-sm-2 col-md-3 offset-md-3">
 						<div class="quiz-panel quiz-panel-no-img panel-dark"><a href="#">MARS Chocolate</a></div>
 					</div>
-					<div class="col-md-3">
+					<div class="col-12 col-sm-4 col-md-3">
 						<div class="quiz-panel quiz-panel-no-img panel-dark"><a href="#">Kimberly-Clark</a></div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-3 offset-md-3">
+					<div class="col-12 col-sm-4 offset-sm-2 col-md-3 offset-md-3">
 						<div class="quiz-panel quiz-panel-no-img panel-dark"><a href="#">ДОЛ им. Ю.А. Гагарина</a></div>
 					</div>
-					<div class="col-md-3">
+					<div class="col-12 col-sm-4 col-md-3">
 						<div class="quiz-panel quiz-panel-no-img panel-dark"><a href="#">MARS Food</a></div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-3 offset-md-3">
+					<div class="col-12 col-sm-4 offset-sm-2 col-md-3 offset-md-3">
 						<div class="quiz-panel quiz-panel-no-img panel-dark"><a href="#">Мастокройф</a></div>
 					</div>
-					<div class="col-md-3">
+					<div class="col-12 col-sm-4 col-md-3">
 						<div class="quiz-panel quiz-panel-no-img panel-dark"><a href="#">Радиал-С</a></div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-10">
+					<div class="col-12 col-md-10">
 						<div class="text text-right">Оставь заявку чтобы узнать подробности</div>
 						<button type="button" class="btn btn-light quiz-button float-right" data-toggle="modal" data-target="#callbackWindow">Обратный звонок</button>
 					</div>
-					<div class="col-md-2"></div>
+					<div class="hidden-md-down col-md-2"></div>
 				</div>
 			</div>
 		</div>
@@ -326,12 +325,12 @@
 		<div id="feedback" class="feedback container quiz-block-container">
 			<div class="container quiz-block block-dark">
 				<div class="row">
-					<div class="col-md-12">
+					<div class="col-12">
 						<div class="quiz-header">ОТЗЫВЫ НАШИХ УЧАСТНИКОВ</div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-8 offset-md-2">
+					<div class="col-12 col-sm-10 offset-sm-1 col-md-6 offset-md-3">
 						<div id="carousel-feedback" class="carousel slide" data-ride="carousel" data-interval=10000>
 							<div class="carousel-inner" role="listbox">
 {foreach from=$FEEDBACK_LIST item=feedback name=feedbacks}
@@ -362,27 +361,27 @@
 		<div id="footer" class="footer container quiz-block-container">
 			<div class="container quiz-block block-footer">
 				<div class="row">
-					<div class="col-md-12">
+					<div class="col-12">
 						<div class="footer-text text">Наши контакты:</div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-12">
+					<div class="col-12">
 						<div class="footer-text phone">{$SETTING_PHONE}</div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-12">
+					<div class="col-12">
 						<div class="footer-text email"><a href="mailto:{$SETTING_EMAIL}">{$SETTING_EMAIL}</a></div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-12">
+					<div class="col-12">
 						<div class="footer-text text">Мы в соц. сетях:</div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-12">
+					<div class="col-12">
 						<div class="socialbuttons footer-text">
 							<a href="https://vk.com/letsquiz" target="_blank"><img src="image/vk.png"></a>
 							<a href="https://www.instagram.com/lets_quiz/" target="_blank"><img src="image/instagram.png"></a>
