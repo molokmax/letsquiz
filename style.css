@@ -34,6 +34,32 @@ nav.quiz-menu .nav-item .nav-link.active {
     border-bottom-color: #ff6699;
 }
 
+#navbarNav .selected-city {
+	font-size: 0.9rem;
+	color: #FFFFFF;
+	padding-top: 0.7rem;
+    padding-bottom: 0.5rem;
+	padding-left: 1rem;
+}
+#navbarNav .selected-city i {
+	font-size: 1.3rem;
+	padding-right: 0.2rem;
+}
+#navbarNav .selected-city .selected-city-link {
+	text-decoration: underline;
+	color: #FFFFFF;
+	font-size: 0.8rem;
+}
+#navbarNav .selected-city .selected-city-link:focus {
+	outline: none !important;
+}
+#navbarNav .selected-city .selected-city-link:hover {
+	text-decoration: none;
+}
+#city {
+	margin-top: 1rem;
+}
+
 nav.quiz-menu #navbarNav ul.nav {
     width: 100%;
 	font-size: 1rem;

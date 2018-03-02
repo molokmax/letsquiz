@@ -53,6 +53,9 @@
 					<li class="nav-item">
 						<a class="nav-link" href="#footer">Контакты</a>
 					</li>
+					<li class="selected-city">
+						<i class="mdi mdi-city"></i> <a class="selected-city-link" href="javascript:void(0);" data-toggle="modal" data-target="#selectCityWindow">Все</a>
+					</li>
 				</ul>
 			</div>
 		</nav>
@@ -414,6 +417,32 @@
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-light quiz-button call-send-button">Отправить</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Select City Window -->
+		<div class="quiz-window modal fade" id="selectCityWindow" tabindex="-1" role="dialog" aria-labelledby="SelectCityWindowTitle" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="selectCityWindowTitle">Город</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span class="mdi mdi-close" aria-hidden="true"></span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<div class="quiz-window-title">Выбери свой город</div>
+						<select class="form-control" id="city" aria-describedby="city">
+{foreach from=$CITY_LIST item=city name=cities}
+							<option>{$city}</option>
+{/foreach}
+						</select>
+					</div>
+					<div class="modal-footer">
+						<!--data-dismiss="modal"-->
+						<button type="button" class="btn btn-light quiz-button select-city-button">Выбрать</button>
 					</div>
 				</div>
 			</div>

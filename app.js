@@ -1,34 +1,54 @@
 $(document).ready(function() {
 
+    var CityUtils = {
+        getSavedCity: function () {
+            var city = localStorage.getItem('selectedCity');
+            if (city) {
+                return city;
+            } else {
+                return null;
+            }
+        },
+        selectCity: function(city) {
+            localStorage.setItem('selectedCity', city);
+        },
+        cityDetermination: function() {
+            var city = this.getSavedCity();
+            if (city) {
+                console.log('selected city: ' + city);
+                this.updateCityDisplay(city);
+            } else {
+                $('#selectCityWindow').modal('show');
+            }
+        },
+        updateCityDisplay: function(city) {
+            $(".selected-city-link").text(city);
+        }
+
+    }
+
+    CityUtils.cityDetermination();
+
     $("#questionWindow .question-answer-link").click(function(link) {
         $(link.currentTarget).parents(".question-item").find(".question-answer-text").toggle();
     });
-    // $("#questionWindow").on('show.bs.modal', function(win) {
-    //     if (!$(win.currentTarget).data("initialized")) {
-    //         $(".question-answer-link").click(function(link) {
-    //             $(link.currentTarget).parents(".question-item").children(".question-answer-text").toggle();
-    //         });
-    //         $(win.currentTarget).data("initialized", true);
-    //     }
-    // });
+    
+    $(".select-city-button").click(function(link) {
+        var city = $("#city").val();
+        CityUtils.selectCity(city);
+        CityUtils.updateCityDisplay(city);
+        $('#selectCityWindow').modal('hide');
+    });
+
     $("#questionWindow").on('hidden.bs.modal', function(win) {
         $(".question-answer-text").hide();
     });
-
-    // $("#registrationWindow").on('show.bs.modal', function(win) {
-    //     if (!$(win.currentTarget).data("initialized")) {
-    //         $(".quiz-game-card").click(function(link) {
-    //             $(link.currentTarget).parents(".carousel-inner").find(".quiz-game-card").removeClass("selected");
-    //             $(link.currentTarget).addClass("selected");
-    //         });
-    //         $(win.currentTarget).data("initialized", true);
-    //     }
-    // });
 
     $(".quiz-game-card").click(function(link) {
         $(link.currentTarget).parents(".carousel-inner").find(".quiz-game-card").removeClass("selected");
         $(link.currentTarget).addClass("selected");
     });
+
     $("#registrationWindow").on('hidden.bs.modal', function(win) {
         $(".quiz-game-card").removeClass("selected");
     });
@@ -65,7 +85,7 @@ $(document).ready(function() {
                             if (json.success) {
                                 MessageUtils.showSuccess(json.message || "Запрос отправлен");
                                 if (dialogId) {
-                                    $('#' + dialogId).modal('toggle');
+                                    $('#' + dialogId).modal('hide');
                                 }
                             } else {
                                 MessageUtils.showError(json.message || "Не удалось отправить запрос");
