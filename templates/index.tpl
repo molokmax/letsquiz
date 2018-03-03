@@ -92,6 +92,48 @@
 			</div>
 		</div>
 {/if}
+{if $SETTING_HIDE_SCHEDULE eq 'false'}
+		<div id="schedule" class="schedule container quiz-block-container">
+			<div class="photos container quiz-block block-light">
+				<div class="row">
+					<div class="col-md-8 offset-md-2">
+						<div id="carousel-schedule" class="carousel slide" data-ride="carousel" data-interval=false>
+							<div class="carousel-inner" role="listbox">
+{assign var=gameCount value=count($GAME_LIST)-1}
+{for $i=0 to $gameCount step 3}
+								<div class="carousel-item {if $i == 0}active{/if}">
+									<div class="d-block game-item container">
+										<div class="row">
+{for $g=$i+0 to $i+2}
+{assign var=game value=$GAME_LIST[$g]}
+{if $g <= $gameCount}
+											<div class="quiz-game-card col-lg-2 col-md-4 col-12" data-game-id="{$game->id}" data-game-fulldate="{$game->full_date}">
+												<div class="game-city">{$game->city}</div>
+												<div class="game-date">{$game->date}</div>
+												<div class="game-day">{$game->day_name}</div>
+												<div class="game-time">{$game->time}</div>
+											</div>
+{/if}
+{/for}
+										</div>
+									</div>
+								</div>
+{/for}
+							</div>
+							<a class="carousel-control-prev" href="#carousel-schedule" role="button" data-slide="prev">
+								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+								<span class="sr-only">Previous</span>
+							</a>
+							<a class="carousel-control-next" href="#carousel-schedule" role="button" data-slide="next">
+								<span class="carousel-control-next-icon" aria-hidden="true"></span>
+								<span class="sr-only">Next</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+{/if}
 {if $SETTING_HIDE_TERMS eq 'false'}
 		<div id="terms" class="terms container quiz-block-container">
 			<div class="intro container quiz-block block-dark">
@@ -523,33 +565,7 @@
 						</button>
 					</div>
 					<div class="modal-body">
-						<div class="quiz-window-title">Выбери игру на которую хочешь записаться</div>
-						<div id="carousel-registration" class="carousel slide" data-ride="carousel" data-interval=false>
-							<div class="carousel-inner" role="listbox">
-{foreach from=$GAME_LIST item=game name=games}
-								<div class="carousel-item {if $smarty.foreach.games.first}active{/if}">
-									<div class="d-block registration-item container">
-										<div class="row">
-											<div class="quiz-game-card col-md-12 col-12" data-game-id="{$game->id}" data-game-fulldate="{$game->full_date}">
-												<div class="registration-city">{$game->city}</div>
-												<div class="registration-date">{$game->date}</div>
-												<div class="registration-day">{$game->day_name}</div>
-												<div class="registration-time">{$game->time}</div>
-											</div>
-										</div>
-									</div>
-								</div>
-{/foreach}
-							</div>
-							<a class="carousel-control-prev" href="#carousel-registration" role="button" data-slide="prev">
-								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-								<span class="sr-only">Previous</span>
-							</a>
-							<a class="carousel-control-next" href="#carousel-registration" role="button" data-slide="next">
-								<span class="carousel-control-next-icon" aria-hidden="true"></span>
-								<span class="sr-only">Next</span>
-							</a>
-						</div>
+						<div class="quiz-window-title">Заполни форму регистрации</div>
 						<label for="reg-name">Название команды</label>
     					<input type="text" class="form-control" id="reg-name" aria-describedby="reg-name" placeholder="">
 						<label for="reg-count">Количество человек</label>

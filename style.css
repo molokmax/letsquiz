@@ -489,18 +489,18 @@ div.quiz-block-container.footer .email a:visited {
 .quiz-game-card:hover {
 	cursor: pointer;
 }
-.quiz-game-card .registration-date {
+.quiz-game-card .game-date {
 	text-align: center;
 }
-.quiz-game-card .registration-city {
+.quiz-game-card .game-city {
 	text-align: center;
 	font-size: 1.5rem;
     padding-bottom: 0.7rem;
 }
-.quiz-game-card .registration-day {
+.quiz-game-card .game-day {
 	text-align: center;
 }
-.quiz-game-card .registration-time {
+.quiz-game-card .game-time {
 	text-align: center;
 	padding-top: 1rem;
 	font-size: 1.5rem;
