@@ -12,7 +12,7 @@ body {
 }
 
 div.quiz-header {
-	font-size: 3.5rem;
+	font-size: 3rem;
 	font-weight: bold;
 	text-align: center;
 	/*margin-top: 50px;*/
@@ -37,8 +37,8 @@ nav.quiz-menu .nav-item .nav-link.active {
 #navbarNav .selected-city {
 	font-size: 0.9rem;
 	color: #FFFFFF;
-	padding-top: 0.7rem;
-    padding-bottom: 0.5rem;
+	padding-top: 0.5rem;
+    /*padding-bottom: 0.5rem;*/
 	padding-left: 1rem;
 }
 #navbarNav .selected-city i {
@@ -485,6 +485,8 @@ div.quiz-block-container.footer .email a:visited {
 	padding-bottom: 1rem;
 	border-style: dashed;
 	border-width: 2px;
+	margin-left: 1rem;
+	margin-right: 1rem;
 }
 .quiz-game-card:hover {
 	cursor: pointer;
@@ -614,5 +616,16 @@ div.quiz-block-container.footer .email a:visited {
 	}
 	.quiz-game-card {
 		margin-bottom: 1rem;
+	}
+}
+
+@media (max-width: 992px) {
+	.carousel-schedule {
+		display: none;
+	}
+}
+@media (min-width: 992px) {
+	.list-schedule {
+		display: none;
 	}
 }

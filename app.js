@@ -1,6 +1,16 @@
 $(document).ready(function() {
 
+    $('.carousel-schedule').slick({
+        //dots: true,
+        slidesToShow: 4
+    });
+
     var CityUtils = {
+        AnyCityName: 'Все',
+        currentCity: null,
+        isAnyCity: function() {
+            return this.AnyCityName == this.currentCity;
+        },
         getSavedCity: function () {
             var city = localStorage.getItem('selectedCity');
             if (city) {
@@ -15,19 +25,48 @@ $(document).ready(function() {
         cityDetermination: function() {
             var city = this.getSavedCity();
             if (city) {
-                console.log('selected city: ' + city);
-                this.updateCityDisplay(city);
+                this.updateInterface(city);
             } else {
                 $('#selectCityWindow').modal('show');
             }
         },
-        updateCityDisplay: function(city) {
+        filterCity(index) {
+            return CityUtils.isAnyCity() || $(this).data("city-name") === CityUtils.currentCity;
+        },
+        updateInterface: function(city) {
+            this.currentCity = city;
             $(".selected-city-link").text(city);
+            $('.carousel-schedule').slick('slickUnfilter');
+            $('.carousel-schedule').slick('slickFilter', this.filterCity);
+            if (this.isAnyCity()) {
+                $(".list-schedule .quiz-game-card").show();
+            } else {
+                $(".list-schedule .quiz-game-card").hide();
+                $(".list-schedule .quiz-game-card[data-city-name='"+city+"']").show();
+            }
         }
 
     }
 
     CityUtils.cityDetermination();
+
+    var navMain = $("#navbarNav");
+    navMain.on("click", "a", null, function () {
+        navMain.collapse('hide');
+    });
+    var navMain = $("#navbarNav");
+    $('.registration-btn a').click(function () {
+        var card = $(this).parents('.quiz-game-card');
+        var date = card.find('.game-date').text();
+        $("#registrationWindow .display-date").text(date);
+        var time = card.find('.game-time').text();
+        $("#registrationWindow .display-time").text(time);
+        var city = card.data('city-name');
+        $("#registrationWindow").data("city-name", city);
+        $("#registrationWindow .display-city").text(city);
+        var fullDate = card.data('game-fulldate');
+        $("#registrationWindow").data("game-fulldate", fullDate);
+    });
 
     $("#questionWindow .question-answer-link").click(function(link) {
         $(link.currentTarget).parents(".question-item").find(".question-answer-text").toggle();
@@ -36,21 +75,12 @@ $(document).ready(function() {
     $(".select-city-button").click(function(link) {
         var city = $("#city").val();
         CityUtils.selectCity(city);
-        CityUtils.updateCityDisplay(city);
+        CityUtils.updateInterface(city);
         $('#selectCityWindow').modal('hide');
     });
 
     $("#questionWindow").on('hidden.bs.modal', function(win) {
         $(".question-answer-text").hide();
-    });
-
-    $(".quiz-game-card").click(function(link) {
-        $(link.currentTarget).parents(".carousel-inner").find(".quiz-game-card").removeClass("selected");
-        $(link.currentTarget).addClass("selected");
-    });
-
-    $("#registrationWindow").on('hidden.bs.modal', function(win) {
-        $(".quiz-game-card").removeClass("selected");
     });
 
     var MessageUtils = {
@@ -139,33 +169,27 @@ $(document).ready(function() {
 
     $(".reg-send-button").click(function(btn) {
         var winId = "registrationWindow";
-        var selectedGame = $(".quiz-game-card.selected")[0];
-        if (selectedGame) {
-            var selectedGameJQElement = $(selectedGame);
-            var gameDate = selectedGameJQElement.data('game-fulldate');
-            var cityElement = selectedGameJQElement.find('.registration-city');
-            var gameCity = cityElement.text();
-            var teamName = $("#reg-name").val();
-            var count = $("#reg-count").val();
-            var leader = $("#reg-capitan").val();
-            var phone = $("#reg-phone").val();
-            var isValid = gameCity && gameDate && teamName && count && leader && phone;
-            if (isValid) {
-                var data = {
-                    NotifyType: 'REGISTRATION',
-                    City: gameCity,
-                    Date: gameDate,
-                    TeamName: teamName,
-                    Count: count,
-                    Leader: leader,
-                    Phone: phone
-                };
-                MessageUtils.sendRequest(data, winId);
-            } else {
-                MessageUtils.showInfo("Заполнены не все поля");
-            }
+        var win = $("#" + winId);
+        var gameDate = win.data('game-fulldate');
+        var gameCity = win.data('city-name');
+        var teamName = $("#reg-name").val();
+        var count = $("#reg-count").val();
+        var leader = $("#reg-capitan").val();
+        var phone = $("#reg-phone").val();
+        var isValid = gameCity && gameDate && teamName && count && leader && phone;
+        if (isValid) {
+            var data = {
+                NotifyType: 'REGISTRATION',
+                City: gameCity,
+                Date: gameDate,
+                TeamName: teamName,
+                Count: count,
+                Leader: leader,
+                Phone: phone
+            };
+            MessageUtils.sendRequest(data, winId);
         } else {
-            MessageUtils.showInfo("Не выбрана игра");
+            MessageUtils.showInfo("Заполнены не все поля");
         }
     });
 });

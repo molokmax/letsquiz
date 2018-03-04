@@ -9,7 +9,9 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
 		<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" integrity="sha256-ENFZrbVzylNbgnXx0n3I1g//2WeO47XxoPe0vkp3NC8=" crossorigin="anonymous" />-->
 		<link href="pnotify.custom.min.css" media="all" rel="stylesheet" type="text/css" />
-		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+		<link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+		<link rel="stylesheet" type="text/css" href="style.css">
 		
 		<title>LET'S КВИЗ!</title>
 	</head>
@@ -81,7 +83,7 @@
 					<div class="col-md-4">
 						<div class="signup">
 							<div class="text text-right">Расписание игр и регистрация</div>
-							<button type="button" class="btn btn-light quiz-button float-right" data-toggle="modal" data-target="#registrationWindow">Хочу играть</button>
+							<a class="btn btn-light quiz-button float-right" href="#schedule">Хочу играть</a>
 						</div>
 						<div class="cert">
 							<div class="text text-right">Подарочный сертификат</div>
@@ -96,38 +98,37 @@
 		<div id="schedule" class="schedule container quiz-block-container">
 			<div class="photos container quiz-block block-light">
 				<div class="row">
+					<div class="col-12">
+						<div class="quiz-header">РАСПИСАНИЕ ИГР</div>
+					</div>
+				</div>
+				<div class="row">
 					<div class="col-md-8 offset-md-2">
-						<div id="carousel-schedule" class="carousel slide" data-ride="carousel" data-interval=false>
-							<div class="carousel-inner" role="listbox">
-{assign var=gameCount value=count($GAME_LIST)-1}
-{for $i=0 to $gameCount step 3}
-								<div class="carousel-item {if $i == 0}active{/if}">
-									<div class="d-block game-item container">
-										<div class="row">
-{for $g=$i+0 to $i+2}
-{assign var=game value=$GAME_LIST[$g]}
-{if $g <= $gameCount}
-											<div class="quiz-game-card col-lg-2 col-md-4 col-12" data-game-id="{$game->id}" data-game-fulldate="{$game->full_date}">
-												<div class="game-city">{$game->city}</div>
-												<div class="game-date">{$game->date}</div>
-												<div class="game-day">{$game->day_name}</div>
-												<div class="game-time">{$game->time}</div>
-											</div>
-{/if}
-{/for}
-										</div>
-									</div>
+						<div class="carousel-schedule">
+{foreach from=$GAME_LIST item=game name=games}
+							<div class="quiz-game-card" data-game-id="{$game->id}" data-city-name="{$game->city}" data-game-fulldate="{$game->full_date}">
+								<div class="game-city">{$game->city}</div>
+								<div class="game-date">{$game->date}</div>
+								<div class="game-day">{$game->day_name}</div>
+								<div class="game-time">{$game->time}</div>
+								<div class="registration-btn">
+									<a href="javascript:void(0);" data-toggle="modal" data-target="#registrationWindow">Регистрация</a>
 								</div>
-{/for}
 							</div>
-							<a class="carousel-control-prev" href="#carousel-schedule" role="button" data-slide="prev">
-								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-								<span class="sr-only">Previous</span>
-							</a>
-							<a class="carousel-control-next" href="#carousel-schedule" role="button" data-slide="next">
-								<span class="carousel-control-next-icon" aria-hidden="true"></span>
-								<span class="sr-only">Next</span>
-							</a>
+{/foreach}
+						</div>					
+						<div class="row list-schedule">
+{foreach from=$GAME_LIST item=game name=games}
+							<div class="quiz-game-card col-sm-5 col-11" data-game-id="{$game->id}" data-city-name="{$game->city}" data-game-fulldate="{$game->full_date}">
+								<div class="game-city">{$game->city}</div>
+								<div class="game-date">{$game->date}</div>
+								<div class="game-day">{$game->day_name}</div>
+								<div class="game-time">{$game->time}</div>
+								<div class="registration-btn">
+									<a href="javascript:void(0);" data-toggle="modal" data-target="#registrationWindow">Регистрация</a>
+								</div>
+							</div>
+{/foreach}
 						</div>
 					</div>
 				</div>
@@ -184,7 +185,7 @@
 				<div class="row">
 					<div class="col-12 col-md-10 text-right">
 						<div class="text">Хочешь сыграть в LET'S КВИЗ?</div>
-						<button type="button" class="btn btn-dark quiz-button float-right" data-toggle="modal" data-target="#registrationWindow">Онлайн-регистрация</button>
+						<a class="btn btn-dark quiz-button float-right" href="#schedule">Онлайн-регистрация</a>
 					</div>
 					<div class="hidden-md-down col-md-2"></div>
 				</div>
@@ -477,6 +478,7 @@
 					<div class="modal-body">
 						<div class="quiz-window-title">Выбери свой город</div>
 						<select class="form-control" id="city" aria-describedby="city">
+							<option>Все</option>
 {foreach from=$CITY_LIST item=city name=cities}
 							<option>{$city}</option>
 {/foreach}
@@ -565,7 +567,7 @@
 						</button>
 					</div>
 					<div class="modal-body">
-						<div class="quiz-window-title">Заполни форму регистрации</div>
+						<div class="quiz-window-title">Заполни форму регистрации на игру в городе <span class="display-city"></span> <span class="display-date"></span> в <span class="display-time"></span></div>
 						<label for="reg-name">Название команды</label>
     					<input type="text" class="form-control" id="reg-name" aria-describedby="reg-name" placeholder="">
 						<label for="reg-count">Количество человек</label>
@@ -601,6 +603,7 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
 		<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js" integrity="sha256-3blsJd4Hli/7wCQ+bmgXfOdK7p/ZUMtPXY08jmxSSgk=" crossorigin="anonymous"></script>-->
 		<script type="text/javascript" src="pnotify.custom.min.js"></script>
+		<script type="text/javascript" src="slick/slick.min.js"></script>
 		<script src="app.js"></script>
 	</body>
 </html>
