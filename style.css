@@ -18,6 +18,9 @@ div.quiz-header {
 	/*margin-top: 50px;*/
 	margin-bottom: 50px;
 }
+a:focus {
+	outline: none !important;
+}
 
 nav.quiz-menu {
 	background: #000033;
@@ -34,33 +37,37 @@ nav.quiz-menu .nav-item .nav-link.active {
     border-bottom-color: #ff6699;
 }
 
-#navbarNav .selected-city {
+.navbar-nav .selected-city {
 	font-size: 0.9rem;
 	color: #FFFFFF;
 	padding-top: 0.5rem;
-    /*padding-bottom: 0.5rem;*/
+    padding-bottom: 0.5rem;
 	padding-left: 1rem;
 }
-#navbarNav .selected-city i {
+.navbar-nav .selected-city i {
 	font-size: 1.3rem;
 	padding-right: 0.2rem;
 }
-#navbarNav .selected-city .selected-city-link {
+.navbar-nav .selected-city .selected-city-link {
 	text-decoration: underline;
 	color: #FFFFFF;
 	font-size: 0.8rem;
 }
-#navbarNav .selected-city .selected-city-link:focus {
+.navbar-nav .selected-city .selected-city-link:focus {
 	outline: none !important;
 }
-#navbarNav .selected-city .selected-city-link:hover {
+.navbar-nav .selected-city .selected-city-link:hover {
 	text-decoration: none;
 }
 #city {
 	margin-top: 1rem;
 }
+nav.quiz-menu .selectCityBlock ul.navbar-nav {
+	padding-left: 2rem;
+	padding-right: 5rem;
+}
 
-nav.quiz-menu #navbarNav ul.nav {
+nav.quiz-menu ul.nav {
     width: 100%;
 	font-size: 1rem;
     display: flex;
@@ -292,7 +299,8 @@ div.quiz-block.faq .faq-block.bad {
     border-color: #CD3354;/*#8B001E;*/
 }
 div.quiz-block.faq .quiz-title {
-	font-size: 1.8rem;
+	font-size: 1.5rem;
+	font-weight: bold;
 	padding-bottom: 0.8rem;
 	display: flex;
 	justify-content: center;
@@ -483,14 +491,15 @@ div.quiz-block-container.footer .email a:visited {
 .quiz-game-card {
 	padding-top: 1rem;
 	padding-bottom: 1rem;
-	border-style: dashed;
+	border-style: solid;
 	border-width: 2px;
 	margin-left: 1rem;
 	margin-right: 1rem;
+	background-color: rgba(255, 255, 255, 0.3);
 }
-.quiz-game-card:hover {
+/*.quiz-game-card:hover {
 	cursor: pointer;
-}
+}*/
 .quiz-game-card .game-date {
 	text-align: center;
 }
@@ -507,6 +516,19 @@ div.quiz-block-container.footer .email a:visited {
 	padding-top: 1rem;
 	font-size: 1.5rem;
 }
+.quiz-game-card .registration-btn {
+	text-align: center;
+	padding-top: 0.7rem;
+	font-size: 1rem;
+}
+.quiz-game-card .registration-btn a {
+	color: #000033;
+	text-decoration: underline;
+}
+.quiz-game-card .registration-btn a:hover {
+	text-decoration: none;
+}
+
 .quiz-game-card.selected {
 	background-color: #ff6699;
 	border-color: #330066;
@@ -531,11 +553,20 @@ div.quiz-block-container.footer .email a:visited {
 		font-size: 2.2rem;
 	}
 }
+@media (max-width: 1800px) and (min-width: 1280px) {
+	div.quiz-header {
+		font-size: 2.5rem;
+	}
+}
 
 @media (max-width: 1280px) and (min-width: 992px) {
-	nav.quiz-menu #navbarNav ul.nav {
+	nav.quiz-menu ul.nav {
 		padding-left: 3rem;
 		padding-right: 3rem;
+	}
+	nav.quiz-menu .selectCityBlock ul.navbar-nav {
+		padding-left: 1rem;
+		padding-right: 1rem;
 	}
 	div.quiz-block-container.gallery .carousel .carousel-inner {
 		width: 100%;
@@ -559,12 +590,31 @@ div.quiz-block-container.footer .email a:visited {
 	div.quiz-item {
 		padding-left: 1rem;
 	}
+	.quiz-button {
+		width: 200px;
+		font-size: 1rem;
+	}
+	div.quiz-block.faq .quiz-title {
+		font-size: 1.2rem;
+	}
+	div.quiz-block.faq .quiz-item {
+		font-size: 1.2rem;
+	}
+	div.quiz-block.faq .quiz-icon {
+		font-size: 1.2rem;
+	}
+	/*div.quiz-block.faq .faq-block {
+		border-width: 4px;
+	}*/
 }
 
 
 @media (max-width: 992px) {
-	nav.quiz-menu #navbarNav ul.nav {
+	nav.quiz-menu ul.nav {
 		padding-left: 1.1rem;
+	}
+	nav.quiz-menu .selectCityBlock ul.navbar-nav {
+		padding-left: 0.5rem;
 	}
 	div.quiz-header {
 		font-size: 1.5rem;
@@ -576,7 +626,17 @@ div.quiz-block-container.footer .email a:visited {
 		font-size: 1.5rem;
 	}
 	div.quiz-block.faq .quiz-title {
-		padding-left: 1rem;
+		font-size: 1rem;
+	}
+	div.quiz-block.faq .quiz-item {
+		padding-left: 2rem;
+		font-size: 1rem;
+	}
+	div.quiz-block.faq .quiz-icon {
+		font-size: 1rem;
+	}
+	div.quiz-block.faq .faq-block {
+		border-width: 4px;
 	}
 	div.quiz-block-container div.quiz-block .main-text {
 		font-size: 1.5rem;
@@ -617,7 +677,27 @@ div.quiz-block-container.footer .email a:visited {
 	.quiz-game-card {
 		margin-bottom: 1rem;
 	}
+	.quiz-button {
+		width: 150px;
+		font-size: 0.6rem;
+	}
 }
+/*
+@media (max-width: 768px) {
+	div.quiz-block.faq .quiz-title {
+		font-size: 0.6rem;
+	}
+	div.quiz-block.faq .quiz-item {
+		padding-left: 1rem;
+		font-size: 0.6rem;
+	}
+	div.quiz-block.faq .quiz-icon {
+		font-size: 0.6rem;
+	}
+	div.quiz-block.faq .faq-block {
+		border-width: 2px;
+	}
+}*/
 
 @media (max-width: 992px) {
 	.carousel-schedule {

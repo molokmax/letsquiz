@@ -55,6 +55,10 @@
 					<li class="nav-item">
 						<a class="nav-link" href="#footer">Контакты</a>
 					</li>
+				</ul>
+			</div>
+			<div class="selectCityBlock">
+				<ul class="navbar-nav nav">
 					<li class="selected-city">
 						<i class="mdi mdi-city"></i> <a class="selected-city-link" href="javascript:void(0);" data-toggle="modal" data-target="#selectCityWindow">Все</a>
 					</li>
