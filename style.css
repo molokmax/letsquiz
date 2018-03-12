@@ -208,14 +208,14 @@ div.quiz-panel img {
 	background-color: #330066 !important;
     border-bottom-color: #000033 !important;
 }
-
+/* 
 div.quiz-block-container.main {
 	color: #FFFFFF;
-	background-image: url("image/main_background.png");
+	background-image: url("image/main_background.jpg");
 	background-repeat: no-repeat;
 	background-position: center top;
 	background-size: cover;
-}
+} */
 div.quiz-block-container.main .quiz-block {
 	background-image: url("image/main-logo.png");
 	background-repeat: no-repeat;
@@ -268,19 +268,19 @@ div.quiz-block-container.main .socialbuttons img {
 }
 
 div.terms div.quiz-block.intro {
-	background-image: url("image/background4.png");
+	background-image: url("image/background4.jpg");
 	background-repeat: no-repeat;
 	background-position: center top;
 	background-size: cover;
 }
 div.terms div.quiz-block.details {
-	background-image: url("image/background2.png");
+	background-image: url("image/background2.jpg");
 	background-repeat: no-repeat;
 	background-position: center top;
 	background-size: cover;
 }
 div.corp div.quiz-block.corp-block {
-	background-image: url("image/background3.png");
+	background-image: url("image/background3.jpg");
 	background-repeat: no-repeat;
 	background-position: center top;
 	background-size: cover;
@@ -642,7 +642,7 @@ div.quiz-block-container.footer .email a:visited {
 		font-size: 1.5rem;
 	}
 	div.quiz-block-container.main {
-		background-image: url("image/main_background_mobile.png");
+		background-image: url("image/main_background_mobile.jpg");
 		background-position: right top;
 	}
 	div.quiz-block-container.main .main-header {
