@@ -683,6 +683,27 @@ div.quiz-block-container.footer .email a:visited {
 		background-position: center;
 		background-size: 20rem;
 	}
+	div.feedback-item .feedback-text {
+		font-size: 1rem;
+	}
+	div.feedback-item .feedback-author {
+		font-size: 0.8rem;
+	}
+	div.feedback-item .feedback-text::before {
+		font-size: 2.5rem;
+		margin-right: 0.7rem;
+	}
+	div.feedback-item .feedback-text::after {
+		font-size: 2.5rem;
+		margin-left: 0.7rem;
+		vertical-align: -2rem;
+	}
+	div.quiz-block-container.footer .phone {
+		font-size: 1.6rem;
+	}
+	div.quiz-block-container.footer .email {
+		font-size: 1.3rem;
+	}
 	/* div.quiz-block-container.main {
 		background-image: url("image/fon-mobile.jpg");
 		background-position: right top;
