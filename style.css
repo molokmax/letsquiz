@@ -683,6 +683,9 @@ div.quiz-block-container.footer .email a:visited {
 		background-position: center;
 		background-size: 20rem;
 	}
+	.gallery .block-dark {
+		background-image: none;
+	}
 	div.feedback-item .feedback-text {
 		font-size: 1rem;
 	}
