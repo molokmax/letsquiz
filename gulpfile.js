@@ -8,7 +8,7 @@ var exec = require('child_process').exec;
 //var runSequence = require('run-sequence').use(gulp);
 
 const paths = {
-    dist: 'D:/develop/denwer/home/localhost/www',
+    dist: 'D:/develop/denwer/home/test1.ru/www',
     src: {
         root: ['*.{js,php}', '!gulpfile.js'],
         libs: {

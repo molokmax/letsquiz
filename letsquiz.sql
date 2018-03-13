@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Фев 17 2018 г., 17:32
+-- Время создания: Мар 13 2018 г., 22:22
 -- Версия сервера: 5.5.25
 -- Версия PHP: 5.3.13
 
@@ -114,50 +114,55 @@ CREATE TABLE IF NOT EXISTS `photo` (
   `url` varchar(100) NOT NULL,
   `order` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=38 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=43 ;
 
 --
 -- Дамп данных таблицы `photo`
 --
 
 INSERT INTO `photo` (`id`, `url`, `order`) VALUES
-(1, 'photo/0XaWojqhyxQ.jpg', 1),
-(2, 'photo/1bW6I69yYBE.jpg', 2),
-(3, 'photo/2970M5Y6OPw.jpg', 3),
-(4, 'photo/2B0FwAzlv-8.jpg', 4),
-(5, 'photo/31aNsN6Arqw.jpg', 5),
-(6, 'photo/39r_Ui0Cw04.jpg', 6),
-(7, 'photo/3eDPWvkVvfw.jpg', 7),
-(8, 'photo/4s44n2I1uRE.jpg', 8),
-(9, 'photo/5vehvvqkQKs.jpg', 9),
-(10, 'photo/5Za03yvwwH0.jpg', 10),
-(11, 'photo/665UfHkS_ug.jpg', 11),
-(12, 'photo/7BeNA99q-EM.jpg', 12),
-(13, 'photo/8FvIvjdktkE.jpg', 13),
-(14, 'photo/8kiJjNyya2I.jpg', 14),
-(15, 'photo/Bfbj5gA1ius.jpg', 15),
-(16, 'photo/BRD9w3djemM.jpg', 16),
-(17, 'photo/CmhREm3qQUU.jpg', 17),
-(18, 'photo/cr11GfDk1yM.jpg', 18),
-(19, 'photo/CY02nBB5Bhw.jpg', 19),
-(20, 'photo/ddkctaiPm5k.jpg', 20),
-(21, 'photo/eJV-YmXvTnM.jpg', 21),
-(22, 'photo/F6D8-2v24f8.jpg', 22),
-(23, 'photo/F7x4viIO0Z8.jpg', 23),
-(24, 'photo/fd6tecX6AyY.jpg', 24),
-(25, 'photo/gqkZgywKsgo.jpg', 25),
-(26, 'photo/HDNMaNwBeHg.jpg', 26),
-(27, 'photo/HlA0cdYi-X0.jpg', 27),
-(28, 'photo/hom9A4DnVlQ.jpg', 28),
-(29, 'photo/jMPM2RYX1Cs.jpg', 29),
-(30, 'photo/myFXND2Ho0k.jpg', 30),
-(31, 'photo/O0A9Qi2YqRY.jpg', 31),
-(32, 'photo/tiU_ZtS10L0.jpg', 32),
-(33, 'photo/TUTs__hJafQ.jpg', 33),
-(34, 'photo/VGHyonWKfmk.jpg', 34),
-(35, 'photo/VvyqxdWnNys.jpg', 35),
-(36, 'photo/WXBl0avMLwU.jpg', 36),
-(37, 'photo/xR38eXW6Lcw.jpg', 37);
+(1, 'photo/0XaWojqhyxQ.jpg', 6),
+(2, 'photo/1bW6I69yYBE.jpg', 7),
+(3, 'photo/2970M5Y6OPw.jpg', 8),
+(4, 'photo/2B0FwAzlv-8.jpg', 9),
+(5, 'photo/31aNsN6Arqw.jpg', 10),
+(6, 'photo/39r_Ui0Cw04.jpg', 11),
+(7, 'photo/3eDPWvkVvfw.jpg', 12),
+(8, 'photo/4s44n2I1uRE.jpg', 13),
+(9, 'photo/5vehvvqkQKs.jpg', 14),
+(10, 'photo/5Za03yvwwH0.jpg', 15),
+(11, 'photo/665UfHkS_ug.jpg', 16),
+(12, 'photo/7BeNA99q-EM.jpg', 17),
+(13, 'photo/8FvIvjdktkE.jpg', 18),
+(14, 'photo/8kiJjNyya2I.jpg', 19),
+(15, 'photo/Bfbj5gA1ius.jpg', 20),
+(16, 'photo/BRD9w3djemM.jpg', 21),
+(17, 'photo/CmhREm3qQUU.jpg', 22),
+(18, 'photo/cr11GfDk1yM.jpg', 23),
+(19, 'photo/CY02nBB5Bhw.jpg', 24),
+(20, 'photo/ddkctaiPm5k.jpg', 25),
+(21, 'photo/eJV-YmXvTnM.jpg', 26),
+(22, 'photo/F6D8-2v24f8.jpg', 27),
+(23, 'photo/F7x4viIO0Z8.jpg', 28),
+(24, 'photo/fd6tecX6AyY.jpg', 29),
+(25, 'photo/gqkZgywKsgo.jpg', 30),
+(26, 'photo/HDNMaNwBeHg.jpg', 31),
+(27, 'photo/HlA0cdYi-X0.jpg', 32),
+(28, 'photo/hom9A4DnVlQ.jpg', 33),
+(29, 'photo/jMPM2RYX1Cs.jpg', 34),
+(30, 'photo/myFXND2Ho0k.jpg', 35),
+(31, 'photo/O0A9Qi2YqRY.jpg', 36),
+(32, 'photo/tiU_ZtS10L0.jpg', 37),
+(33, 'photo/TUTs__hJafQ.jpg', 38),
+(34, 'photo/VGHyonWKfmk.jpg', 39),
+(35, 'photo/VvyqxdWnNys.jpg', 40),
+(36, 'photo/WXBl0avMLwU.jpg', 41),
+(37, 'photo/xR38eXW6Lcw.jpg', 42),
+(38, 'photo/tV0U1tYhFQw.jpg', 1),
+(39, 'photo/Jzscf5qA8Nw.jpg', 2),
+(40, 'photo/OGLv2NqIcNM.jpg', 3),
+(41, 'photo/bV8VRG1thlU.jpg', 4),
+(42, 'photo/rXJLW7qhDMM.jpg', 5);
 
 -- --------------------------------------------------------
 
@@ -199,7 +204,7 @@ CREATE TABLE IF NOT EXISTS `setting` (
   `type` varchar(10) NOT NULL,
   `value` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
 --
 -- Дамп данных таблицы `setting`
@@ -215,7 +220,8 @@ INSERT INTO `setting` (`id`, `name`, `prefix`, `type`, `value`) VALUES
 (7, 'Скрыть раздел "Корпоративы"', 'HIDE_CORP', 'bool', 'true'),
 (8, 'Скрыть раздел "Главная"', 'HIDE_MAIN', 'bool', 'false'),
 (9, 'Скрыть раздел "Правила"', 'HIDE_TERMS', 'bool', 'false'),
-(10, 'Закрывать регистрацию за N часов до начала игры', 'GAME_CLOSE', 'int', '4');
+(10, 'Закрывать регистрацию за N часов до начала игры', 'GAME_CLOSE', 'int', '4'),
+(11, 'Скрыть раздел "Расписание"', 'HIDE_SCHEDULE', 'bool', 'false');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -208,14 +208,14 @@ div.quiz-panel img {
 	background-color: #330066 !important;
     border-bottom-color: #000033 !important;
 }
-/* 
+
 div.quiz-block-container.main {
 	color: #FFFFFF;
-	background-image: url("image/main_background.jpg");
+	background-image: url("image/fon.jpg");
 	background-repeat: no-repeat;
 	background-position: center top;
 	background-size: cover;
-} */
+}
 div.quiz-block-container.main .quiz-block {
 	background-image: url("image/main-logo.png");
 	background-repeat: no-repeat;
@@ -322,9 +322,19 @@ div.quiz-block-container.gallery .carousel .carousel-inner {
 div.quiz-block-container.gallery .carousel .carousel-inner img {
 	max-height: 50rem;
 }
-.block-dark.photos {
+.gallery .block-dark {
 	background-image: url('image/question_background.png');
 	background-repeat: repeat;
+}
+/* .feedback .block-dark {
+	background-image: url('image/question_background.png');
+	background-repeat: repeat;
+} */
+div.feedback div.quiz-block {
+	background-image: url("image/background3.jpg");
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
 }
 
 div.feedback-item {
@@ -646,7 +656,7 @@ div.quiz-block-container.footer .email a:visited {
 		font-size: 1.5rem;
 	}
 	div.quiz-block-container.main {
-		background-image: url("image/main_background_mobile.jpg");
+		background-image: url("image/fon-mobile.jpg");
 		background-position: right top;
 	}
 	div.quiz-block-container.main .main-header {
