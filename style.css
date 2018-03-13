@@ -97,11 +97,11 @@ div.quiz-block-container div.quiz-block {
     max-width: 100%;
 }
 div.quiz-block.block-dark {
-	background: #330066;
+	background-color: #330066;
 	color: #FFFFFF;
 }
 div.quiz-block.block-light {
-	background: #E3E3FE;
+	background-color: #E3E3FE;
 	color: #000033;
 }
 
@@ -321,6 +321,10 @@ div.quiz-block-container.gallery .carousel .carousel-inner {
 }
 div.quiz-block-container.gallery .carousel .carousel-inner img {
 	max-height: 50rem;
+}
+.block-dark.photos {
+	background-image: url('image/question_background.png');
+	background-repeat: repeat;
 }
 
 div.feedback-item {
