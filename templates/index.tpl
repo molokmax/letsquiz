@@ -73,13 +73,13 @@
 						<div class="main-header">ИНТЕЛЛЕКТУАЛЬНО-РАЗВЛЕКАТЕЛЬНАЯ </br> БИТВА</div>
 					</div>
 				</div>
-				<div class="row">
+				<div class="row main-block-desktop">
 					<div class="col-md-4 offset-md-2">
 						<div class="contacts">
 							<div class="phone">{$SETTING_PHONE}</div>
 							<button type="button" class="btn btn-light quiz-button" data-toggle="modal" data-target="#callbackWindow">Обратный звонок</button>
 						</div>
-						<div class="socialbuttons hidden-md-down">
+						<div class="socialbuttons">
 							<a href="https://vk.com/letsquiz" target="_blank"><img src="image/vk.png"></a>
 							<a href="https://www.instagram.com/lets_quiz/" target="_blank"><img src="image/instagram.png"></a>
 						</div>
@@ -92,6 +92,13 @@
 						<div class="cert">
 							<div class="text text-right">Подарочный сертификат</div>
 							<button type="button" class="btn btn-light quiz-button float-right" data-toggle="modal" data-target="#certificateWindow">Приобрести</button>
+						</div>
+					</div>
+				</div>
+				<div class="row main-block-mobile">
+					<div class="logo-placeholder"></div>
+					<div class="col-12">
+							<a class="btn btn-light quiz-button d-block mx-auto" href="#schedule">Хочу играть</a>
 						</div>
 					</div>
 				</div>
