@@ -40,9 +40,12 @@ $(document).ready(function() {
             $('.carousel-schedule').slick('slickFilter', this.filterCity);
             if (this.isAnyCity()) {
                 $(".list-schedule .quiz-game-card").show();
+                $(".address-item").show();
             } else {
                 $(".list-schedule .quiz-game-card").hide();
                 $(".list-schedule .quiz-game-card[data-city-name='"+city+"']").show();
+                $(".address-item").hide();
+                $(".address-item[data-city-name='"+city+"']").show();
             }
         }
 

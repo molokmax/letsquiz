@@ -46,6 +46,7 @@
         public $id;
         public $date;
         public $city;
+        public $is_closed;
     }
     
     class GameViewModel {
@@ -56,6 +57,7 @@
         public $day_name;
         public $time;
         public $city;
+        public $is_closed;
 
         function __construct($db_game, $formatter) {
             $this->id = $db_game->id;
@@ -64,6 +66,7 @@
             $this->day_name = $formatter->getDayName($db_game->date);
             $this->time = $db_game->date->format('H:i');
             $this->city = $db_game->city;
+            $this->is_closed = $db_game->is_closed;
         }
     }
 
@@ -82,7 +85,7 @@
             mysql_set_charset($config['DB_CONFIG_CHARSET'], $con);
 	        mysql_select_db($config['DB_CONFIG_DATABASENAME'], $con);
 	
-	        $query = "SELECT g.`id` AS  `id` , g.`date` AS  `date` , c.`name` AS  `city` FROM  `game` AS g JOIN  `city` AS c ON ( g.`city_id` = c.`id` ) WHERE g.`date` > '{$date->format('Y-m-d H:i:s')}' ORDER BY g.`date` LIMIT 0, $limit";
+	        $query = "SELECT g.`id` AS  `id` , g.`date` AS  `date` , c.`name` AS  `city`, g.`is_closed` AS `is_closed` FROM  `game` AS g JOIN  `city` AS c ON ( g.`city_id` = c.`id` ) WHERE g.`date` > '{$date->format('Y-m-d H:i:s')}' ORDER BY g.`date` LIMIT 0, $limit";
 
 	        $db_result = mysql_query($query);
             if ($db_result) {
@@ -91,6 +94,7 @@
                     $rec->id = $row['id'];
                     $rec->date = DateTime::createFromFormat('Y-m-d H:i:s', $row['date'], $timezone);
                     $rec->city = $row['city'];
+                    $rec->is_closed = $row['is_closed'];
                     array_push($result, $rec);
                 }
             }

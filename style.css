@@ -16,7 +16,7 @@ div.quiz-header {
 	font-weight: bold;
 	text-align: center;
 	/*margin-top: 50px;*/
-	margin-bottom: 50px;
+	margin-bottom: 4rem;
 }
 a:focus {
 	outline: none !important;
@@ -296,6 +296,15 @@ div.corp div.quiz-block.corp-block {
 	background-size: cover;
 }
 
+.address-list {
+	margin-bottom: 2rem;
+}
+.address-item {
+	font-size: 1.3rem;
+    text-align: center;
+	margin-bottom: 0.5rem;
+}
+
 div.quiz-block.faq .faq-block {
 	border-width: 7px;
     border-style: solid;
@@ -521,6 +530,9 @@ div.quiz-block-container.footer .email a:visited {
 	margin-right: 1rem;
 	background-color: rgba(255, 255, 255, 0.3);
 }
+.quiz-game-card.game-closed {
+	color: rgba(0, 0, 51, 0.5);
+}
 /*.quiz-game-card:hover {
 	cursor: pointer;
 }*/
@@ -610,9 +622,17 @@ div.quiz-block-container.footer .email a:visited {
 	}
 	div.quiz-header {
 		font-size: 2rem;
+		margin-bottom: 2rem;
 	}
 	div.quiz-item {
 		padding-left: 1rem;
+	}
+	.address-list {
+		margin-bottom: 1.5rem;
+	}
+	.address-item {
+		font-size: 1rem;
+		margin-bottom: 0.3rem;
 	}
 	.quiz-button {
 		width: 200px;
@@ -642,6 +662,14 @@ div.quiz-block-container.footer .email a:visited {
 	}
 	div.quiz-header {
 		font-size: 1.5rem;
+		margin-bottom: 1rem;
+	}
+	.address-list {
+		margin-bottom: 1rem;
+	}
+	.address-item {
+		font-size: 0.7rem;
+		/* margin-bottom: 0.3rem; */
 	}
 	div.quiz-item {
 		padding-left: 0.7rem;

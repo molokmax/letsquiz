@@ -112,31 +112,45 @@
 					<div class="col-12">
 						<div class="quiz-header">РАСПИСАНИЕ ИГР</div>
 					</div>
+				</div><div class="row address-list">
+{foreach from=$ADDRESS_LIST item=address name=addresses}
+					<div class="col-12">
+						<div class="address-item" data-city-name="{$address->city_name}">{$address->city_name}, {$address->description}</div>
+					</div>
+{/foreach}
 				</div>
 				<div class="row">
 					<div class="col-md-8 offset-md-2">
 						<div class="carousel-schedule">
 {foreach from=$GAME_LIST item=game name=games}
-							<div class="quiz-game-card" data-game-id="{$game->id}" data-city-name="{$game->city}" data-game-fulldate="{$game->full_date}">
+							<div class="quiz-game-card {if $game->is_closed eq '1'}game-closed{/if}" data-game-id="{$game->id}" data-city-name="{$game->city}" data-game-fulldate="{$game->full_date}">
 								<div class="game-city">{$game->city}</div>
 								<div class="game-date">{$game->date}</div>
 								<div class="game-day">{$game->day_name}</div>
 								<div class="game-time">{$game->time}</div>
 								<div class="registration-btn">
-									<a href="javascript:void(0);" data-toggle="modal" data-target="#registrationWindow">Регистрация</a>
+{if $game->is_closed eq '1'}
+<span>Мест нет</span>
+{else}
+<a href="javascript:void(0);" data-toggle="modal" data-target="#registrationWindow">Регистрация</a>
+{/if}
 								</div>
 							</div>
 {/foreach}
 						</div>					
 						<div class="row list-schedule">
 {foreach from=$GAME_LIST item=game name=games}
-							<div class="quiz-game-card col-sm-5 col-11" data-game-id="{$game->id}" data-city-name="{$game->city}" data-game-fulldate="{$game->full_date}">
+							<div class="quiz-game-card col-sm-5 col-11 {if $game->is_closed eq '1'}game-closed{/if}" data-game-id="{$game->id}" data-city-name="{$game->city}" data-game-fulldate="{$game->full_date}">
 								<div class="game-city">{$game->city}</div>
 								<div class="game-date">{$game->date}</div>
 								<div class="game-day">{$game->day_name}</div>
 								<div class="game-time">{$game->time}</div>
 								<div class="registration-btn">
-									<a href="javascript:void(0);" data-toggle="modal" data-target="#registrationWindow">Регистрация</a>
+{if $game->is_closed eq '1'}
+										<span>Мест нет</span>
+{else}
+										<a href="javascript:void(0);" data-toggle="modal" data-target="#registrationWindow">Регистрация</a>
+{/if}
 								</div>
 							</div>
 {/foreach}

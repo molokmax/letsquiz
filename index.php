@@ -6,6 +6,7 @@
 	require_once('app/feedbacks.php');
 	require_once('app/games.php');
 	require_once('app/cities.php');
+	require_once('app/addresses.php');
 	require_once('libs/smarty/Smarty.class.php');
 
 	$timezone = new DateTimeZone('Europe/Moscow');
@@ -48,6 +49,10 @@
 	$cityRepo = new CityRepository();
 	$cities = $cityRepo->GetAll();
 	$smarty->assign('CITY_LIST', $cities);
+
+	$addressRepo = new AddressRepository();
+	$addresses = $addressRepo->GetAll();
+	$smarty->assign('ADDRESS_LIST', $addresses);
 
 	$formatter = new GameFormatter();
 	$date = new DateTime('now', $timezone);
