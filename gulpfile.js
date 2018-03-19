@@ -1,19 +1,31 @@
 "use strict";
 
+/* config example
+
+module.exports = {
+    ftp_url: 'ftp.quiz.ru',
+    ftp_port: 21,
+    ftp_user: 'username',
+    ftp_pass: 'password',
+    ftp_path: '/domains/quiz.ru/public_html/',
+ }
+
+*/
+const config = require('./secret.config');
 const gulp = require('gulp');
 const del = require('del');
 const autoprefixer = require('gulp-autoprefixer');
 const imagemin = require('gulp-imagemin');
-var exec = require('child_process').exec;
-//var runSequence = require('run-sequence').use(gulp);
+const ftp = require('gulp-ftp');
 
 const paths = {
     dist: 'D:/develop/denwer/home/test1.ru/www',
+    build_dir: './build',
     src: {
-        root: ['*.{js,php}', '!gulpfile.js'],
+        root: ['*.{js,php}', '!gulpfile.js', '!secret.config.js'],
         libs: {
           smarty: './libs/smarty/**/*', 
-          slick: './slick/**/*', 
+          //slick: './slick/**/*', 
           pnotify: './pnotify/**/*'
         },
         css: ['./*.css'],
@@ -30,11 +42,18 @@ gulp.task('default', ['build', 'watch'], function() {
 });
 //gulp.task('default', ['build', 'watch', 'deploy']);
 
-// gulp.task('deploy', function() {
-//   setTimeout(function() {
-//     exec('deploy.cmd');
-//   }, 5000);
-// });
+gulp.task('prod-deploy', function() {
+  //del.sync([paths.build_dir], { force: true });
+  return gulp.src([paths.dist + '/**/*', '!'+paths.dist+'/config.php', '!'+paths.dist+'/libs/**/*'])
+    //.pipe(gulp.dest(paths.build_dir))
+    .pipe(ftp({
+      host: config.ftp_url,
+      port: config.ftp_port,
+      user: config.ftp_user,
+      pass: config.ftp_pass,
+      remotePath: config.ftp_path
+    }));
+});
 
 gulp.task('clean', function () {
   del.sync([paths.dist], { force: true });
@@ -61,8 +80,8 @@ gulp.task('copy-all', ['copy-libs', 'copy-root', 'copy-app', 'copy-css', 'copy-f
 gulp.task('copy-libs', function() {
   gulp.src(paths.src.libs.smarty)
     .pipe(gulp.dest(paths.dist + '/libs/smarty/'));
-  gulp.src(paths.src.libs.slick)
-    .pipe(gulp.dest(paths.dist + '/slick/'));
+  //gulp.src(paths.src.libs.slick)
+  //  .pipe(gulp.dest(paths.dist + '/slick/'));
   gulp.src(paths.src.libs.pnotify)
     .pipe(gulp.dest(paths.dist + '/pnotify/'));
 });

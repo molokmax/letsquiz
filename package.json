@@ -4,7 +4,7 @@
   "description": "Site of game Let's QUIZ",
   "main": "index.php",
   "scripts": {
-    "dist": "gulp dist"
+    "build": "gulp build"
   },
   "repository": {
     "type": "git",
@@ -25,6 +25,7 @@
     "del": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^5.0.0",
+    "gulp-ftp": "^1.1.0",
     "gulp-imagemin": "^4.1.0"
   }
 }
