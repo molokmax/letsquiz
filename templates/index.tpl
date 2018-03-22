@@ -440,17 +440,6 @@
 			
 				<div class="row">
 					<div class="col-12">
-						<div class="footer-text text">Заявки, вопросы, предложения, корпоративные и выездные игры!</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-12">
-						<div class="footer-text text">Работаем круглосуточно и без выходных)))</div>
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="col-12">
 						<div class="footer-text text">Наши контакты:</div>
 					</div>
 				</div>
@@ -464,6 +453,19 @@
 						<div class="footer-text email"><a href="mailto:{$SETTING_EMAIL}">{$SETTING_EMAIL}</a></div>
 					</div>
 				</div>
+
+				<div class="row">
+					<div class="col-12">
+						<!-- <div class="main-text">Заявки, вопросы, предложения, корпоративные и выездные игры!</div> -->
+						<div class="footer-text text">Заявки, вопросы, предложения, корпоративные и выездные игры!</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<div class="footer-text text">Работаем круглосуточно и без выходных :)</div>
+					</div>
+				</div>
+
 				<div class="row">
 					<div class="col-12">
 						<div class="footer-text text">Мы в соц. сетях:</div>
