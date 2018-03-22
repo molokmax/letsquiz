@@ -437,6 +437,18 @@
 {/if}
 		<div id="footer" class="footer container quiz-block-container">
 			<div class="container quiz-block block-footer">
+			
+				<div class="row">
+					<div class="col-12">
+						<div class="footer-text text">Заявки, вопросы, предложения, корпоративные и выездные игры!</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<div class="footer-text text">Работаем круглосуточно и без выходных)))</div>
+					</div>
+				</div>
+
 				<div class="row">
 					<div class="col-12">
 						<div class="footer-text text">Наши контакты:</div>
