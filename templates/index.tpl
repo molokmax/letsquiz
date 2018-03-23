@@ -176,7 +176,7 @@
 				</div>
 				<div class="row">
 					<div class="col-12 col-sm-10 offset-sm-1 col-md-6 offset-md-3">
-						<div class="quiz-item"><i class="quiz-icon mdi mdi-timer"></i>2,5 часа игры каждые 2 недели по воскресеньям</div>
+						<div class="quiz-item"><i class="quiz-icon mdi mdi-timer"></i>2,5 часа игры каждые 2 недели</div>
 					</div>
 				</div>
 				<div class="row">
