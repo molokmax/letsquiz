@@ -131,6 +131,7 @@
 {foreach from=$GAME_LIST item=game name=games}
 							<div class="quiz-game-card {if $game->is_closed eq '1'}game-closed{/if}" data-game-id="{$game->id}" data-city-name="{$game->city}" data-game-fulldate="{$game->full_date}">
 								<div class="game-city">{$game->city}</div>
+								<div class="game-name">Игра <b>{$game->game_name}</b></div>
 								<div class="game-date">{$game->date}</div>
 								<div class="game-day">{$game->day_name}</div>
 								<div class="game-time">{$game->time}</div>
@@ -148,6 +149,7 @@
 {foreach from=$GAME_LIST item=game name=games}
 							<div class="quiz-game-card col-sm-5 col-11 {if $game->is_closed eq '1'}game-closed{/if}" data-game-id="{$game->id}" data-city-name="{$game->city}" data-game-fulldate="{$game->full_date}">
 								<div class="game-city">{$game->city}</div>
+								<div class="game-name">Игра <b>{$game->game_name}</b></div>
 								<div class="game-date">{$game->date}</div>
 								<div class="game-day">{$game->day_name}</div>
 								<div class="game-time">{$game->time}</div>
@@ -346,6 +348,11 @@
 					</div>
 					<div class="col-12 col-sm-4 col-md-3">
 						<div class="quiz-panel panel-light"><a href="https://www.instagram.com/artiko_print/" target="_blank"><img src="image/logo-artiko.png"></a></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12 col-sm-4 offset-sm-2 col-md-3 offset-md-3">
+						<div class="quiz-panel panel-light"><a href="http://www.perspektiva-pravo.ru/" target="_blank"><img src="image/logo-pravo.png"></a></div>
 					</div>
 				</div>
 			</div>
