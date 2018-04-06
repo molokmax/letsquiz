@@ -354,6 +354,9 @@
 					<div class="col-12 col-sm-4 offset-sm-2 col-md-3 offset-md-3">
 						<div class="quiz-panel panel-light"><a href="http://www.perspektiva-pravo.ru/" target="_blank"><img src="image/logo-pravo.png"></a></div>
 					</div>
+					<div class="col-12 col-sm-4 col-md-3">
+						<div class="quiz-panel panel-light"><a href="http://www.1litr-bar.ru/" target="_blank"><img src="image/logo-litr.png"></a></div>
+					</div>
 				</div>
 			</div>
 		</div>
