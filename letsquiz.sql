@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Мар 31 2018 г., 10:19
+-- Время создания: Апр 07 2018 г., 09:38
 -- Версия сервера: 5.5.25
 -- Версия PHP: 5.3.13
 
@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS `address` (
   `description` varchar(250) NOT NULL,
   `city_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Дамп данных таблицы `address`
@@ -39,7 +39,8 @@ CREATE TABLE IF NOT EXISTS `address` (
 
 INSERT INTO `address` (`id`, `description`, `city_id`) VALUES
 (1, 'Клуб-ресторан-караоке "Shizgara" (Проспект победы, 71)', 1),
-(2, 'Гриль-бар "МЯСО И УГЛИ" (ул. Гагарина, 68)', 2);
+(2, 'Гриль-бар "МЯСО И УГЛИ" (ул. Гагарина, 68)', 2),
+(3, 'Ресторан "1 литр" (ул. Пушкина, 125)', 3);
 
 -- --------------------------------------------------------
 
@@ -51,7 +52,7 @@ CREATE TABLE IF NOT EXISTS `city` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Дамп данных таблицы `city`
@@ -59,7 +60,8 @@ CREATE TABLE IF NOT EXISTS `city` (
 
 INSERT INTO `city` (`id`, `name`) VALUES
 (1, 'Ступино'),
-(2, 'Коломна');
+(2, 'Коломна'),
+(3, 'Луховицы');
 
 -- --------------------------------------------------------
 
@@ -100,7 +102,7 @@ CREATE TABLE IF NOT EXISTS `game` (
   `city_id` int(11) NOT NULL,
   `is_closed` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=47 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=48 ;
 
 --
 -- Дамп данных таблицы `game`
@@ -116,7 +118,8 @@ INSERT INTO `game` (`id`, `date`, `name`, `city_id`, `is_closed`) VALUES
 (43, '2018-04-22 16:15:00', '27.2', 1, 0),
 (44, '2018-04-22 19:30:00', '27.3', 1, 0),
 (45, '2018-04-23 19:30:00', '27.1', 2, 0),
-(46, '2018-04-24 19:30:00', '27.2', 2, 0);
+(46, '2018-04-24 19:30:00', '27.2', 2, 0),
+(47, '2018-04-26 19:30:00', '27', 3, 0);
 
 -- --------------------------------------------------------
 
@@ -228,7 +231,7 @@ CREATE TABLE IF NOT EXISTS `setting` (
 INSERT INTO `setting` (`id`, `name`, `prefix`, `type`, `value`) VALUES
 (1, 'Номер контактного телефона', 'PHONE', 'string', '8-916-451-44-81'),
 (2, 'Контактный Email', 'EMAIL', 'string', 'info@letsquiz.ru'),
-(3, 'Количество игр для отображения', 'GAME_TAKE', 'int', '10'),
+(3, 'Количество игр для отображения', 'GAME_TAKE', 'int', '15'),
 (4, 'Скрыть раздел "Отзывы"', 'HIDE_FEEDBACK', 'bool', 'false'),
 (5, 'Скрыть раздел "Галерея"', 'HIDE_GALLERY', 'bool', 'false'),
 (6, 'Скрыть раздел "Друзья"', 'HIDE_FRIENDS', 'bool', 'false'),
