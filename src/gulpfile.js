@@ -19,9 +19,9 @@ const imagemin = require('gulp-imagemin');
 const ftp = require('gulp-ftp');
 
 const paths = {
-    dist: './build',
+    dist: '../build',
     //dist: 'D:/develop/denwer/home/test1.ru/www',
-    build_dir: './build',
+    //build_dir: './build',
     src: {
         root: ['*.{js,php}', '!gulpfile.js', '!secret.config.js'],
         libs: {
