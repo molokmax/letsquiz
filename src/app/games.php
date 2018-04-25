@@ -46,6 +46,7 @@
         public $id;
         public $date;
         public $game_name;
+        public $city_id;
         public $city;
         public $is_closed;
     }
@@ -74,6 +75,130 @@
     }
 
     class GameRepository {
+
+        public function Create($game) {
+            $config = include('config.php');
+            $result = array();
+
+            $con = mysql_connect($config['DB_CONFIG_HOSTNAME'], $config['DB_CONFIG_USERNAME'], $config['DB_CONFIG_PASSWORD']);
+
+            if (!$con) {
+                die('Db connect error: ' . mysql_error());
+            }
+
+            mysql_set_charset($config['DB_CONFIG_CHARSET'], $con);
+	        mysql_select_db($config['DB_CONFIG_DATABASENAME'], $con);
+    
+            //$id_param = mysql_escape_string($game->id);
+            $date_param = mysql_escape_string($game->date);
+            $name_param = mysql_escape_string($game->game_name);
+            $city_param = mysql_escape_string($game->city_id);
+            $isclosed_param = mysql_escape_string($game->is_closed);
+            $query = "INSERT INTO `game` (`date`, `name`, `city_id`, `is_closed`) VALUES ('{$date_param}', '{$name_param}', {$city_param}, {$isclosed_param}";
+
+	        $db_result = mysql_query($query);
+            
+            mysql_close($con);
+
+            if ($db_result) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        public function Update($game) {
+            $config = include('config.php');
+            $result = array();
+
+            $con = mysql_connect($config['DB_CONFIG_HOSTNAME'], $config['DB_CONFIG_USERNAME'], $config['DB_CONFIG_PASSWORD']);
+
+            if (!$con) {
+                die('Db connect error: ' . mysql_error());
+            }
+
+            mysql_set_charset($config['DB_CONFIG_CHARSET'], $con);
+	        mysql_select_db($config['DB_CONFIG_DATABASENAME'], $con);
+    
+            $id_param = mysql_escape_string($game->id);
+            $date_param = mysql_escape_string($game->date);
+            $name_param = mysql_escape_string($game->game_name);
+            $city_param = mysql_escape_string($game->city_id);
+            $isclosed_param = mysql_escape_string($game->is_closed);
+            $query = "UPDATE `game` SET `date` = '{$date_param}', `name` = '{$name_param}', `city_id` = {$city_param}, `is_closed` = {$isclosed_param} WHERE `id` = {$id_param}";
+
+	        $db_result = mysql_query($query);
+            
+            mysql_close($con);
+
+            if ($db_result) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        public function Delete($game) {
+            $config = include('config.php');
+            $result = array();
+
+            $con = mysql_connect($config['DB_CONFIG_HOSTNAME'], $config['DB_CONFIG_USERNAME'], $config['DB_CONFIG_PASSWORD']);
+
+            if (!$con) {
+                die('Db connect error: ' . mysql_error());
+            }
+
+            mysql_set_charset($config['DB_CONFIG_CHARSET'], $con);
+	        mysql_select_db($config['DB_CONFIG_DATABASENAME'], $con);
+    
+            $id_param = mysql_escape_string($game->id);
+            $query = "DELETE FROM `game` WHERE `id` = {$id_param}";
+
+	        $db_result = mysql_query($query);
+            
+            mysql_close($con);
+
+            if ($db_result) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        public function Read($timezone) {
+            $config = include('config.php');
+            $result = array();
+
+            $con = mysql_connect($config['DB_CONFIG_HOSTNAME'], $config['DB_CONFIG_USERNAME'], $config['DB_CONFIG_PASSWORD']);
+
+            if (!$con) {
+                die('Db connect error: ' . mysql_error());
+            }
+
+            mysql_set_charset($config['DB_CONFIG_CHARSET'], $con);
+	        mysql_select_db($config['DB_CONFIG_DATABASENAME'], $con);
+	
+	        $query = "SELECT g.`id` AS `id`, g.`date` AS  `date`, g.`name` AS `game_name`, g.`city_id` AS `city_id`, c.`name` AS  `city`, g.`is_closed` AS `is_closed` FROM  `game` AS g JOIN  `city` AS c ON ( g.`city_id` = c.`id` ) ORDER BY g.`date`";
+
+	        $db_result = mysql_query($query);
+            if ($db_result) {
+                while($row = mysql_fetch_array($db_result)) {
+                    $rec = new GameModel();
+                    $rec->id = $row['id'];
+                    $date = DateTime::createFromFormat('Y-m-d H:i:s', $row['date'], $timezone);
+                    $rec->date = $date->format('Y-m-d H:i:s');
+                    $rec->game_name = $row['game_name'];
+                    $rec->city_id = $row['city_id'];
+                    $rec->city = $row['city'];
+                    $rec->is_closed = $row['is_closed'];
+                    array_push($result, $rec);
+                }
+            }
+
+            mysql_close($con);
+
+            return $result;
+        }
 
         public function GetAfterDate($date, $limit, $timezone) {
             $config = include('config.php');

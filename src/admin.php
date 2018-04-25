@@ -1,10 +1,13 @@
 <?php
 
     require_once('app/auth.php');
+	require_once('app/games.php');
 	require_once('libs/smarty/Smarty.class.php');
 
     $auth = new AuthUtility();
     $auth->Auth();
+
+	$timezone = new DateTimeZone('Europe/Moscow');
 
     $smarty = new Smarty();
     
@@ -12,7 +15,11 @@
 	$smarty->compile_dir = 'libs/smarty/templates_c/';
 	$smarty->config_dir = 'libs/smarty/configs/';
     $smarty->cache_dir = 'libs/smarty/cache/';
-    
+	
+	$gameRepo = new GameRepository();
+	$games = $gameRepo->Read($timezone);
+	$smarty->assign('GAME_LIST', $games);
+
 	/*$smarty->assign('GAME_LIST', $game_list);
 	$smarty->assign('ADDRESS_LIST', $address_list);
 	$smarty->assign('CITY_LIST', $city_list);

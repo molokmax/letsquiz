@@ -21,8 +21,46 @@
 	</head>
 	<body >
 		
-		<div>Добро пожаловать в интерфейс администратора</div>
-	
+		<h1>Добро пожаловать в интерфейс администратора</h1>
+		
+		<div class="container" data-entity-type='GAME'>
+			<h2>Игры</h2>
+			<button type="button" class="btn btn-success crud-create">Создать</button>
+			<table class="table">
+				<thead class="thead-dark">
+					<tr>
+						<!-- <th scope="col">#</th> -->
+						<th scope="col">Дата</th>
+						<th scope="col">Номер</th>
+						<th scope="col">Город</th>
+						<th scope="col">Закрыто</th>
+						<th scope="col">Действие</th>
+					</tr>
+				</thead>
+				<tbody>
+	{foreach from=$GAME_LIST item=game name=games}
+					<tr 
+						data-record-id='{$game->id}' 
+						data-record-name='{$game->game_name}' 
+						data-record-city_id='{$game->city_id}' 
+						data-record-city='{$game->city}'
+						data-record-is_closed='{$game->is_closed}'>
+						<!-- <th scope="row">{$smarty.foreach.games.index}</th> -->
+						<td>{$game->date}</td>
+						<td>{$game->game_name}</td>
+						<td>{$game->city}</td>
+						<td>{$game->is_closed}</td>
+						<td>
+							<button type="button" class="btn btn-primary btn-sm crud-update">Изменить</button>
+							<button type="button" class="btn btn-danger btn-sm crud-delete">Удалить</button>
+						</td>
+					</tr>
+	{/foreach}
+				</tbody>
+			</table>
+		</div>
+
+
 		<!-- Optional JavaScript -->
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 		<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>

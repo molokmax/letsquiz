@@ -118,7 +118,8 @@
 					<div class="col-12">
 						<div class="quiz-header">РАСПИСАНИЕ ИГР</div>
 					</div>
-				</div><div class="row address-list">
+				</div>
+				<div class="row address-list">
 {foreach from=$ADDRESS_LIST item=address name=addresses}
 					<div class="col-12">
 						<div class="address-item" data-city-name="{$address->city_name}">{$address->city_name}, {$address->description}</div>
