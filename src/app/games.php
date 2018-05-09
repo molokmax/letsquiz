@@ -76,6 +76,17 @@
 
     class GameRepository {
 
+        public function BuildModel($data) {
+            $rec = new GameModel();
+            $rec->id = $data['id'];
+            $rec->date = $data['date'];
+            $rec->game_name = $data['name'];
+            $rec->city_id = $data['city_id'];
+            $rec->city = $data['city'];
+            $rec->is_closed = $data['is_closed'];
+            return $rec;
+        }
+
         public function Create($game) {
             $config = include('config.php');
             $result = array();
@@ -153,7 +164,7 @@
     
             $id_param = mysql_escape_string($game->id);
             $query = "DELETE FROM `game` WHERE `id` = {$id_param}";
-
+//print($query);
 	        $db_result = mysql_query($query);
             
             mysql_close($con);

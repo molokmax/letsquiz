@@ -2,6 +2,7 @@
 
     require_once('app/auth.php');
 	require_once('app/games.php');
+	require_once('app/cities.php');
 	require_once('libs/smarty/Smarty.class.php');
 
     $auth = new AuthUtility();
@@ -19,6 +20,10 @@
 	$gameRepo = new GameRepository();
 	$games = $gameRepo->Read($timezone);
 	$smarty->assign('GAME_LIST', $games);
+
+	$cityRepo = new CityRepository();
+	$cities = $cityRepo->Read();
+	$smarty->assign('CITY_LIST', $cities);
 
 	/*$smarty->assign('GAME_LIST', $game_list);
 	$smarty->assign('ADDRESS_LIST', $address_list);
