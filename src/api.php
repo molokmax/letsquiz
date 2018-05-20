@@ -4,6 +4,7 @@
 	require_once('app/games.php');
 	require_once('app/feedbacks.php');
 	require_once('app/questions.php');
+	require_once('app/settings.php');
 
     $auth = new AuthUtility();
     $auth->Auth();
@@ -17,6 +18,8 @@
 			return new FeedbackRepository();
 		} else if ($entityType == "QUESTION") {
 			return new QuestionRepository();
+		} else if ($entityType == "SETTING") {
+			return new SettingRepository();
 		}
 	}
 

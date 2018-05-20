@@ -5,6 +5,7 @@
 	require_once('app/cities.php');
 	require_once('app/feedbacks.php');
 	require_once('app/questions.php');
+	require_once('app/settings.php');
 	require_once('libs/smarty/Smarty.class.php');
 
     $auth = new AuthUtility();
@@ -19,6 +20,10 @@
 	$smarty->config_dir = 'libs/smarty/configs/';
     $smarty->cache_dir = 'libs/smarty/cache/';
 	
+	$settingRepo = new SettingRepository();
+	$settings = $settingRepo->Read();
+	$smarty->assign('SETTING_LIST', $settings);
+
 	$gameRepo = new GameRepository();
 	$games = $gameRepo->Read($timezone);
 	$smarty->assign('GAME_LIST', $games);

@@ -20,7 +20,7 @@
 	
 		
 	$settingRepo = new SettingRepository();
-	$settings = $settingRepo->GetAll();
+	$settings = $settingRepo->Read();
 
 	$game_take = 8;
 	$game_close_hourse = 4;

@@ -27,7 +27,42 @@
 		
 		<h1>Добро пожаловать в интерфейс администратора</h1>
 		
-		<div class="container" data-entity-type='GAME'>
+		<div class="container letsquiz-grid" data-entity-type='SETTING'>
+			<h2>Настройки</h2>
+			<!-- <button type="button" class="btn btn-success crud-create" data-toggle="modal" data-target="#settingEditor">Создать</button> -->
+			<table class="table">
+				<thead class="thead-dark">
+					<tr>
+						<th scope="col">Название</th>
+						<th scope="col">Системное название</th>
+						<th scope="col">Тип</th>
+						<th scope="col">Значение</th>
+						<th scope="col">Действие</th>
+					</tr>
+				</thead>
+				<tbody>
+	{foreach from=$SETTING_LIST item=setting name=settings}
+					<tr class="record"
+						data-record-id='{$setting->id}' 
+						data-record-name='{$setting->name}' 
+						data-record-prefix='{$setting->prefix}' 
+						data-record-type='{$setting->type}' 
+						data-record-value='{$setting->value}'>
+						<td>{$setting->name}</td>
+						<td>{$setting->prefix}</td>
+						<td>{$setting->type}</td>
+						<td>{$setting->value}</td>
+						<td class="action-column">
+							<button type="button" class="btn btn-primary btn-sm crud-update" data-toggle="modal" data-target="#settingEditor">Изменить</button>
+							<!-- <button type="button" class="btn btn-danger btn-sm crud-delete">Удалить</button> -->
+						</td>
+					</tr>
+	{/foreach}
+				</tbody>
+			</table>
+		</div>
+
+		<div class="container letsquiz-grid" data-entity-type='GAME'>
 			<h2>Игры</h2>
 			<button type="button" class="btn btn-success crud-create" data-toggle="modal" data-target="#gameEditor">Создать</button>
 			<table class="table">
@@ -53,7 +88,7 @@
 						<td>{$game->game_name}</td>
 						<td>{$game->city}</td>
 						<td>{$game->is_closed}</td>
-						<td>
+						<td class="action-column">
 							<button type="button" class="btn btn-primary btn-sm crud-update" data-toggle="modal" data-target="#gameEditor">Изменить</button>
 							<button type="button" class="btn btn-danger btn-sm crud-delete">Удалить</button>
 						</td>
@@ -64,7 +99,7 @@
 		</div>
 
 
-		<div class="container" data-entity-type='FEEDBACK'>
+		<div class="container letsquiz-grid" data-entity-type='FEEDBACK'>
 			<h2>Отзывы</h2>
 			<button type="button" class="btn btn-success crud-create" data-toggle="modal" data-target="#feedbackEditor">Создать</button>
 			<table class="table">
@@ -83,7 +118,7 @@
 						data-record-author='{$feedback->author}'>
 						<td>{$feedback->text}</td>
 						<td>{$feedback->author}</td>
-						<td>
+						<td class="action-column">
 							<button type="button" class="btn btn-primary btn-sm crud-update" data-toggle="modal" data-target="#feedbackEditor">Изменить</button>
 							<button type="button" class="btn btn-danger btn-sm crud-delete">Удалить</button>
 						</td>
@@ -94,7 +129,7 @@
 		</div>
 
 
-		<div class="container" data-entity-type='QUESTION'>
+		<div class="container letsquiz-grid" data-entity-type='QUESTION'>
 			<h2>Вопросы</h2>
 			<button type="button" class="btn btn-success crud-create" data-toggle="modal" data-target="#questionEditor">Создать</button>
 			<table class="table">
@@ -116,7 +151,7 @@
 						<td>{$question->question}</td>
 						<td>{$question->answer}</td>
 						<td>{$question->order}</td>
-						<td>
+						<td class="action-column">
 							<button type="button" class="btn btn-primary btn-sm crud-update" data-toggle="modal" data-target="#questionEditor">Изменить</button>
 							<button type="button" class="btn btn-danger btn-sm crud-delete">Удалить</button>
 						</td>
@@ -213,7 +248,7 @@
 			<div class="modal-dialog modal-dialog-centered" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="questionEditorTitle">ОТЗЫВ</h5>
+						<h5 class="modal-title" id="questionEditorTitle">ВОПРОС</h5>
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 							<span class="mdi mdi-close" aria-hidden="true"></span>
 						</button>
@@ -242,6 +277,37 @@
 			</div>
 		</div>
 
+		
+		<!-- Setting editor -->
+		<div class="editorWindow modal fade" id="settingEditor" tabindex="-1" role="dialog" aria-labelledby="SettingEditorTitle" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="settingEditorTitle">НАСТРОЙКА</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span class="mdi mdi-close" aria-hidden="true"></span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<form>
+							<input class="field" type="hidden" name="id">
+							<div class="form-group">
+								<label for="setting-name">Название</label>
+								<input type="text" readonly class="form-control field" id="setting-name" name="name" aria-describedby="setting-name" placeholder="">
+							</div>
+							<div class="form-group">
+								<label for="setting-value">Значение</label>
+								<input type="text" class="form-control field" id="setting-value" name="value" aria-describedby="setting-value" placeholder="">
+							</div>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary save-button">Сохранить</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	
 		<!-- Optional JavaScript -->
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 		<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
