@@ -39,11 +39,11 @@
 	$smarty->assign('PHOTO_LIST', $photos);
 
 	$questionRepo = new QuestionRepository();
-	$questions = $questionRepo->GetAll();
+	$questions = $questionRepo->Read();
 	$smarty->assign('QUESTION_LIST', $questions);
 
 	$feedbackRepo = new FeedbackRepository();
-	$feedbacks = $feedbackRepo->GetAll();
+	$feedbacks = $feedbackRepo->Read();
 	$smarty->assign('FEEDBACK_LIST', $feedbacks);
 
 	$cityRepo = new CityRepository();

@@ -2,6 +2,8 @@
 
     require_once('app/auth.php');
 	require_once('app/games.php');
+	require_once('app/feedbacks.php');
+	require_once('app/questions.php');
 
     $auth = new AuthUtility();
     $auth->Auth();
@@ -11,6 +13,10 @@
 	function GetRepository($entityType) {
 		if ($entityType == "GAME") {
 			return new GameRepository();
+		} else if ($entityType == "FEEDBACK") {
+			return new FeedbackRepository();
+		} else if ($entityType == "QUESTION") {
+			return new QuestionRepository();
 		}
 	}
 
@@ -19,6 +25,12 @@
 		if ($action == 'delete') {
 			//print('del');
 			$result = $repo->Delete($data);
+		} else if ($action == 'update') {
+			//print('upd');
+			$result = $repo->Update($data);
+		} else if ($action == 'create') {
+			//print('cre');
+			$result = $repo->Create($data);
 		}
 		return $result;
 	}

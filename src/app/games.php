@@ -105,8 +105,8 @@
             $name_param = mysql_escape_string($game->game_name);
             $city_param = mysql_escape_string($game->city_id);
             $isclosed_param = mysql_escape_string($game->is_closed);
-            $query = "INSERT INTO `game` (`date`, `name`, `city_id`, `is_closed`) VALUES ('{$date_param}', '{$name_param}', {$city_param}, {$isclosed_param}";
-
+            $query = "INSERT INTO `game` (`date`, `name`, `city_id`, `is_closed`) VALUES ('{$date_param}', '{$name_param}', {$city_param}, {$isclosed_param})";
+            //print($query);
 	        $db_result = mysql_query($query);
             
             mysql_close($con);
@@ -137,7 +137,7 @@
             $city_param = mysql_escape_string($game->city_id);
             $isclosed_param = mysql_escape_string($game->is_closed);
             $query = "UPDATE `game` SET `date` = '{$date_param}', `name` = '{$name_param}', `city_id` = {$city_param}, `is_closed` = {$isclosed_param} WHERE `id` = {$id_param}";
-
+            //print($query);
 	        $db_result = mysql_query($query);
             
             mysql_close($con);

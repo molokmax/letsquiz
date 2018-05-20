@@ -3,6 +3,8 @@
     require_once('app/auth.php');
 	require_once('app/games.php');
 	require_once('app/cities.php');
+	require_once('app/feedbacks.php');
+	require_once('app/questions.php');
 	require_once('libs/smarty/Smarty.class.php');
 
     $auth = new AuthUtility();
@@ -24,6 +26,14 @@
 	$cityRepo = new CityRepository();
 	$cities = $cityRepo->Read();
 	$smarty->assign('CITY_LIST', $cities);
+
+	$feedbackRepo = new FeedbackRepository();
+	$feedbacks = $feedbackRepo->Read();
+	$smarty->assign('FEEDBACK_LIST', $feedbacks);
+
+	$questionRepo = new QuestionRepository();
+	$questions = $questionRepo->Read();
+	$smarty->assign('QUESTION_LIST', $questions);
 
 	/*$smarty->assign('GAME_LIST', $game_list);
 	$smarty->assign('ADDRESS_LIST', $address_list);
