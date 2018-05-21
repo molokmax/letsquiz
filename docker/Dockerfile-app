@@ -15,3 +15,4 @@ RUN apt-get update && apt-get install -y mc && docker-php-ext-install -j$(nproc)
 # RUN apt-get update && apt-get install -y mc
 
 ADD php.ini /usr/local/etc/php/conf.d/40-custom.ini
+ADD apache2.conf /etc/apache2/apache2.conf

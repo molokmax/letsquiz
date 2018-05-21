@@ -1,23 +1,23 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
--- https://www.phpmyadmin.net/
+-- version 3.5.1
+-- http://www.phpmyadmin.net
 --
--- Хост: localhost
--- Время создания: Май 21 2018 г., 20:06
--- Версия сервера: 5.6.37-82.2
--- Версия PHP: 5.5.38
+-- Хост: 127.0.0.1
+-- Время создания: Апр 07 2018 г., 09:38
+-- Версия сервера: 5.5.25
+-- Версия PHP: 5.3.13
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
--- База данных: `letsquiz_db`
+-- База данных: `letsquiz`
 --
 
 -- --------------------------------------------------------
@@ -26,20 +26,21 @@ SET time_zone = "+00:00";
 -- Структура таблицы `address`
 --
 
-CREATE TABLE `address` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `address` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `description` varchar(250) NOT NULL,
-  `city_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `city_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Дамп данных таблицы `address`
 --
 
 INSERT INTO `address` (`id`, `description`, `city_id`) VALUES
-(1, 'Клуб-ресторан-караоке \"Shizgara\" (Проспект победы, 71)', 1),
-(2, 'Гриль-бар \"МЯСО И УГЛИ\" (ул. Гагарина, 68)', 2),
-(3, 'Ресторан \"1 литр\" (ул. Пушкина, 125)', 3);
+(1, 'Клуб-ресторан-караоке "Shizgara" (Проспект победы, 71)', 1),
+(2, 'Гриль-бар "МЯСО И УГЛИ" (ул. Гагарина, 68)', 2),
+(3, 'Ресторан "1 литр" (ул. Пушкина, 125)', 3);
 
 -- --------------------------------------------------------
 
@@ -47,10 +48,11 @@ INSERT INTO `address` (`id`, `description`, `city_id`) VALUES
 -- Структура таблицы `city`
 --
 
-CREATE TABLE `city` (
-  `id` int(11) NOT NULL,
-  `name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE IF NOT EXISTS `city` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Дамп данных таблицы `city`
@@ -67,23 +69,24 @@ INSERT INTO `city` (`id`, `name`) VALUES
 -- Структура таблицы `feedback`
 --
 
-CREATE TABLE `feedback` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `feedback` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `order` int(11) DEFAULT NULL,
   `text` text NOT NULL,
-  `author` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `author` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
 -- Дамп данных таблицы `feedback`
 --
 
 INSERT INTO `feedback` (`id`, `order`, `text`, `author`) VALUES
-(1, 1, 'Заразилась. Нереально круто! Отлично провели время. Подумали, посмеялись, пообщались. В новом сезоне будем новой командой \"экоЛогика\" зажигать', 'katrina_shubina'),
+(1, 1, 'Заразилась. Нереально круто! Отлично провели время. Подумали, посмеялись, пообщались. В новом сезоне будем новой командой "экоЛогика" зажигать', 'katrina_shubina'),
 (2, 2, 'Да, душевно и интерактивно, элемент свадебного интерактивна поразил!!! Узнать трек, и тд + гифки на экране... В общем, не хочу повторяться, но это оч круто! Спасибо огромное!', 'Алёна'),
 (3, 3, 'Мы молодцы! Все молодцы! Было круто круто! Почему я раньше не знала о вас, ребята?', 'varvalola'),
-(4, 4, 'Пускай без призовых мест, НО зато стабильность нашей команды зашкаливает. Мы не изменяем своим привычкам и поэтому каждые 2 недели мы на Let\'s КВИЗ, а теперь они еще и на Коломну замахнулись... думаю она их примет с распростертыми объятьями! А мы желаем всем таких привычек!', 'partygoer2013'),
-(5, 5, 'Закончился второй сезон барных викторин Let\'s КВИЗ! Это была чреда крутых выходных с чумовыми вопросами, шумом, классными ребятами и Shizgara! Те, кто участвовал, знают, о чем речь =) Остальные, скорее присоединяйтесь, регистрируйтесь на игры нового сезона! Для этого нужно найти компанию 2-9 человек и оставить заявку. Спасибо, Let\'s КВИЗ за офигенный сезон! Ждем продолжения (с нетерпением)', 'mosigrastupino'),
+(4, 4, 'Пускай без призовых мест, НО зато стабильность нашей команды зашкаливает. Мы не изменяем своим привычкам и поэтому каждые 2 недели мы на Let''s КВИЗ, а теперь они еще и на Коломну замахнулись... думаю она их примет с распростертыми объятьями! А мы желаем всем таких привычек!', 'partygoer2013'),
+(5, 5, 'Закончился второй сезон барных викторин Let''s КВИЗ! Это была чреда крутых выходных с чумовыми вопросами, шумом, классными ребятами и Shizgara! Те, кто участвовал, знают, о чем речь =) Остальные, скорее присоединяйтесь, регистрируйтесь на игры нового сезона! Для этого нужно найти компанию 2-9 человек и оставить заявку. Спасибо, Let''s КВИЗ за офигенный сезон! Ждем продолжения (с нетерпением)', 'mosigrastupino'),
 (6, 6, 'Роман, Алина, спасибо большое вам и всем кто за кадром :) супер, что вы организовали игру, которая приносит столько эмоций, новых друзей и кругозор расширяет :)', 'Алёна');
 
 -- --------------------------------------------------------
@@ -92,13 +95,14 @@ INSERT INTO `feedback` (`id`, `order`, `text`, `author`) VALUES
 -- Структура таблицы `game`
 --
 
-CREATE TABLE `game` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `game` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `date` datetime NOT NULL,
   `name` varchar(10) NOT NULL,
   `city_id` int(11) NOT NULL,
-  `is_closed` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `is_closed` tinyint(1) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=48 ;
 
 --
 -- Дамп данных таблицы `game`
@@ -115,17 +119,7 @@ INSERT INTO `game` (`id`, `date`, `name`, `city_id`, `is_closed`) VALUES
 (44, '2018-04-22 19:30:00', '27.3', 1, 0),
 (45, '2018-04-23 19:30:00', '27.1', 2, 0),
 (46, '2018-04-24 19:30:00', '27.2', 2, 0),
-(47, '2018-04-26 19:30:00', '27', 3, 0),
-(48, '2018-05-06 13:00:00', '28.1', 1, 0),
-(49, '2018-05-06 16:15:00', '28.2', 1, 0),
-(50, '2018-05-06 19:30:00', '28.3', 1, 0),
-(51, '2018-05-07 19:30:00', '28.1', 2, 0),
-(52, '2018-05-08 19:30:00', '28.2', 2, 0),
-(53, '2018-05-20 13:00:00', '29.1', 1, 0),
-(54, '2018-05-20 16:15:00', '29.2', 1, 0),
-(55, '2018-05-20 19:30:00', '29.3', 1, 0),
-(57, '2018-05-22 19:30:00', '29.1', 2, 0),
-(58, '2018-05-10 19:30:00', '28', 3, 0);
+(47, '2018-04-26 19:30:00', '27', 3, 0);
 
 -- --------------------------------------------------------
 
@@ -133,11 +127,12 @@ INSERT INTO `game` (`id`, `date`, `name`, `city_id`, `is_closed`) VALUES
 -- Структура таблицы `photo`
 --
 
-CREATE TABLE `photo` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `photo` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `url` varchar(100) NOT NULL,
-  `order` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `order` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=43 ;
 
 --
 -- Дамп данных таблицы `photo`
@@ -193,12 +188,13 @@ INSERT INTO `photo` (`id`, `url`, `order`) VALUES
 -- Структура таблицы `question`
 --
 
-CREATE TABLE `question` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `question` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `order` int(11) NOT NULL,
   `question` text NOT NULL,
-  `answer` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `answer` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
 -- Дамп данных таблицы `question`
@@ -206,12 +202,12 @@ CREATE TABLE `question` (
 
 INSERT INTO `question` (`id`, `order`, `question`, `answer`) VALUES
 (1, 1, 'В этой европейской стране популярны футболки с перечеркнутым изображением кенгуру и надписью, что тут кенгуру не живут. Что это за страна?', 'Австрия (не путать с Австралией)'),
-(2, 2, 'Угадайте знаменитость: <br />Родился в 1978 г <br />Начал свою карьеру в сериале \"Улицы разбитых фонарей\" <br />Играет на гитаре, фортепиано, аккордеоне, блок-флейте и ударных <br />Является соавтором книги Владимира Познера \"Одноэтажная Америка\" <br />Ведущий кулинарного шоу <br />Очень любит Елки', 'Иван Ургант'),
+(2, 2, 'Угадайте знаменитость: <br />Родился в 1978 г <br />Начал свою карьеру в сериале "Улицы разбитых фонарей" <br />Играет на гитаре, фортепиано, аккордеоне, блок-флейте и ударных <br />Является соавтором книги Владимира Познера "Одноэтажная Америка" <br />Ведущий кулинарного шоу <br />Очень любит Елки', 'Иван Ургант'),
 (3, 3, 'В честь юбилея одной замечательной игры, издатель Hasbro сообщил что упакует в коробки с игрой настоящие деньги. В 79 коробках игровые деньги будут частично заменены на реальные купюры, а в одной коробке будут заменены все банкноты и обладатель получит сумму = 20,5 тысяч евро. Как называется эта игра? И сколько лет ей исполняется?', 'Монополия, 80 лет'),
-(4, 4, 'Народное название этой травы \"Мяун\". Напишите научное название', 'Валериана'),
+(4, 4, 'Народное название этой травы "Мяун". Напишите научное название', 'Валериана'),
 (5, 5, 'Притча о шести великих евреях, которые изменили мир: <br />Моисей сказал, что все от НЕБЕС <br />Соломон сказал, что все от ГОЛОВЫ <br />Иисус сказал, что все от СЕРДЦА <br />Маркс сказал, что все от ЖИВОТА <br />Фрейд сказал, что все от КХЕКХЕ ЧУТЬ НИЖЕ ЖИВОТА)) <br />Эйнштейн сказа, что все ОT... <br />Что сказал Эйнштейн?', 'все ОТНОСИТЕЛЬНО'),
 (6, 6, 'В одном американском городе местные библиотекари устроили выставку. Среди разнообразных бумажек и полосок картона, посетители могли увидеть и такие экспонаты как: кредитные карты, фантики от конфет, ломтики засохшей колбасы, расчески, лезвия для бритвы', 'Выставка книжных закладок'),
-(7, 7, '\"Король Тьмы\" и популярный музыкант Мерилин Мэнсон выпускает абсент под названием \"Absinthe Mansinthe\". Чему равна крепость напитка Мэнсона?', 'Крепость равна 66,6%');
+(7, 7, '"Король Тьмы" и популярный музыкант Мерилин Мэнсон выпускает абсент под названием "Absinthe Mansinthe". Чему равна крепость напитка Мэнсона?', 'Крепость равна 66,6%');
 
 -- --------------------------------------------------------
 
@@ -219,13 +215,14 @@ INSERT INTO `question` (`id`, `order`, `question`, `answer`) VALUES
 -- Структура таблицы `setting`
 --
 
-CREATE TABLE `setting` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `setting` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
   `prefix` varchar(50) NOT NULL,
   `type` varchar(10) NOT NULL,
-  `value` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `value` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
 --
 -- Дамп данных таблицы `setting`
@@ -235,100 +232,15 @@ INSERT INTO `setting` (`id`, `name`, `prefix`, `type`, `value`) VALUES
 (1, 'Номер контактного телефона', 'PHONE', 'string', '8-916-451-44-81'),
 (2, 'Контактный Email', 'EMAIL', 'string', 'info@letsquiz.ru'),
 (3, 'Количество игр для отображения', 'GAME_TAKE', 'int', '15'),
-(4, 'Скрыть раздел \"Отзывы\"', 'HIDE_FEEDBACK', 'bool', 'false'),
-(5, 'Скрыть раздел \"Галерея\"', 'HIDE_GALLERY', 'bool', 'false'),
-(6, 'Скрыть раздел \"Друзья\"', 'HIDE_FRIENDS', 'bool', 'false'),
-(7, 'Скрыть раздел \"Корпоративы\"', 'HIDE_CORP', 'bool', 'true'),
-(8, 'Скрыть раздел \"Главная\"', 'HIDE_MAIN', 'bool', 'false'),
-(9, 'Скрыть раздел \"Правила\"', 'HIDE_TERMS', 'bool', 'false'),
+(4, 'Скрыть раздел "Отзывы"', 'HIDE_FEEDBACK', 'bool', 'false'),
+(5, 'Скрыть раздел "Галерея"', 'HIDE_GALLERY', 'bool', 'false'),
+(6, 'Скрыть раздел "Друзья"', 'HIDE_FRIENDS', 'bool', 'false'),
+(7, 'Скрыть раздел "Корпоративы"', 'HIDE_CORP', 'bool', 'true'),
+(8, 'Скрыть раздел "Главная"', 'HIDE_MAIN', 'bool', 'false'),
+(9, 'Скрыть раздел "Правила"', 'HIDE_TERMS', 'bool', 'false'),
 (10, 'Закрывать регистрацию за N часов до начала игры', 'GAME_CLOSE', 'int', '4'),
-(11, 'Скрыть раздел \"Расписание\"', 'HIDE_SCHEDULE', 'bool', 'false');
+(11, 'Скрыть раздел "Расписание"', 'HIDE_SCHEDULE', 'bool', 'false');
 
---
--- Индексы сохранённых таблиц
---
-
---
--- Индексы таблицы `address`
---
-ALTER TABLE `address`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `city`
---
-ALTER TABLE `city`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `feedback`
---
-ALTER TABLE `feedback`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `game`
---
-ALTER TABLE `game`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `photo`
---
-ALTER TABLE `photo`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `question`
---
-ALTER TABLE `question`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `setting`
---
-ALTER TABLE `setting`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT для сохранённых таблиц
---
-
---
--- AUTO_INCREMENT для таблицы `address`
---
-ALTER TABLE `address`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
---
--- AUTO_INCREMENT для таблицы `city`
---
-ALTER TABLE `city`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
---
--- AUTO_INCREMENT для таблицы `feedback`
---
-ALTER TABLE `feedback`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
---
--- AUTO_INCREMENT для таблицы `game`
---
-ALTER TABLE `game`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
---
--- AUTO_INCREMENT для таблицы `photo`
---
-ALTER TABLE `photo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
---
--- AUTO_INCREMENT для таблицы `question`
---
-ALTER TABLE `question`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
---
--- AUTO_INCREMENT для таблицы `setting`
---
-ALTER TABLE `setting`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

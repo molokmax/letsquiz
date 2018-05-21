@@ -2,6 +2,7 @@ $(document).ready(function() {
 
     var crud = {
         save: function() {
+            debugger;
             var win = $(this).parents('.editorWindow');
             var entityType = win.data('entityType');
             var action = win.data('action');
@@ -9,19 +10,23 @@ $(document).ready(function() {
                 entityType: entityType,
                 action: action
             };
+            var isFileForm = false;
             win.find(".field").each(function (index) {
                 var field = $(this);
                 var val = null;
                 if (this.type == "checkbox") {
                     val = field.is(":checked");
+                } else if (this.type == "file") {
+                    debugger;
+                    isFileForm = !!field.val();
+                    val = this.files[0];
                 } else {
                     val = field.val();
                 }
                 data[this.name] = val;
             });
-            $.ajax({
+            var options = {
                 url: 'api.php',
-                data: data,
                 type: 'POST',
                 success: function(result) {
                     var res = JSON.parse(result);
@@ -34,7 +39,19 @@ $(document).ready(function() {
                 error: function(result) {
                     alert(result || 'Server error');
                 }
-            });
+            };
+            if (isFileForm) {
+                var fd = new FormData();
+                for (var i in data) {
+                    fd.append(i, data[i]);
+                }
+                data = fd;
+                options.cache = false;
+                options.contentType = false;
+                options.processData = false;
+            }
+            options.data = data;
+            $.ajax(options);
         },
         create: function() {
             var entityContainer = $(this).parents('.container');
@@ -54,7 +71,11 @@ $(document).ready(function() {
             var windowId = $(this).data("target");
             var editorWin = $(windowId);
             editorWin.find(".field").each(function (index) {
-                $(this).val(data[this.name]);
+                if (this.type !== 'file') {
+                    $(this).val(data[this.name]);
+                } else {
+                    this.value = "";
+                }
             });
             editorWin.data('entityType', entityType);
             editorWin.data('action', 'update');

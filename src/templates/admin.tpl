@@ -99,6 +99,38 @@
 		</div>
 
 
+		<div class="container letsquiz-grid" data-entity-type='PHOTO'>
+			<h2>Фотографии</h2>
+			<button type="button" class="btn btn-success crud-create" data-toggle="modal" data-target="#photoEditor">Создать</button>
+			<table class="table">
+				<thead class="thead-dark">
+					<tr>
+						<th scope="col">Фото</th>
+						<th scope="col">URL</th>
+						<th scope="col">Порядок</th>
+						<th scope="col">Действие</th>
+					</tr>
+				</thead>
+				<tbody>
+	{foreach from=$PHOTO_LIST item=photo name=photos}
+					<tr class="record"
+						data-record-id='{$photo->id}' 
+						data-record-url='{$photo->url}' 
+						data-record-order='{$photo->order}'>
+						<td><a href="{$photo->url}" target="_blank"><img class="img-preview" src="{$photo->url}"></a></td>
+						<td><a href="{$photo->url}" target="_blank">{$photo->url}</a></td>
+						<td>{$photo->order}</td>
+						<td class="action-column">
+							<button type="button" class="btn btn-primary btn-sm crud-update" data-toggle="modal" data-target="#photoEditor">Изменить</button>
+							<button type="button" class="btn btn-danger btn-sm crud-delete">Удалить</button>
+						</td>
+					</tr>
+	{/foreach}
+				</tbody>
+			</table>
+		</div>
+
+
 		<div class="container letsquiz-grid" data-entity-type='FEEDBACK'>
 			<h2>Отзывы</h2>
 			<button type="button" class="btn btn-success crud-create" data-toggle="modal" data-target="#feedbackEditor">Создать</button>
@@ -278,6 +310,38 @@
 		</div>
 
 		
+		<!-- Photo editor -->
+		<div class="editorWindow modal fade" id="photoEditor" tabindex="-1" role="dialog" aria-labelledby="PhotoEditorTitle" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="photoEditorTitle">ФОТОГРАФИЯ</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span class="mdi mdi-close" aria-hidden="true"></span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<!-- <form enctype="multipart/form-data" action="__URL__" method="POST"> -->
+						<form>
+							<input class="field" type="hidden" name="id">
+							<div class="form-group">
+								<label for="photo-url">Фото</label>
+								<input type="file" accept="image/jpeg" class="form-control field" id="photo-url" name="url" aria-describedby="photo-url" placeholder="">
+							</div>
+							<div class="form-group">
+								<label for="photo-order">Порядок</label>
+								<input type="number" class="form-control field" id="photo-order" name="order" aria-describedby="photo-order" placeholder="">
+							</div>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary save-button">Сохранить</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
 		<!-- Setting editor -->
 		<div class="editorWindow modal fade" id="settingEditor" tabindex="-1" role="dialog" aria-labelledby="SettingEditorTitle" aria-hidden="true">
 			<div class="modal-dialog modal-dialog-centered" role="document">
