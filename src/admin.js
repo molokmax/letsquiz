@@ -2,7 +2,6 @@ $(document).ready(function() {
 
     var crud = {
         save: function() {
-            debugger;
             var win = $(this).parents('.editorWindow');
             var entityType = win.data('entityType');
             var action = win.data('action');
@@ -15,9 +14,9 @@ $(document).ready(function() {
                 var field = $(this);
                 var val = null;
                 if (this.type == "checkbox") {
-                    val = field.is(":checked");
-                } else if (this.type == "file") {
                     debugger;
+                    val = field.prop("checked"); // field.is(":checked");
+                } else if (this.type == "file") {
                     isFileForm = !!field.val();
                     val = this.files[0];
                 } else {
@@ -71,10 +70,12 @@ $(document).ready(function() {
             var windowId = $(this).data("target");
             var editorWin = $(windowId);
             editorWin.find(".field").each(function (index) {
-                if (this.type !== 'file') {
-                    $(this).val(data[this.name]);
-                } else {
+                if (this.type === 'checkbox') {
+                    $(this).prop('checked', data[this.name]);
+                } else if (this.type === 'file') {
                     this.value = "";
+                } else {
+                    $(this).val(data[this.name]);
                 }
             });
             editorWin.data('entityType', entityType);
