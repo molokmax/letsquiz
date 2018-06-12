@@ -3,54 +3,56 @@ $(document).ready(function() {
     var crud = {
         save: function() {
             var win = $(this).parents('.editorWindow');
-            var entityType = win.data('entityType');
-            var action = win.data('action');
-            var data = {
-                entityType: entityType,
-                action: action
-            };
-            var isFileForm = false;
-            win.find(".field").each(function (index) {
-                var field = $(this);
-                var val = null;
-                if (this.type == "checkbox") {
-                    debugger;
-                    val = field.prop("checked"); // field.is(":checked");
-                } else if (this.type == "file") {
-                    isFileForm = !!field.val();
-                    val = this.files[0];
-                } else {
-                    val = field.val();
-                }
-                data[this.name] = val;
-            });
-            var options = {
-                url: 'api.php',
-                type: 'POST',
-                success: function(result) {
-                    var res = JSON.parse(result);
-                    if (res.success) {
-                        location.reload();
+            var form = win.find('form')[0];
+            if (form.checkValidity()) {
+                var entityType = win.data('entityType');
+                var action = win.data('action');
+                var data = {
+                    entityType: entityType,
+                    action: action
+                };
+                var isFileForm = false;
+                win.find(".field").each(function (index) {
+                    var field = $(this);
+                    var val = null;
+                    if (this.type == "checkbox") {
+                        val = field.prop("checked"); // field.is(":checked");
+                    } else if (this.type == "file") {
+                        isFileForm = !!field.val();
+                        val = this.files[0];
                     } else {
-                        alert(res.message);
+                        val = field.val();
                     }
-                },
-                error: function(result) {
-                    alert(result || 'Server error');
+                    data[this.name] = val;
+                });
+                var options = {
+                    url: 'api.php',
+                    type: 'POST',
+                    success: function(result) {
+                        var res = JSON.parse(result);
+                        if (res.success) {
+                            location.reload();
+                        } else {
+                            alert(res.message);
+                        }
+                    },
+                    error: function(result) {
+                        alert(result || 'Server error');
+                    }
+                };
+                if (isFileForm) {
+                    var fd = new FormData();
+                    for (var i in data) {
+                        fd.append(i, data[i]);
+                    }
+                    data = fd;
+                    options.cache = false;
+                    options.contentType = false;
+                    options.processData = false;
                 }
-            };
-            if (isFileForm) {
-                var fd = new FormData();
-                for (var i in data) {
-                    fd.append(i, data[i]);
-                }
-                data = fd;
-                options.cache = false;
-                options.contentType = false;
-                options.processData = false;
+                options.data = data;
+                $.ajax(options);
             }
-            options.data = data;
-            $.ajax(options);
         },
         create: function() {
             var entityContainer = $(this).parents('.container');
@@ -59,6 +61,15 @@ $(document).ready(function() {
             var data = crud.getData(recordElement);
             var windowId = $(this).data("target");
             var editorWin = $(windowId);
+            editorWin.find(".field").each(function (index) {
+                if (this.type === 'checkbox') {
+                    $(this).prop('checked', false);
+                } else if (this.type === 'file') {
+                    this.value = "";
+                } else {
+                    $(this).val("");
+                }
+            });
             editorWin.data('entityType', entityType);
             editorWin.data('action', 'create');
         },

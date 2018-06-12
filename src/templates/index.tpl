@@ -508,11 +508,13 @@
 						</button>
 					</div>
 					<div class="modal-body">
-						<div class="quiz-window-title">Оставь номер телефона и мы перезвоним</div>
-						<label for="callback-name">Имя:</label>
-						<input type="text" class="form-control" id="callback-name" aria-describedby="callback-name" placeholder="Как к тебе обращаться">
-						<label for="callback-phone">Телефон:</label>
-						<input type="tel" class="form-control" id="callback-phone" aria-describedby="callback-phone" placeholder="Как с тобой связаться">
+						<form>
+							<div class="quiz-window-title">Оставь номер телефона и мы перезвоним</div>
+							<label for="callback-name">Имя:</label>
+							<input type="text" class="form-control" id="callback-name" required aria-describedby="callback-name" placeholder="Как к тебе обращаться">
+							<label for="callback-phone">Телефон:</label>
+							<input type="tel" class="form-control" id="callback-phone" required aria-describedby="callback-phone" placeholder="Как с тобой связаться">
+						</form>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-light quiz-button call-send-button">Отправить</button>
@@ -559,11 +561,13 @@
 						</button>
 					</div>
 					<div class="modal-body">
-						<div class="quiz-window-title">Ты можешь приобрести подарочный сертификат. Оставь заявку и мы перезвоним</div>
-						<label for="cert-name">Имя:</label>
-    					<input type="text" class="form-control" id="cert-name" aria-describedby="cert-name" placeholder="Как к тебе обращаться">
-						<label for="cert-phone">Телефон:</label>
-    					<input type="tel" class="form-control" id="cert-phone" aria-describedby="cert-phone" placeholder="Как с тобой связаться">
+						<form>
+							<div class="quiz-window-title">Ты можешь приобрести подарочный сертификат. Оставь заявку и мы перезвоним</div>
+							<label for="cert-name">Имя:</label>
+							<input type="text" class="form-control" id="cert-name" required aria-describedby="cert-name" placeholder="Как к тебе обращаться">
+							<label for="cert-phone">Телефон:</label>
+							<input type="tel" class="form-control" id="cert-phone" required aria-describedby="cert-phone" placeholder="Как с тобой связаться">
+						</form>
 					</div>
 					<div class="modal-footer">
 						<!--data-dismiss="modal"-->
@@ -623,25 +627,27 @@
 						</button>
 					</div>
 					<div class="modal-body">
-						<div class="quiz-window-title">Заполни форму регистрации на игру в городе <span class="display-city"></span> <span class="display-date"></span> в <span class="display-time"></span></div>
-						<label for="reg-name">Название команды</label>
-    					<input type="text" class="form-control" id="reg-name" aria-describedby="reg-name" placeholder="">
-						<label for="reg-count">Количество человек</label>
-    					<select class="form-control" id="reg-count">
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-							<option>6</option>
-							<option>7</option>
-							<option>8</option>
-							<option>9</option>
-						</select>
-						<label for="reg-capitan">Капитан</label>
-    					<input type="text" class="form-control" id="reg-capitan" aria-describedby="reg-phone" placeholder="">
-						<label for="reg-phone">Телефон</label>
-    					<input type="tel" class="form-control" id="reg-phone" aria-describedby="reg-phone" placeholder="">
-						<div class="quiz-window-text">Стоимость участия - 300 руб/чел</div>
+						<form>
+							<div class="quiz-window-title">Заполни форму регистрации на игру в городе <span class="display-city"></span> <span class="display-date"></span> в <span class="display-time"></span></div>
+							<label for="reg-name">Название команды</label>
+							<input type="text" class="form-control" id="reg-name" required aria-describedby="reg-name" placeholder="">
+							<label for="reg-count">Количество человек</label>
+							<select class="form-control" id="reg-count" required>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+								<option>6</option>
+								<option>7</option>
+								<option>8</option>
+								<option>9</option>
+							</select>
+							<label for="reg-capitan">Капитан</label>
+							<input type="text" class="form-control" id="reg-capitan" required aria-describedby="reg-phone" placeholder="">
+							<label for="reg-phone">Телефон</label>
+							<input type="tel" class="form-control" id="reg-phone" required aria-describedby="reg-phone" placeholder="">
+							<div class="quiz-window-text">Стоимость участия - 300 руб/чел</div>
+						</form>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-light quiz-button reg-send-button">Отправить</button>

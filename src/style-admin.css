@@ -25,3 +25,7 @@ button.crud-create {
     max-height: 100px;
     max-width: 200px;
 }
+
+input:invalid, select:invalid, textarea:invalid {
+	box-shadow: 0 0 5px 1px #ff4040;
+}

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: localhost
--- Время создания: Май 21 2018 г., 20:06
+-- Время создания: Май 21 2018 г., 20:26
 -- Версия сервера: 5.6.37-82.2
 -- Версия PHP: 5.5.38
 
@@ -244,6 +244,26 @@ INSERT INTO `setting` (`id`, `name`, `prefix`, `type`, `value`) VALUES
 (10, 'Закрывать регистрацию за N часов до начала игры', 'GAME_CLOSE', 'int', '4'),
 (11, 'Скрыть раздел \"Расписание\"', 'HIDE_SCHEDULE', 'bool', 'false');
 
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `user`
+--
+
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `pass` varchar(100) NOT NULL,
+  `is_locked` tinyint(1) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `user`
+--
+
+INSERT INTO `user` (`id`, `name`, `pass`, `is_locked`) VALUES
+(1, 'admin', '*027011E607535B7EC88190C1299032C3AF63CF53', 0);
+
 --
 -- Индексы сохранённых таблиц
 --
@@ -291,6 +311,12 @@ ALTER TABLE `setting`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Индексы таблицы `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT для сохранённых таблиц
 --
 
@@ -329,6 +355,11 @@ ALTER TABLE `question`
 --
 ALTER TABLE `setting`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+--
+-- AUTO_INCREMENT для таблицы `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

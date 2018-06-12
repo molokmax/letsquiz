@@ -138,10 +138,10 @@ $(document).ready(function() {
 
     $(".cert-send-button").click(function(btn) {
         var winId = "certificateWindow";
-        var name = $("#cert-name").val();
-        var phone = $("#cert-phone").val();
-        var isValid = name && phone;
-        if (isValid) {
+        var form = $('#certificateWindow form')[0];
+        if (form.checkValidity()) {
+            var name = $("#cert-name").val();
+            var phone = $("#cert-phone").val();
             var data = {
                 NotifyType: 'CERTIFICATE',
                 Name: name,
@@ -155,10 +155,10 @@ $(document).ready(function() {
 
     $(".call-send-button").click(function(btn) {
         var winId = "callbackWindow";
-        var name = $("#callback-name").val();
-        var phone = $("#callback-phone").val();
-        var isValid = name && phone;
-        if (isValid) {
+        var form = $('#callbackWindow form')[0];
+        if (form.checkValidity()) {
+            var name = $("#callback-name").val();
+            var phone = $("#callback-phone").val();
             var data = {
                 NotifyType: 'CALLBACK',
                 Name: name,
@@ -173,24 +173,29 @@ $(document).ready(function() {
     $(".reg-send-button").click(function(btn) {
         var winId = "registrationWindow";
         var win = $("#" + winId);
+        var form = $('#registrationWindow form')[0];
         var gameDate = win.data('game-fulldate');
         var gameCity = win.data('city-name');
-        var teamName = $("#reg-name").val();
-        var count = $("#reg-count").val();
-        var leader = $("#reg-capitan").val();
-        var phone = $("#reg-phone").val();
-        var isValid = gameCity && gameDate && teamName && count && leader && phone;
-        if (isValid) {
-            var data = {
-                NotifyType: 'REGISTRATION',
-                City: gameCity,
-                Date: gameDate,
-                TeamName: teamName,
-                Count: count,
-                Leader: leader,
-                Phone: phone
-            };
-            MessageUtils.sendRequest(data, winId);
+        var isHiddenFieldsValid = gameCity && gameDate;
+        if (isHiddenFieldsValid) {
+            if (form.checkValidity()) {
+                var teamName = $("#reg-name").val();
+                var count = $("#reg-count").val();
+                var leader = $("#reg-capitan").val();
+                var phone = $("#reg-phone").val();
+                var data = {
+                    NotifyType: 'REGISTRATION',
+                    City: gameCity,
+                    Date: gameDate,
+                    TeamName: teamName,
+                    Count: count,
+                    Leader: leader,
+                    Phone: phone
+                };
+                MessageUtils.sendRequest(data, winId);
+            } else {
+                MessageUtils.showInfo("Заполнены не все поля");
+            }
         } else {
             MessageUtils.showInfo("Заполнены не все поля");
         }

@@ -213,7 +213,7 @@
 							<div class="form-group">
 								<label for="game-date">Дата</label>
 								<div class="input-group date quiz-datetimepicker" id="game-date-group" data-target-input="nearest">
-									<input type="text" class="form-control field datetimepicker-input" id="game-date" name="date" data-target="#game-date-group"/>
+									<input type="text" class="form-control field datetimepicker-input" id="game-date" required name="date" data-target="#game-date-group"/>
 									<div class="input-group-append" data-target="#game-date-group" data-toggle="datetimepicker">
 										<div class="input-group-text"><i class="fa fa-calendar"></i></div>
 									</div>
@@ -221,11 +221,11 @@
 							</div>
 							<div class="form-group">
 								<label for="game-name">Название</label>
-								<input type="text" class="form-control field" id="game-name" name="name" aria-describedby="game-name" placeholder="">
+								<input type="text" class="form-control field" id="game-name" required name="name" aria-describedby="game-name" placeholder="">
 							</div>
 							<div class="form-group">
 								<label for="game-city">Город</label>
-								<select class="form-control field" id="game-city" name="city_id">
+								<select class="form-control field" id="game-city" required name="city_id">
 	{foreach from=$CITY_LIST item=city name=selector_cities}
 									<option value="{$city->id}">{$city->name}</option>
 	{/foreach}
@@ -260,7 +260,7 @@
 							<input class="field" type="hidden" name="id">
 							<div class="form-group">
 								<label for="feedback-text">Текст</label>
-								<textarea rows="5" class="form-control field" id="feedback-text" name="text" aria-describedby="feedback-text" placeholder=""></textarea>
+								<textarea rows="5" class="form-control field" id="feedback-text" required name="text" aria-describedby="feedback-text" placeholder=""></textarea>
 							</div>
 							<div class="form-group">
 								<label for="feedback-author">Автор</label>
@@ -290,15 +290,15 @@
 							<input class="field" type="hidden" name="id">
 							<div class="form-group">
 								<label for="question-question">Вопрос</label>
-								<textarea rows="5" class="form-control field" id="question-question" name="question" aria-describedby="question-question" placeholder=""></textarea>
+								<textarea rows="5" class="form-control field" id="question-question" required name="question" aria-describedby="question-question" placeholder=""></textarea>
 							</div>
 							<div class="form-group">
 								<label for="question-answer">Ответ</label>
-								<input type="text" class="form-control field" id="question-answer" name="answer" aria-describedby="question-answer" placeholder="">
+								<input type="text" class="form-control field" id="question-answer" required name="answer" aria-describedby="question-answer" placeholder="">
 							</div>
 							<div class="form-group">
 								<label for="question-order">Порядок</label>
-								<input type="number" class="form-control field" id="question-order" name="order" aria-describedby="question-order" placeholder="">
+								<input type="number" class="form-control field" id="question-order" required name="order" aria-describedby="question-order" placeholder="">
 							</div>
 						</form>
 					</div>
@@ -330,7 +330,7 @@
 							</div>
 							<div class="form-group">
 								<label for="photo-order">Порядок</label>
-								<input type="number" class="form-control field" id="photo-order" name="order" aria-describedby="photo-order" placeholder="">
+								<input type="number" class="form-control field" id="photo-order" required name="order" aria-describedby="photo-order" placeholder="">
 							</div>
 						</form>
 					</div>

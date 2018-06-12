@@ -37,6 +37,10 @@ nav.quiz-menu .nav-item .nav-link.active {
     border-bottom-color: #ff6699;
 }
 
+input:invalid, select:invalid, textarea:invalid {
+	box-shadow: 0 0 5px 1px #ff4040;
+}
+
 .navbar-nav .selected-city {
 	font-size: 0.9rem;
 	color: #FFFFFF;
