@@ -15,8 +15,8 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/2.1.19/css/materialdesignicons.min.css" integrity="sha256-L3NrnCWf0Pw+HvXutUdR0Vlj4pI5pM2s7tijm55+DzU=" crossorigin="anonymous" />
 		<link href="vendor/bootstrap/bootstrap.min.css" rel="stylesheet" />
 		<link href="vendor/pnotify/pnotify.custom.min.css" media="all" rel="stylesheet" type="text/css" />
-		<link href="vendor/slick/slick.min.css" rel="stylesheet" />
-		<link href="vendor/slick/slick-theme.min.css" rel="stylesheet" />
+		<link href="vendor/slick/slick.css" rel="stylesheet" />
+		<link href="vendor/slick/slick-theme.css" rel="stylesheet" />
 		<link href="style.css" rel="stylesheet" />
 		
 		<title>LET'S КВИЗ!</title>
@@ -662,7 +662,7 @@
 		<script src="vendor/jquery/jquery-3.3.1.min.js"></script>
 		<script src="vendor/bootstrap/bootstrap.min.js"></script>
 		<script src="vendor/pnotify/pnotify.custom.min.js"></script>
-		<script src="vendor/slick/slick.min.js"></script>
+		<script src="vendor/slick/slick.js"></script>
 		<script src="app.js"></script>
 	</body>
 </html>
