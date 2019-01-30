@@ -69,11 +69,21 @@
             $config = include('config.php');
             
             $result = new Message();
-            $result->to = $config['MAIL_TO_ADDRESS'];
+            $result->to = getToAddress($notify_type, $model)
             $result->from = $config['MAIL_FROM_ADDRESS'];
             $result->subject = "Новая заявка с сайта Let's quiz";
             $result->body = $this->formatMessage($notify_type, $model);
             return $result;
+        }
+
+        public function getToAddress($notify_type, $model) {
+            $config = include('config.php');
+
+            if ($notify_type == $this->NOTIFY_TYPES['REG'] && $model->game_city == "Бутово") {
+                $config['MAIL_TO_ADDRESS_BUTOVO']
+            } else {
+                $config['MAIL_TO_ADDRESS']
+            }
         }
 
         private function formatData($notify_type, $model) {

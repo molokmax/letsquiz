@@ -13,13 +13,12 @@
 		<meta property="og:image" content="http://letsquiz.ru/photo/Jzscf5qA8Nw.jpg" />
 
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/2.1.19/css/materialdesignicons.min.css" integrity="sha256-L3NrnCWf0Pw+HvXutUdR0Vlj4pI5pM2s7tijm55+DzU=" crossorigin="anonymous" />
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
-		<link href="pnotify/pnotify.custom.min.css" media="all" rel="stylesheet" type="text/css" />
+		
+  		<link href="vendor/bootstrap/bootstrap.min.css" rel="stylesheet" />
+		<link href="vendor/pnotify/pnotify.custom.min.css" media="all" rel="stylesheet" type="text/css" />
+		<link href="vendor/datetimepicker/jquery.datetimepicker.min.css" media="all" rel="stylesheet" type="text/css" />
 
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-  		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css" />
-
-		<link rel="stylesheet" type="text/css" href="style-admin.css">
+		<link rel="stylesheet" type="text/css" href="style-admin.css" />
 		
 		<title>LET'S КВИЗ! (Админка)</title>
 	</head>
@@ -374,12 +373,12 @@
 	
 		<!-- Optional JavaScript -->
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-		<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
-		<script type="text/javascript" src="pnotify/pnotify.custom.min.js"></script>
-
+		<script src="vendor/jquery/jquery-3.3.1.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment-with-locales.min.js" integrity="sha256-ZykW30UBCXWkPGsVyVPdJlUrce9/PawgYCEzinA4pnU=" crossorigin="anonymous"></script>
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/js/tempusdominus-bootstrap-4.min.js"></script>
+		
+		<script src="vendor/bootstrap/bootstrap.min.js"></script>
+		<script src="vendor/pnotify/pnotify.custom.min.js"></script>
+		<script src="vendor/datetimepicker/jquery.datetimepicker.full.min.js"></script>
 		
 		<script src="admin.js"></script>
 	</body>

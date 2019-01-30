@@ -63,6 +63,15 @@ INSERT INTO `city` (`id`, `name`) VALUES
 
 -- --------------------------------------------------------
 
+
+
+INSERT INTO `city` (`id`, `name`) VALUES
+(4, 'Бутово');
+
+INSERT INTO `address` (`id`, `description`, `city_id`) VALUES
+(4, 'Клуб \"Butovo\" (пр. Победы, 71)', 4);
+
+
 --
 -- Структура таблицы `feedback`
 --
@@ -360,6 +369,9 @@ ALTER TABLE `setting`
 --
 ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+

@@ -13,11 +13,11 @@
 		<meta property="og:image" content="http://letsquiz.ru/photo/Jzscf5qA8Nw.jpg" />
 
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/2.1.19/css/materialdesignicons.min.css" integrity="sha256-L3NrnCWf0Pw+HvXutUdR0Vlj4pI5pM2s7tijm55+DzU=" crossorigin="anonymous" />
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
-		<link href="pnotify/pnotify.custom.min.css" media="all" rel="stylesheet" type="text/css" />
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" integrity="sha256-3h45mwconzsKjTUULjY+EoEkoRhXcOIU4l5YAw2tSOU=" crossorigin="anonymous">
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" integrity="sha256-etrwgFLGpqD4oNAFW08ZH9Bzif5ByXK2lXNHKy7LQGo=" crossorigin="anonymous">
-		<link rel="stylesheet" type="text/css" href="style.css">
+		<link href="vendor/bootstrap/bootstrap.min.css" rel="stylesheet" />
+		<link href="vendor/pnotify/pnotify.custom.min.css" media="all" rel="stylesheet" type="text/css" />
+		<link href="vendor/slick/slick.min.css" rel="stylesheet" />
+		<link href="vendor/slick/slick-theme.min.css" rel="stylesheet" />
+		<link href="style.css" rel="stylesheet" />
 		
 		<title>LET'S КВИЗ!</title>
 	</head>
@@ -659,10 +659,10 @@
 	
 		<!-- Optional JavaScript -->
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-		<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
-		<script type="text/javascript" src="pnotify/pnotify.custom.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" integrity="sha256-DHF4zGyjT7GOMPBwpeehwoey18z8uiz98G4PRu2lV0A=" crossorigin="anonymous"></script>
+		<script src="vendor/jquery/jquery-3.3.1.min.js"></script>
+		<script src="vendor/bootstrap/bootstrap.min.js"></script>
+		<script src="vendor/pnotify/pnotify.custom.min.js"></script>
+		<script src="vendor/slick/slick.min.js"></script>
 		<script src="app.js"></script>
 	</body>
 </html>

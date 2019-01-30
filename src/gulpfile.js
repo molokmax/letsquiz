@@ -27,7 +27,7 @@ const paths = {
         libs: {
           smarty: './libs/smarty/**/*', 
           //slick: './slick/**/*', 
-          pnotify: './pnotify/**/*'
+          vendor: './vendor/**/*'
         },
         css: ['./*.css'],
         app: './app/*',
@@ -83,8 +83,8 @@ gulp.task('copy-libs', function() {
     .pipe(gulp.dest(paths.dist + '/libs/smarty/'));
   //gulp.src(paths.src.libs.slick)
   //  .pipe(gulp.dest(paths.dist + '/slick/'));
-  gulp.src(paths.src.libs.pnotify)
-    .pipe(gulp.dest(paths.dist + '/pnotify/'));
+  gulp.src(paths.src.libs.vendor)
+    .pipe(gulp.dest(paths.dist + '/vendor/'));
 });
 
 gulp.task('copy-root', function() {

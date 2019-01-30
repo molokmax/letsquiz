@@ -127,10 +127,10 @@ $(document).ready(function() {
         }
     };
 
-    $('.quiz-datetimepicker').each(function (index) {
+    $('.quiz-datetimepicker input').each(function (index) {
         $(this).datetimepicker({
-            format: 'YYYY-MM-DD HH:mm',
-            sideBySide: true
+            format:'Y-m-d H:i',
+            lang:'ru'
         });
     });
 
