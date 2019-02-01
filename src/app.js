@@ -31,7 +31,10 @@ $(document).ready(function() {
             }
         },
         filterCity(index) {
-            return CityUtils.isAnyCity() || $(this).data("city-name") === CityUtils.currentCity;
+            var item = $(this).find(".quiz-game-card");
+            var cityName = item.data("city-name")
+            var result = CityUtils.isAnyCity() || cityName === CityUtils.currentCity;
+            return result;
         },
         updateInterface: function(city) {
             this.currentCity = city;

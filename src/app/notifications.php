@@ -79,7 +79,7 @@
         public function getToAddress($notify_type, $model) {
             $config = include('config.php');
 
-            if ($notify_type == $this->NOTIFY_TYPES['REG'] && $model->game_city == "Бутово") {
+            if ($notify_type == $this->NOTIFY_TYPES['REG'] && $model->game_city == "Москва") {
                 $config['MAIL_TO_ADDRESS_BUTOVO']
             } else {
                 $config['MAIL_TO_ADDRESS']
