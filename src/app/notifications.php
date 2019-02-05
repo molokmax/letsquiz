@@ -69,7 +69,7 @@
             $config = include('config.php');
             
             $result = new Message();
-            $result->to = getToAddress($notify_type, $model)
+            $result->to = $this->getToAddress($notify_type, $model);
             $result->from = $config['MAIL_FROM_ADDRESS'];
             $result->subject = "Новая заявка с сайта Let's quiz";
             $result->body = $this->formatMessage($notify_type, $model);
@@ -80,9 +80,9 @@
             $config = include('config.php');
 
             if ($notify_type == $this->NOTIFY_TYPES['REG'] && $model->game_city == "Москва") {
-                $config['MAIL_TO_ADDRESS_BUTOVO']
+                return $config['MAIL_TO_ADDRESS_BUTOVO'];
             } else {
-                $config['MAIL_TO_ADDRESS']
+                return $config['MAIL_TO_ADDRESS'];
             }
         }
 
