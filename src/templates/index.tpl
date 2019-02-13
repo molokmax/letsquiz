@@ -340,7 +340,7 @@
 						<div class="quiz-panel panel-light"><a href="https://vk.com/m.ugli" target="_blank"><img src="image/logo-mugli.png"></a></div>
 					</div>
 					<div class="col-12 col-sm-4 col-md-3">
-						<div class="quiz-panel panel-light"><a href="https://vk.com/pobeda22_stupino" target="_blank"><img src="image/logo-pobeda.png"></a></div>
+						<div class="quiz-panel panel-light"><a href="https://www.instagram.com/artiko_print/" target="_blank"><img src="image/logo-artiko.png"></a></div>
 					</div>
 				</div>
 				<div class="row">
@@ -348,15 +348,15 @@
 						<div class="quiz-panel panel-light"><a href="https://fotopodarkist.ru/" target="_blank"><img src="image/logo-photo.png"></a></div>
 					</div>
 					<div class="col-12 col-sm-4 col-md-3">
-						<div class="quiz-panel panel-light"><a href="https://www.instagram.com/artiko_print/" target="_blank"><img src="image/logo-artiko.png"></a></div>
+						<div class="quiz-panel panel-light"><a href="http://www.perspektiva-pravo.ru/" target="_blank"><img src="image/logo-pravo.png"></a></div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-12 col-sm-4 offset-sm-2 col-md-3 offset-md-3">
-						<div class="quiz-panel panel-light"><a href="http://www.perspektiva-pravo.ru/" target="_blank"><img src="image/logo-pravo.png"></a></div>
+						<div class="quiz-panel panel-light"><a href="https://yatort.ru/" target="_blank"><img src="image/logo-yatort.png"></a></div>
 					</div>
 					<div class="col-12 col-sm-4 col-md-3">
-						<div class="quiz-panel panel-light"><a href="http://www.1litr-bar.ru/" target="_blank"><img src="image/logo-litr.png"></a></div>
+						<div class="quiz-panel panel-light"><a href="https://vk.com/kvartalbutovo" target="_blank"><img src="image/logo-kvartal.png"></a></div>
 					</div>
 				</div>
 			</div>
