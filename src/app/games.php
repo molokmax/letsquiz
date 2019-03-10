@@ -242,7 +242,7 @@
                     $rec = new GameModel();
                     $rec->id = $row['id'];
                     $date = DateTime::createFromFormat('Y-m-d H:i:s', $row['date'], $timezone);
-                    $rec->date = $date->format('Y-m-d H:i:s');
+                    $rec->date = $date->format('Y-m-d H:i');
                     $rec->game_name = $row['game_name'];
                     $rec->city_id = $row['city_id'];
                     $rec->city = $row['city'];

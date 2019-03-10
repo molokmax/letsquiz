@@ -127,12 +127,12 @@ $(document).ready(function() {
         }
     };
 
-    $('.quiz-datetimepicker input').each(function (index) {
-        $(this).datetimepicker({
-            format:'Y-m-d H:i',
-            lang:'ru'
-        });
-    });
+    // $('.quiz-datetimepicker input').each(function (index) {
+    //     $(this).datetimepicker({
+    //         format:'Y-m-d H:i',
+    //         lang:'ru'
+    //     });
+    // });
 
     $('.btn.crud-create').click(crud.create);
     $('.btn.crud-update').click(crud.update);

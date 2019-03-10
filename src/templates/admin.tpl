@@ -212,7 +212,7 @@
 					<div class="modal-body">
 						<form>
 							<input class="field" type="hidden" name="id">
-							<div class="form-group">
+							{* <div class="form-group">
 								<label for="game-date">Дата</label>
 								<div class="input-group date quiz-datetimepicker" id="game-date-group" data-target-input="nearest">
 									<input type="text" class="form-control field datetimepicker-input" id="game-date" required name="date" data-target="#game-date-group"/>
@@ -220,6 +220,10 @@
 										<div class="input-group-text"><i class="fa fa-calendar"></i></div>
 									</div>
 								</div>
+							</div> *}
+							<div class="form-group">
+								<label for="game-date">Дата</label>
+								<input type="text" class="form-control field" id="game-date" required pattern="\d\d\d\d-\d\d-\d\d \d\d:\d\d" name="date" aria-describedby="game-date" placeholder="yyyy-MM-dd HH:mm">
 							</div>
 							<div class="form-group">
 								<label for="game-name">Название</label>
@@ -389,7 +393,6 @@
 		
 		<script src="vendor/bootstrap/bootstrap.min.js"></script>
 		<script src="vendor/pnotify/pnotify.custom.min.js"></script>
-		<script src="vendor/datetimepicker/jquery.datetimepicker.full.min.js"></script>
 		
 		<script src="admin.js"></script>
 	</body>
