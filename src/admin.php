@@ -7,6 +7,7 @@
 	require_once('app/questions.php');
 	require_once('app/settings.php');
 	require_once('app/photos.php');
+	require_once('app/colors.php');
 	require_once('libs/smarty/Smarty.class.php');
 
     $auth = new AuthUtility();
@@ -44,6 +45,10 @@
 	$photoRepo = new PhotoRepository();
 	$photos = $photoRepo->Read();
 	$smarty->assign('PHOTO_LIST', $photos);
+	
+	$colorRepo = new ColorRepository();
+	$colors = $colorRepo->Read();
+	$smarty->assign('COLOR_LIST', $colors);
 
 	/*$smarty->assign('GAME_LIST', $game_list);
 	$smarty->assign('ADDRESS_LIST', $address_list);

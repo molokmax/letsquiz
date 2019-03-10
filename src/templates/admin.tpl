@@ -82,6 +82,9 @@
 						data-record-name='{$game->game_name}' 
 						data-record-city_id='{$game->city_id}' 
 						data-record-city='{$game->city}'
+						data-record-color_id='{$game->color_id}' 
+						data-record-color_name='{$game->color_name}' 
+						data-record-color='{$game->color}' 
 						data-record-is_closed='{$game->is_closed}'>
 						<td>{$game->date}</td>
 						<td>{$game->game_name}</td>
@@ -227,6 +230,14 @@
 								<select class="form-control field" id="game-city" required name="city_id">
 	{foreach from=$CITY_LIST item=city name=selector_cities}
 									<option value="{$city->id}">{$city->name}</option>
+	{/foreach}
+								</select>
+							</div>
+							<div class="form-group">
+								<label for="game-color">Цвет</label>
+								<select class="form-control field" id="game-color" name="color_id">
+	{foreach from=$COLOR_LIST item=color name=selector_colors}
+									<option value="{$color->id}">{$color->name}</option>
 	{/foreach}
 								</select>
 							</div>

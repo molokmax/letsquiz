@@ -7,6 +7,7 @@
 	require_once('app/games.php');
 	require_once('app/cities.php');
 	require_once('app/addresses.php');
+	require_once('app/colors.php');
 	require_once('libs/smarty/Smarty.class.php');
 
 	$timezone = new DateTimeZone('Europe/Moscow');
@@ -50,6 +51,9 @@
 	$cities = $cityRepo->GetAll();
 	$smarty->assign('CITY_LIST', $cities);
 
+	$colorRepo = new ColorRepository();
+	$colors = $colorRepo->Read();
+
 	$addressRepo = new AddressRepository();
 	$addresses = $addressRepo->GetAll();
 	$smarty->assign('ADDRESS_LIST', $addresses);
@@ -62,7 +66,7 @@
 	$game_list = array();
 	$first_game_found = false;
 	foreach ($games as $item) {
-		$rec = new GameViewModel($item, $formatter);
+		$rec = new GameViewModel($item, $formatter, $colors);
         array_push($game_list, $rec);
 		if (!$first_game_found) {
 			$first_game_found = true;

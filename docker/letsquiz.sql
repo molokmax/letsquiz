@@ -66,10 +66,13 @@ INSERT INTO `city` (`id`, `name`) VALUES
 
 
 INSERT INTO `city` (`id`, `name`) VALUES
-(4, 'Бутово');
+(4, 'Москва');
 
 INSERT INTO `address` (`id`, `description`, `city_id`) VALUES
-(4, 'Клуб \"Butovo\" (пр. Победы, 71)', 4);
+(4, 'KVARTAL Lounge (ул. Куликовская, 5)', 4);
+
+DELETE FROM `address` WHERE `id` = 3;
+DELETE FROM `city` WHERE `id` = 3;
 
 
 --

@@ -49,6 +49,9 @@
         public $city_id;
         public $city;
         public $is_closed;
+        public $color_id;
+        public $color_name;
+        public $color;
     }
     
     class GameViewModel {
@@ -61,8 +64,9 @@
         public $game_name;
         public $city;
         public $is_closed;
+        public $color;
 
-        function __construct($db_game, $formatter) {
+        function __construct($db_game, $formatter, $colors) {
             $this->id = $db_game->id;
             $this->full_date = $db_game->date->format('Y-m-d H:i:s');
             $this->date = $db_game->date->format('j') . ' ' . $formatter->getMonthName($db_game->date);
@@ -71,6 +75,13 @@
             $this->city = $db_game->city;
             $this->game_name = $db_game->game_name;
             $this->is_closed = $db_game->is_closed;
+            if ($db_game->color) {
+                $this->color = $db_game->color;
+            } else {
+                $rnd_index = rand(0, count($colors)-1);
+                $clr = $colors[$rnd_index];
+                $this->color = $clr->prefix;
+            }
         }
     }
 
@@ -84,6 +95,7 @@
             $rec->city_id = $data['city_id'];
             $rec->city = $data['city'];
             $rec->is_closed = $data['is_closed'];
+            $rec->color_id = $data['color_id'];
             return $rec;
         }
 
@@ -105,7 +117,24 @@
             $name_param = mysql_escape_string($game->game_name);
             $city_param = mysql_escape_string($game->city_id);
             $isclosed_param = mysql_escape_string($game->is_closed);
-            $query = "INSERT INTO `game` (`date`, `name`, `city_id`, `is_closed`) VALUES ('{$date_param}', '{$name_param}', {$city_param}, {$isclosed_param})";
+            $color_param = mysql_escape_string($game->color_id);
+            // print("COLOR: {$color_param}");
+
+            // if color is not selected, take random
+            if (!$color_param) {
+                $random_color_query = "SELECT `id` FROM `color` ORDER BY RAND() LIMIT 1";
+                $db_color_result = mysql_query($random_color_query);
+                if ($db_color_result) {
+                    if($color_row = mysql_fetch_array($db_color_result)) {
+                        $color_param = $color_row['id'];
+                    }
+                }
+            }
+            if (!$color_param) {
+                $color_param = 'NULL';
+            }
+
+            $query = "INSERT INTO `game` (`date`, `name`, `city_id`, `is_closed`, `color_id`) VALUES ('{$date_param}', '{$name_param}', {$city_param}, {$isclosed_param}, {$color_param})";
             //print($query);
 	        $db_result = mysql_query($query);
             
@@ -136,7 +165,23 @@
             $name_param = mysql_escape_string($game->game_name);
             $city_param = mysql_escape_string($game->city_id);
             $isclosed_param = mysql_escape_string($game->is_closed);
-            $query = "UPDATE `game` SET `date` = '{$date_param}', `name` = '{$name_param}', `city_id` = {$city_param}, `is_closed` = {$isclosed_param} WHERE `id` = {$id_param}";
+            $color_param = mysql_escape_string($game->color_id);
+
+            // if color is not selected, take random
+            if (!$color_param) {
+                $random_color_query = "SELECT `id` FROM `color` ORDER BY RAND() LIMIT 1";
+                $db_color_result = mysql_query($random_color_query);
+                if ($db_color_result) {
+                    if($color_row = mysql_fetch_array($db_color_result)) {
+                        $color_param = $color_row['id'];
+                    }
+                }
+            }
+            if (!$color_param) {
+                $color_param = 'NULL';
+            }
+
+            $query = "UPDATE `game` SET `date` = '{$date_param}', `name` = '{$name_param}', `city_id` = {$city_param}, `is_closed` = {$isclosed_param}, `color_id` = {$color_param} WHERE `id` = {$id_param}";
             //print($query);
 	        $db_result = mysql_query($query);
             
@@ -189,7 +234,7 @@
             mysql_set_charset($config['DB_CONFIG_CHARSET'], $con);
 	        mysql_select_db($config['DB_CONFIG_DATABASENAME'], $con);
 	
-	        $query = "SELECT g.`id` AS `id`, g.`date` AS  `date`, g.`name` AS `game_name`, g.`city_id` AS `city_id`, c.`name` AS  `city`, g.`is_closed` AS `is_closed` FROM  `game` AS g JOIN  `city` AS c ON ( g.`city_id` = c.`id` ) ORDER BY g.`date`";
+	        $query = "SELECT g.`id` AS `id`, g.`date` AS  `date`, g.`name` AS `game_name`, g.`city_id` AS `city_id`, c.`name` AS  `city`, g.`is_closed` AS `is_closed`, g.`color_id` AS `color_id`, clr.`name` AS `color_name`, clr.`prefix` AS `color_prefix` FROM  `game` AS g JOIN  `city` AS c ON ( g.`city_id` = c.`id` ) LEFT JOIN `color` as clr ON (g.`color_id` = clr.`id`) ORDER BY g.`date`";
 
 	        $db_result = mysql_query($query);
             if ($db_result) {
@@ -202,6 +247,9 @@
                     $rec->city_id = $row['city_id'];
                     $rec->city = $row['city'];
                     $rec->is_closed = $row['is_closed'];
+                    $rec->color_id = $row['color_id'];
+                    $rec->color_name = $row['color_name'];
+                    $rec->color = $row['color_prefix'];
                     array_push($result, $rec);
                 }
             }
@@ -224,7 +272,7 @@
             mysql_set_charset($config['DB_CONFIG_CHARSET'], $con);
 	        mysql_select_db($config['DB_CONFIG_DATABASENAME'], $con);
 	
-	        $query = "SELECT g.`id` AS `id`, g.`date` AS  `date`, g.`name` AS `game_name`, c.`name` AS  `city`, g.`is_closed` AS `is_closed` FROM  `game` AS g JOIN  `city` AS c ON ( g.`city_id` = c.`id` ) WHERE g.`date` > '{$date->format('Y-m-d H:i:s')}' ORDER BY g.`date` LIMIT 0, $limit";
+	        $query = "SELECT g.`id` AS `id`, g.`date` AS  `date`, g.`name` AS `game_name`, c.`name` AS  `city`, g.`is_closed` AS `is_closed`, g.`color_id` AS `color_id`, clr.`name` AS `color_name`, clr.`prefix` AS `color_prefix` FROM  `game` AS g JOIN  `city` AS c ON ( g.`city_id` = c.`id` ) LEFT JOIN `color` as clr ON (g.`color_id` = clr.`id`) WHERE g.`date` > '{$date->format('Y-m-d H:i:s')}' ORDER BY g.`date` LIMIT 0, $limit";
 
 	        $db_result = mysql_query($query);
             if ($db_result) {
@@ -235,6 +283,9 @@
                     $rec->game_name = $row['game_name'];
                     $rec->city = $row['city'];
                     $rec->is_closed = $row['is_closed'];
+                    $rec->color_id = $row['color_id'];
+                    $rec->color_name = $row['color_name'];
+                    $rec->color = $row['color_prefix'];
                     array_push($result, $rec);
                 }
             }
