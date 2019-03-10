@@ -23,7 +23,7 @@ const paths = {
     //dist: 'D:/develop/denwer/home/test1.ru/www',
     //build_dir: './build',
     src: {
-        root: ['*.{js,php}', '!gulpfile.js', '!secret.config.js'],
+        root: ['*.{js,php}', '.htaccess', '!gulpfile.js', '!secret.config.js'],
         libs: {
           smarty: './libs/smarty/**/*', 
           //slick: './slick/**/*', 
@@ -45,7 +45,7 @@ gulp.task('default', ['build', 'watch'], function() {
 
 gulp.task('prod-deploy', function() {
   //del.sync([paths.build_dir], { force: true });
-  return gulp.src([paths.dist + '/**/*', '!'+paths.dist+'/config.php', '!'+paths.dist+'/libs/**/*'])
+  return gulp.src([paths.dist + '/**/*', '!'+paths.dist+'/config.php', '!'+paths.dist+'/.htaccess', '!'+paths.dist+'/libs/**/*'])
     //.pipe(gulp.dest(paths.build_dir))
     .pipe(ftp({
       host: config.ftp_url,

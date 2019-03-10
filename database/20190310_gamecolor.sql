@@ -1,9 +1,9 @@
 CREATE TABLE IF NOT EXISTS `color` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` nvarchar(50) NOT NULL,
+  `name` varchar(50) NOT NULL,
   `prefix` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO `color` (`id`, `name`, `prefix`) VALUES 
 (1, 'Зеленый', 'green'),

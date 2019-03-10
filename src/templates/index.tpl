@@ -606,7 +606,7 @@
 			<div class="modal-dialog modal-dialog-centered" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="registrationWindowTitle">ЗАПИСАТЬСЯ НА ИГРУ</h5>
+						<h5 class="modal-title" id="registrationWindowTitle">ЗАПИСАТЬСЯ<span class="d-none d-md-inline"> НА ИГРУ</span></h5>
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 							<span class="mdi mdi-close" aria-hidden="true"></span>
 						</button>
@@ -614,23 +614,24 @@
 					<div class="modal-body">
 						<form>
 							<div class="quiz-window-title">Заполни форму регистрации на игру в городе <span class="display-city"></span> <span class="display-date"></span> в <span class="display-time"></span></div>
-							<label for="reg-name">Название команды</label>
-							<input type="text" class="form-control" id="reg-name" required aria-describedby="reg-name" placeholder="">
-							<label for="reg-count">Количество человек</label>
+							<!--<label for="reg-name">Название команды</label>-->
+							<input type="text" class="form-control" id="reg-name" required aria-describedby="reg-name" placeholder="Название команды">
+							<!--<label for="reg-count">Количество человек</label>-->
 							<select class="form-control" id="reg-count" required>
-								<option>2</option>
-								<option>3</option>
-								<option>4</option>
-								<option>5</option>
-								<option>6</option>
-								<option>7</option>
-								<option>8</option>
-								<option>9</option>
+								<option disabled selected value>Количество человек</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
 							</select>
-							<label for="reg-capitan">Капитан</label>
-							<input type="text" class="form-control" id="reg-capitan" required aria-describedby="reg-phone" placeholder="">
-							<label for="reg-phone">Телефон</label>
-							<input type="tel" class="form-control" id="reg-phone" required aria-describedby="reg-phone" placeholder="">
+							<!--<label for="reg-capitan">Капитан</label>-->
+							<input type="text" class="form-control" id="reg-capitan" required aria-describedby="reg-capitan" placeholder="Капитан">
+							<!--<label for="reg-phone">Телефон</label>-->
+							<input type="tel" class="form-control" id="reg-phone" required aria-describedby="reg-phone" placeholder="Телефон">
 							<div class="quiz-window-text">Стоимость участия - 300 руб/чел</div>
 						</form>
 					</div>

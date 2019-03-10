@@ -38,7 +38,7 @@ nav.quiz-menu .nav-item .nav-link.active {
 }
 
 input:invalid, select:invalid, textarea:invalid {
-	box-shadow: 0 0 5px 1px #ff4040;
+	box-shadow: 0 0 0px 2px #ff6699;
 }
 
 .navbar-nav .selected-city {
@@ -518,6 +518,9 @@ div.quiz-block-container.footer .email a:visited {
 
 #registrationWindow label {
 	padding-top: 1rem;
+}
+#registrationWindow .form-control {
+	margin-top: 1rem;
 }
 #registrationWindow .modal-dialog {
 	max-width: 40rem;
