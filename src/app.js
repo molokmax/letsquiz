@@ -1,9 +1,9 @@
 $(document).ready(function() {
 
-    $('.carousel-schedule').slick({
-        //dots: true,
-        slidesToShow: 4
-    });
+    // $('.carousel-schedule').slick({
+    //     //dots: true,
+    //     slidesToShow: 4
+    // });
 
     var CityUtils = {
         AnyCityName: 'Все',
@@ -39,14 +39,14 @@ $(document).ready(function() {
         updateInterface: function(city) {
             this.currentCity = city;
             $(".selected-city-link").text(city);
-            $('.carousel-schedule').slick('slickUnfilter');
-            $('.carousel-schedule').slick('slickFilter', this.filterCity);
+            // $('.carousel-schedule').slick('slickUnfilter');
+            // $('.carousel-schedule').slick('slickFilter', this.filterCity);
             if (this.isAnyCity()) {
-                $(".list-schedule .quiz-game-card").show();
+                $(".list-schedule .quiz-game-card-container").show();
                 $(".address-item").show();
             } else {
-                $(".list-schedule .quiz-game-card").hide();
-                $(".list-schedule .quiz-game-card[data-city-name='"+city+"']").show();
+                $(".list-schedule .quiz-game-card-container").hide();
+                $(".list-schedule .quiz-game-card-container[data-city-name='"+city+"']").show();
                 $(".address-item").hide();
                 $(".address-item[data-city-name='"+city+"']").show();
             }

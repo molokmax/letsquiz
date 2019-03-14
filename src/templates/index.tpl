@@ -130,7 +130,7 @@
 					<div class="col-md-8 offset-md-2">				
 						<div class="row list-schedule">
 {foreach from=$GAME_LIST item=game name=games}
-							<div class="quiz-game-card-container col-lg-4 col-md-6 col-sm-12">
+							<div class="quiz-game-card-container col-lg-4 col-md-6 col-sm-12" data-city-name="{$game->city}">
 								<div class="quiz-game-card border-{$game->color} {if $game->is_closed eq '1'}game-closed{/if}" 
 									data-game-id="{$game->id}" data-city-name="{$game->city}" data-game-fulldate="{$game->full_date}">
 									<div class="game-city">{$game->city}</div>
