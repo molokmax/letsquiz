@@ -223,8 +223,10 @@ div.quiz-block-container.main {
 div.quiz-block-container.main .quiz-block {
 	background-image: url("image/main-logo.png");
 	background-repeat: no-repeat;
-	background-position: center 6rem;
-    background-size: 40rem;
+	/* background-position: center 8rem;
+    background-size: 35rem; */
+	background-position: center 10rem;
+    background-size: 30rem;
 	width: 100%;
 	height: 100%;
 }
@@ -346,8 +348,8 @@ div.quiz-block-container.gallery .carousel .carousel-inner img {
 	max-height: 50rem;
 }
 .gallery .block-dark {
-	background-image: url('image/question_background.png');
-	background-repeat: repeat;
+	background-image: url('image/question_background_2.jpg');
+	/* background-repeat: repeat; */
 }
 /* .feedback .block-dark {
 	background-image: url('image/question_background.png');
@@ -596,6 +598,9 @@ div.quiz-block-container.footer .email a:visited {
 	background-color: #ff6699;
 	border-color: #330066;
 }
+.quiz-main-text1 {
+	color: #ff6699;
+}
 
 @media (min-width: 1920px) {
 	div.quiz-block-container.main .socialbuttons {
@@ -605,8 +610,8 @@ div.quiz-block-container.footer .email a:visited {
 		padding-top: 30rem;
 	}
 	div.quiz-block-container.main .quiz-block {
-		background-position: center 4rem;
-		background-size: 60rem;
+		background-position: center 6rem;
+		background-size: 50rem;
 	}
 	div.quiz-item {
 		font-size: 2rem;
@@ -641,8 +646,10 @@ div.quiz-block-container.footer .email a:visited {
 		padding-top: 15rem;
 	}
 	div.quiz-block-container.main .quiz-block {
-		background-position: center 8rem;
-		background-size: 30rem;
+		/* background-position: center 9rem;
+		background-size: 25rem; */
+		background-position: center 10rem;
+		background-size: 20rem;
 	}
 	div.quiz-block-container.main .main-header {
 		font-size: 2rem;
@@ -727,12 +734,8 @@ div.quiz-block-container.footer .email a:visited {
 	.main-block-mobile {
 		display: inherit;
 	}
-	/* div.quiz-block-container.main .quiz-block {
-		background-position: center 4rem;
-		background-size: 20rem;
-	} */
 	.main-block-mobile .logo-placeholder {
-		height: 20rem;
+		height: 21.5rem;
 		background-image: url("image/main-logo.png");
 		background-repeat: no-repeat;
 		background-position: center;

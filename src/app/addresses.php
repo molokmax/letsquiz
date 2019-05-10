@@ -13,19 +13,19 @@
             $config = include('config.php');
             $result = array();
 
-            $con = mysql_connect($config['DB_CONFIG_HOSTNAME'], $config['DB_CONFIG_USERNAME'], $config['DB_CONFIG_PASSWORD']);
+            $con = new mysqli($config['DB_CONFIG_HOSTNAME'], $config['DB_CONFIG_USERNAME'], $config['DB_CONFIG_PASSWORD']);
 
             if (!$con) {
-                die('Db connect error: ' . mysql_error());
+                die('Db connect error: ' . mysqli_error());
             }
 
-            mysql_set_charset($config['DB_CONFIG_CHARSET'], $con);
-	        mysql_select_db($config['DB_CONFIG_DATABASENAME'], $con);
+            mysqli_set_charset($con, $config['DB_CONFIG_CHARSET']);
+	        mysqli_select_db($con, $config['DB_CONFIG_DATABASENAME']);
 	
 	        $query = 'SELECT a.`id` as `id`, a.`description` as `description`, a.`city_id` as `city_id`, c.`name` as `city_name` FROM `address` as a JOIN `city` as c on (a.city_id = c.id)';
-	        $db_result = mysql_query($query);
+	        $db_result = mysqli_query($con, $query);
             if ($db_result) {
-                while($row = mysql_fetch_array($db_result)) {
+                while($row = mysqli_fetch_array($db_result)) {
                     $rec = new AddressModel();
                     $rec->id = $row['id'];
                     $rec->description = $row['description'];
@@ -35,7 +35,7 @@
                 }
             }
 
-            mysql_close($con);
+            mysqli_close($con);
 
             return $result;
         }

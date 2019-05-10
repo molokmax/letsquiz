@@ -24,27 +24,27 @@
             $config = include('config.php');
             $result = array();
 
-            $con = mysql_connect($config['DB_CONFIG_HOSTNAME'], $config['DB_CONFIG_USERNAME'], $config['DB_CONFIG_PASSWORD']);
+            $con = new mysqli($config['DB_CONFIG_HOSTNAME'], $config['DB_CONFIG_USERNAME'], $config['DB_CONFIG_PASSWORD']);
 
             if (!$con) {
-                die('Db connect error: ' . mysql_error());
+                die('Db connect error: ' . mysqli_error());
             }
 
-            mysql_set_charset($config['DB_CONFIG_CHARSET'], $con);
-	        mysql_select_db($config['DB_CONFIG_DATABASENAME'], $con);
+            mysqli_set_charset($con, $config['DB_CONFIG_CHARSET']);
+	        mysqli_select_db($con, $config['DB_CONFIG_DATABASENAME']);
     
-            //$id_param = mysql_escape_string($record->id);
-            $question_param = mysql_escape_string($record->question);
-            $answer_param = mysql_escape_string($record->answer);
-            $order_param = mysql_escape_string($record->order);
+            //$id_param = mysqli_escape_string($record->id);
+            $question_param = mysqli_escape_string($record->question);
+            $answer_param = mysqli_escape_string($record->answer);
+            $order_param = mysqli_escape_string($record->order);
             $query = "INSERT INTO `question` (`question`, `answer`, `order`) VALUES ('{$question_param}', '{$answer_param}', {$order_param})";
-            $db_result = mysql_query($query);
+            $db_result = mysqli_query($con, $query);
             // if (!$db_result) {
             //     print($query . "\n");
-            //     print(mysql_errno($con) . ": " . mysql_error($con) . "\n");
+            //     print(mysqli_errno($con) . ": " . mysqli_error($con) . "\n");
             // }
             
-            mysql_close($con);
+            mysqli_close($con);
 
             if ($db_result) {
                 return true;
@@ -57,23 +57,23 @@
             $config = include('config.php');
             $result = array();
 
-            $con = mysql_connect($config['DB_CONFIG_HOSTNAME'], $config['DB_CONFIG_USERNAME'], $config['DB_CONFIG_PASSWORD']);
+            $con = new mysqli($config['DB_CONFIG_HOSTNAME'], $config['DB_CONFIG_USERNAME'], $config['DB_CONFIG_PASSWORD']);
 
             if (!$con) {
-                die('Db connect error: ' . mysql_error());
+                die('Db connect error: ' . mysqli_error());
             }
 
-            mysql_set_charset($config['DB_CONFIG_CHARSET'], $con);
-	        mysql_select_db($config['DB_CONFIG_DATABASENAME'], $con);
+            mysqli_set_charset($con, $config['DB_CONFIG_CHARSET']);
+	        mysqli_select_db($con, $config['DB_CONFIG_DATABASENAME']);
     
-            $id_param = mysql_escape_string($record->id);
-            $question_param = mysql_escape_string($record->question);
-            $answer_param = mysql_escape_string($record->answer);
-            $order_param = mysql_escape_string($record->order);
+            $id_param = mysqli_escape_string($record->id);
+            $question_param = mysqli_escape_string($record->question);
+            $answer_param = mysqli_escape_string($record->answer);
+            $order_param = mysqli_escape_string($record->order);
             $query = "UPDATE `question` SET `question` = '{$question_param}', `answer` = '{$answer_param}', `order` = '{$order_param}' WHERE `id` = {$id_param}";
-	        $db_result = mysql_query($query);
+	        $db_result = mysqli_query($con, $query);
             
-            mysql_close($con);
+            mysqli_close($con);
 
             if ($db_result) {
                 return true;
@@ -86,20 +86,20 @@
             $config = include('config.php');
             $result = array();
 
-            $con = mysql_connect($config['DB_CONFIG_HOSTNAME'], $config['DB_CONFIG_USERNAME'], $config['DB_CONFIG_PASSWORD']);
+            $con = new mysqli($config['DB_CONFIG_HOSTNAME'], $config['DB_CONFIG_USERNAME'], $config['DB_CONFIG_PASSWORD']);
 
             if (!$con) {
-                die('Db connect error: ' . mysql_error());
+                die('Db connect error: ' . mysqli_error());
             }
 
-            mysql_set_charset($config['DB_CONFIG_CHARSET'], $con);
-	        mysql_select_db($config['DB_CONFIG_DATABASENAME'], $con);
+            mysqli_set_charset($con, $config['DB_CONFIG_CHARSET']);
+	        mysqli_select_db($con, $config['DB_CONFIG_DATABASENAME']);
     
-            $id_param = mysql_escape_string($record->id);
+            $id_param = mysqli_escape_string($record->id);
             $query = "DELETE FROM `question` WHERE `id` = {$id_param}";
-	        $db_result = mysql_query($query);
+	        $db_result = mysqli_query($con, $query);
             
-            mysql_close($con);
+            mysqli_close($con);
 
             if ($db_result) {
                 return true;
@@ -112,19 +112,19 @@
             $config = include('config.php');
             $result = array();
 
-            $con = mysql_connect($config['DB_CONFIG_HOSTNAME'], $config['DB_CONFIG_USERNAME'], $config['DB_CONFIG_PASSWORD']);
+            $con = new mysqli($config['DB_CONFIG_HOSTNAME'], $config['DB_CONFIG_USERNAME'], $config['DB_CONFIG_PASSWORD']);
 
             if (!$con) {
-                die('Db connect error: ' . mysql_error());
+                die('Db connect error: ' . mysqli_error());
             }
 
-            mysql_set_charset($config['DB_CONFIG_CHARSET'], $con);
-	        mysql_select_db($config['DB_CONFIG_DATABASENAME'], $con);
+            mysqli_set_charset($con, $config['DB_CONFIG_CHARSET']);
+	        mysqli_select_db($con, $config['DB_CONFIG_DATABASENAME']);
 	
 	        $query = 'SELECT `id`, `question`, `answer`, `order` FROM `question` ORDER BY `order`';
-	        $db_result = mysql_query($query);
+	        $db_result = mysqli_query($con, $query);
             if ($db_result) {
-                while($row = mysql_fetch_array($db_result)) {
+                while($row = mysqli_fetch_array($db_result)) {
                     $rec = new QuestionModel();
                     $rec->id = $row['id'];
                     $rec->question = $row['question'];
@@ -134,7 +134,7 @@
                 }
             }
 
-            mysql_close($con);
+            mysqli_close($con);
 
             return $result;
         }

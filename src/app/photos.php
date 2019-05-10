@@ -45,27 +45,27 @@
             $config = include('config.php');
             $result = array();
 
-            $con = mysql_connect($config['DB_CONFIG_HOSTNAME'], $config['DB_CONFIG_USERNAME'], $config['DB_CONFIG_PASSWORD']);
+            $con = new mysqli($config['DB_CONFIG_HOSTNAME'], $config['DB_CONFIG_USERNAME'], $config['DB_CONFIG_PASSWORD']);
 
             if (!$con) {
-                die('Db connect error: ' . mysql_error());
+                die('Db connect error: ' . mysqli_error());
             }
 
-            mysql_set_charset($config['DB_CONFIG_CHARSET'], $con);
-	        mysql_select_db($config['DB_CONFIG_DATABASENAME'], $con);
+            mysqli_set_charset($con, $config['DB_CONFIG_CHARSET']);
+	        mysqli_select_db($con, $config['DB_CONFIG_DATABASENAME']);
     
-            //$id_param = mysql_escape_string($record->id);
-            $url_param = mysql_escape_string($record->url);
-            $order_param = mysql_escape_string($record->order);
+            //$id_param = mysqli_escape_string($record->id);
+            $url_param = mysqli_escape_string($record->url);
+            $order_param = mysqli_escape_string($record->order);
             
             $query = "INSERT INTO `photo` (`url`, `order`) VALUES ('{$url_param}', {$order_param})";
-            $db_result = mysql_query($query);
+            $db_result = mysqli_query($con, $query);
             // if (!$db_result) {
             //     print($query . "\n");
-            //     print(mysql_errno($con) . ": " . mysql_error($con) . "\n");
+            //     print(mysqli_errno($con) . ": " . mysqli_error($con) . "\n");
             // }
             
-            mysql_close($con);
+            mysqli_close($con);
 
             if ($db_result) {
                 return true;
@@ -78,26 +78,26 @@
             $config = include('config.php');
             $result = array();
 
-            $con = mysql_connect($config['DB_CONFIG_HOSTNAME'], $config['DB_CONFIG_USERNAME'], $config['DB_CONFIG_PASSWORD']);
+            $con = new mysqli($config['DB_CONFIG_HOSTNAME'], $config['DB_CONFIG_USERNAME'], $config['DB_CONFIG_PASSWORD']);
 
             if (!$con) {
-                die('Db connect error: ' . mysql_error());
+                die('Db connect error: ' . mysqli_error());
             }
 
-            mysql_set_charset($config['DB_CONFIG_CHARSET'], $con);
-	        mysql_select_db($config['DB_CONFIG_DATABASENAME'], $con);
+            mysqli_set_charset($con, $config['DB_CONFIG_CHARSET']);
+	        mysqli_select_db($con, $config['DB_CONFIG_DATABASENAME']);
     
-            $id_param = mysql_escape_string($record->id);
-            $url_param = mysql_escape_string($record->url);
-            $order_param = mysql_escape_string($record->order);
+            $id_param = mysqli_escape_string($record->id);
+            $url_param = mysqli_escape_string($record->url);
+            $order_param = mysqli_escape_string($record->order);
             
             $sql_with_url = "UPDATE `photo` SET `url` = '{$url_param}', `order` = '{$order_param}' WHERE `id` = {$id_param}";
             $sql_without_url = "UPDATE `photo` SET `order` = '{$order_param}' WHERE `id` = {$id_param}";
             $query = $url_param ? $sql_with_url : $sql_without_url;
             //print($query);
-	        $db_result = mysql_query($query);
+	        $db_result = mysqli_query($con, $query);
             
-            mysql_close($con);
+            mysqli_close($con);
 
             if ($db_result) {
                 return true;
@@ -110,24 +110,24 @@
             $config = include('config.php');
             $result = array();
 
-            $con = mysql_connect($config['DB_CONFIG_HOSTNAME'], $config['DB_CONFIG_USERNAME'], $config['DB_CONFIG_PASSWORD']);
+            $con = new mysqli($config['DB_CONFIG_HOSTNAME'], $config['DB_CONFIG_USERNAME'], $config['DB_CONFIG_PASSWORD']);
 
             if (!$con) {
-                die('Db connect error: ' . mysql_error());
+                die('Db connect error: ' . mysqli_error());
             }
 
-            mysql_set_charset($config['DB_CONFIG_CHARSET'], $con);
-	        mysql_select_db($config['DB_CONFIG_DATABASENAME'], $con);
+            mysqli_set_charset($con, $config['DB_CONFIG_CHARSET']);
+	        mysqli_select_db($con, $config['DB_CONFIG_DATABASENAME']);
     
-            $id_param = mysql_escape_string($record->id);
+            $id_param = mysqli_escape_string($record->id);
             $query = "DELETE FROM `photo` WHERE `id` = {$id_param}";
-	        $db_result = mysql_query($query);
+	        $db_result = mysqli_query($con, $query);
             if (!$db_result) {
                 print($query . "\n");
-                print(mysql_errno($con) . ": " . mysql_error($con) . "\n");
+                print(mysqli_errno($con) . ": " . mysqli_error($con) . "\n");
             }
 
-            mysql_close($con);
+            mysqli_close($con);
 
             if ($db_result) {
                 return true;
@@ -140,19 +140,19 @@
             $config = include('config.php');
             $result = array();
 
-            $con = mysql_connect($config['DB_CONFIG_HOSTNAME'], $config['DB_CONFIG_USERNAME'], $config['DB_CONFIG_PASSWORD']);
+            $con = new mysqli($config['DB_CONFIG_HOSTNAME'], $config['DB_CONFIG_USERNAME'], $config['DB_CONFIG_PASSWORD']);
 
             if (!$con) {
-                die('Db connect error: ' . mysql_error());
+                die('Db connect error: ' . mysqli_error());
             }
 
-            mysql_set_charset($config['DB_CONFIG_CHARSET'], $con);
-	        mysql_select_db($config['DB_CONFIG_DATABASENAME'], $con);
+            mysqli_set_charset($con, $config['DB_CONFIG_CHARSET']);
+	        mysqli_select_db($con, $config['DB_CONFIG_DATABASENAME']);
 	
 	        $query = 'SELECT `id`, `url`, `order` FROM `photo` ORDER BY  `order`';
-	        $db_result = mysql_query($query);
+	        $db_result = mysqli_query($con, $query);
             if ($db_result) {
-                while($row = mysql_fetch_array($db_result)) {
+                while($row = mysqli_fetch_array($db_result)) {
                     $rec = new PhotoModel();
                     $rec->id = $row['id'];
                     $rec->url = $row['url'];
@@ -161,7 +161,7 @@
                 }
             }
 
-            mysql_close($con);
+            mysqli_close($con);
 
             return $result;
         }
@@ -170,24 +170,24 @@
             $config = include('config.php');
             $result = array();
 
-            $con = mysql_connect($config['DB_CONFIG_HOSTNAME'], $config['DB_CONFIG_USERNAME'], $config['DB_CONFIG_PASSWORD']);
+            $con = new mysqli($config['DB_CONFIG_HOSTNAME'], $config['DB_CONFIG_USERNAME'], $config['DB_CONFIG_PASSWORD']);
 
             if (!$con) {
-                die('Db connect error: ' . mysql_error());
+                die('Db connect error: ' . mysqli_error());
             }
 
-            mysql_set_charset($config['DB_CONFIG_CHARSET'], $con);
-	        mysql_select_db($config['DB_CONFIG_DATABASENAME'], $con);
+            mysqli_set_charset($con, $config['DB_CONFIG_CHARSET']);
+	        mysqli_select_db($con, $config['DB_CONFIG_DATABASENAME']);
 	
 	        $query = 'SELECT `id`, `url`, `order` FROM `photo` ORDER BY  `order`';
-	        $db_result = mysql_query($query);
+	        $db_result = mysqli_query($con, $query);
             if ($db_result) {
-                while($row = mysql_fetch_array($db_result)) {
+                while($row = mysqli_fetch_array($db_result)) {
                     array_push($result, $row['url']);
                 }
             }
 
-            mysql_close($con);
+            mysqli_close($con);
 
             return $result;
         }

@@ -103,29 +103,29 @@
             $config = include('config.php');
             $result = array();
 
-            $con = mysql_connect($config['DB_CONFIG_HOSTNAME'], $config['DB_CONFIG_USERNAME'], $config['DB_CONFIG_PASSWORD']);
+            $con = new mysqli($config['DB_CONFIG_HOSTNAME'], $config['DB_CONFIG_USERNAME'], $config['DB_CONFIG_PASSWORD']);
 
             if (!$con) {
-                die('Db connect error: ' . mysql_error());
+                die('Db connect error: ' . mysqli_error());
             }
 
-            mysql_set_charset($config['DB_CONFIG_CHARSET'], $con);
-	        mysql_select_db($config['DB_CONFIG_DATABASENAME'], $con);
+            mysqli_set_charset($con, $config['DB_CONFIG_CHARSET']);
+	        mysqli_select_db($con, $config['DB_CONFIG_DATABASENAME']);
     
-            //$id_param = mysql_escape_string($game->id);
-            $date_param = mysql_escape_string($game->date);
-            $name_param = mysql_escape_string($game->game_name);
-            $city_param = mysql_escape_string($game->city_id);
-            $isclosed_param = mysql_escape_string($game->is_closed);
-            $color_param = mysql_escape_string($game->color_id);
+            //$id_param = mysqli_escape_string($game->id);
+            $date_param = mysqli_escape_string($game->date);
+            $name_param = mysqli_escape_string($game->game_name);
+            $city_param = mysqli_escape_string($game->city_id);
+            $isclosed_param = mysqli_escape_string($game->is_closed);
+            $color_param = mysqli_escape_string($game->color_id);
             // print("COLOR: {$color_param}");
 
             // if color is not selected, take random
             if (!$color_param) {
                 $random_color_query = "SELECT `id` FROM `color` ORDER BY RAND() LIMIT 1";
-                $db_color_result = mysql_query($random_color_query);
+                $db_color_result = mysqli_query($con, $random_color_query);
                 if ($db_color_result) {
-                    if($color_row = mysql_fetch_array($db_color_result)) {
+                    if($color_row = mysqli_fetch_array($db_color_result)) {
                         $color_param = $color_row['id'];
                     }
                 }
@@ -136,9 +136,9 @@
 
             $query = "INSERT INTO `game` (`date`, `name`, `city_id`, `is_closed`, `color_id`) VALUES ('{$date_param}', '{$name_param}', {$city_param}, {$isclosed_param}, {$color_param})";
             //print($query);
-	        $db_result = mysql_query($query);
+	        $db_result = mysqli_query($con, $query);
             
-            mysql_close($con);
+            mysqli_close($con);
 
             if ($db_result) {
                 return true;
@@ -151,28 +151,28 @@
             $config = include('config.php');
             $result = array();
 
-            $con = mysql_connect($config['DB_CONFIG_HOSTNAME'], $config['DB_CONFIG_USERNAME'], $config['DB_CONFIG_PASSWORD']);
+            $con = new mysqli($config['DB_CONFIG_HOSTNAME'], $config['DB_CONFIG_USERNAME'], $config['DB_CONFIG_PASSWORD']);
 
             if (!$con) {
-                die('Db connect error: ' . mysql_error());
+                die('Db connect error: ' . mysqli_error());
             }
 
-            mysql_set_charset($config['DB_CONFIG_CHARSET'], $con);
-	        mysql_select_db($config['DB_CONFIG_DATABASENAME'], $con);
+            mysqli_set_charset($con, $config['DB_CONFIG_CHARSET']);
+	        mysqli_select_db($con, $config['DB_CONFIG_DATABASENAME']);
     
-            $id_param = mysql_escape_string($game->id);
-            $date_param = mysql_escape_string($game->date);
-            $name_param = mysql_escape_string($game->game_name);
-            $city_param = mysql_escape_string($game->city_id);
-            $isclosed_param = mysql_escape_string($game->is_closed);
-            $color_param = mysql_escape_string($game->color_id);
+            $id_param = mysqli_escape_string($game->id);
+            $date_param = mysqli_escape_string($game->date);
+            $name_param = mysqli_escape_string($game->game_name);
+            $city_param = mysqli_escape_string($game->city_id);
+            $isclosed_param = mysqli_escape_string($game->is_closed);
+            $color_param = mysqli_escape_string($game->color_id);
 
             // if color is not selected, take random
             if (!$color_param) {
                 $random_color_query = "SELECT `id` FROM `color` ORDER BY RAND() LIMIT 1";
-                $db_color_result = mysql_query($random_color_query);
+                $db_color_result = mysqli_query($con, $random_color_query);
                 if ($db_color_result) {
-                    if($color_row = mysql_fetch_array($db_color_result)) {
+                    if($color_row = mysqli_fetch_array($db_color_result)) {
                         $color_param = $color_row['id'];
                     }
                 }
@@ -183,9 +183,9 @@
 
             $query = "UPDATE `game` SET `date` = '{$date_param}', `name` = '{$name_param}', `city_id` = {$city_param}, `is_closed` = {$isclosed_param}, `color_id` = {$color_param} WHERE `id` = {$id_param}";
             //print($query);
-	        $db_result = mysql_query($query);
+	        $db_result = mysqli_query($con, $query);
             
-            mysql_close($con);
+            mysqli_close($con);
 
             if ($db_result) {
                 return true;
@@ -198,21 +198,21 @@
             $config = include('config.php');
             $result = array();
 
-            $con = mysql_connect($config['DB_CONFIG_HOSTNAME'], $config['DB_CONFIG_USERNAME'], $config['DB_CONFIG_PASSWORD']);
+            $con = new mysqli($config['DB_CONFIG_HOSTNAME'], $config['DB_CONFIG_USERNAME'], $config['DB_CONFIG_PASSWORD']);
 
             if (!$con) {
-                die('Db connect error: ' . mysql_error());
+                die('Db connect error: ' . mysqli_error());
             }
 
-            mysql_set_charset($config['DB_CONFIG_CHARSET'], $con);
-	        mysql_select_db($config['DB_CONFIG_DATABASENAME'], $con);
+            mysqli_set_charset($con, $config['DB_CONFIG_CHARSET']);
+	        mysqli_select_db($con, $config['DB_CONFIG_DATABASENAME']);
     
-            $id_param = mysql_escape_string($game->id);
+            $id_param = mysqli_escape_string($game->id);
             $query = "DELETE FROM `game` WHERE `id` = {$id_param}";
 //print($query);
-	        $db_result = mysql_query($query);
+	        $db_result = mysqli_query($con, $query);
             
-            mysql_close($con);
+            mysqli_close($con);
 
             if ($db_result) {
                 return true;
@@ -225,20 +225,20 @@
             $config = include('config.php');
             $result = array();
 
-            $con = mysql_connect($config['DB_CONFIG_HOSTNAME'], $config['DB_CONFIG_USERNAME'], $config['DB_CONFIG_PASSWORD']);
+            $con = new mysqli($config['DB_CONFIG_HOSTNAME'], $config['DB_CONFIG_USERNAME'], $config['DB_CONFIG_PASSWORD']);
 
             if (!$con) {
-                die('Db connect error: ' . mysql_error());
+                die('Db connect error: ' . mysqli_error());
             }
 
-            mysql_set_charset($config['DB_CONFIG_CHARSET'], $con);
-	        mysql_select_db($config['DB_CONFIG_DATABASENAME'], $con);
+            mysqli_set_charset($con, $config['DB_CONFIG_CHARSET']);
+	        mysqli_select_db($con, $config['DB_CONFIG_DATABASENAME']);
 	
 	        $query = "SELECT g.`id` AS `id`, g.`date` AS  `date`, g.`name` AS `game_name`, g.`city_id` AS `city_id`, c.`name` AS  `city`, g.`is_closed` AS `is_closed`, g.`color_id` AS `color_id`, clr.`name` AS `color_name`, clr.`prefix` AS `color_prefix` FROM  `game` AS g JOIN  `city` AS c ON ( g.`city_id` = c.`id` ) LEFT JOIN `color` as clr ON (g.`color_id` = clr.`id`) ORDER BY g.`date`";
 
-	        $db_result = mysql_query($query);
+	        $db_result = mysqli_query($con, $query);
             if ($db_result) {
-                while($row = mysql_fetch_array($db_result)) {
+                while($row = mysqli_fetch_array($db_result)) {
                     $rec = new GameModel();
                     $rec->id = $row['id'];
                     $date = DateTime::createFromFormat('Y-m-d H:i:s', $row['date'], $timezone);
@@ -254,7 +254,7 @@
                 }
             }
 
-            mysql_close($con);
+            mysqli_close($con);
 
             return $result;
         }
@@ -263,20 +263,20 @@
             $config = include('config.php');
             $result = array();
 
-            $con = mysql_connect($config['DB_CONFIG_HOSTNAME'], $config['DB_CONFIG_USERNAME'], $config['DB_CONFIG_PASSWORD']);
+            $con = new mysqli($config['DB_CONFIG_HOSTNAME'], $config['DB_CONFIG_USERNAME'], $config['DB_CONFIG_PASSWORD']);
 
             if (!$con) {
-                die('Db connect error: ' . mysql_error());
+                die('Db connect error: ' . mysqli_error());
             }
 
-            mysql_set_charset($config['DB_CONFIG_CHARSET'], $con);
-	        mysql_select_db($config['DB_CONFIG_DATABASENAME'], $con);
+            mysqli_set_charset($con, $config['DB_CONFIG_CHARSET']);
+	        mysqli_select_db($con, $config['DB_CONFIG_DATABASENAME']);
 	
 	        $query = "SELECT g.`id` AS `id`, g.`date` AS  `date`, g.`name` AS `game_name`, c.`name` AS  `city`, g.`is_closed` AS `is_closed`, g.`color_id` AS `color_id`, clr.`name` AS `color_name`, clr.`prefix` AS `color_prefix` FROM  `game` AS g JOIN  `city` AS c ON ( g.`city_id` = c.`id` ) LEFT JOIN `color` as clr ON (g.`color_id` = clr.`id`) WHERE g.`date` > '{$date->format('Y-m-d H:i:s')}' ORDER BY g.`date` LIMIT 0, $limit";
 
-	        $db_result = mysql_query($query);
+	        $db_result = mysqli_query($con, $query);
             if ($db_result) {
-                while($row = mysql_fetch_array($db_result)) {
+                while($row = mysqli_fetch_array($db_result)) {
                     $rec = new GameModel();
                     $rec->id = $row['id'];
                     $rec->date = DateTime::createFromFormat('Y-m-d H:i:s', $row['date'], $timezone);
@@ -290,7 +290,7 @@
                 }
             }
 
-            mysql_close($con);
+            mysqli_close($con);
 
             return $result;
         }

@@ -82,7 +82,7 @@
 				<div class="row main-block-desktop">
 					<div class="col-md-4 offset-md-2">
 						<div class="contacts">
-							<div class="phone">{$SETTING_PHONE}</div>
+							<div class="quiz-main-text phone">{$SETTING_PHONE}</div>
 							<button type="button" class="btn btn-light quiz-button" data-toggle="modal" data-target="#callbackWindow">Обратный звонок</button>
 						</div>
 						<div class="socialbuttons">
@@ -92,11 +92,11 @@
 					</div>
 					<div class="col-md-4">
 						<div class="signup">
-							<div class="text text-right">Расписание игр и регистрация</div>
+							<div class="quiz-main-text text text-right">Расписание игр и регистрация</div>
 							<a class="btn btn-light quiz-button float-right" href="#schedule">Хочу играть</a>
 						</div>
 						<div class="cert">
-							<div class="text text-right">Подарочный сертификат</div>
+							<div class="quiz-main-text text text-right">Подарочный сертификат</div>
 							<button type="button" class="btn btn-light quiz-button float-right" data-toggle="modal" data-target="#certificateWindow">Приобрести</button>
 						</div>
 					</div>
