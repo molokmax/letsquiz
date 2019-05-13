@@ -31,9 +31,9 @@
             mysqli_set_charset($con, $config['DB_CONFIG_CHARSET']);
 	        mysqli_select_db($con, $config['DB_CONFIG_DATABASENAME']);
     
-            //$id_param = mysqli_escape_string($record->id);
-            $text_param = mysqli_escape_string($record->text);
-            $author_param = mysqli_escape_string($record->author);
+            //$id_param = mysqli_escape_string($con, $record->id);
+            $text_param = mysqli_escape_string($con, $record->text);
+            $author_param = mysqli_escape_string($con, $record->author);
             $query = "INSERT INTO `feedback` (`text`, `author`) VALUES ('{$text_param}', '{$author_param}')";
             //print($query);
 	        $db_result = mysqli_query($con, $query);
@@ -60,9 +60,9 @@
             mysqli_set_charset($con, $config['DB_CONFIG_CHARSET']);
 	        mysqli_select_db($con, $config['DB_CONFIG_DATABASENAME']);
     
-            $id_param = mysqli_escape_string($record->id);
-            $text_param = mysqli_escape_string($record->text);
-            $author_param = mysqli_escape_string($record->author);
+            $id_param = mysqli_escape_string($con, $record->id);
+            $text_param = mysqli_escape_string($con, $record->text);
+            $author_param = mysqli_escape_string($con, $record->author);
             $query = "UPDATE `feedback` SET `text` = '{$text_param}', `author` = '{$author_param}' WHERE `id` = {$id_param}";
             //print($query);
 	        $db_result = mysqli_query($con, $query);
@@ -89,7 +89,7 @@
             mysqli_set_charset($con, $config['DB_CONFIG_CHARSET']);
 	        mysqli_select_db($con, $config['DB_CONFIG_DATABASENAME']);
     
-            $id_param = mysqli_escape_string($record->id);
+            $id_param = mysqli_escape_string($con, $record->id);
             $query = "DELETE FROM `feedback` WHERE `id` = {$id_param}";
 //print($query);
 	        $db_result = mysqli_query($con, $query);

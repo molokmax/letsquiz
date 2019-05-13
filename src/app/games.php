@@ -112,12 +112,12 @@
             mysqli_set_charset($con, $config['DB_CONFIG_CHARSET']);
 	        mysqli_select_db($con, $config['DB_CONFIG_DATABASENAME']);
     
-            //$id_param = mysqli_escape_string($game->id);
-            $date_param = mysqli_escape_string($game->date);
-            $name_param = mysqli_escape_string($game->game_name);
-            $city_param = mysqli_escape_string($game->city_id);
-            $isclosed_param = mysqli_escape_string($game->is_closed);
-            $color_param = mysqli_escape_string($game->color_id);
+            //$id_param = mysqli_escape_string($con, $game->id);
+            $date_param = mysqli_escape_string($con, $game->date);
+            $name_param = mysqli_escape_string($con, $game->game_name);
+            $city_param = mysqli_escape_string($con, $game->city_id);
+            $isclosed_param = mysqli_escape_string($con, $game->is_closed);
+            $color_param = mysqli_escape_string($con, $game->color_id);
             // print("COLOR: {$color_param}");
 
             // if color is not selected, take random
@@ -160,12 +160,12 @@
             mysqli_set_charset($con, $config['DB_CONFIG_CHARSET']);
 	        mysqli_select_db($con, $config['DB_CONFIG_DATABASENAME']);
     
-            $id_param = mysqli_escape_string($game->id);
-            $date_param = mysqli_escape_string($game->date);
-            $name_param = mysqli_escape_string($game->game_name);
-            $city_param = mysqli_escape_string($game->city_id);
-            $isclosed_param = mysqli_escape_string($game->is_closed);
-            $color_param = mysqli_escape_string($game->color_id);
+            $id_param = mysqli_escape_string($con, $game->id);
+            $date_param = mysqli_escape_string($con, $game->date);
+            $name_param = mysqli_escape_string($con, $game->game_name);
+            $city_param = mysqli_escape_string($con, $game->city_id);
+            $isclosed_param = mysqli_escape_string($con, $game->is_closed);
+            $color_param = mysqli_escape_string($con, $game->color_id);
 
             // if color is not selected, take random
             if (!$color_param) {
@@ -207,7 +207,7 @@
             mysqli_set_charset($con, $config['DB_CONFIG_CHARSET']);
 	        mysqli_select_db($con, $config['DB_CONFIG_DATABASENAME']);
     
-            $id_param = mysqli_escape_string($game->id);
+            $id_param = mysqli_escape_string($con, $game->id);
             $query = "DELETE FROM `game` WHERE `id` = {$id_param}";
 //print($query);
 	        $db_result = mysqli_query($con, $query);

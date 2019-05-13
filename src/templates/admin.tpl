@@ -16,7 +16,7 @@
 		
   		<link href="vendor/bootstrap/bootstrap.min.css" rel="stylesheet" />
 		<link href="vendor/pnotify/pnotify.custom.min.css" media="all" rel="stylesheet" type="text/css" />
-		<link href="vendor/datetimepicker/jquery.datetimepicker.min.css" media="all" rel="stylesheet" type="text/css" />
+		<!-- <link href="vendor/datetimepicker/jquery.datetimepicker.min.css" media="all" rel="stylesheet" type="text/css" /> -->
 
 		<link rel="stylesheet" type="text/css" href="style-admin.css" />
 		

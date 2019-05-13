@@ -54,9 +54,9 @@
             mysqli_set_charset($con, $config['DB_CONFIG_CHARSET']);
 	        mysqli_select_db($con, $config['DB_CONFIG_DATABASENAME']);
     
-            //$id_param = mysqli_escape_string($record->id);
-            $url_param = mysqli_escape_string($record->url);
-            $order_param = mysqli_escape_string($record->order);
+            //$id_param = mysqli_escape_string($con, $record->id);
+            $url_param = mysqli_escape_string($con, $record->url);
+            $order_param = mysqli_escape_string($con, $record->order);
             
             $query = "INSERT INTO `photo` (`url`, `order`) VALUES ('{$url_param}', {$order_param})";
             $db_result = mysqli_query($con, $query);
@@ -87,9 +87,9 @@
             mysqli_set_charset($con, $config['DB_CONFIG_CHARSET']);
 	        mysqli_select_db($con, $config['DB_CONFIG_DATABASENAME']);
     
-            $id_param = mysqli_escape_string($record->id);
-            $url_param = mysqli_escape_string($record->url);
-            $order_param = mysqli_escape_string($record->order);
+            $id_param = mysqli_escape_string($con, $record->id);
+            $url_param = mysqli_escape_string($con, $record->url);
+            $order_param = mysqli_escape_string($con, $record->order);
             
             $sql_with_url = "UPDATE `photo` SET `url` = '{$url_param}', `order` = '{$order_param}' WHERE `id` = {$id_param}";
             $sql_without_url = "UPDATE `photo` SET `order` = '{$order_param}' WHERE `id` = {$id_param}";
@@ -119,7 +119,7 @@
             mysqli_set_charset($con, $config['DB_CONFIG_CHARSET']);
 	        mysqli_select_db($con, $config['DB_CONFIG_DATABASENAME']);
     
-            $id_param = mysqli_escape_string($record->id);
+            $id_param = mysqli_escape_string($con, $record->id);
             $query = "DELETE FROM `photo` WHERE `id` = {$id_param}";
 	        $db_result = mysqli_query($con, $query);
             if (!$db_result) {

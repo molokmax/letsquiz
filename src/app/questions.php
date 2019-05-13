@@ -33,10 +33,10 @@
             mysqli_set_charset($con, $config['DB_CONFIG_CHARSET']);
 	        mysqli_select_db($con, $config['DB_CONFIG_DATABASENAME']);
     
-            //$id_param = mysqli_escape_string($record->id);
-            $question_param = mysqli_escape_string($record->question);
-            $answer_param = mysqli_escape_string($record->answer);
-            $order_param = mysqli_escape_string($record->order);
+            //$id_param = mysqli_escape_string($con, $record->id);
+            $question_param = mysqli_escape_string($con, $record->question);
+            $answer_param = mysqli_escape_string($con, $record->answer);
+            $order_param = mysqli_escape_string($con, $record->order);
             $query = "INSERT INTO `question` (`question`, `answer`, `order`) VALUES ('{$question_param}', '{$answer_param}', {$order_param})";
             $db_result = mysqli_query($con, $query);
             // if (!$db_result) {
@@ -66,10 +66,10 @@
             mysqli_set_charset($con, $config['DB_CONFIG_CHARSET']);
 	        mysqli_select_db($con, $config['DB_CONFIG_DATABASENAME']);
     
-            $id_param = mysqli_escape_string($record->id);
-            $question_param = mysqli_escape_string($record->question);
-            $answer_param = mysqli_escape_string($record->answer);
-            $order_param = mysqli_escape_string($record->order);
+            $id_param = mysqli_escape_string($con, $record->id);
+            $question_param = mysqli_escape_string($con, $record->question);
+            $answer_param = mysqli_escape_string($con, $record->answer);
+            $order_param = mysqli_escape_string($con, $record->order);
             $query = "UPDATE `question` SET `question` = '{$question_param}', `answer` = '{$answer_param}', `order` = '{$order_param}' WHERE `id` = {$id_param}";
 	        $db_result = mysqli_query($con, $query);
             
@@ -95,7 +95,7 @@
             mysqli_set_charset($con, $config['DB_CONFIG_CHARSET']);
 	        mysqli_select_db($con, $config['DB_CONFIG_DATABASENAME']);
     
-            $id_param = mysqli_escape_string($record->id);
+            $id_param = mysqli_escape_string($con, $record->id);
             $query = "DELETE FROM `question` WHERE `id` = {$id_param}";
 	        $db_result = mysqli_query($con, $query);
             

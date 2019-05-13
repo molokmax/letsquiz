@@ -36,8 +36,8 @@
             mysqli_set_charset($con, $config['DB_CONFIG_CHARSET']);
 	        mysqli_select_db($con, $config['DB_CONFIG_DATABASENAME']);
     
-            $id_param = mysqli_escape_string($record->id);
-            $value_param = mysqli_escape_string($record->value);
+            $id_param = mysqli_escape_string($con, $record->id);
+            $value_param = mysqli_escape_string($con, $record->value);
             $query = "UPDATE `setting` SET `value` = '{$value_param}' WHERE `id` = {$id_param}";
 	        $db_result = mysqli_query($con, $query);
             

@@ -15,8 +15,8 @@
             mysqli_set_charset($con, $config['DB_CONFIG_CHARSET']);
 	        mysqli_select_db($con, $config['DB_CONFIG_DATABASENAME']);
 
-            $user_param = mysqli_escape_string($user);
-            $pass_param = mysqli_escape_string($pass);
+            $user_param = mysqli_escape_string($con, $user);
+            $pass_param = mysqli_escape_string($con, $pass);
             $query = "SELECT count(*) AS `cnt` FROM `user` WHERE `name` = '{$user_param}' AND `pass` = PASSWORD('{$pass_param}') AND `is_locked` = 0";
             
 	        $db_result = mysqli_query($con, $query);
