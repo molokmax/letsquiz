@@ -2,6 +2,7 @@
 
     class RegistrationModel {
         public $game_city;
+        public $game_cityid;
         public $game_date;
         public $team_name;
         public $team_count;
@@ -17,6 +18,12 @@
         public $phone;
     }
 
+    class NotifyModel {
+        public $id;
+        public $type;
+        public $city_id;
+        public $email;
+    }
     
     class Message {
         public $to;
@@ -43,6 +50,7 @@
             if ($notify_type == $this->NOTIFY_TYPES['REG']) {
                 $result = new RegistrationModel();
                 $result->game_city = $params["City"];
+                $result->game_cityid = $params["CityId"];
                 $result->game_date = $params["Date"];
                 $result->team_name = $params["TeamName"];
                 $result->team_count = $params["Count"];
@@ -79,8 +87,10 @@
         public function getToAddress($notify_type, $model) {
             $config = include('config.php');
 
-            if ($notify_type == $this->NOTIFY_TYPES['REG'] && $model->game_city == "Москва") {
-                return $config['MAIL_TO_ADDRESS_BUTOVO'];
+            $notifyRepo = new NotifyRepository();
+            $email = $notifyRepo->GetEmail($notify_type, $model->game_cityid);
+            if ($email) {
+                return $email;
             } else {
                 return $config['MAIL_TO_ADDRESS'];
             }
@@ -152,6 +162,76 @@
         }
     }
 
+    
+    class NotifyRepository {
+
+        
+        public function BuildModel($data) {
+            $rec = new NotifyModel();
+            $rec->id = $data['id'];
+            $rec->type = $data['type'];
+            $rec->city_id = $data['city_id'];
+            $rec->email = $data['email'];
+            return $rec;
+        }
+
+        public function GetAll() {
+            $config = include('config.php');
+            $result = array();
+
+            $con = new mysqli($config['DB_CONFIG_HOSTNAME'], $config['DB_CONFIG_USERNAME'], $config['DB_CONFIG_PASSWORD']);
+
+            if (!$con) {
+                die('Db connect error: ' . mysqli_error());
+            }
+            mysqli_set_charset($con, $config['DB_CONFIG_CHARSET']);
+	        mysqli_select_db($con, $config['DB_CONFIG_DATABASENAME']);
+	
+	        $query = 'SELECT `id`, `type`, `city_id`, `email` FROM `notify` ORDER BY `id`';
+	        $db_result = mysqli_query($con, $query);
+            if ($db_result) {
+                while($row = mysqli_fetch_array($db_result)) {
+                    $rec = new NotifyModel();
+                    $rec->id = $row['id'];
+                    $rec->type = $row['type'];
+                    $rec->city_id = $row['city_id'];
+                    $rec->email = $row['email'];
+                    array_push($result, $rec);
+                }
+            }
+
+            mysqli_close($con);
+
+            return $result;
+        }
+
+        public function GetEmail($notifyType, $cityId) {
+            $config = include('config.php');
+            $result = '';
+
+            $con = new mysqli($config['DB_CONFIG_HOSTNAME'], $config['DB_CONFIG_USERNAME'], $config['DB_CONFIG_PASSWORD']);
+
+            if (!$con) {
+                die('Db connect error: ' . mysqli_error());
+            }
+            mysqli_set_charset($con, $config['DB_CONFIG_CHARSET']);
+	        mysqli_select_db($con, $config['DB_CONFIG_DATABASENAME']);
+	
+            $query = "SELECT `id`, `type`, `city_id`, `email` FROM `notify` WHERE (`type` IS NULL OR `type` = '$notifyType') AND (`city_id` IS NULL OR `city_id` = $cityId) ORDER BY `type` DESC, `city_id` DESC LIMIT 1";
+	        $db_result = mysqli_query($con, $query);
+            if ($db_result) {
+                if($row = mysqli_fetch_array($db_result)) {
+                    $result = $row['email'];
+                }
+            }
+
+            mysqli_close($con);
+
+            return $result;
+        }
+    }
+
+
     class Sender {
 
         public function send($message) {
@@ -172,7 +252,8 @@
                 $headers[] = "From: Lets's quiz site <" . $message->from . ">";
                 $headers[] = "Subject: {$message->subject}"; 
                 $headers[] = "X-Mailer: PHP/".phpversion();
-                //print_r($message);
+                // print_r($message);
+                // return true;
                 return mail($message->to, $message->subject, $message->body, implode("\r\n", $headers));
             } else {
                 return true;

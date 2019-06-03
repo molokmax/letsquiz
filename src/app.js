@@ -70,6 +70,8 @@ $(document).ready(function() {
         var city = card.data('city-name');
         $("#registrationWindow").data("city-name", city);
         $("#registrationWindow .display-city").text(city);
+        var cityId = card.data('city-id');
+        $("#registrationWindow").data("city-id", cityId);
         var fullDate = card.data('game-fulldate');
         $("#registrationWindow").data("game-fulldate", fullDate);
     });
@@ -179,6 +181,7 @@ $(document).ready(function() {
         var form = $('#registrationWindow form')[0];
         var gameDate = win.data('game-fulldate');
         var gameCity = win.data('city-name');
+        var gameCityId = win.data('city-id');
         var isHiddenFieldsValid = gameCity && gameDate;
         if (isHiddenFieldsValid) {
             if (form.checkValidity()) {
@@ -189,6 +192,7 @@ $(document).ready(function() {
                 var data = {
                     NotifyType: 'REGISTRATION',
                     City: gameCity,
+                    CityId: gameCityId,
                     Date: gameDate,
                     TeamName: teamName,
                     Count: count,

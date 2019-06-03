@@ -62,6 +62,7 @@
         public $day_name;
         public $time;
         public $game_name;
+        public $city_id;
         public $city;
         public $is_closed;
         public $color;
@@ -72,6 +73,7 @@
             $this->date = $db_game->date->format('j') . ' ' . $formatter->getMonthName($db_game->date);
             $this->day_name = $formatter->getDayName($db_game->date);
             $this->time = $db_game->date->format('H:i');
+            $this->city_id = $db_game->city_id;
             $this->city = $db_game->city;
             $this->game_name = $db_game->game_name;
             $this->is_closed = $db_game->is_closed;
@@ -272,7 +274,7 @@
             mysqli_set_charset($con, $config['DB_CONFIG_CHARSET']);
 	        mysqli_select_db($con, $config['DB_CONFIG_DATABASENAME']);
 	
-	        $query = "SELECT g.`id` AS `id`, g.`date` AS  `date`, g.`name` AS `game_name`, c.`name` AS  `city`, g.`is_closed` AS `is_closed`, g.`color_id` AS `color_id`, clr.`name` AS `color_name`, clr.`prefix` AS `color_prefix` FROM  `game` AS g JOIN  `city` AS c ON ( g.`city_id` = c.`id` ) LEFT JOIN `color` as clr ON (g.`color_id` = clr.`id`) WHERE g.`date` > '{$date->format('Y-m-d H:i:s')}' ORDER BY g.`date` LIMIT 0, $limit";
+	        $query = "SELECT g.`id` AS `id`, g.`date` AS  `date`, g.`name` AS `game_name`, g.`city_id` AS `city_id`, c.`name` AS  `city`, g.`is_closed` AS `is_closed`, g.`color_id` AS `color_id`, clr.`name` AS `color_name`, clr.`prefix` AS `color_prefix` FROM  `game` AS g JOIN  `city` AS c ON ( g.`city_id` = c.`id` ) LEFT JOIN `color` as clr ON (g.`color_id` = clr.`id`) WHERE g.`date` > '{$date->format('Y-m-d H:i:s')}' ORDER BY g.`date` LIMIT 0, $limit";
 
 	        $db_result = mysqli_query($con, $query);
             if ($db_result) {
@@ -281,6 +283,7 @@
                     $rec->id = $row['id'];
                     $rec->date = DateTime::createFromFormat('Y-m-d H:i:s', $row['date'], $timezone);
                     $rec->game_name = $row['game_name'];
+                    $rec->city_id = $row['city_id'];
                     $rec->city = $row['city'];
                     $rec->is_closed = $row['is_closed'];
                     $rec->color_id = $row['color_id'];

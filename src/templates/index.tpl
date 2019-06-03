@@ -132,7 +132,7 @@
 {foreach from=$GAME_LIST item=game name=games}
 							<div class="quiz-game-card-container col-lg-4 col-md-6 col-sm-12" data-city-name="{$game->city}">
 								<div class="quiz-game-card border-{$game->color} {if $game->is_closed eq '1'}game-closed{/if}" 
-									data-game-id="{$game->id}" data-city-name="{$game->city}" data-game-fulldate="{$game->full_date}">
+									data-game-id="{$game->id}" data-city-id="{$game->city_id}" data-city-name="{$game->city}" data-game-fulldate="{$game->full_date}">
 									<div class="game-city">{$game->city}</div>
 									<div class="game-name">Игра <b>{$game->game_name}</b></div>
 									<div class="game-date">{$game->date}</div>
