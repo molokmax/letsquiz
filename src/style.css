@@ -465,6 +465,9 @@ div.quiz-block-container.footer .email a:visited {
 	text-align: center;
 	padding-top: 1rem;
 }
+.quiz-form {
+	padding-bottom: 1rem;
+}
 .quiz-window .modal-body {
 	font-size: 1.1rem;
 	margin-left: 2rem;

@@ -22,6 +22,22 @@
 		<title>LET'S КВИЗ!</title>
 	</head>
 	<body data-spy="scroll" data-target=".quiz-menu">
+		<!-- Yandex.Metrika counter --> 
+		<script type="text/javascript" > 
+			(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; 
+			m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) 
+			(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); 
+
+			ym(54485767, "init", { 
+			clickmap:true, 
+			trackLinks:true, 
+			accurateTrackBounce:true, 
+			webvisor:true 
+			}); 
+		</script> 
+		<noscript><div><img src="https://mc.yandex.ru/watch/54485767" style="position:absolute; left:-9999px;" alt="" /></div></noscript> 
+		<!-- /Yandex.Metrika counter -->
+
 		<nav class="quiz-menu navbar navbar-expand-lg sticky-top">
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="quiz-menu-button mdi mdi-menu"></span>
@@ -612,7 +628,7 @@
 						</button>
 					</div>
 					<div class="modal-body">
-						<form>
+						<form class="quiz-form">
 							<div class="quiz-window-title">Заполни форму регистрации на игру в городе <span class="display-city"></span> <span class="display-date"></span> в <span class="display-time"></span></div>
 							<!--<label for="reg-name">Название команды</label>-->
 							<input type="text" class="form-control" id="reg-name" required aria-describedby="reg-name" placeholder="Название команды">
@@ -632,7 +648,7 @@
 							<input type="text" class="form-control" id="reg-capitan" required aria-describedby="reg-capitan" placeholder="Капитан">
 							<!--<label for="reg-phone">Телефон</label>-->
 							<input type="tel" class="form-control" id="reg-phone" required aria-describedby="reg-phone" placeholder="Телефон">
-							<div class="quiz-window-text">Стоимость участия - 300 руб/чел</div>
+							<!--<div class="quiz-window-text">Стоимость участия - 300 руб/чел</div>-->
 						</form>
 					</div>
 					<div class="modal-footer">
