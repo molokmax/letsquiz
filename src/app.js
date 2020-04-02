@@ -7,6 +7,7 @@ $(document).ready(function() {
 
     var CityUtils = {
         AnyCityName: 'Все',
+        OnlineCityName: 'Онлайн',
         currentCity: null,
         isAnyCity: function() {
             return this.AnyCityName == this.currentCity;
@@ -33,7 +34,7 @@ $(document).ready(function() {
         filterCity(index) {
             var item = $(this).find(".quiz-game-card");
             var cityName = item.data("city-name")
-            var result = CityUtils.isAnyCity() || cityName === CityUtils.currentCity;
+            var result = CityUtils.isAnyCity() || cityName === CityUtils.OnlineCityName || cityName === CityUtils.currentCity;
             return result;
         },
         updateInterface: function(city) {
@@ -47,8 +48,10 @@ $(document).ready(function() {
             } else {
                 $(".list-schedule .quiz-game-card-container").hide();
                 $(".list-schedule .quiz-game-card-container[data-city-name='"+city+"']").show();
+                $(".list-schedule .quiz-game-card-container[data-city-name='"+CityUtils.OnlineCityName+"']").show();
                 $(".address-item").hide();
                 $(".address-item[data-city-name='"+city+"']").show();
+                $(".address-item[data-city-name='"+CityUtils.OnlineCityName+"']").show();
             }
         }
 
@@ -68,6 +71,12 @@ $(document).ready(function() {
         var time = card.find('.game-time').text();
         $("#registrationWindow .display-time").text(time);
         var city = card.data('city-name');
+        $("#registrationWindow .quiz-window-title").hide();
+        if (city == CityUtils.OnlineCityName) {
+            $("#registrationWindow .quiz-window-title.online-game").show();
+        } else {
+            $("#registrationWindow .quiz-window-title.offline-game").show();
+        }
         $("#registrationWindow").data("city-name", city);
         $("#registrationWindow .display-city").text(city);
         var cityId = card.data('city-id');

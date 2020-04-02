@@ -618,7 +618,8 @@
 					</div>
 					<div class="modal-body">
 						<form class="quiz-form">
-							<div class="quiz-window-title">Заполни форму регистрации на игру в городе <span class="display-city"></span> <span class="display-date"></span> в <span class="display-time"></span></div>
+							<div class="quiz-window-title online-game">Заполни форму регистрации на игру <span class="display-city"></span> <span class="display-date"></span> в <span class="display-time"></span></div>
+							<div class="quiz-window-title offline-game">Заполни форму регистрации на игру в городе <span class="display-city"></span> <span class="display-date"></span> в <span class="display-time"></span></div>
 							<!--<label for="reg-name">Название команды</label>-->
 							<input type="text" class="form-control" id="reg-name" required aria-describedby="reg-name" placeholder="Название команды">
 							<!--<label for="reg-count">Количество человек</label>-->

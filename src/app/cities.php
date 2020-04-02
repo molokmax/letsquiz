@@ -20,7 +20,7 @@
             mysqli_set_charset($con, $config['DB_CONFIG_CHARSET']);
 	        mysqli_select_db($con, $config['DB_CONFIG_DATABASENAME']);
 	
-	        $query = "SELECT `id`, `name` FROM `city`";
+	        $query = "SELECT `id`, `name` FROM `city` order by `order`";
 
 	        $db_result = mysqli_query($con, $query);
             if ($db_result) {
@@ -50,7 +50,7 @@
             mysqli_set_charset($con, $config['DB_CONFIG_CHARSET']);
 	        mysqli_select_db($con, $config['DB_CONFIG_DATABASENAME']);
 	
-	        $query = 'SELECT `id`, `name` FROM `city`';
+	        $query = 'SELECT `id`, `name` FROM `city` order by `order`';
 	        $db_result = mysqli_query($con, $query);
             if ($db_result) {
                 while($row = mysqli_fetch_array($db_result)) {
