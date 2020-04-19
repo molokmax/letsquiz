@@ -70,6 +70,8 @@ $(document).ready(function() {
         $("#registrationWindow .display-date").text(date);
         var time = card.find('.game-time').text();
         $("#registrationWindow .display-time").text(time);
+        var price = card.data('price');
+        $("#registrationWindow .display-price").text(price);
         var city = card.data('city-name');
         $("#registrationWindow .quiz-window-title").hide();
         if (city == CityUtils.OnlineCityName) {
