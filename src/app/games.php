@@ -141,7 +141,7 @@
                 $color_param = 'NULL';
             }
 
-            $query = "INSERT INTO `game` (`date`, `name`, `city_id`, `is_closed`, `color_id`, `price`) VALUES ('{$date_param}', '{$name_param}', {$city_param}, {$isclosed_param}, {$color_param}, {$price_param})";
+            $query = "INSERT INTO `game` (`date`, `name`, `city_id`, `is_closed`, `color_id`, `price`) VALUES ('{$date_param}', '{$name_param}', {$city_param}, {$isclosed_param}, {$color_param}, '{$price_param}')";
             //print($query);
 	        $db_result = mysqli_query($con, $query);
             
@@ -189,7 +189,7 @@
                 $color_param = 'NULL';
             }
 
-            $query = "UPDATE `game` SET `date` = '{$date_param}', `name` = '{$name_param}', `city_id` = {$city_param}, `is_closed` = {$isclosed_param}, `color_id` = {$color_param}, `price` = {$price_param} WHERE `id` = {$id_param}";
+            $query = "UPDATE `game` SET `date` = '{$date_param}', `name` = '{$name_param}', `city_id` = {$city_param}, `is_closed` = {$isclosed_param}, `color_id` = {$color_param}, `price` = '{$price_param}' WHERE `id` = {$id_param}";
             //print($query);
 	        $db_result = mysqli_query($con, $query);
             

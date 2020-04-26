@@ -791,6 +791,7 @@ div.quiz-block-container.footer .email a:visited {
 		border-bottom: none;
 	}
 	.quiz-window .modal-body {
+		font-size: 1rem;
 		margin-left: 0.5rem;
 		margin-right: 0.5rem;
 	}

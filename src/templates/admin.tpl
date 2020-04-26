@@ -242,7 +242,7 @@
 							</div>
 							<div class="form-group">
 								<label for="game-price">Цена</label>
-								<input type="number" class="form-control field" id="game-price" required name="price" aria-describedby="game-price" placeholder="">
+								<input type="text" class="form-control field" id="game-price" required name="price" aria-describedby="game-price" placeholder="">
 							</div>
 							<div class="form-group">
 								<label for="game-color">Цвет</label>
