@@ -1,0 +1,1 @@
+gulp build && gulp dev-deploy

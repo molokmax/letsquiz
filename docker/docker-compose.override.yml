@@ -4,8 +4,6 @@ services:
   app:
     ports:
       - 8088:80
-    volumes:
-      - .\app\build\:/var/www/html/:rw
   db:
     ports:
       - 33060:3306

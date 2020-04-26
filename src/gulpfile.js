@@ -17,12 +17,13 @@ const del = require('del');
 const autoprefixer = require('gulp-autoprefixer');
 const imagemin = require('gulp-imagemin');
 const ftp = require('gulp-ftp');
+const exec = require('child_process').exec;
 
 const paths = {
     dist: '../build',
-    docker_dist: '../docker/app/build',
-    //dist: 'D:/develop/denwer/home/test1.ru/www',
-    //build_dir: './build',
+    // dist: '../docker/app/build',
+    // dist: 'D:/develop/denwer/home/test1.ru/www',
+    // build_dir: './build',
     src: {
         root: ['*.{js,php}', '.htaccess', '!gulpfile.js', '!secret.config.js'],
         libs: {
@@ -57,6 +58,16 @@ gulp.task('prod-deploy', function() {
     }));
 });
 
+gulp.task('dev-deploy', function() {
+  var htmlDir = '/var/www/html/';
+  var cmd = 'docker cp ' + paths.dist + '/. letsquiz-app:' + htmlDir + ' && docker exec letsquiz-app chmod -R 777 ' + htmlDir
+  exec(cmd, function(err) {
+    if (err) {
+      console.error(err)
+    }
+  })
+});
+
 gulp.task('clean', function () {
   del.sync([paths.dist], { force: true });
 });
@@ -73,16 +84,7 @@ gulp.task('watch', function() {
   gulp.watch(paths.src.templates, ['copy-templates']);
 });
 
-gulp.task('dev-watch', function() {
-  gulp.watch(paths.dist + '/**/*', ['dev-deploy']);
-});
-
 // copy block
-
-gulp.task('dev-deploy', function() {
-  gulp.src(paths.dist + '/**/*')
-    .pipe(gulp.dest(paths.docker_dist + '/'));
-})
 
 gulp.task('copy-all', ['copy-libs', 'copy-root', 'copy-app', 'copy-css', 'copy-fonts', 'copy-image', 'copy-photo', 'copy-templates']);
 

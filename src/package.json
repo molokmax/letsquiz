@@ -26,7 +26,8 @@
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^5.0.0",
     "gulp-ftp": "^1.1.0",
-    "gulp-imagemin": "^4.1.0"
+    "gulp-imagemin": "^4.1.0",
+    "gulp-run-command": "0.0.10"
   },
   "dependencies": {
     "natives": "^1.1.6"
