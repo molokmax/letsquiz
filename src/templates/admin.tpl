@@ -70,6 +70,7 @@
 						<th scope="col">Дата</th>
 						<th scope="col">Номер</th>
 						<th scope="col">Город</th>
+						<th scope="col">Цена</th>
 						<th scope="col">Закрыто</th>
 						<th scope="col">Действие</th>
 					</tr>
@@ -82,6 +83,7 @@
 						data-record-name='{$game->game_name}' 
 						data-record-city_id='{$game->city_id}' 
 						data-record-city='{$game->city}'
+						data-record-price='{$game->price}'
 						data-record-color_id='{$game->color_id}' 
 						data-record-color_name='{$game->color_name}' 
 						data-record-color='{$game->color}' 
@@ -89,6 +91,7 @@
 						<td>{$game->date}</td>
 						<td>{$game->game_name}</td>
 						<td>{$game->city}</td>
+						<td>{$game->price}</td>
 						<td>{$game->is_closed}</td>
 						<td class="action-column">
 							<button type="button" class="btn btn-primary btn-sm crud-update" data-toggle="modal" data-target="#gameEditor">Изменить</button>
@@ -236,6 +239,10 @@
 									<option value="{$city->id}">{$city->name}</option>
 	{/foreach}
 								</select>
+							</div>
+							<div class="form-group">
+								<label for="game-price">Цена</label>
+								<input type="text" class="form-control field" id="game-price" required name="price" aria-describedby="game-price" placeholder="">
 							</div>
 							<div class="form-group">
 								<label for="game-color">Цвет</label>
@@ -395,5 +402,11 @@
 		<script src="vendor/pnotify/pnotify.custom.min.js"></script>
 		
 		<script src="admin.js"></script>
+		
+		<script>
+			{foreach from=$SETTING_LIST item=setting name=settings}
+				window.QUIZ_SETTINGS['{$setting->prefix}'] = '{$setting->value}';
+			{/foreach}
+		</script>
 	</body>
 </html>

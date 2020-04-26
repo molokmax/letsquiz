@@ -1,0 +1,17 @@
+version: '3.4'
+
+services:
+  app:
+    image: letsquiz-app-image
+    container_name: letsquiz-app
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    links:
+      - "db:letsquiz-db"
+  db:
+    image: letsquiz-db-image
+    container_name: letsquiz-db
+    build:
+      context: ./db
+      dockerfile: Dockerfile

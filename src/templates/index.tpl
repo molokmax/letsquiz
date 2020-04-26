@@ -137,7 +137,7 @@
 {foreach from=$GAME_LIST item=game name=games}
 							<div class="quiz-game-card-container col-lg-4 col-md-6 col-sm-12" data-city-name="{$game->city}">
 								<div class="quiz-game-card border-{$game->color} {if $game->is_closed eq '1'}game-closed{/if}" 
-									data-game-id="{$game->id}" data-city-id="{$game->city_id}" data-city-name="{$game->city}" data-game-fulldate="{$game->full_date}">
+									data-game-id="{$game->id}" data-city-id="{$game->city_id}" data-city-name="{$game->city}" data-price="{$game->price}" data-game-fulldate="{$game->full_date}">
 									<div class="game-city">{$game->city}</div>
 									<div class="game-name">Игра <b>{$game->game_name}</b></div>
 									<div class="game-date">{$game->date}</div>
@@ -618,8 +618,14 @@
 					</div>
 					<div class="modal-body">
 						<form class="quiz-form">
-							<div class="quiz-window-title online-game">Заполни форму регистрации на игру <span class="display-city"></span> <span class="display-date"></span> в <span class="display-time"></span></div>
-							<div class="quiz-window-title offline-game">Заполни форму регистрации на игру в городе <span class="display-city"></span> <span class="display-date"></span> в <span class="display-time"></span></div>
+							<div class="quiz-window-title online-game">
+								Заполни форму регистрации на игру <span class="display-city"></span> <span class="display-date"></span> в <span class="display-time"></span> 
+								(стоимость - <span class="display-price"></span> руб/чел)
+							</div>
+							<div class="quiz-window-title offline-game">
+								Заполни форму регистрации на игру в городе <span class="display-city"></span> <span class="display-date"></span> в <span class="display-time"></span> 
+								(стоимость - <span class="display-price"></span> руб с команды)
+							</div>
 							<!--<label for="reg-name">Название команды</label>-->
 							<input type="text" class="form-control" id="reg-name" required aria-describedby="reg-name" placeholder="Название команды">
 							<!--<label for="reg-count">Количество человек</label>-->

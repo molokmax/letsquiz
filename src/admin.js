@@ -1,6 +1,15 @@
+window.QUIZ_SETTINGS = {};
+
 $(document).ready(function() {
 
     var crud = {
+        correctValue(entityType, fieldName, fieldValue, data, action) {
+            if (entityType === 'GAME' && action === 'create' && fieldName === 'price' && !fieldValue) {
+                return window.QUIZ_SETTINGS.DEFAULT_GAME_PRICE;
+            } else {
+                return fieldValue;
+            }
+        },
         save: function() {
             var win = $(this).parents('.editorWindow');
             var form = win.find('form')[0];
@@ -55,6 +64,7 @@ $(document).ready(function() {
             }
         },
         create: function() {
+            var action = 'create';
             var entityContainer = $(this).parents('.container');
             var entityType = entityContainer.data('entity-type');
             var recordElement = $(this).parents('tr.record');
@@ -67,13 +77,15 @@ $(document).ready(function() {
                 } else if (this.type === 'file') {
                     this.value = "";
                 } else {
-                    $(this).val("");
+                    var val = crud.correctValue(entityType, this.name, "", data, action);
+                    $(this).val(val);
                 }
             });
             editorWin.data('entityType', entityType);
-            editorWin.data('action', 'create');
+            editorWin.data('action', action);
         },
         update: function() {
+            var action = 'update';
             var entityContainer = $(this).parents('.container');
             var entityType = entityContainer.data('entity-type');
             var recordElement = $(this).parents('tr.record');
@@ -86,19 +98,21 @@ $(document).ready(function() {
                 } else if (this.type === 'file') {
                     this.value = "";
                 } else {
-                    $(this).val(data[this.name]);
+                    var val = crud.correctValue(entityType, this.name, data[this.name], data, action);
+                    $(this).val(val);
                 }
             });
             editorWin.data('entityType', entityType);
-            editorWin.data('action', 'update');
+            editorWin.data('action', action);
         },
         delete: function() {
+            var action = 'update';
             var entityContainer = $(this).parents('.container');
             var entityType = entityContainer.data('entity-type');
             var recordElement = $(this).parents('tr.record');
             var data = crud.getData(recordElement);
             data['entityType'] = entityType;
-            data['action'] = 'delete';
+            data['action'] = action;
             $.ajax({
                 url: 'api.php',
                 data: data,

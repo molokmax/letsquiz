@@ -20,6 +20,7 @@ const ftp = require('gulp-ftp');
 
 const paths = {
     dist: '../build',
+    docker_dist: '../docker/app/build',
     //dist: 'D:/develop/denwer/home/test1.ru/www',
     //build_dir: './build',
     src: {
@@ -72,9 +73,16 @@ gulp.task('watch', function() {
   gulp.watch(paths.src.templates, ['copy-templates']);
 });
 
-
+gulp.task('dev-watch', function() {
+  gulp.watch(paths.dist + '/**/*', ['dev-deploy']);
+});
 
 // copy block
+
+gulp.task('dev-deploy', function() {
+  gulp.src(paths.dist + '/**/*')
+    .pipe(gulp.dest(paths.docker_dist + '/'));
+})
 
 gulp.task('copy-all', ['copy-libs', 'copy-root', 'copy-app', 'copy-css', 'copy-fonts', 'copy-image', 'copy-photo', 'copy-templates']);
 
