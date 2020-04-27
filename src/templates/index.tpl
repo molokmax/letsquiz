@@ -644,7 +644,7 @@
 							<input type="text" class="form-control" id="reg-capitan" required aria-describedby="reg-capitan" placeholder="Капитан">
 							<!--<label for="reg-phone">Телефон</label>-->
 							<input type="tel" class="form-control" id="reg-phone" required aria-describedby="reg-phone" placeholder="Телефон">
-							<input type="email" class="form-control" id="reg-email" required aria-describedby="reg-email" placeholder="Email">
+							<input type="email" class="form-control" id="reg-email" aria-describedby="reg-email" placeholder="Email">
 							<!--<div class="quiz-window-text">Стоимость участия - 300 руб/чел</div>-->
 						</form>
 					</div>
