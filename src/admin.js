@@ -144,7 +144,10 @@ $(document).ready(function() {
             var recordElement = $(this).parents('tr.record');
             var data = crud.getData(recordElement);
             var url = 'report.php?' + crud.buildReportParams(entityType, data, action);
-            window.open(url, "report");
+            var winId = window.open(url, "_blank");
+            if (!winId) {
+                alert('Please allow popups for this website');
+            }
         },
         getData: function(element) {
             var data = element.data();
