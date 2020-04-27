@@ -1,5 +1,5 @@
 
-INSERT INTO `setting` (`id`, `name`, `prefix`, `type`, `value`) VALUES (12, 'Стоимость игры по умолчанию', 'DEFAULT_GAME_PRICE', 'string', '300');
+INSERT INTO `setting` (`id`, `name`, `prefix`, `type`, `value`) VALUES (12, 'Стоимость игры по умолчанию', 'DEFAULT_GAME_PRICE', 'string', '300 руб/чел');
 
 ALTER TABLE game ADD COLUMN `price` varchar(50);
 
