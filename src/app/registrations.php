@@ -48,13 +48,6 @@
             $rec->email = $data['email'];
             return $rec;
         }
-        public function GetCSVReportHeader() {
-            return array('Дата регистрации', 'Команда', 'Количество человек', 'Капитан', 'Телефон', 'Email');
-            // return array('Registration date', 'Team name', 'Gamer count', 'Leader', 'Phone', 'Email');
-        }
-        public function GetCSVReportLine($rec) {
-            return array($rec->date, $rec->team_name, $rec->team_count, $rec->leader_name, $rec->phone, $rec->email);
-        }
         public function GetCSVReportName($rec, $timezone) {
             $date = new DateTime('NOW', $timezone);
             $timestamp = $date->format('Ymd_Hi');
@@ -225,6 +218,51 @@
             mysqli_close($con);
 
             return $result;
+        }
+
+        public function BuildReport($params) {
+
+			$data = $this->ReadReport($params);
+
+			$headers = $this->GetCSVReportHeader();
+			$lines = array();
+			foreach ($data as $rec) {
+				$line = $this->GetCSVReportLine($rec);
+				array_push($lines, $line);
+			}
+            $result = $this->BuildCSV($headers, $lines);
+            return $result;
+        }
+
+
+            
+        private function GetCSVReportHeader() {
+            return array('Дата регистрации', 'Команда', 'Количество человек', 'Капитан', 'Телефон', 'Email');
+            // return array('Registration date', 'Team name', 'Gamer count', 'Leader', 'Phone', 'Email');
+        }
+        private function GetCSVReportLine($rec) {
+            return array($rec->date, $rec->team_name, $rec->team_count, $rec->leader_name, $rec->phone, $rec->email);
+        }
+        private function BuildCSV($headers, $records) {
+            // we use a threshold of 1 MB (1024 * 1024), it's just an example
+            $fd = fopen('php://temp/maxmemory:1048576', 'w');
+            if($fd === FALSE) {
+                die('Failed to open temporary file');
+            }
+
+            fputs($fd, "Sep=;\r\n");
+            fputcsv($fd, $headers, ";");
+            foreach($records as $record) {
+                fputcsv($fd, $record, ";");
+            }
+
+            rewind($fd);
+            $csv = stream_get_contents($fd);
+            $config = include('config.php');
+            $target_encoding = $config['REPORT_CHARSET'];
+            $csv = iconv("UTF-8", $target_encoding, $csv);
+            fclose($fd); // releases the memory (or tempfile)
+            return $csv;
         }
     }
 
