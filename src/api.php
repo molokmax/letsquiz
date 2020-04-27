@@ -29,13 +29,10 @@
 	function DoAction($data, $action, $repo) {
 		$result = false;
 		if ($action == 'delete') {
-			//print('del');
 			$result = $repo->Delete($data);
 		} else if ($action == 'update') {
-			//print('upd');
 			$result = $repo->Update($data);
 		} else if ($action == 'create') {
-			//print('cre');
 			$result = $repo->Create($data);
 		}
 		return $result;
@@ -47,7 +44,7 @@
 		$entityType = $_POST['entityType'];
 		$repo = GetRepository($entityType);
 		$data = $repo->BuildModel($_POST);
-		//print_r($data);
+		
 		if ($data) {
 			$result = DoAction($data, $action, $repo);
 			if ($result) {

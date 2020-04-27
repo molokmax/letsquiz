@@ -98,7 +98,7 @@
             $rec->date = $data['date'];
             $rec->game_name = $data['name'];
             $rec->city_id = $data['city_id'];
-            $rec->city = $data['city'];
+            // $rec->city = $data['city'];
             $rec->is_closed = $data['is_closed'];
             $rec->color_id = $data['color_id'];
             $rec->price = $data['price'];
@@ -125,7 +125,6 @@
             $isclosed_param = mysqli_escape_string($con, $game->is_closed);
             $color_param = mysqli_escape_string($con, $game->color_id);
             $price_param = mysqli_escape_string($con, $game->price);
-            // print("COLOR: {$color_param}");
 
             // if color is not selected, take random
             if (!$color_param) {
@@ -142,9 +141,14 @@
             }
 
             $query = "INSERT INTO `game` (`date`, `name`, `city_id`, `is_closed`, `color_id`, `price`) VALUES ('{$date_param}', '{$name_param}', {$city_param}, {$isclosed_param}, {$color_param}, '{$price_param}')";
-            //print($query);
+
 	        $db_result = mysqli_query($con, $query);
             
+            if (!$db_result) {
+                // TODO: log message
+                $err = mysqli_error($con);
+            }
+
             mysqli_close($con);
 
             if ($db_result) {

@@ -10,7 +10,7 @@
 		<link rel="icon" type="image/png" href="image/favicon64.png" sizes="64x64">
 
 		<meta property="og:title" content="LET'S КВИЗ!" />
-		<meta property="og:image" content="http://letsquiz.ru/photo/Jzscf5qA8Nw.jpg" />
+		<meta property="og:image" content="https://letsquiz.ru/photo/Jzscf5qA8Nw.jpg" />
 
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/2.1.19/css/materialdesignicons.min.css" integrity="sha256-L3NrnCWf0Pw+HvXutUdR0Vlj4pI5pM2s7tijm55+DzU=" crossorigin="anonymous" />
 		
@@ -96,6 +96,7 @@
 						<td class="action-column">
 							<button type="button" class="btn btn-primary btn-sm crud-update" data-toggle="modal" data-target="#gameEditor">Изменить</button>
 							<button type="button" class="btn btn-danger btn-sm crud-delete">Удалить</button>
+							<button type="button" class="btn btn-secondary btn-sm crud-report">Отчет</button>
 						</td>
 					</tr>
 	{/foreach}

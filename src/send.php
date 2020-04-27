@@ -21,13 +21,14 @@
             );
             echo(json_encode($answer));
         } else {
+            $messageFactory->handleEvent($notify_type, $model);
             $message = $messageFactory->buildMessage($notify_type, $model);
             $sender = new Sender();
             $result = $sender->send($message);
             if ($result) {
                 $answer = array(
                     "success" => true, 
-                    "message" => "Запрос отправлен. Мы скоро перезвоним"
+                    "message" => "Запрос отправлен. Ждите подтверждения на электронную почту"
                 );
                 echo(json_encode($answer));
             } else {

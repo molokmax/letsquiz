@@ -10,6 +10,13 @@ $(document).ready(function() {
                 return fieldValue;
             }
         },
+        buildReportParams(entityType, data, action) {
+            if (entityType === 'GAME') {
+                return 'entityType=REGISTRATION&game_id=' + data['id']
+            } else {
+                return 'entityType=' + entityType;
+            }
+        },
         save: function() {
             var win = $(this).parents('.editorWindow');
             var form = win.find('form')[0];
@@ -130,6 +137,18 @@ $(document).ready(function() {
                 }
             });
         },
+        report: function() {
+            var action = 'report';
+            var entityContainer = $(this).parents('.container');
+            var entityType = entityContainer.data('entity-type');
+            var recordElement = $(this).parents('tr.record');
+            var data = crud.getData(recordElement);
+            var url = 'report.php?' + crud.buildReportParams(entityType, data, action);
+            var winId = window.open(url, "_blank");
+            if (!winId) {
+                alert('Please allow popups for this website');
+            }
+        },
         getData: function(element) {
             var data = element.data();
             var result = {};
@@ -152,4 +171,5 @@ $(document).ready(function() {
     $('.btn.crud-update').click(crud.update);
     $('.btn.crud-delete').click(crud.delete);
     $('.btn.save-button').click(crud.save);
+    $('.btn.crud-report').click(crud.report);
 });

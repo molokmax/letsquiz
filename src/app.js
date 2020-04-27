@@ -85,6 +85,8 @@ $(document).ready(function() {
         $("#registrationWindow").data("city-id", cityId);
         var fullDate = card.data('game-fulldate');
         $("#registrationWindow").data("game-fulldate", fullDate);
+        var gameId = card.data('game-id');
+        $("#registrationWindow").data("game-id", gameId);
     });
 
     $("#questionWindow .question-answer-link").click(function(link) {
@@ -190,6 +192,7 @@ $(document).ready(function() {
         var winId = "registrationWindow";
         var win = $("#" + winId);
         var form = $('#registrationWindow form')[0];
+        var gameId = win.data('game-id');
         var gameDate = win.data('game-fulldate');
         var gameCity = win.data('city-name');
         var gameCityId = win.data('city-id');
@@ -200,15 +203,18 @@ $(document).ready(function() {
                 var count = $("#reg-count").val();
                 var leader = $("#reg-capitan").val();
                 var phone = $("#reg-phone").val();
+                var email = $("#reg-email").val();
                 var data = {
                     NotifyType: 'REGISTRATION',
+                    GameId: gameId,
                     City: gameCity,
                     CityId: gameCityId,
                     Date: gameDate,
                     TeamName: teamName,
                     Count: count,
                     Leader: leader,
-                    Phone: phone
+                    Phone: phone,
+                    Email: email
                 };
                 MessageUtils.sendRequest(data, winId);
             } else {

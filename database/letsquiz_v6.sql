@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: localhost
--- Время создания: Апр 27 2020 г., 21:18
+-- Время создания: Апр 26 2020 г., 20:19
 -- Версия сервера: 5.6.37-82.2
 -- Версия PHP: 7.1.33
 
@@ -148,8 +148,7 @@ INSERT INTO `game` (`id`, `date`, `name`, `city_id`, `is_closed`, `color_id`, `p
 (388, '2020-04-04 16:00:00', 'Летс Квиз Онлайн №1', 7, 0, 2, '500/1000'),
 (389, '2020-04-18 16:00:00', 'Летс Квиз Онлайн №2', 7, 0, 2, '500/1000'),
 (393, '2020-04-19 16:00:00', 'Junior Летс Квиз Онлайн №1', 7, 0, 1, '500/1000'),
-(394, '2020-04-26 16:00:00', 'Онлайн №3/Кино и музыка', 7, 0, 2, '500/1000'),
-(395, '2020-05-01 18:00:00', 'Saint Twins Detective Online №1', 7, 0, 2, ' 1 команда = 1000 руб');
+(394, '2020-04-26 16:00:00', 'Онлайн №3/Кино и музыка', 7, 0, 2, '500/1000');
 
 -- --------------------------------------------------------
 
@@ -253,23 +252,6 @@ INSERT INTO `question` (`id`, `order`, `question`, `answer`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `registration`
---
-
-CREATE TABLE `registration` (
-  `id` int(11) NOT NULL,
-  `game_id` int(11) NOT NULL,
-  `date` datetime NOT NULL,
-  `team_name` varchar(50) NOT NULL,
-  `team_count` tinyint(1) NOT NULL,
-  `leader_name` varchar(50) NOT NULL,
-  `phone` varchar(50) NOT NULL,
-  `email` varchar(50) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
 -- Структура таблицы `setting`
 --
 
@@ -297,7 +279,7 @@ INSERT INTO `setting` (`id`, `name`, `prefix`, `type`, `value`) VALUES
 (9, 'Скрыть раздел \"Правила\"', 'HIDE_TERMS', 'bool', 'false'),
 (10, 'Закрывать регистрацию за N часов до начала игры', 'GAME_CLOSE', 'int', '4'),
 (11, 'Скрыть раздел \"Расписание\"', 'HIDE_SCHEDULE', 'bool', 'false'),
-(12, 'Стоимость игры по умолчанию', 'DEFAULT_GAME_PRICE', 'string', '300 руб/чел');
+(12, 'Стоимость игры по умолчанию', 'DEFAULT_GAME_PRICE', 'string', '300');
 
 -- --------------------------------------------------------
 
@@ -372,12 +354,6 @@ ALTER TABLE `question`
   ADD PRIMARY KEY (`id`);
 
 --
--- Индексы таблицы `registration`
---
-ALTER TABLE `registration`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Индексы таблицы `setting`
 --
 ALTER TABLE `setting`
@@ -421,7 +397,7 @@ ALTER TABLE `feedback`
 -- AUTO_INCREMENT для таблицы `game`
 --
 ALTER TABLE `game`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=396;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=395;
 
 --
 -- AUTO_INCREMENT для таблицы `notify`
@@ -440,12 +416,6 @@ ALTER TABLE `photo`
 --
 ALTER TABLE `question`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- AUTO_INCREMENT для таблицы `registration`
---
-ALTER TABLE `registration`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT для таблицы `setting`
