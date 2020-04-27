@@ -21,6 +21,7 @@
             );
             echo(json_encode($answer));
         } else {
+            $messageFactory->handleEvent($notify_type, $model);
             $message = $messageFactory->buildMessage($notify_type, $model);
             $sender = new Sender();
             $result = $sender->send($message);

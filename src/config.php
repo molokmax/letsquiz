@@ -7,6 +7,8 @@
         'DB_CONFIG_DATABASENAME' => 'letsquiz',
         'DB_CONFIG_CHARSET' => 'utf8',
 
+        'REPORT_CHARSET' => 'CP1251',
+
         'MAIL_SEND_METHOD' => 'PHP',
         'MAIL_FROM_ADDRESS' => 'info@letsquiz.ru',
         'MAIL_TO_ADDRESS' => 'yglerod@rambler.ru', //'info@letsquiz.ru'

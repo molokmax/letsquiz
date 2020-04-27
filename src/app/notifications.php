@@ -1,6 +1,9 @@
 <?php
 
-    class RegistrationModel {
+    require_once('registrations.php');
+
+    class RegistrationNotifyModel {
+        public $game_id;
         public $game_city;
         public $game_cityid;
         public $game_date;
@@ -8,12 +11,13 @@
         public $team_count;
         public $team_leader;
         public $team_phone;
+        public $team_email;
     }
-    class CallbackModel {
+    class CallbackNotifyModel {
         public $name;
         public $phone;
     }
-    class CertificateModel {
+    class CertificateNotifyModel {
         public $name;
         public $phone;
     }
@@ -48,7 +52,8 @@
 
         public function buildModel($notify_type, $params) {
             if ($notify_type == $this->NOTIFY_TYPES['REG']) {
-                $result = new RegistrationModel();
+                $result = new RegistrationNotifyModel();
+                $result->game_id = $params["GameId"];
                 $result->game_city = $params["City"];
                 $result->game_cityid = $params["CityId"];
                 $result->game_date = $params["Date"];
@@ -56,19 +61,38 @@
                 $result->team_count = $params["Count"];
                 $result->team_leader = $params["Leader"];
                 $result->team_phone = $params["Phone"];
+                $result->team_email = $params["Email"];
                 return $result;
             } else if ($notify_type == $this->NOTIFY_TYPES['CALL']) {
-                $result = new CallbackModel();
+                $result = new CallbackNotifyModel();
                 $result->name = $params["Name"];
                 $result->phone = $params["Phone"];
                 return $result;
             } else if ($notify_type == $this->NOTIFY_TYPES['CERT']) {
-                $result = new CertificateModel();
+                $result = new CertificateNotifyModel();
                 $result->name = $params["Name"];
                 $result->phone = $params["Phone"];
                 return $result;
             } else {
                 return NULL;
+            }
+        }
+
+        public function handleEvent($notify_type, $model) {
+            if ($notify_type == $this->NOTIFY_TYPES['REG']) {
+                $timezone = new DateTimeZone('Europe/Moscow');
+
+                $regRepo = new RegistrationRepository();
+                $reg = new RegistrationModel();
+                $reg->game_id = $model->game_id;
+                $date = new DateTime('NOW', $timezone);
+                $reg->date = $date->format('Y-m-d H:i:s');
+                $reg->team_name = $model->team_name;
+                $reg->team_count = $model->team_count;
+                $reg->leader_name = $model->team_leader;
+                $reg->phone = $model->team_phone;
+                $reg->email = $model->team_email;
+                $regRepo->Create($reg);
             }
         }
 
@@ -97,6 +121,7 @@
         }
 
         private function formatData($notify_type, $model) {
+            // TODO: move message text to resources
             if ($notify_type == $this->NOTIFY_TYPES['REG']) {
                 return "
                 <p>

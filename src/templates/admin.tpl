@@ -96,6 +96,7 @@
 						<td class="action-column">
 							<button type="button" class="btn btn-primary btn-sm crud-update" data-toggle="modal" data-target="#gameEditor">Изменить</button>
 							<button type="button" class="btn btn-danger btn-sm crud-delete">Удалить</button>
+							<button type="button" class="btn btn-secondary btn-sm crud-report">Отчет</button>
 						</td>
 					</tr>
 	{/foreach}

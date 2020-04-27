@@ -84,6 +84,10 @@ gulp.task('watch', function() {
   gulp.watch(paths.src.templates, ['copy-templates']);
 });
 
+// gulp.task('dev-watch', function() {
+//   gulp.watch('./**/*', ['build', 'dev-deploy']);
+// });
+
 // copy block
 
 gulp.task('copy-all', ['copy-libs', 'copy-root', 'copy-app', 'copy-css', 'copy-fonts', 'copy-image', 'copy-photo', 'copy-templates']);
