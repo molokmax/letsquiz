@@ -10,7 +10,7 @@
 		<link rel="icon" type="image/png" href="image/favicon64.png" sizes="64x64">
 
 		<meta property="og:title" content="LET'S КВИЗ!" />
-		<meta property="og:image" content="http://letsquiz.ru/photo/Jzscf5qA8Nw.jpg" />
+		<meta property="og:image" content="https://letsquiz.ru/photo/Jzscf5qA8Nw.jpg" />
 
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/2.1.19/css/materialdesignicons.min.css" integrity="sha256-L3NrnCWf0Pw+HvXutUdR0Vlj4pI5pM2s7tijm55+DzU=" crossorigin="anonymous" />
 		<link href="vendor/bootstrap/bootstrap.min.css" rel="stylesheet" />
@@ -338,7 +338,7 @@
 						<div class="quiz-panel panel-light"><a href="https://fotopodarkist.ru/" target="_blank"><img src="image/logo-photo.png"></a></div>
 					</div>
 					<div class="col-12 col-sm-4 col-md-3">
-						<div class="quiz-panel panel-light"><a href="http://www.perspektiva-pravo.ru/" target="_blank"><img src="image/logo-pravo.png"></a></div>
+						<div class="quiz-panel panel-light"><a href="https://www.perspektiva-pravo.ru/" target="_blank"><img src="image/logo-pravo.png"></a></div>
 					</div>
 				</div>
 				<div class="row">
