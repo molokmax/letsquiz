@@ -28,7 +28,7 @@
             if ($result) {
                 $answer = array(
                     "success" => true, 
-                    "message" => "Запрос отправлен. Мы скоро перезвоним"
+                    "message" => "Запрос отправлен. Ждите подтверждения на электронную почту"
                 );
                 echo(json_encode($answer));
             } else {

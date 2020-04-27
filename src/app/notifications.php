@@ -141,6 +141,9 @@
                 </p>
                 <p>
                     <b>Телефон</b>: <i>".htmlspecialchars($model->team_phone)."</i>
+                </p>
+                <p>
+                    <b>Email</b>: <i>".htmlspecialchars($model->team_email)."</i>
                 </p>";
             } else if ($notify_type == $this->NOTIFY_TYPES['CALL']) {
                 return "
