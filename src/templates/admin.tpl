@@ -18,7 +18,7 @@
 		<link href="vendor/pnotify/pnotify.custom.min.css" media="all" rel="stylesheet" type="text/css" />
 		<!-- <link href="vendor/datetimepicker/jquery.datetimepicker.min.css" media="all" rel="stylesheet" type="text/css" /> -->
 
-		<link rel="stylesheet" type="text/css" href="style-admin.css" />
+		<link href="style-admin.css?{$SETTING_SYSTEM_VERSION_NUMBER}" rel="stylesheet" type="text/css" />
 		
 		<title>LET'S КВИЗ! (Админка)</title>
 	</head>
@@ -402,7 +402,7 @@
 		<script src="vendor/bootstrap/bootstrap.min.js"></script>
 		<script src="vendor/pnotify/pnotify.custom.min.js"></script>
 		
-		<script src="admin.js"></script>
+		<script src="admin.js?{$SETTING_SYSTEM_VERSION_NUMBER}"></script>
 		
 		<script>
 			{foreach from=$SETTING_LIST item=setting name=settings}

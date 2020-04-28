@@ -26,6 +26,10 @@
 	$settings = $settingRepo->Read();
 	$smarty->assign('SETTING_LIST', $settings);
 
+	foreach ($settings as $item) {
+		$smarty->assign('SETTING_' . $item->prefix, $item->value);
+	}
+
 	$gameRepo = new GameRepository();
 	$games = $gameRepo->Read($timezone);
 	$smarty->assign('GAME_LIST', $games);

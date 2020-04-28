@@ -17,7 +17,7 @@
 		<link href="vendor/pnotify/pnotify.custom.min.css" media="all" rel="stylesheet" type="text/css" />
 		<link href="vendor/slick/slick.css" rel="stylesheet" />
 		<link href="vendor/slick/slick-theme.css" rel="stylesheet" />
-		<link href="style.css" rel="stylesheet" />
+		<link href="style.css?{$SETTING_SYSTEM_VERSION_NUMBER}" rel="stylesheet" type="text/css" />
 		
 		<title>LET'S КВИЗ!</title>
 	</head>
@@ -662,6 +662,6 @@
 		<script src="vendor/bootstrap/bootstrap.min.js"></script>
 		<script src="vendor/pnotify/pnotify.custom.min.js"></script>
 		<script src="vendor/slick/slick.js"></script>
-		<script src="app.js"></script>
+		<script src="app.js?{$SETTING_SYSTEM_VERSION_NUMBER}"></script>
 	</body>
 </html>
