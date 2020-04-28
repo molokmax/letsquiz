@@ -16,7 +16,7 @@ const gulp = require('gulp');
 const del = require('del');
 const autoprefixer = require('gulp-autoprefixer');
 const imagemin = require('gulp-imagemin');
-const ftp = require('gulp-ftp');
+const ftp = require('vinyl-ftp');
 const exec = require('child_process').exec;
 
 const paths = {
@@ -45,17 +45,36 @@ gulp.task('default', ['build', 'watch'], function() {
 });
 //gulp.task('default', ['build', 'watch', 'deploy']);
 
-gulp.task('prod-deploy', function() {
+function prodDeploy(libs, vendor, photo) {
+  var src = [paths.dist + '/**/*', '!'+paths.dist+'/config.php', '!'+paths.dist+'/.htaccess'];
+  if (!libs) {
+    src.push('!'+paths.dist+'/libs/**/*');
+  }
+  if (!vendor) {
+    src.push('!'+paths.dist+'/vendor/**/*');
+  }
+  if (!photo) {
+    src.push('!'+paths.dist+'/photo/**/*');
+  }
+  var conn = ftp.create( {
+    host: config.ftp_url,
+    port: config.ftp_port,
+    user: config.ftp_user,
+    password: config.ftp_pass,
+    parallel: 10
+  });
+  return gulp.src(src, { buffer: false })
+    .pipe(conn.newer(config.ftp_path)) // only upload newer files
+    .pipe(conn.dest(config.ftp_path));
+}
+
+gulp.task('prod-deploy-full', function() {
   //del.sync([paths.build_dir], { force: true });
-  return gulp.src([paths.dist + '/**/*', '!'+paths.dist+'/config.php', '!'+paths.dist+'/.htaccess', '!'+paths.dist+'/libs/**/*'])
-    //.pipe(gulp.dest(paths.build_dir))
-    .pipe(ftp({
-      host: config.ftp_url,
-      port: config.ftp_port,
-      user: config.ftp_user,
-      pass: config.ftp_pass,
-      remotePath: config.ftp_path
-    }));
+  return prodDeploy(false, true, true);
+});
+
+gulp.task('prod-deploy', function() {
+  return prodDeploy(false, false, false);
 });
 
 gulp.task('dev-deploy', function() {
