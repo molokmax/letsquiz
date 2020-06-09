@@ -28,6 +28,7 @@ const paths = {
         root: ['*.{js,php}', '.htaccess', '!gulpfile.js', '!secret.config.js'],
         libs: {
           smarty: './libs/smarty/**/*', 
+          mailer: './libs/PHPMailer/**/*', 
           //slick: './slick/**/*', 
           vendor: './vendor/**/*'
         },
@@ -114,6 +115,8 @@ gulp.task('copy-all', ['copy-libs', 'copy-root', 'copy-app', 'copy-css', 'copy-f
 gulp.task('copy-libs', function() {
   gulp.src(paths.src.libs.smarty)
     .pipe(gulp.dest(paths.dist + '/libs/smarty/'));
+    gulp.src(paths.src.libs.mailer)
+      .pipe(gulp.dest(paths.dist + '/libs/PHPMailer/'));
   //gulp.src(paths.src.libs.slick)
   //  .pipe(gulp.dest(paths.dist + '/slick/'));
   gulp.src(paths.src.libs.vendor)

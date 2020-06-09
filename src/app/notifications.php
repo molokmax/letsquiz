@@ -1,4 +1,10 @@
 <?php
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\Exception;
+
+    require_once('libs/PHPMailer/Exception.php');
+    require_once('libs/PHPMailer/PHPMailer.php');
+    require_once('libs/PHPMailer/SMTP.php');
 
     require_once('registrations.php');
 
@@ -267,6 +273,8 @@
             $send_method = $config['MAIL_SEND_METHOD'];
             if ($send_method == 'PHP') {
                 return $this->sendByPHP($message);
+            } else if ($send_method == 'SMTP') {
+                return $this->sendBySMTP($message);
             } else {
                 return false;
             }
@@ -285,6 +293,47 @@
                 return mail($message->to, $message->subject, $message->body, implode("\r\n", $headers));
             } else {
                 return true;
+            }
+        }
+
+        private function sendBySMTP($message) {
+            $config = include('config.php');
+            $host = $config['MAIL_SMTP_HOST'];
+            $port = $config['MAIL_SMTP_PORT'];
+            $user = $config['MAIL_SMTP_USERNAME'];
+            $pass = $config['MAIL_SMTP_PASSWORD'];
+
+            // Instantiation and passing `true` enables exceptions
+            $mail = new PHPMailer(true);
+
+            try {
+                //Server settings
+                $mail->CharSet = 'UTF-8';
+ 
+                // Настройки SMTP
+                $mail->isSMTP();
+                $mail->SMTPAuth = true;
+                $mail->SMTPDebug = 0;
+
+                $mail->Host       = $host;                    // Set the SMTP server to send through
+                $mail->Username   = $user;                     // SMTP username
+                $mail->Password   = $pass;                               // SMTP password
+                $mail->Port       = $port;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+                $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+
+                //Recipients
+                $mail->setFrom($message->from, 'Lets Quiz');
+                $mail->addAddress($message->to);
+
+                // Content
+                $mail->isHTML(true);                                  // Set email format to HTML
+                $mail->Subject = $message->subject;
+                $mail->Body    = $message->body;
+
+                return $mail->send();
+            } catch (Exception $e) {
+                // TODO: log error - echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+                return false;
             }
         }
     }
