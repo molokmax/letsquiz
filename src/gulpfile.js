@@ -69,6 +69,10 @@ function prodDeploy(libs, vendor, photo) {
     .pipe(conn.dest(config.ftp_path));
 }
 
+gulp.task('prod-deploy-full-libs', function() {
+  return prodDeploy(true, true, true);
+});
+
 gulp.task('prod-deploy-full', function() {
   //del.sync([paths.build_dir], { force: true });
   return prodDeploy(false, true, true);

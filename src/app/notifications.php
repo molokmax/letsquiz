@@ -1,4 +1,5 @@
 <?php
+
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\Exception;
 
@@ -333,9 +334,9 @@
                 return $mail->send();
             } catch (Exception $e) {
                 // TODO: log error - echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+                // echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
                 return false;
             }
         }
     }
-
 ?>
