@@ -36,11 +36,6 @@ nav.quiz-menu .nav-item .nav-link.active {
     border-bottom-width: 5px;
     border-bottom-color: #ff6699;
 }
-nav.quiz-menu .intro-text {
-	transform-origin: 0 0;
-	transform: rotate(270deg);
-}
-
 
 input:invalid, select:invalid, textarea:invalid {
 	box-shadow: 0 0 0px 2px #ff6699;
@@ -110,8 +105,8 @@ div.quiz-block.block-dark {
 	color: #FFFFFF;
 }
 div.quiz-block.block-light {
-	background-color: #FFFFFF;
-	color: #492798;
+	background-color: #E3E3FE;
+	color: #000033;
 }
 
 div.quiz-block-container div.quiz-block .main-text {
@@ -235,11 +230,7 @@ div.quiz-block-container.main .quiz-block {
 	width: 100%;
 	height: 100%;
 }
-.main-block-desktop {
-	height: 100vh;
-}
 .main-block-mobile {
-	height: 100vh;
 	display: none;
 }
 .main-block-mobile .logo-placeholder {
@@ -543,78 +534,64 @@ div.quiz-block-container.footer .email a:visited {
 	padding-bottom: 1rem;
 }
 .quiz-game-card {
-	padding: 1.5rem;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
 	margin-bottom: 1rem;
 	margin-left: 1rem;
 	margin-right: 1rem;
-	background-color: #ebebeb;
+	border-style: solid;
+	border-width: 4px;
+	background-color: rgba(255, 255, 255, 0.3);
 }
 /* .quiz-game-card-container {
 } */
 .quiz-game-card.game-closed {
 	color: rgba(0, 0, 51, 0.5);
 }
-.quiz-game-card.game-color-green {
-	color: #63C130;
+.quiz-game-card.border-green {
+	border-color: #63C130;
 }
-.quiz-game-card.game-color-blue {
-	color: #4286f4;
+.quiz-game-card.border-blue {
+	border-color: #4286f4;
 }
-.quiz-game-card.game-color-red {
-	color: #f46541;
+.quiz-game-card.border-red {
+	border-color: #f46541;
 }
-.quiz-game-card.game-color-yellow {
-	color: #f4c842;
+.quiz-game-card.border-yellow {
+	border-color: #f4c842;
 }
 /*.quiz-game-card:hover {
 	cursor: pointer;
 }*/
-.quiz-game-card .game-label {
-	font-size: 1.2rem;
+.quiz-game-card .game-date {
+	text-align: center;
 }
-.quiz-game-card .game-label .game-label-icon {
-	font-size: 1.2rem;
-	margin-right: 0.7rem;
+.quiz-game-card .game-city {
+	text-align: center;
+	font-size: 1.5rem;
+    padding-bottom: 0.5rem;
 }
-.quiz-game-card .game-label.game-name {
-	font-size: 2rem;
-	font-weight: bold;
+.quiz-game-card .game-name {
+	text-align: center;
+	font-size: 0.8rem;
+    padding-bottom: 0.5rem;
 }
-.quiz-game-card .game-label.game-city {
+.quiz-game-card .game-day {
+	text-align: center;
 }
-.quiz-game-card .game-date-block {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-}
-.quiz-game-card .game-label.game-date {
-}
-.quiz-game-card .game-label.game-day {
-}
-.quiz-game-card .game-label.game-time {
-}
-
-.quiz-game-card.game-color-green .registration-btn {
-	background-color: #63C130;
-}
-.quiz-game-card.game-color-blue .registration-btn {
-	background-color: #4286f4;
-}
-.quiz-game-card.game-color-red .registration-btn {
-	background-color: #f46541;
-}
-.quiz-game-card.game-color-yellow .registration-btn {
-	background-color: #f4c842;
+.quiz-game-card .game-time {
+	text-align: center;
+	padding-top: 0.5rem;
+	font-size: 1.5rem;
 }
 .quiz-game-card .registration-btn {
 	text-align: center;
-	margin-top: 1rem;
+	padding-top: 0.5rem;
 	font-size: 1rem;
-	background-color: #492798;
 }
 .quiz-game-card .registration-btn a {
-	color: #ebebeb;
-	font-size: 1.2rem;
-	font-weight: bold;
+	color: #000033;
+	text-decoration: underline;
 }
 .quiz-game-card .registration-btn a:hover {
 	text-decoration: none;

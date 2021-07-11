@@ -10,10 +10,18 @@
             $day_of_week = $date->format('N');
             return $this->WEEK_DAY_NAMES[$day_of_week];
         }
+        public function getDayShortName($date) {
+            $day_of_week = $date->format('N');
+            return $this->WEEK_DAY_SHORT_NAMES[$day_of_week];
+        }
 
         public function getMonthName($date) {
             $month_number = $date->format('n');
             return $this->MONTH_NAMES[$month_number];
+        }
+        public function getMonthShortName($date) {
+            $month_number = $date->format('n');
+            return $this->MONTH_SHORT_NAMES[$month_number];
         }
         
         private $WEEK_DAY_NAMES = array(
@@ -24,6 +32,15 @@
             5 => 'Пятница',
             6 => 'Суббота',
             7 => 'Воскресенье'
+        );
+        private $WEEK_DAY_SHORT_NAMES = array(
+            1 => 'пн',
+            2 => 'вт',
+            3 => 'ср',
+            4 => 'чт',
+            5 => 'пт',
+            6 => 'сб',
+            7 => 'вс'
         );
 
         private $MONTH_NAMES = array(
@@ -40,6 +57,21 @@
             11 => 'ноября',
             12 => 'декабря'
         );
+        private $MONTH_SHORT_NAMES = array(
+            1 => 'янв.',
+            2 => 'фев.',
+            3 => 'мар.',
+            4 => 'апр.',
+            5 => 'мая',
+            6 => 'июн.',
+            7 => 'июл.',
+            8 => 'авг.',
+            9 => 'сен.',
+            10 => 'окт.',
+            11 => 'ноя.',
+            12 => 'дек.'
+        );
+
     }
 
     class GameModel {
@@ -60,7 +92,9 @@
         public $id;
         public $full_date;
         public $date;
+        public $date_short;
         public $day_name;
+        public $day_short_name;
         public $time;
         public $game_name;
         public $city_id;
@@ -73,7 +107,9 @@
             $this->id = $db_game->id;
             $this->full_date = $db_game->date->format('Y-m-d H:i:s');
             $this->date = $db_game->date->format('j') . ' ' . $formatter->getMonthName($db_game->date);
+            $this->date_short = $db_game->date->format('j') . ' ' . $formatter->getMonthShortName($db_game->date);
             $this->day_name = $formatter->getDayName($db_game->date);
+            $this->day_short_name = $formatter->getDayShortName($db_game->date);
             $this->time = $db_game->date->format('H:i');
             $this->city_id = $db_game->city_id;
             $this->city = $db_game->city;

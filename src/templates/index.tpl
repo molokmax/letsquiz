@@ -12,7 +12,7 @@
 		<meta property="og:title" content="LET'S КВИЗ!" />
 		<meta property="og:image" content="https://letsquiz.ru/photo/Jzscf5qA8Nw.jpg" />
 
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/2.1.19/css/materialdesignicons.min.css" integrity="sha256-L3NrnCWf0Pw+HvXutUdR0Vlj4pI5pM2s7tijm55+DzU=" crossorigin="anonymous" />
+		<link rel="stylesheet" href="https://cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css" />
 		<link href="vendor/bootstrap/bootstrap.min.css" rel="stylesheet" />
 		<link href="vendor/pnotify/pnotify.custom.min.css" media="all" rel="stylesheet" type="text/css" />
 		<link href="vendor/slick/slick.css" rel="stylesheet" />
@@ -23,11 +23,12 @@
 	</head>
 	<body data-spy="scroll" data-target=".quiz-menu">
 		<!-- Yandex.Metrika counter -->
-		<script type="text/javascript" src="metrika.js"></script>
-		<noscript><div><img src="https://mc.yandex.ru/watch/54485767" style="position:absolute; left:-9999px;" alt="" /></div></noscript> 
+		<!-- <script type="text/javascript" src="metrika.js"></script>
+		<noscript><div><img src="https://mc.yandex.ru/watch/54485767" style="position:absolute; left:-9999px;" alt="" /></div></noscript> -->
 		<!-- /Yandex.Metrika counter -->
-
-		<nav class="quiz-menu navbar navbar-expand-lg sticky-top">
+<!--
+		<nav class="quiz-menu navbar">
+			<div class="intro-text">ЛЕТС КВИЗ</div>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="quiz-menu-button mdi mdi-menu"></span>
 			</button>
@@ -76,40 +77,20 @@
 				</ul>
 			</div>
 		</nav>
+-->
+
 {if $SETTING_HIDE_MAIN eq 'false'}
 		<div id="main" class="main container quiz-block-container">
 			<div class="container quiz-block">
-				<div class="row">
-					<div class="col-md-12">
-						<div class="main-header">ИНТЕЛЛЕКТУАЛЬНО-РАЗВЛЕКАТЕЛЬНАЯ </br> БИТВА</div>
-					</div>
-				</div>
 				<div class="row main-block-desktop">
 					<div class="col-md-4 offset-md-2">
-						<div class="contacts">
-							<div class="quiz-main-text phone">{$SETTING_PHONE}</div>
-							<button type="button" class="btn btn-light quiz-button" data-toggle="modal" data-target="#callbackWindow">Обратный звонок</button>
-						</div>
-						<div class="socialbuttons">
-							<a href="https://vk.com/letsquiz" target="_blank"><img src="image/vk.png"></a>
-							<a href="https://www.instagram.com/lets_quiz/" target="_blank"><img src="image/instagram.png"></a>
-						</div>
 					</div>
 					<div class="col-md-4">
-						<div class="signup">
-							<div class="quiz-main-text text text-right">Расписание игр и регистрация</div>
-							<a class="btn btn-light quiz-button float-right" href="#schedule">Хочу играть</a>
-						</div>
-						<div class="cert">
-							<div class="quiz-main-text text text-right">Подарочный сертификат</div>
-							<button type="button" class="btn btn-light quiz-button float-right" data-toggle="modal" data-target="#certificateWindow">Приобрести</button>
-						</div>
 					</div>
 				</div>
 				<div class="row main-block-mobile">
 					<div class="logo-placeholder"></div>
-					<div class="col-12">
-							<a class="btn btn-light quiz-button d-block mx-auto" href="#schedule">Хочу играть</a>
+						<div class="col-12">
 						</div>
 					</div>
 				</div>
@@ -124,36 +105,54 @@
 						<div class="quiz-header">РАСПИСАНИЕ ИГР</div>
 					</div>
 				</div>
-				<div class="row address-list">
+				<!-- <div class="row address-list">
 {foreach from=$ADDRESS_LIST item=address name=addresses}
 					<div class="col-12">
 						<div class="address-item" data-city-name="{$address->city_name}">{$address->city_name}, {$address->description}</div>
 					</div>
 {/foreach}
-				</div>
+				</div> -->
 				<div class="row">
 					<div class="col-md-8 offset-md-2">				
 						<div class="row list-schedule">
 {foreach from=$GAME_LIST item=game name=games}
 							<div class="quiz-game-card-container col-lg-4 col-md-6 col-sm-12" data-city-name="{$game->city}">
-								<div class="quiz-game-card border-{$game->color} {if $game->is_closed eq '1'}game-closed{/if}" 
+								<div class="quiz-game-card game-color-{$game->color} {if $game->is_closed eq '1'}game-closed{/if}" 
 									data-game-id="{$game->id}" data-city-id="{$game->city_id}" data-city-name="{$game->city}" data-price="{$game->price}" data-game-fulldate="{$game->full_date}">
-									<div class="game-city">{$game->city}</div>
-									<div class="game-name">Игра <b>{$game->game_name}</b></div>
-									<div class="game-date">{$game->date}</div>
-									<div class="game-day">{$game->day_name}</div>
-									<div class="game-time">{$game->time}</div>
+									<div class="game-label game-name">{$game->game_name}</div>
+									<div class="game-label game-city">
+										<i class="game-label-icon mdi mdi-flag-outline"></i>{$game->city}
+									</div>
+									<div class="game-label game-label">
+										<i class="game-label-icon mdi mdi-calendar"></i>{$game->date_short}, {$game->day_short_name}
+									</div>
+									<div class="game-label game-date-block"> 
+										<div class="game-label game-time">
+											<i class="game-label-icon mdi mdi-clock-time-three-outline"></i>{$game->time}
+										</div>
+										<div class="game-label game-price">
+											<i class="game-label-icon mdi mdi-cash-100"></i>{$game->price} руб.
+										</div>
+									</div>
 									<div class="registration-btn">
 	{if $game->is_closed eq '1'}
-											<span>Мест нет</span>
+											<span>МЕСТ НЕТ</span>
 	{else}
-											<a href="javascript:void(0);" data-toggle="modal" data-target="#registrationWindow">Регистрация</a>
+											<a href="javascript:void(0);" data-toggle="modal" data-target="#registrationWindow">РЕГИСТРАЦИЯ</a>
 	{/if}
 									</div>
 								</div>
 							</div>
 {/foreach}
+							<div class="quiz-schedule-ad col-12">
+								<div class="quiz-schedule-ad-text">ТВОИ ЭМОЦИИ, КОГДА ТЫ УСПЕЛ ПОДАТЬ ЗАЯВКУ НА СВОЕ ЛЮБИМОЕ ВРЕМЯ</div>
+							</div>
 						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-8 offset-md-2">	
+						Наша цель - позитивный вечер, на не взрыв мозга! (#ноэтонеточно (с) Организаторы)
 					</div>
 				</div>
 			</div>
