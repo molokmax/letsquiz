@@ -100,8 +100,8 @@ div.quiz-block-container {
     max-width: 100%;
 }
 div.quiz-block-container div.quiz-block {
-	padding-top: 50px;
-	padding-bottom: 50px;
+	padding-top: 70px;
+	padding-bottom: 70px;
 	width: 100%;
     max-width: 100%;
 }
@@ -236,7 +236,7 @@ div.quiz-block-container.main .quiz-block {
 	height: 100%;
 }
 .main-block-desktop {
-	height: 100vh;
+	height: 85vh;
 }
 .main-block-mobile {
 	height: 100vh;
@@ -290,6 +290,55 @@ div.quiz-block-container.main .cert {
 
 div.quiz-block-container.main .socialbuttons img {
 	padding: 5px;
+}
+
+div.quiz-block-container.schedule .quiz-schedule-ad {
+	height: 200px;
+	background: linear-gradient(to right, transparent 60%, #492798 80%), url("image/schedule_background.jpg");
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-size: cover;    
+	margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+div.quiz-block-container.schedule .quiz-schedule-ad-text {
+	position: relative;
+    float: right;
+    width: 280px;
+    color: #FFFFFF;
+    font-size: 1.4rem;
+    text-align: right;
+	height: 100%;
+	font-weight: bold;
+	text-transform: uppercase;
+	padding: 1rem;
+}
+
+div.quiz-block-container.schedule .quiz-schedule-target-container {   
+	margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    margin-top: 2rem;
+}
+div.quiz-block-container.schedule .quiz-schedule-target-text {
+    font-size: 3.5rem;
+	font-weight: bold;
+    line-height: 1.2;
+    line-height: 1;
+    padding-right: 2rem;
+}
+div.quiz-block-container.schedule .quiz-schedule-target-tags {
+	display: inline-block;
+    line-height: 1.2;
+}
+div.quiz-block-container.schedule .quiz-schedule-target-tag {
+    font-size: 1.2rem;
+	font-weight: normal;
+}
+
+div.quiz-block-container.schedule .quiz-schedule-target-tag {
+    font-size: 1.2rem;
+	font-weight: normal;
 }
 
 div.terms div.quiz-block.intro {
@@ -544,9 +593,9 @@ div.quiz-block-container.footer .email a:visited {
 }
 .quiz-game-card {
 	padding: 1.5rem;
-	margin-bottom: 1rem;
-	margin-left: 1rem;
-	margin-right: 1rem;
+	margin-bottom: 2rem;
+	margin-left: 0.5rem;
+	margin-right: 0.5rem;
 	background-color: #ebebeb;
 }
 /* .quiz-game-card-container {
@@ -579,6 +628,7 @@ div.quiz-block-container.footer .email a:visited {
 .quiz-game-card .game-label.game-name {
 	font-size: 2rem;
 	font-weight: bold;
+	text-transform: uppercase;
 }
 .quiz-game-card .game-label.game-city {
 }
@@ -637,7 +687,7 @@ div.quiz-block-container.footer .email a:visited {
 	}
 	div.quiz-block-container.main .quiz-block {
 		background-position: center 6rem;
-		background-size: 50rem;
+		background-size: 45rem;
 	}
 	div.quiz-item {
 		font-size: 2rem;

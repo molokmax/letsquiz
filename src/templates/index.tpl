@@ -99,19 +99,12 @@
 {/if}
 {if $SETTING_HIDE_SCHEDULE eq 'false'}
 		<div id="schedule" class="schedule container quiz-block-container">
-			<div class="photos container quiz-block block-light">
+			<div class="container quiz-block block-light">
 				<div class="row">
 					<div class="col-12">
 						<div class="quiz-header">РАСПИСАНИЕ ИГР</div>
 					</div>
 				</div>
-				<!-- <div class="row address-list">
-{foreach from=$ADDRESS_LIST item=address name=addresses}
-					<div class="col-12">
-						<div class="address-item" data-city-name="{$address->city_name}">{$address->city_name}, {$address->description}</div>
-					</div>
-{/foreach}
-				</div> -->
 				<div class="row">
 					<div class="col-md-8 offset-md-2">				
 						<div class="row list-schedule">
@@ -144,15 +137,25 @@
 								</div>
 							</div>
 {/foreach}
-							<div class="quiz-schedule-ad col-12">
-								<div class="quiz-schedule-ad-text">ТВОИ ЭМОЦИИ, КОГДА ТЫ УСПЕЛ ПОДАТЬ ЗАЯВКУ НА СВОЕ ЛЮБИМОЕ ВРЕМЯ</div>
-							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-8 offset-md-2">
+						<div class="quiz-schedule-ad">
+							<div class="quiz-schedule-ad-text">ТВОИ ЭМОЦИИ, КОГДА ТЫ УСПЕЛ ПОДАТЬ ЗАЯВКУ НА СВОЕ ЛЮБИМОЕ ВРЕМЯ</div>
 						</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-md-8 offset-md-2">	
-						Наша цель - позитивный вечер, на не взрыв мозга! (#ноэтонеточно (с) Организаторы)
+						<div class="quiz-schedule-target-container">
+							<span class="quiz-schedule-target-text">Наша цель - позитивный вечер, а не взрыв мозга!</span>
+							<div class="quiz-schedule-target-tags">
+								<div class="quiz-schedule-target-tag">#ноэтонеточно</div>
+								<div class="quiz-schedule-target-tag">(с) Организаторы</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
