@@ -124,7 +124,7 @@
 											<i class="game-label-icon mdi mdi-clock-time-three-outline"></i>{$game->time}
 										</div>
 										<div class="game-label game-price">
-											<i class="game-label-icon mdi mdi-cash-100"></i>{$game->price} руб.
+											<i class="game-label-icon mdi mdi-currency-usd"></i>{$game->price} руб.
 										</div>
 									</div>
 									<div class="registration-btn">
@@ -165,38 +165,35 @@
 		<div id="terms" class="terms container quiz-block-container">
 			<div class="intro container quiz-block block-dark">
 				<div class="row">
-					<div class="col-12">
-						<div class="quiz-header">ЧТО ТАКОЕ LET'S КВИЗ?</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-12 col-sm-10 offset-sm-1 col-md-6 offset-md-3">
-						<div class="quiz-item"><i class="quiz-icon mdi mdi-timer"></i>2,5 часа игры каждые 2 недели</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-12 col-sm-10 offset-sm-1 col-md-6 offset-md-3">
-						<div class="quiz-item"><i class="quiz-icon mdi mdi-account-multiple-outline"></i>От 2 до 9 человек в команде</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-12 col-sm-10 offset-sm-1 col-md-6 offset-md-3">
-						<div class="quiz-item"><i class="quiz-icon mdi mdi-comment-question-outline"></i>7 раундов с интересными вопросами на логику, интуицию и удачу!</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-12 col-sm-10 offset-sm-1 col-md-6 offset-md-3">
-						<div class="quiz-item"><i class="quiz-icon mdi mdi-gift"></i>Крутые призы от наших партнеров для победителей и призеров</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-12 col-sm-10 offset-sm-1 col-md-6 offset-md-3">
-						<div class="quiz-item"><i class="quiz-icon mdi mdi-food"></i>Еда, напитки, неповторимая атмосфера и заряд позитива</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-12 col-sm-10 offset-sm-1 col-md-6 offset-md-3">
-						<div class="quiz-item"><i class="quiz-icon mdi mdi-cake"></i>Повод встретиться с друзьями не только на День Рождения</div>
+					<div class="col-md-8 offset-md-2">
+						<div class="row row-cols-2">		
+							<div class="col">
+								<div class="quiz-terms-header">ЧТО ТАКОЕ ЛЕТС КВИЗ?</div>
+							</div>	
+							<div class="col">
+								<div class="quiz-terms-details">
+									<div class="row">		
+										<div class="col-12 quiz-terms-details-text">
+											"ЛЕТС КВИЗ" - это интеллектуально- развлекательная викторина, цель которой - дружный и веселый праздник, а не взрыв мозга.
+										</div>	
+										<div class="col-12">
+											<div class="quiz-terms-details-item">
+												<i class="quiz-icon mdi mdi-record-circle"></i>2 часа интересного времяпрепровождения
+											</div>
+											<div class="quiz-terms-details-item">
+												<i class="quiz-icon mdi mdi-record-circle"></i>Призы и подарки победителям
+											</div>
+											<div class="quiz-terms-details-item">
+												<i class="quiz-icon mdi mdi-record-circle"></i>Универсальная игра для всех возрастов
+											</div>
+											<div class="quiz-terms-details-item">
+												<i class="quiz-icon mdi mdi-record-circle"></i>Пригодятся любые знания (даже те, о которых вы забыли ;)
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
