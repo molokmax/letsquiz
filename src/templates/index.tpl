@@ -19,7 +19,7 @@
 		<link href="vendor/slick/slick-theme.css" rel="stylesheet" />
 		<link href="style.css?{$SETTING_SYSTEM_VERSION_NUMBER}" rel="stylesheet" type="text/css" />
 		
-		<title>LET'S КВИЗ!</title>
+		<title>ЛЕТС КВИЗ!</title>
 	</head>
 	<body data-spy="scroll" data-target=".quiz-menu">
 		<!-- Yandex.Metrika counter -->
@@ -197,22 +197,6 @@
 					</div>
 				</div>
 			</div>
-			<div class="container quiz-block block-light">
-				<div class="row">
-					<!--<div class="col-md-4"></div>-->
-					<div class="col-12">
-						<div class="main-text">Наша цель - позитивный вечер, а не взрыв мозга!</div>
-					</div>
-					<!--<div class="col-md-4"></div>-->
-				</div>
-				<div class="row">
-					<div class="col-12 col-md-10 text-right">
-						<div class="text">Хочешь сыграть в LET'S КВИЗ?</div>
-						<a class="btn btn-dark quiz-button float-right" href="#schedule">Онлайн-регистрация</a>
-					</div>
-					<div class="hidden-md-down col-md-2"></div>
-				</div>
-			</div>
 			<div class="details container quiz-block block-dark">
 				<div class="row">
 					<div class="col-12">
@@ -277,33 +261,27 @@
 {/if}
 {if $SETTING_HIDE_GALLERY eq 'false'}
 		<div id="gallery" class="gallery container quiz-block-container">
-			<div class="photos container quiz-block block-dark">
+			<div class="photos container quiz-block block-light">
 				<div class="row">
-					<div class="col-md-8 offset-md-2">
-						<div id="carousel-gallery" class="carousel slide" data-ride="carousel" data-interval=10000>
-							<div class="carousel-inner" role="listbox">
-{foreach from=$PHOTO_LIST item=url name=gallery}
-								<div class="carousel-item {if $smarty.foreach.gallery.first}active{/if}">
-									<img class="d-block img-fluid" src="{$url}">
-								</div>
-{/foreach}
-							</div>
-							<a class="carousel-control-prev" href="#carousel-gallery" role="button" data-slide="prev">
-								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-								<span class="sr-only">Previous</span>
-							</a>
-							<a class="carousel-control-next" href="#carousel-gallery" role="button" data-slide="next">
-								<span class="carousel-control-next-icon" aria-hidden="true"></span>
-								<span class="sr-only">Next</span>
-							</a>
-						</div>
+					<div class="col-12">
+						<div class="quiz-header">ФОТОГРАФИИ</div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-12 col-md-10">
-						<button type="button" class="btn btn-light quiz-button float-right" data-toggle="modal" data-target="#questionWindow">Примеры вопросов</button>
+					<div class="col-md-8 offset-md-2">
+						<div class="row photo-container">
+{foreach from=$PHOTO_LIST item=url name=gallery}
+							<div class="photo-block col-lg-4 col-md-6 col-sm-12">
+								<img class="img-fluid" src="{$url}"> <!-- d-block -->
+							</div>
+{/foreach}
+							<div class="photo-gallery-link col-lg-8 col-md-6 col-sm-12">
+								<div class="photo-gallery-link-background">
+									<div class="photo-gallery-link-text">ЭТО, КОНЕЧНО, </br>НЕ ВСЕ ФОТОГРАФИИ... </br>ПОЛНЫЕ ФОТООТЧЕТЫ </br>СМОТРИ ЗДЕСЬ</div>
+								</div>
+							</div>
+						</div>
 					</div>
-					<div class="hidden-md-down col-md-2"></div>
 				</div>
 			</div>
 		</div>

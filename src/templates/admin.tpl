@@ -20,7 +20,7 @@
 
 		<link href="style-admin.css?{$SETTING_SYSTEM_VERSION_NUMBER}" rel="stylesheet" type="text/css" />
 		
-		<title>LET'S КВИЗ! (Админка)</title>
+		<title>ЛЕТС КВИЗ! (Админка)</title>
 	</head>
 	<body >
 		

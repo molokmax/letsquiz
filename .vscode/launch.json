@@ -8,6 +8,8 @@
         "type": "php",
         "request": "launch",
         "port": 9000,
+        "log": true,
+        "externalConsole": false,
         "pathMappings": {
             "/var/www/html": "${workspaceFolder}/src"
         },

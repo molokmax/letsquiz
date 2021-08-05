@@ -166,7 +166,7 @@
             return $result;
         }
 
-        public function GetAll() {
+        public function GetAll($limit) {
             $config = include('config.php');
             $result = array();
 
@@ -179,10 +179,11 @@
             mysqli_set_charset($con, $config['DB_CONFIG_CHARSET']);
 	        mysqli_select_db($con, $config['DB_CONFIG_DATABASENAME']);
 	
-	        $query = 'SELECT `id`, `url`, `order` FROM `photo` ORDER BY  `order`';
+            $query = "SELECT `id`, `url`, `order` FROM `photo` ORDER BY  `order` LIMIT 0, $limit";
 	        $db_result = mysqli_query($con, $query);
             if ($db_result) {
                 while($row = mysqli_fetch_array($db_result)) {
+                    // print($row['url']);
                     array_push($result, $row['url']);
                 }
             }

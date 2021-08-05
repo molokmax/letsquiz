@@ -4,6 +4,7 @@ services:
   app:
     ports:
       - 8088:80
+      - 9000:9000
   db:
     ports:
       - 33060:3306

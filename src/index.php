@@ -36,7 +36,7 @@
 	}
 
 	$photoRepo = new PhotoRepository();
-	$photos = $photoRepo->GetAll();
+	$photos = $photoRepo->GetAll(4);
 	$smarty->assign('PHOTO_LIST', $photos);
 
 	$questionRepo = new QuestionRepository();

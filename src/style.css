@@ -6,7 +6,7 @@
 }
 
 body {
-	font-family: 'Verdana';
+	font-family: 'IntroRegular', 'Verdana';
 	background: #000033;
 	position: relative;
 }
@@ -252,7 +252,6 @@ div.quiz-block-container.main .quiz-block {
 
 div.quiz-block-container.main .main-header {
 	text-align: center;
-	font-family: 'IntroRegular', 'Verdana';
 	font-size: 2.5rem;
 }
 
@@ -372,7 +371,7 @@ div.terms div.quiz-block.intro .quiz-terms-details .quiz-terms-details-text:befo
 }
 
 div.terms div.quiz-block.intro .quiz-terms-details .quiz-terms-details-item {
-	font-size: 1.9rem;
+	font-size: 1.7rem;
 	line-height: 1.2;
 	margin-bottom: 3rem;
 	display: inline-flex;
@@ -436,16 +435,31 @@ div.quiz-block.faq .quiz-icon {
 	padding-right: 0.5rem;
 	font-size: 1.5rem;
 }
-div.quiz-block-container.gallery .carousel .carousel-inner {
-	width: 80%;
-	margin: auto;
-}
-div.quiz-block-container.gallery .carousel .carousel-inner img {
-	max-height: 50rem;
-}
 .gallery .block-dark {
 	background-image: url('image/question_background_2.jpg');
 	/* background-repeat: repeat; */
+}
+.gallery .photo-block {
+	margin-bottom: 1.5rem;
+}
+.gallery .photo-gallery-link {
+    margin-bottom: 1.5rem;
+}
+.gallery .photo-gallery-link .photo-gallery-link-background {
+	background-color: #492798;
+	background-image: url('image/background5.jpg');
+	height: 100%;
+}
+.gallery .photo-gallery-link .photo-gallery-link-text {
+	position: relative;
+    float: right;
+    width: 500px;
+    color: #FFFFFF;
+    font-size: 2rem;
+    text-align: right;
+    height: 100%;
+    text-transform: uppercase;
+    padding: 2rem;
 }
 /* .feedback .block-dark {
 	background-image: url('image/question_background.png');
