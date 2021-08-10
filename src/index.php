@@ -23,6 +23,7 @@
 	$settingRepo = new SettingRepository();
 	$settings = $settingRepo->Read();
 
+	$photo_take = 4;
 	$game_take = 8;
 	$game_close_hourse = 4;
 	foreach ($settings as $item) {
@@ -32,11 +33,13 @@
 			$game_take = (int) $item->value;
 		} else if ($item->prefix == 'GAME_CLOSE') {
 			$game_close_hourse = (int) $item->value;
+		} else if ($item->prefix == 'PHOTO_TAKE') {
+			$photo_take = (int) $item->value;
 		}
 	}
 
 	$photoRepo = new PhotoRepository();
-	$photos = $photoRepo->GetAll(4);
+	$photos = $photoRepo->GetAll($photo_take);
 	$smarty->assign('PHOTO_LIST', $photos);
 
 	$questionRepo = new QuestionRepository();

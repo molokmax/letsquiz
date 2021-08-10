@@ -391,10 +391,45 @@ div.terms div.quiz-block.details {
 	background-size: cover;
 }
 div.corp div.quiz-block.corp-block {
-	background-image: url("image/background3.jpg");
+	background-image: url("image/background6.jpg");
 	background-repeat: no-repeat;
 	background-position: center top;
 	background-size: cover;
+}
+div.corp div.quiz-block .corp-text {
+	font-size: 1.2rem;
+	text-align: center;
+}
+div.corp div.quiz-block .corp-item {
+	font-size: 1.2rem;
+    display: inline-flex;
+    line-height: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+div.corp div.quiz-block .corp-item .quiz-icon {
+	padding-right: 1rem;
+    font-size: 4rem;
+}
+div.corp div.quiz-block .corp-questions-text {
+	float: right;
+}
+/* div.corp div.quiz-block .corp-questions-buttons {
+} */
+div.corp div.quiz-block .corp-questions-button {
+	text-align: center;
+	margin-top: 0.5rem;
+	font-size: 1rem;
+	background-color: #492798;
+	border-radius: 3px;
+	width: 300px;
+}
+div.corp div.quiz-block .corp-questions-button a {
+	color: #FFFFFF;
+	font-size: 1.2rem;
+	font-weight: bold;
+}
+div.corp div.quiz-block .corp-questions-button a:hover {
+	text-decoration: none;
 }
 
 .address-list {
@@ -449,6 +484,9 @@ div.quiz-block.faq .quiz-icon {
 	background-color: #492798;
 	background-image: url('image/background5.jpg');
 	height: 100%;
+	background-repeat: no-repeat;
+	background-position: left top;
+	background-size: cover;
 }
 .gallery .photo-gallery-link .photo-gallery-link-text {
 	position: relative;
@@ -460,6 +498,11 @@ div.quiz-block.faq .quiz-icon {
     height: 100%;
     text-transform: uppercase;
     padding: 2rem;
+}
+.gallery .photo-gallery-link img.photo-gallery-link-text-vk {
+	height: 2rem;
+	margin-bottom: 5px;
+    margin-left: 10px;
 }
 /* .feedback .block-dark {
 	background-image: url('image/question_background.png');
@@ -682,6 +725,7 @@ div.quiz-block-container.footer .email a:visited {
 	font-size: 2rem;
 	font-weight: bold;
 	text-transform: uppercase;
+	margin-bottom: 0.5rem;
 }
 .quiz-game-card .game-label.game-city {
 }

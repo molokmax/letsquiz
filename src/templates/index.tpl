@@ -49,11 +49,6 @@
 						<a class="nav-link" href="#gallery">Галерея</a>
 					</li>
 {/if}
-{if $SETTING_HIDE_FRIENDS eq 'false'}
-					<li class="nav-item">
-						<a class="nav-link" href="#friends">Друзья и партнеры</a>
-					</li>
-{/if}
 {if $SETTING_HIDE_CORP eq 'false'}
 					<li class="nav-item">
 						<a class="nav-link" href="#corp">Корпоративы</a>
@@ -277,7 +272,7 @@
 {/foreach}
 							<div class="photo-gallery-link col-lg-8 col-md-6 col-sm-12">
 								<div class="photo-gallery-link-background">
-									<div class="photo-gallery-link-text">ЭТО, КОНЕЧНО, </br>НЕ ВСЕ ФОТОГРАФИИ... </br>ПОЛНЫЕ ФОТООТЧЕТЫ </br>СМОТРИ ЗДЕСЬ</div>
+									<div class="photo-gallery-link-text">ЭТО, КОНЕЧНО, </br>НЕ ВСЕ ФОТОГРАФИИ... </br>ПОЛНЫЕ ФОТООТЧЕТЫ </br>СМОТРИ ЗДЕСЬ <a href="https://vk.com/letsquiz" target="_blank"><img class="photo-gallery-link-text-vk" src="image/vk3.png" alt="VK"></a></div>
 								</div>
 							</div>
 						</div>
@@ -331,88 +326,75 @@
 {/if}
 {if $SETTING_HIDE_CORP eq 'false'}
 		<div id="corp" class="corp container quiz-block-container">
-			<div class="corp-block container quiz-block block-dark">
+			<div class="corp-block container quiz-block block-light">
 				<div class="row">
 					<div class="col-12">
-						<div class="quiz-header">КВИЗ НА КОРПОРАТИВ</div>
+						<div class="quiz-header">КОРПОРАТИВЫ</div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-12 col-sm-10 offset-sm-1 col-md-6 offset-md-3">
-						<div class="main-text">LET'S КВИЗ - отличный вариант для корпоратива или сплочения команды (team building)! Это могут подтвердить компании, которые уже работали с нами:</div>
+					<div class="col-md-6 offset-md-3">
+						<div class="corp-text">Уже сделали интеллектуально и весело таким компаниям как:</div>
+						<div class="corp-text">КАРУСЕЛЬКА</div>
 					</div>
 				</div>
-				<div class="row">
-					<div class="col-12 col-sm-4 offset-sm-2 col-md-3 offset-md-3">
-						<div class="quiz-panel quiz-panel-no-img panel-dark"><a href="#">MARS Chocolate</a></div>
-					</div>
-					<div class="col-12 col-sm-4 col-md-3">
-						<div class="quiz-panel quiz-panel-no-img panel-dark"><a href="#">Kimberly-Clark</a></div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-12 col-sm-4 offset-sm-2 col-md-3 offset-md-3">
-						<div class="quiz-panel quiz-panel-no-img panel-dark"><a href="#">ДОЛ им. Ю.А. Гагарина</a></div>
-					</div>
-					<div class="col-12 col-sm-4 col-md-3">
-						<div class="quiz-panel quiz-panel-no-img panel-dark"><a href="#">MARS Food</a></div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-12 col-sm-4 offset-sm-2 col-md-3 offset-md-3">
-						<div class="quiz-panel quiz-panel-no-img panel-dark"><a href="#">Мастокройф</a></div>
-					</div>
-					<div class="col-12 col-sm-4 col-md-3">
-						<div class="quiz-panel quiz-panel-no-img panel-dark"><a href="#">Радиал-С</a></div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-12 col-md-10">
-						<div class="text text-right">Оставь заявку чтобы узнать подробности</div>
-						<button type="button" class="btn btn-light quiz-button float-right" data-toggle="modal" data-target="#callbackWindow">Обратный звонок</button>
-					</div>
-					<div class="hidden-md-down col-md-2"></div>
-				</div>
-			</div>
-		</div>
-{/if}
-{if $SETTING_HIDE_FEEDBACK eq 'false'}
-		<div id="feedback" class="feedback container quiz-block-container">
-			<div class="container quiz-block block-dark">
 				<div class="row">
 					<div class="col-12">
-						<div class="quiz-header">ОТЗЫВЫ НАШИХ УЧАСТНИКОВ</div>
+						<div class="quiz-header">ЧТО МЫ МОЖЕМ СДЕЛАТЬ?</div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-12 col-sm-10 offset-sm-1 col-md-6 offset-md-3">
-						<div id="carousel-feedback" class="carousel slide" data-ride="carousel" data-interval=10000>
-							<div class="carousel-inner" role="listbox">
-{foreach from=$FEEDBACK_LIST item=feedback name=feedbacks}
-								<div class="carousel-item {if $smarty.foreach.feedbacks.first}active{/if}">
-									<div class="d-block">
-										<div class="feedback-item">
-											<div class="feedback-text">{$feedback->text}</div>
-											<div class="feedback-author">{$feedback->author}</div>
-										</div>
-									</div>
+					<div class="col-md-6 offset-md-3">		
+						<div class="row">
+							<div class="col-12 col-md-6">
+								<div class="corp-item">
+									<i class="quiz-icon mdi mdi-toggle-switch"></i>Он-лайн или Офф-лайн
 								</div>
-{/foreach}
+								<div class="corp-item">
+									<i class="quiz-icon mdi mdi-toggle-switch"></i>От 6 до бесконечности человек
+								</div>
+								<div class="corp-item">
+									<i class="quiz-icon mdi mdi-toggle-switch"></i>Сложность Вы выбираете сами
+								</div>
+								<div class="corp-item">
+									<i class="quiz-icon mdi mdi-toggle-switch"></i>Офис, бар, поле - приедем куда угодно
+								</div>
 							</div>
-							<a class="carousel-control-prev" href="#carousel-feedback" role="button" data-slide="prev">
-								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-								<span class="sr-only">Previous</span>
-							</a>
-							<a class="carousel-control-next" href="#carousel-feedback" role="button" data-slide="next">
-								<span class="carousel-control-next-icon" aria-hidden="true"></span>
-								<span class="sr-only">Next</span>
-							</a>
+							<div class="col-12 col-md-6">
+								<div class="corp-item">
+									<i class="quiz-icon mdi mdi-toggle-switch"></i>Тематическая игра или раунд
+								</div>
+								<div class="corp-item">
+									<i class="quiz-icon mdi mdi-toggle-switch"></i>Элементы игры в Вашем фирменном стиле
+								</div>
+								<div class="corp-item">
+									<i class="quiz-icon mdi mdi-toggle-switch"></i>Можем организовать мероприятие "под ключ"
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6 offset-md-3">		
+						<div class="row">
+							<div class="col-12 col-md-6">
+								<div class="corp-questions-text">
+									<img src="image/quiestions-text.png" alt="Остались вопросы?">
+								</div>
+							</div>
+							<div class="col-12 col-md-6">
+								<div class="corp-questions-buttons">
+									<div class="corp-questions-button"><a href="javascript:void(0);" target="_blank">НАШ PR-KIT</a></div>
+									<div class="corp-questions-button"><a href="javascript:void(0);" data-toggle="modal" data-target="#callbackWindow">ОБРАТНЫЙ ЗВОНОК</a></div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 {/if}
+{if $SETTING_HIDE_FOOTER eq 'false'}
 		<div id="footer" class="footer container quiz-block-container">
 			<div class="container quiz-block block-footer">
 			
@@ -459,36 +441,10 @@
 				</div>
 			</div>
 		</div>
-
+{/if}
 
 
 <!--  Modal windows  -->
-
-		<!-- Callback Window -->
-		<div class="quiz-window modal fade" id="callbackWindow" tabindex="-1" role="dialog" aria-labelledby="CallbackWindowTitle" aria-hidden="true">
-			<div class="modal-dialog modal-dialog-centered" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="callbackWindowTitle">ОБРАТНЫЙ ЗВОНОК</h5>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span class="mdi mdi-close" aria-hidden="true"></span>
-						</button>
-					</div>
-					<div class="modal-body">
-						<form>
-							<div class="quiz-window-title">Оставь номер телефона и мы перезвоним</div>
-							<label for="callback-name">Имя:</label>
-							<input type="text" class="form-control" id="callback-name" required aria-describedby="callback-name" placeholder="Как к тебе обращаться">
-							<label for="callback-phone">Телефон:</label>
-							<input type="tel" class="form-control" id="callback-phone" required aria-describedby="callback-phone" placeholder="Как с тобой связаться">
-						</form>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-light quiz-button call-send-button">Отправить</button>
-					</div>
-				</div>
-			</div>
-		</div>
 
 		<!-- Select City Window -->
 		<div class="quiz-window modal fade" id="selectCityWindow" tabindex="-1" role="dialog" aria-labelledby="SelectCityWindowTitle" aria-hidden="true">
@@ -517,67 +473,27 @@
 			</div>
 		</div>
 
-		<!-- Certificate Window -->
-		<div class="quiz-window modal fade" id="certificateWindow" tabindex="-1" role="dialog" aria-labelledby="CertificateWindowTitle" aria-hidden="true">
+		<!-- Callback Window -->
+		<div class="quiz-window modal fade" id="callbackWindow" tabindex="-1" role="dialog" aria-labelledby="CallbackWindowTitle" aria-hidden="true">
 			<div class="modal-dialog modal-dialog-centered" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="certificateWindowTitle">СЕРТИФИКАТЫ</h5>
+						<h5 class="modal-title" id="callbackWindowTitle">ОБРАТНЫЙ ЗВОНОК</h5>
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 							<span class="mdi mdi-close" aria-hidden="true"></span>
 						</button>
 					</div>
 					<div class="modal-body">
 						<form>
-							<div class="quiz-window-title">Ты можешь приобрести подарочный сертификат. Оставь заявку и мы перезвоним</div>
-							<label for="cert-name">Имя:</label>
-							<input type="text" class="form-control" id="cert-name" required aria-describedby="cert-name" placeholder="Как к тебе обращаться">
-							<label for="cert-phone">Телефон:</label>
-							<input type="tel" class="form-control" id="cert-phone" required aria-describedby="cert-phone" placeholder="Как с тобой связаться">
+							<div class="quiz-window-title">Оставь номер телефона и мы перезвоним</div>
+							<label for="callback-name">Имя:</label>
+							<input type="text" class="form-control" id="callback-name" required aria-describedby="callback-name" placeholder="Как к тебе обращаться">
+							<label for="callback-phone">Телефон:</label>
+							<input type="tel" class="form-control" id="callback-phone" required aria-describedby="callback-phone" placeholder="Как с тобой связаться">
 						</form>
 					</div>
 					<div class="modal-footer">
-						<!--data-dismiss="modal"-->
-						<button type="button" class="btn btn-light quiz-button cert-send-button" >Отправить</button>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<!-- Question Example Window -->
-		<div class="quiz-window modal fade" id="questionWindow" tabindex="-1" role="dialog" aria-labelledby="QuestionWindowTitle" aria-hidden="true">
-			<div class="modal-dialog modal-dialog-centered" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="questionWindowTitle">ПРИМЕРЫ ВОПРОСОВ</h5>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span class="mdi mdi-close" aria-hidden="true"></span>
-						</button>
-					</div>
-					<div class="modal-body">
-						<div id="carousel-question" class="carousel slide" data-ride="carousel" data-interval=10000>
-							<div class="carousel-inner" role="listbox">
-{foreach from=$QUESTION_LIST item=question name=questions}
-								<div class="carousel-item {if $smarty.foreach.questions.first}active{/if}">
-									<div class="d-block">
-										<div class="question-item">
-											<div class="question-text">{$question->question}</div>
-											<div class="question-answer-link-wrapper"><span class="question-answer-link">Ответ</span></div>
-											<div class="question-answer-text-wrapper"><div class="question-answer-text">{$question->answer}</div></div>
-										</div>
-									</div>
-								</div>
-{/foreach}
-							</div>
-							<a class="carousel-control-prev" href="#carousel-question" role="button" data-slide="prev">
-								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-								<span class="sr-only">Previous</span>
-							</a>
-							<a class="carousel-control-next" href="#carousel-question" role="button" data-slide="next">
-								<span class="carousel-control-next-icon" aria-hidden="true"></span>
-								<span class="sr-only">Next</span>
-							</a>
-						</div>
+						<button type="button" class="btn btn-light quiz-button call-send-button">Отправить</button>
 					</div>
 				</div>
 			</div>
