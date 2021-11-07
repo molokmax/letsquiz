@@ -26,53 +26,74 @@
 		<!-- <script type="text/javascript" src="metrika.js"></script>
 		<noscript><div><img src="https://mc.yandex.ru/watch/54485767" style="position:absolute; left:-9999px;" alt="" /></div></noscript> -->
 		<!-- /Yandex.Metrika counter -->
-<!--
-		<nav class="quiz-menu navbar">
-			<div class="intro-text">ЛЕТС КВИЗ</div>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="quiz-menu-button mdi mdi-menu"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarNav">
-				<ul class="navbar-nav nav">
-{if $SETTING_HIDE_MAIN eq 'false'}
-					<li class="nav-item">
-						<a class="nav-link" href="#main">Главная</a>
-					</li>
-{/if}
-{if $SETTING_HIDE_TERMS eq 'false'}
-					<li class="nav-item">
-						<a class="nav-link" href="#terms">Правила</a>
-					</li>
-{/if}
-{if $SETTING_HIDE_GALLERY eq 'false'}
-					<li class="nav-item">
-						<a class="nav-link" href="#gallery">Галерея</a>
-					</li>
-{/if}
-{if $SETTING_HIDE_CORP eq 'false'}
-					<li class="nav-item">
-						<a class="nav-link" href="#corp">Корпоративы</a>
-					</li>
-{/if}
-{if $SETTING_HIDE_FEEDBACK eq 'false'}
-					<li class="nav-item">
-						<a class="nav-link" href="#feedback">Отзывы</a>
-					</li>
-{/if}
-					<li class="nav-item">
-						<a class="nav-link" href="#footer">Контакты</a>
-					</li>
-				</ul>
+
+		<nav class="quiz-menu">
+			<div class="menu-content closed">
+				<div class="collapse-button mdi mdi-menu"></div>
+				<div class="menu-info-block">
+					<div class="menu-info-text">Интеллектуально- развлекательная битва</div>
+				</div>
+				<div class="menu-title-block">
+					<div class="menu-title-text">ЛЕТС КВИЗ</div>
+				</div>
 			</div>
-			<div class="selectCityBlock">
-				<ul class="navbar-nav nav">
-					<li class="selected-city">
-						<i class="mdi mdi-city"></i> <a class="selected-city-link" href="javascript:void(0);" data-toggle="modal" data-target="#selectCityWindow">Все</a>
-					</li>
-				</ul>
+			<div class="menu-content opened">
+				<div class="menu-content-opened-container">
+					<div class="menu-header-block">
+						<div class="collapse-button mdi mdi-menu"></div>
+						<div class="menu-header-text">Меню</div>
+					</div>
+					<div class="menu-items-block">
+						<ul class="navbar-nav nav">
+							{if $SETTING_HIDE_MAIN eq 'false'}
+							<li class="nav-item">
+								<a class="nav-link" href="#main">Главная</a>
+							</li>
+							{/if}
+							{if $SETTING_HIDE_MAIN eq 'false'}
+							<li class="nav-item">
+								<a class="nav-link" href="#schedule">Расписание игр</a>
+							</li>
+							{/if}
+						</ul>
+						<ul class="navbar-nav nav">
+							{if $SETTING_HIDE_MAIN eq 'false'}
+							<li class="nav-item">
+								<a class="nav-link" href="#terms">Что такое квиз?</a>
+							</li>
+							{/if}
+							{if $SETTING_HIDE_TERMS eq 'false'}
+							<li class="nav-item">
+								<a class="nav-link" href="#terms">Как проходит игра?</a>
+							</li>
+							{/if}
+							{if $SETTING_HIDE_GALLERY eq 'false'}
+							<li class="nav-item">
+								<a class="nav-link" href="#gallery">Фото</a>
+							</li>
+							{/if}
+							{if $SETTING_HIDE_CORP eq 'false'}
+							<li class="nav-item">
+								<a class="nav-link" href="#corp">Корпоративы</a>
+							</li>
+							{/if}
+							<li class="nav-item">
+								<a class="nav-link" href="#footer">Контакты</a>
+							</li>
+						</ul>
+					</div>
+					<div class="menu-callback-block">
+						<img class="callback-info" src="image/callback-info.png" alt="Нажми и мы перезвоним">
+						<div class="callback-button">Обратный звонок</div>
+					</div>
+					<div class="menu-contact-block">
+						<div><a href="https://vk.com/letsquiz" target="_blank"><img class="menu-contact-block-link" src="image/vk4.png" alt="VK"></a></div>
+						<div><a href="https://instagram.com/lets_quiz" target="_blank"><img class="menu-contact-block-link" src="image/instagram2.png" alt="Instagram"></a></div>
+						<div class="menu-contact-block-phone"><a href="tel:{$SETTING_PHONE}">{$SETTING_PHONE}</a></div>
+					</div>
+				</div>
 			</div>
 		</nav>
--->
 
 {if $SETTING_HIDE_MAIN eq 'false'}
 		<div id="main" class="main container quiz-block-container">
@@ -272,7 +293,7 @@
 {/foreach}
 							<div class="photo-gallery-link col-lg-8 col-md-6 col-sm-12">
 								<div class="photo-gallery-link-background">
-									<div class="photo-gallery-link-text">ЭТО, КОНЕЧНО, </br>НЕ ВСЕ ФОТОГРАФИИ... </br>ПОЛНЫЕ ФОТООТЧЕТЫ </br>СМОТРИ ЗДЕСЬ <a href="https://vk.com/letsquiz" target="_blank"><img class="photo-gallery-link-text-vk" src="image/vk3.png" alt="VK"></a></div>
+									<div class="photo-gallery-link-text">ЭТО, КОНЕЧНО, </br>НЕ ВСЕ ФОТОГРАФИИ... </br>ПОЛНЫЕ ФОТООТЧЕТЫ </br>СМОТРИ <a href="https://vk.com/letsquiz" target="_blank">ЗДЕСЬ</a> <a href="https://vk.com/letsquiz" target="_blank"><img class="photo-gallery-link-text-vk" src="image/vk4.png" alt="VK"></a></div>
 								</div>
 							</div>
 						</div>
@@ -335,12 +356,33 @@
 				<div class="row">
 					<div class="col-md-6 offset-md-3">
 						<div class="corp-text">Уже сделали интеллектуально и весело таким компаниям как:</div>
-						<div class="corp-text">КАРУСЕЛЬКА</div>
+						<div class="corp-company-items">
+							<div class="corp-company-item"><img src="/image/corp-logo-1.jpg"></div>
+							<div class="corp-company-item"><img src="/image/corp-logo-2.jpg"></div>
+							<div class="corp-company-item"><img src="/image/corp-logo-3.jpg"></div>
+							<div class="corp-company-item"><img src="/image/corp-logo-4.jpg"></div>
+							<div class="corp-company-item"><img src="/image/corp-logo-5.jpg"></div>
+							<div class="corp-company-item"><img src="/image/corp-logo-6.jpg"></div>
+							<div class="corp-company-item"><img src="/image/corp-logo-7.jpg"></div>
+							<div class="corp-company-item"><img src="/image/corp-logo-8.jpg"></div>
+							<div class="corp-company-item"><img src="/image/corp-logo-9.jpg"></div>
+							<div class="corp-company-item"><img src="/image/corp-logo-10.jpg"></div>
+							<div class="corp-company-item"><img src="/image/corp-logo-11.jpg"></div>
+							<div class="corp-company-item"><img src="/image/corp-logo-12.jpg"></div>
+							<div class="corp-company-item"><img src="/image/corp-logo-13.jpg"></div>
+							<div class="corp-company-item"><img src="/image/corp-logo-14.jpg"></div>
+							<div class="corp-company-item"><img src="/image/corp-logo-15.jpg"></div>
+							<div class="corp-company-item"><img src="/image/corp-logo-16.jpg"></div>
+							<div class="corp-company-item"><img src="/image/corp-logo-17.jpg"></div>
+							<div class="corp-company-item"><img src="/image/corp-logo-18.jpg"></div>
+							<div class="corp-company-item"><img src="/image/corp-logo-19.jpg"></div>
+							<div class="corp-company-item"><img src="/image/corp-logo-20.jpg"></div>
+						</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-12">
-						<div class="quiz-header">ЧТО МЫ МОЖЕМ СДЕЛАТЬ?</div>
+						<div class="quiz-header we-can-do">ЧТО МЫ МОЖЕМ СДЕЛАТЬ?</div>
 					</div>
 				</div>
 				<div class="row">
@@ -399,6 +441,45 @@
 			<div class="container quiz-block block-footer">
 			
 				<div class="row">
+					<div class="col-md-4 offset-md-2">
+						<div class="quiz-header">Уже готовы к увлекательным интеллектуальным битвам?</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-8 offset-md-2">
+						<div class="footer-text footer-subheader">Вот как с нами связаться:</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-8 offset-md-2">
+						<div class="row">
+							<div class="col-6">
+								<div class="footer-text phone">
+									<a href="tel:{$SETTING_PHONE}"><img class="footer-icon" src="image/phone.png"></a><a href="tel:{$SETTING_PHONE}">{$SETTING_PHONE}</a>
+								</div>
+								<div class="footer-text email">
+									<a href="mailto:{$SETTING_EMAIL}"><img class="footer-icon" src="image/email.png"></a><a href="mailto:{$SETTING_EMAIL}">{$SETTING_EMAIL}</a>
+								</div>
+							</div>
+							<div class="col-6">
+								<div class="footer-text social">
+									<a href="https://vk.com/letsquiz" target="_blank"><img class="footer-icon" src="image/vk4.png"></a><a href="https://vk.com/letsquiz" target="_blank">vk.com/letsquiz</a>
+								</div>
+								<div class="footer-text social">
+									<a href="https://www.instagram.com/lets_quiz/" target="_blank"><img class="footer-icon" src="image/instagram2.png"></a><a href="https://www.instagram.com/lets_quiz/" target="_blank">@lets_quiz</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+{/if}
+<!-- 
+		<div id="footer" class="footer container quiz-block-container">
+			<div class="container quiz-block block-footer">
+			
+				<div class="row">
 					<div class="col-12">
 						<div class="footer-text text">Наши контакты:</div>
 					</div>
@@ -416,7 +497,6 @@
 
 				<div class="row">
 					<div class="col-12">
-						<!-- <div class="main-text">Заявки, вопросы, предложения, корпоративные и выездные игры!</div> -->
 						<div class="footer-text text">Заявки, вопросы, предложения, корпоративные и выездные игры!</div>
 					</div>
 				</div>
@@ -441,7 +521,7 @@
 				</div>
 			</div>
 		</div>
-{/if}
+ -->
 
 
 <!--  Modal windows  -->

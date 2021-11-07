@@ -1,9 +1,12 @@
 $(document).ready(function() {
 
-    // $('.carousel-schedule').slick({
-    //     //dots: true,
-    //     slidesToShow: 4
-    // });
+    $('.corp-company-items').slick({
+        dots: true,
+        slidesToShow: 6,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 6000
+    });
 
     var CityUtils = {
         AnyCityName: 'Все',
@@ -63,7 +66,16 @@ $(document).ready(function() {
     navMain.on("click", "a", null, function () {
         navMain.collapse('hide');
     });
-    var navMain = $("#navbarNav");
+    
+    function toogleMenu(link) {
+        $("nav.quiz-menu .menu-content.closed").toggle(100);
+        $("nav.quiz-menu .menu-content.opened").toggle(100);
+    }
+    $("nav.quiz-menu .collapse-button").click(toogleMenu);
+
+    
+    $("nav.quiz-menu .nav-link").click(toogleMenu);
+
     $('.registration-btn a').click(function () {
         var card = $(this).parents('.quiz-game-card');
         var date = card.find('.game-date').text();
