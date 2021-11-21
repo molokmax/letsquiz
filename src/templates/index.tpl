@@ -140,7 +140,9 @@
 											<i class="game-label-icon mdi mdi-clock-time-three-outline"></i>{$game->time}
 										</div>
 										<div class="game-label game-price">
-											<i class="game-label-icon mdi mdi-currency-usd"></i>{$game->price} руб.
+											<i class="game-label-icon game-label-svg-icon game-price-ruble"></i>
+											<!-- <i class="game-label-icon mdi mdi-currency-usd"></i> -->
+											{$game->price} руб.
 										</div>
 									</div>
 									<div class="registration-btn">
@@ -213,62 +215,55 @@
 					</div>
 				</div>
 			</div>
+		</div>
+		<div id="rules" class="rules container quiz-block-container">
 			<div class="details container quiz-block block-dark">
 				<div class="row">
-					<div class="col-12">
-						<div class="quiz-header light">А ТЕПЕРЬ ПОДРОБНЕЕ</div>
+					<div class="col-md-5 offset-md-1">
+						<div class="quiz-header light">КАК ВСЕ ЭТО ПРОИСХОДИТ?</div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-12 col-sm-10 offset-sm-1 col-md-6 offset-md-3">
-						<div class="quiz-item"><i class="quiz-icon mdi mdi-lead-pencil"></i> Для вашей команды забронирован стол, на котором лежит все необходимое для игры</div>
+					<div class="col-md-2 offset-md-1">
+						<div class="rule rule-1">
+							Рассаживаем команды по 2-10 человек. Один стол - это одна команда
+							<img src="image/bluepic_1.png">
+						</div>
+					</div>
+					<div class="col-md-2">
+						<div class="rule rule-2">
+							<div class="rule-2-1">Вас ждут</div><div class="digit">2<img src="image/bluepic_2.png"></div> <div class="rule-large">часа игры</div> <div class="digit">7</div> <div class="rule-large">раундов</div><div class="rule-2-2">Каждый раунд имеет свою особенность</div>
+						</div>
+					</div>
+					<div class="col-md-2">
+						<div class="rule rule-3">
+							Вопросы на различную тематику и разной сложности
+						</div>
+					</div>
+					<div class="col-md-2">
+						<div class="rule rule-4">
+							Думаем всей командой, затем отвечаем на специальных бланках. После каждого раунда узнаем правильные ответы и зарабатываем очки!
+						</div>
+					</div>
+					<div class="col-md-2">
+						<div class="rule rule-5">
+							Награждаем победителей под авации зала!
+						</div>
 					</div>
 				</div>
-				<div class="row">
-					<div class="col-12 col-sm-10 offset-sm-1 col-md-6 offset-md-3">
-						<div class="quiz-item"><i class="quiz-icon mdi mdi-account-multiple-plus-outline"></i> В зале находится более 15-ти команд</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-12 col-sm-10 offset-sm-1 col-md-6 offset-md-3">
-						<div class="quiz-item"><i class="quiz-icon mdi mdi-emoticon-excited"></i> Вы думаете, пьёте, кушаете и весело проводите время в компании друзей</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-12 col-sm-10 offset-sm-1 col-md-6 offset-md-3">
-						<div class="quiz-item"><i class="quiz-icon mdi mdi-voice"></i> Ведущий зачитывает вопросы, которые дублируются на экранах</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-12 col-sm-10 offset-sm-1 col-md-6 offset-md-3">
-						<div class="quiz-item"><i class="quiz-icon mdi mdi-wallet-membership"></i> После жаркого командного обсуждения, правильный ответ записывается в бланк</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-12 col-sm-10 offset-sm-1 col-md-6 offset-md-3">
-						<div class="quiz-item"><i class="quiz-icon mdi mdi-information-outline"></i> Сдаем бланки и узнаем правильные ответы</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-12 col-sm-10 offset-sm-1 col-md-6 offset-md-3">
-						<div class="quiz-item"><i class="quiz-icon mdi mdi-trophy-outline"></i> Победитель определяется после 7-ми раундов игры (39 вопросов)</div>
-					</div>
-				</div>
-			</div>
-			<div class="faq container quiz-block block-light">
-				<div class="row">
+				<div class="row faq-blocks">
 					<div class="col-12 col-md-4 offset-md-2">
 						<div class="faq-block good">
-							<div class="quiz-title"></i>Что нужно взять с собой?</div>  <!-- <i class="quiz-icon mdi mdi-check-circle-outline"> -->
-							<div class="quiz-item"><i class="quiz-icon mdi mdi-plus"></i>компанию друзей</div>
-							<div class="quiz-item"><i class="quiz-icon mdi mdi-plus"></i>хорошее настроение</div>
+							<div class="quiz-title">Возьми с собой на игру</div>
+							<div class="quiz-item">+ компанию друзей</div>
+							<div class="quiz-item">+ хорошее настроение</div>
 						</div>
 					</div>
 					<div class="col-12 col-md-4">
 						<div class="faq-block bad">
-							<div class="quiz-title"></i>Что не нужно брать с собой?</div> <!-- <i class="quiz-icon mdi mdi-close-circle-outline"> -->
-							<div class="quiz-item"><i class="quiz-icon mdi mdi-minus"></i>энциклопедии</div>
-							<div class="quiz-item"><i class="quiz-icon mdi mdi-minus"></i>успокоительные</div>
+							<div class="quiz-title">Точно не стоит брать на игру</div>
+							<div class="quiz-item">- энциклопедии</div>
+							<div class="quiz-item">- успокоительные</div>
 						</div>
 					</div>
 				</div>
@@ -293,53 +288,10 @@
 {/foreach}
 							<div class="photo-gallery-link col-lg-8 col-md-6 col-sm-12">
 								<div class="photo-gallery-link-background">
-									<div class="photo-gallery-link-text">ЭТО, КОНЕЧНО, </br>НЕ ВСЕ ФОТОГРАФИИ... </br>ПОЛНЫЕ ФОТООТЧЕТЫ </br>СМОТРИ <a href="https://vk.com/letsquiz" target="_blank">ЗДЕСЬ</a> <a href="https://vk.com/letsquiz" target="_blank"><img class="photo-gallery-link-text-vk" src="image/vk4.png" alt="VK"></a></div>
+									<div class="photo-gallery-link-text">ЭТО, КОНЕЧНО, </br>НЕ ВСЕ ФОТОГРАФИИ... </br>ПОЛНЫЕ ФОТООТЧЁТЫ </br>СМОТРИ <a href="https://vk.com/letsquiz" target="_blank">ЗДЕСЬ</a> <a href="https://vk.com/letsquiz" target="_blank"><img class="photo-gallery-link-text-vk" src="image/vk4.png" alt="VK"></a></div>
 								</div>
 							</div>
 						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-{/if}
-{if $SETTING_HIDE_FRIENDS eq 'false'}
-		<div id="friends" class="friends container quiz-block-container">
-			<div class="friends-block container quiz-block block-light">
-				<div class="row">
-					<div class="col-12">
-						<div class="quiz-header dark">НАШИ ДРУЗЬЯ И ПАРТНЕРЫ</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-12 col-sm-4 offset-sm-2 col-md-3 offset-md-3">
-						<div class="quiz-panel panel-light"><a href="https://stupino.mosigra.ru/" target="_blank"><img src="image/logo-mosigra.png"></a></div>
-					</div>
-					<div class="col-12 col-sm-4 col-md-3">
-						<div class="quiz-panel panel-light"><a href="https://vk.com/shizgarastupino" target="_blank"><img src="image/logo-shizgara.png"></a></div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-12 col-sm-4 offset-sm-2 col-md-3 offset-md-3">
-						<div class="quiz-panel panel-light"><a href="https://vk.com/m.ugli" target="_blank"><img src="image/logo-mugli.png"></a></div>
-					</div>
-					<div class="col-12 col-sm-4 col-md-3">
-						<div class="quiz-panel panel-light"><a href="https://www.instagram.com/artiko_print/" target="_blank"><img src="image/logo-artiko.png"></a></div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-12 col-sm-4 offset-sm-2 col-md-3 offset-md-3">
-						<div class="quiz-panel panel-light"><a href="https://fotopodarkist.ru/" target="_blank"><img src="image/logo-photo.png"></a></div>
-					</div>
-					<div class="col-12 col-sm-4 col-md-3">
-						<div class="quiz-panel panel-light"><a href="https://www.perspektiva-pravo.ru/" target="_blank"><img src="image/logo-pravo.png"></a></div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-12 col-sm-4 offset-sm-2 col-md-3 offset-md-3">
-						<div class="quiz-panel panel-light"><a href="https://yatort.ru/" target="_blank"><img src="image/logo-yatort.png"></a></div>
-					</div>
-					<div class="col-12 col-sm-4 col-md-3">
-						<div class="quiz-panel panel-light"><a href="https://vk.com/kvartalbutovo" target="_blank"><img src="image/logo-kvartal.png"></a></div>
 					</div>
 				</div>
 			</div>
@@ -421,7 +373,7 @@
 						<div class="row">
 							<div class="col-12 col-md-6">
 								<div class="corp-questions-text">
-									<img src="image/quiestions-text.png" alt="Остались вопросы?">
+									<img src="image/questions-text.png" alt="Остались вопросы?">
 								</div>
 							</div>
 							<div class="col-12 col-md-6">
@@ -442,7 +394,7 @@
 			
 				<div class="row">
 					<div class="col-md-4 offset-md-2">
-						<div class="quiz-header">Уже готовы к увлекательным интеллектуальным битвам?</div>
+						<div class="quiz-header">УЖЕ ГОТОВЫ К УВЛЕКАТЕЛЬНЫМ ИНТЕЛЛЕКТУАЛЬНЫМ БИТВАМ?</div>
 					</div>
 				</div>
 				<div class="row">
