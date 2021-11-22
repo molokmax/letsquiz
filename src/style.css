@@ -680,7 +680,7 @@ div.quiz-block-container.corp .corp-company-items .corp-company-item {
 }
 
 div.quiz-block-container.corp .corp-item {
-	font-size: 1.4srem;
+	font-size: 1.4rem;
     line-height: 1.2;
     display: inline-flex;
 }
@@ -719,7 +719,7 @@ div.quiz-block-container.corp .corp-questions-button {
 
 div.quiz-block-container.rules .details {
 	color: #FFFFFF;
-	background-image: url("image/fon.jpg");
+	background-image: url("image/fon2.jpg");
 	background-repeat: no-repeat;
 	background-position: center top;
 	background-size: cover;
@@ -727,11 +727,14 @@ div.quiz-block-container.rules .details {
 	padding-bottom: 8rem;
 }
 div.quiz-block-container.rules .rule {
-	font-size: 1.5rem;
+	font-size: 1rem;
 }
 div.quiz-block-container.rules .rule.rule-1 img {
 	padding-top: 2rem;
 	width: 150px;
+}
+div.quiz-block-container.rules .rule.rule-2 {
+	margin-top: 6rem;
 }
 div.quiz-block-container.rules .rule.rule-2 .digit {
 	font-size: 10rem;
@@ -755,6 +758,27 @@ div.quiz-block-container.rules .rule.rule-2 .rule-2-1 {
 }
 div.quiz-block-container.rules .rule.rule-2 .rule-2-2 {
 	width: 200px;
+}
+
+div.quiz-block-container.rules .rule.rule-3 img {
+	width: 120px;
+	margin-bottom: 1.5rem;
+}
+
+div.quiz-block-container.rules .rule.rule-4 {
+	margin-top: 20rem;
+}
+div.quiz-block-container.rules .rule.rule-4 img {
+	width: 180px;
+	margin-bottom: 1.5rem;
+}
+
+div.quiz-block-container.rules .rule.rule-5 {
+	margin-top: 3rem;
+}
+div.quiz-block-container.rules .rule.rule-5 img {
+	width: 100px;
+	margin: 1.5rem 0.5rem;
 }
 
 div.quiz-block-container.rules .faq-blocks {

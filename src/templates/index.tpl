@@ -219,14 +219,14 @@
 		<div id="rules" class="rules container quiz-block-container">
 			<div class="details container quiz-block block-dark">
 				<div class="row">
-					<div class="col-md-5 offset-md-1">
+					<div class="col-md-5 offset-md-2">
 						<div class="quiz-header light">КАК ВСЕ ЭТО ПРОИСХОДИТ?</div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-2 offset-md-1">
+					<div class="col-md-2 offset-md-2">
 						<div class="rule rule-1">
-							Рассаживаем команды по 2-10 человек. Один стол - это одна команда
+							<div>Рассаживаем команды по 2-10 человек. Один стол - это одна команда</div>
 							<img src="image/bluepic_1.png">
 						</div>
 					</div>
@@ -235,19 +235,33 @@
 							<div class="rule-2-1">Вас ждут</div><div class="digit">2<img src="image/bluepic_2.png"></div> <div class="rule-large">часа игры</div> <div class="digit">7</div> <div class="rule-large">раундов</div><div class="rule-2-2">Каждый раунд имеет свою особенность</div>
 						</div>
 					</div>
-					<div class="col-md-2">
+					<div class="col-md-2 order-md-last">
 						<div class="rule rule-3">
-							Вопросы на различную тематику и разной сложности
+							<img src="image/bluepic_4.png">
+							<div>
+								Вопросы на различную тематику и разной сложности:
+								<ul>
+									<li>Музыка</li>
+									<li>Кино</li>
+									<li>Спорт</li>
+									<li>Общие знания</li>
+									<li>Эрудиция</li>
+									<li>Удача</li>
+									<li>Логика</li>
+									<li>... да что угодно!</li>
+								</ul>
+							</div>
+						</div>
+						<div class="rule rule-5">
+							<img src="image/bluepic_5.png">
+							<img src="image/bluepic_6.png">
+							<div>Награждаем победителей под овации зала!</div>
 						</div>
 					</div>
 					<div class="col-md-2">
 						<div class="rule rule-4">
-							Думаем всей командой, затем отвечаем на специальных бланках. После каждого раунда узнаем правильные ответы и зарабатываем очки!
-						</div>
-					</div>
-					<div class="col-md-2">
-						<div class="rule rule-5">
-							Награждаем победителей под авации зала!
+							<img src="image/bluepic_3.png">
+							<div>Думаем всей командой, затем отвечаем на специальных бланках. После каждого раунда узнаем правильные ответы и зарабатываем очки!</div>
 						</div>
 					</div>
 				</div>
