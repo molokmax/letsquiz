@@ -729,12 +729,50 @@ div.quiz-block-container.rules .details {
 div.quiz-block-container.rules .rule {
 	font-size: 1rem;
 }
+div.quiz-block-container.rules .rule .rule-point {
+	position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: #04A9ED;
+    border-radius: 1.5rem;
+    border-color: #FFFFFF;
+    border-style: solid;
+    border-width: 2px;
+    text-align: center;
+    font-size: 0.9rem;
+}
 div.quiz-block-container.rules .rule.rule-1 img {
 	padding-top: 2rem;
 	width: 150px;
 }
+div.quiz-block-container.rules .rule.rule-1 .rule-point {
+	top: 4rem;
+    left: 14rem;
+}
+div.quiz-block-container.rules .rule.rule-1 .rule-arrow {
+	height: 46px;
+    width: 150px;
+    position: absolute;
+    background-image: url(image/arrow-1.png);
+    background-size: cover;
+    left: 16rem;
+    top: 2rem;
+}
 div.quiz-block-container.rules .rule.rule-2 {
 	margin-top: 6rem;
+}
+div.quiz-block-container.rules .rule.rule-2 .rule-point {
+	top: 7rem;
+    left: 14rem;
+}
+div.quiz-block-container.rules .rule.rule-2 .rule-arrow {
+	height: 118px;
+    width: 350px;
+    position: absolute;
+    background-image: url(image/arrow-2.png);
+    background-size: cover;
+	left: 15.5rem;
+    top: 0.3rem;
 }
 div.quiz-block-container.rules .rule.rule-2 .digit {
 	font-size: 10rem;
@@ -764,6 +802,22 @@ div.quiz-block-container.rules .rule.rule-3 img {
 	width: 120px;
 	margin-bottom: 1.5rem;
 }
+div.quiz-block-container.rules .rule.rule-3 .rule-3-text {
+	margin-left: 2rem;
+}
+div.quiz-block-container.rules .rule.rule-3 .rule-point {
+	top: 14rem;
+    left: -1rem;
+}
+div.quiz-block-container.rules .rule.rule-3 .rule-arrow {    
+	height: 90px;
+    width: 120px;
+    position: absolute;
+    background-image: url(image/arrow-3.png);
+    background-size: cover;
+    left: -7.7rem;
+    top: 16rem;
+}
 
 div.quiz-block-container.rules .rule.rule-4 {
 	margin-top: 20rem;
@@ -771,6 +825,19 @@ div.quiz-block-container.rules .rule.rule-4 {
 div.quiz-block-container.rules .rule.rule-4 img {
 	width: 180px;
 	margin-bottom: 1.5rem;
+}
+div.quiz-block-container.rules .rule.rule-4 .rule-point {
+	top: 26rem;
+    left: 14rem;
+}
+div.quiz-block-container.rules .rule.rule-4 .rule-arrow {  
+	height: 60px;
+    width: 98px;
+    position: absolute;
+    background-image: url(image/arrow-4.png);
+    background-size: cover;
+    left: 15rem;
+    top: 28rem;
 }
 
 div.quiz-block-container.rules .rule.rule-5 {

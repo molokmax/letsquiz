@@ -226,19 +226,25 @@
 				<div class="row">
 					<div class="col-md-2 offset-md-2">
 						<div class="rule rule-1">
+							<div class="rule-point">1</div>
+							<div class="rule-arrow"></div>
 							<div>Рассаживаем команды по 2-10 человек. Один стол - это одна команда</div>
 							<img src="image/bluepic_1.png">
 						</div>
 					</div>
 					<div class="col-md-2">
 						<div class="rule rule-2">
+							<div class="rule-point">2</div>
+							<div class="rule-arrow"></div>
 							<div class="rule-2-1">Вас ждут</div><div class="digit">2<img src="image/bluepic_2.png"></div> <div class="rule-large">часа игры</div> <div class="digit">7</div> <div class="rule-large">раундов</div><div class="rule-2-2">Каждый раунд имеет свою особенность</div>
 						</div>
 					</div>
 					<div class="col-md-2 order-md-last">
 						<div class="rule rule-3">
+							<div class="rule-point">3</div>
+							<div class="rule-arrow"></div>
 							<img src="image/bluepic_4.png">
-							<div>
+							<div class="rule-3-text">
 								Вопросы на различную тематику и разной сложности:
 								<ul>
 									<li>Музыка</li>
@@ -260,6 +266,8 @@
 					</div>
 					<div class="col-md-2">
 						<div class="rule rule-4">
+							<div class="rule-point">4</div>
+							<div class="rule-arrow"></div>
 							<img src="image/bluepic_3.png">
 							<div>Думаем всей командой, затем отвечаем на специальных бланках. После каждого раунда узнаем правильные ответы и зарабатываем очки!</div>
 						</div>
