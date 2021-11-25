@@ -193,9 +193,10 @@ nav.quiz-menu .menu-contact-block .menu-contact-block-phone {
 	font-weight: bold;
 }
 
+/* 
 input:invalid, select:invalid, textarea:invalid {
 	box-shadow: 0 0 0px 2px #ff6699;
-}
+} */
 
 .navbar-nav .selected-city {
 	font-size: 0.9rem;
@@ -880,24 +881,47 @@ div.quiz-block-container.footer .quiz-block.block-footer .footer-icon {
 	background-color: #330066;
 	color: #FFFFFF;
 	border-radius: 0;
+	flex-direction: row;
+}
+.quiz-window .quiz-modal-body {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	background-color: #47269B;
+	padding-left: 2rem;
 }
 .quiz-window .modal-header {
-	background-color: #000033;
-	padding-top: 0.5rem;
-	padding-bottom: 0.5rem;
+	background-color: #E30485;
     border-radius: 0;
-	border: none;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    padding-left: 0rem;
 }
-.quiz-window label {
-	padding-top: 2rem;
+.quiz-window .modal-header .modal-title {
+	-webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: rotate(270deg);
+    transform: rotate(270deg);
+    position: absolute;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 2rem;
+    bottom: -2rem;
+	padding-top: 0.4rem;
 }
 .quiz-window input {
 	border-radius: 0;
+	margin-top: 1rem;
+    width: 18rem;
 }
 .quiz-window select {
 	border-radius: 0;
 }
 .quiz-window .close {
+	background-color: #E9369C;
+	font-size: 2.5rem;
+    padding: 0.6rem;
 	color: inherit;
 	text-shadow: none;
 	opacity: inherit;
@@ -909,7 +933,9 @@ div.quiz-block-container.footer .quiz-block.block-footer .footer-icon {
 	box-shadow: none;
 }
 .quiz-window .quiz-window-title {
-	text-align: center;
+	/* text-align: center; */
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
 }
 .quiz-window .quiz-window-text {
 	text-align: center;
@@ -920,8 +946,9 @@ div.quiz-block-container.footer .quiz-block.block-footer .footer-icon {
 }
 .quiz-window .modal-body {
 	font-size: 1.1rem;
-	margin-left: 2rem;
-    margin-right: 2rem;
+	/* margin-left: 2rem;
+    margin-right: 2rem; */
+	padding-top: 2.5rem;
 }
 .quiz-window .modal-footer {
     border-radius: 0;

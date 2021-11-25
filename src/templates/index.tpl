@@ -449,53 +449,7 @@
 			</div>
 		</div>
 {/if}
-<!-- 
-		<div id="footer" class="footer container quiz-block-container">
-			<div class="container quiz-block block-footer">
-			
-				<div class="row">
-					<div class="col-12">
-						<div class="footer-text text">Наши контакты:</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-12">
-						<div class="footer-text phone">{$SETTING_PHONE}</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-12">
-						<div class="footer-text email"><a href="mailto:{$SETTING_EMAIL}">{$SETTING_EMAIL}</a></div>
-					</div>
-				</div>
 
-				<div class="row">
-					<div class="col-12">
-						<div class="footer-text text">Заявки, вопросы, предложения, корпоративные и выездные игры!</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-12">
-						<div class="footer-text text">Работаем круглосуточно и без выходных :)</div>
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="col-12">
-						<div class="footer-text text">Мы в соц. сетях:</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-12">
-						<div class="socialbuttons footer-text">
-							<a href="https://vk.com/letsquiz" target="_blank"><img src="image/vk.png"></a>
-							<a href="https://www.instagram.com/lets_quiz/" target="_blank"><img src="image/instagram.png"></a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
- -->
 
 
 <!--  Modal windows  -->
@@ -532,22 +486,22 @@
 			<div class="modal-dialog modal-dialog-centered" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="callbackWindowTitle">ОБРАТНЫЙ ЗВОНОК</h5>
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 							<span class="mdi mdi-close" aria-hidden="true"></span>
 						</button>
+						<h5 class="modal-title" id="callbackWindowTitle">ЗВОНОК</h5>
 					</div>
-					<div class="modal-body">
-						<form>
-							<div class="quiz-window-title">Оставь номер телефона и мы перезвоним</div>
-							<label for="callback-name">Имя:</label>
-							<input type="text" class="form-control" id="callback-name" required aria-describedby="callback-name" placeholder="Как к тебе обращаться">
-							<label for="callback-phone">Телефон:</label>
-							<input type="tel" class="form-control" id="callback-phone" required aria-describedby="callback-phone" placeholder="Как с тобой связаться">
-						</form>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-light quiz-button call-send-button">Отправить</button>
+					<div class="quiz-modal-body">
+						<div class="modal-body">
+							<form>
+								<div class="quiz-window-title">Заполни форму и мы перезвоним Вам ;)</div>
+								<input type="text" class="form-control" id="callback-name" required aria-describedby="callback-name" placeholder="Как к Вам обращаться">
+								<input type="tel" class="form-control" id="callback-phone" required aria-describedby="callback-phone" placeholder="Телефон">
+							</form>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-light quiz-button call-send-button">Отправить</button>
+						</div>
 					</div>
 				</div>
 			</div>
