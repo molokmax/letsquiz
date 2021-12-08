@@ -84,7 +84,8 @@
 					</div>
 					<div class="menu-callback-block">
 						<img class="callback-info" src="image/callback-info.png" alt="Нажми и мы перезвоним">
-						<div class="callback-button">Обратный звонок</div>
+						<button type="button" class="quiz-button quiz-button--light callback-button" data-toggle="modal" data-target="#callbackWindow">Обратный звонок</button>
+						<!-- <a href="javascript:void(0);" data-toggle="modal" data-target="#callbackWindow" role="button" class="quiz-button quiz-button--dark corp-questions-button">ОБРАТНЫЙ ЗВОНОК</a> -->
 					</div>
 					<div class="menu-contact-block">
 						<div><a href="https://vk.com/letsquiz" target="_blank"><img class="menu-contact-block-link" src="image/vk4.png" alt="VK"></a></div>
@@ -145,10 +146,11 @@
 											{$game->price} руб.
 										</div>
 									</div>
-									<div class="registration-btn">
+									<div class="registration-button">
 	{if $game->is_closed eq '1'}
 											<span>МЕСТ НЕТ</span>
 	{else}
+											<!-- <a href="javascript:void(0);" data-toggle="modal" data-target="#registrationWindow" role="button" class="quiz-button quiz-button--dark registration-button">РЕГИСТРАЦИЯ</a> -->
 											<a href="javascript:void(0);" data-toggle="modal" data-target="#registrationWindow">РЕГИСТРАЦИЯ</a>
 	{/if}
 									</div>
@@ -400,8 +402,8 @@
 							</div>
 							<div class="col-12 col-md-6">
 								<div class="corp-questions-buttons">
-									<div class="corp-questions-button"><a href="javascript:void(0);" target="_blank">НАШ PR-KIT</a></div>
-									<div class="corp-questions-button"><a href="javascript:void(0);" data-toggle="modal" data-target="#callbackWindow">ОБРАТНЫЙ ЗВОНОК</a></div>
+									<a href="javascript:void(0);" target="_blank" role="button" class="quiz-button quiz-button--dark corp-questions-button">НАШ PR-KIT</a>
+									<a href="javascript:void(0);" data-toggle="modal" data-target="#callbackWindow" role="button" class="quiz-button quiz-button--dark corp-questions-button">ОБРАТНЫЙ ЗВОНОК</a>
 								</div>
 							</div>
 						</div>
@@ -475,7 +477,7 @@
 					</div>
 					<div class="modal-footer">
 						<!--data-dismiss="modal"-->
-						<button type="button" class="btn btn-light quiz-button select-city-button">Выбрать</button>
+						<button type="button" class="quiz-button quiz-button--light select-city-button">Выбрать</button>
 					</div>
 				</div>
 			</div>
@@ -497,10 +499,11 @@
 								<div class="quiz-window-title">Заполни форму и мы перезвоним Вам ;)</div>
 								<input type="text" class="form-control" id="callback-name" required aria-describedby="callback-name" placeholder="Как к Вам обращаться">
 								<input type="tel" class="form-control" id="callback-phone" required aria-describedby="callback-phone" placeholder="Телефон">
+								<div class="error-container"></div>
 							</form>
 						</div>
 						<div class="modal-footer">
-							<button type="button" class="btn btn-light quiz-button call-send-button">Отправить</button>
+							<button type="button" class="quiz-button quiz-button--pink call-send-button">Отправить</button>
 						</div>
 					</div>
 				</div>
@@ -512,45 +515,43 @@
 			<div class="modal-dialog modal-dialog-centered" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="registrationWindowTitle">ЗАПИСАТЬСЯ<span class="d-none d-md-inline"> НА ИГРУ</span></h5>
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 							<span class="mdi mdi-close" aria-hidden="true"></span>
 						</button>
+						<h5 class="modal-title" id="registrationWindowTitle">ЗАПИСАТЬСЯ<span class="d-none d-md-inline"> НА ИГРУ</span></h5>
 					</div>
-					<div class="modal-body">
-						<form class="quiz-form">
-							<div class="quiz-window-title online-game">
-								Заполни форму регистрации на игру <span class="display-city"></span> <span class="display-date"></span> в <span class="display-time"></span> 
-								(стоимость - <span class="display-price"></span>)
-							</div>
-							<div class="quiz-window-title offline-game">
-								Заполни форму регистрации на игру в городе <span class="display-city"></span> <span class="display-date"></span> в <span class="display-time"></span> 
-								(стоимость - <span class="display-price"></span>)
-							</div>
-							<!--<label for="reg-name">Название команды</label>-->
-							<input type="text" class="form-control" id="reg-name" required aria-describedby="reg-name" placeholder="Название команды">
-							<!--<label for="reg-count">Количество человек</label>-->
-							<select class="form-control" id="reg-count" required>
-								<option disabled selected value>Количество человек</option>
-								<option value="2">2</option>
-								<option value="3">3</option>
-								<option value="4">4</option>
-								<option value="5">5</option>
-								<option value="6">6</option>
-								<option value="7">7</option>
-								<option value="8">8</option>
-								<option value="9">9</option>
-							</select>
-							<!--<label for="reg-capitan">Капитан</label>-->
-							<input type="text" class="form-control" id="reg-capitan" required aria-describedby="reg-capitan" placeholder="Капитан">
-							<!--<label for="reg-phone">Телефон</label>-->
-							<input type="tel" class="form-control" id="reg-phone" required aria-describedby="reg-phone" placeholder="Телефон">
-							<input type="email" class="form-control" id="reg-email" required aria-describedby="reg-email" placeholder="Email">
-							<!--<div class="quiz-window-text">Стоимость участия - 300 руб/чел</div>-->
-						</form>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-light quiz-button reg-send-button">Отправить</button>
+					<div class="quiz-modal-body">
+						<div class="modal-body">
+							<form class="quiz-form">
+								<div class="quiz-window-title online-game">
+									Заполни форму регистрации на игру <span class="display-city"></span> <span class="display-date"></span> в <span class="display-time"></span> 
+									(<span class="display-price"></span>)
+								</div>
+								<div class="quiz-window-title offline-game">
+									Заполни форму регистрации на игру в городе <span class="display-city"></span> <span class="display-date"></span> в <span class="display-time"></span> 
+									(<span class="display-price"></span>)
+								</div>
+								<input type="text" class="form-control" id="reg-name" required aria-describedby="reg-name" placeholder="Название команды">
+								<select class="form-control" id="reg-count" required>
+									<option disabled selected value>Количество человек</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+								</select>
+								<input type="text" class="form-control" id="reg-capitan" required aria-describedby="reg-capitan" placeholder="Капитан">
+								<input type="tel" class="form-control" id="reg-phone" required aria-describedby="reg-phone" placeholder="Телефон">
+								<input type="email" class="form-control" id="reg-email" required aria-describedby="reg-email" placeholder="Email">
+								<div class="error-container"></div>
+							</form>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="quiz-button quiz-button--pink reg-send-button">Отправить</button>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -561,7 +562,6 @@
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 		<script src="vendor/jquery/jquery-3.3.1.min.js"></script>
 		<script src="vendor/bootstrap/bootstrap.min.js"></script>
-		<script src="vendor/pnotify/pnotify.custom.min.js"></script>
 		<script src="vendor/slick/slick.js"></script>
 		<script src="app.js?{$SETTING_SYSTEM_VERSION_NUMBER}"></script>
 	</body>

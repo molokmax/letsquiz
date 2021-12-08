@@ -57,16 +57,16 @@ $(document).ready(function() {
                 $(".address-item[data-city-name='"+CityUtils.OnlineCityName+"']").show();
             }
         }
-
     }
+    $(".select-city-button").click(function(link) {
+        var city = $("#city").val();
+        CityUtils.selectCity(city);
+        CityUtils.updateInterface(city);
+        $('#selectCityWindow').modal('hide');
+    });
 
     CityUtils.cityDetermination();
 
-    var navMain = $("#navbarNav");
-    navMain.on("click", "a", null, function () {
-        navMain.collapse('hide');
-    });
-    
     function toogleMenu(link) {
         $("nav.quiz-menu .menu-content.closed").toggle(100);
         $("nav.quiz-menu .menu-content.opened").toggle(100);
@@ -76,7 +76,7 @@ $(document).ready(function() {
     
     $("nav.quiz-menu .nav-link").click(toogleMenu);
 
-    $('.registration-btn a').click(function () {
+    $('.registration-button a').click(function () {
         var card = $(this).parents('.quiz-game-card');
         var date = card.find('.game-date').text();
         $("#registrationWindow .display-date").text(date);
@@ -99,21 +99,6 @@ $(document).ready(function() {
         $("#registrationWindow").data("game-fulldate", fullDate);
         var gameId = card.data('game-id');
         $("#registrationWindow").data("game-id", gameId);
-    });
-
-    $("#questionWindow .question-answer-link").click(function(link) {
-        $(link.currentTarget).parents(".question-item").find(".question-answer-text").toggle();
-    });
-    
-    $(".select-city-button").click(function(link) {
-        var city = $("#city").val();
-        CityUtils.selectCity(city);
-        CityUtils.updateInterface(city);
-        $('#selectCityWindow').modal('hide');
-    });
-
-    $("#questionWindow").on('hidden.bs.modal', function(win) {
-        $(".question-answer-text").hide();
     });
 
     var MessageUtils = {
@@ -139,6 +124,12 @@ $(document).ready(function() {
             });
         },
 
+        setError: function (dialogId, error) {
+            var errBlock = $("#" + dialogId + " .error-container");
+            errBlock.text(error);
+            errBlock.show();
+        },
+
         sendRequest: function(data, dialogId) {
             $.post('send.php', data)
                 .done(function(resp) {
@@ -146,47 +137,33 @@ $(document).ready(function() {
                         if (resp[0] == "{") {
                             var json = JSON.parse(resp);
                             if (json.success) {
-                                MessageUtils.showSuccess(json.message || "Запрос отправлен");
+                                // MessageUtils.showSuccess(json.message || "Запрос отправлен");
                                 if (dialogId) {
                                     $('#' + dialogId).modal('hide');
                                 }
                             } else {
-                                MessageUtils.showError(json.message || "Не удалось отправить запрос");
+                                MessageUtils.setError(dialogId, json.message || "Не удалось отправить запрос");
                             }
                         } else {
-                            MessageUtils.showError("Не удалось отправить запрос");
+                            MessageUtils.setError(dialogId, "Не удалось отправить запрос");
                         }
                     } else {
-                        MessageUtils.showError("Не удалось отправить запрос");
+                        // MessageUtils.showError("Не удалось отправить запрос");
+                        MessageUtils.setError(dialogId, "Не удалось отправить запрос");
                     }
                 })
                 .fail(function() {
-                    MessageUtils.showError("Не удалось отправить запрос");
+                    // MessageUtils.showError("Не удалось отправить запрос");
+                    MessageUtils.setError(dialogId, "Не удалось отправить запрос");
                 });
         }
     }
 
-    $(".cert-send-button").click(function(btn) {
-        var winId = "certificateWindow";
-        var form = $('#certificateWindow form')[0];
-        if (form.checkValidity()) {
-            var name = $("#cert-name").val();
-            var phone = $("#cert-phone").val();
-            var data = {
-                NotifyType: 'CERTIFICATE',
-                Name: name,
-                Phone: phone
-            };
-            MessageUtils.sendRequest(data, winId);
-        } else {
-            MessageUtils.showInfo("Заполнены не все поля");
-        }
-    });
-
     $(".call-send-button").click(function(btn) {
         var winId = "callbackWindow";
-        var form = $('#callbackWindow form')[0];
-        if (form.checkValidity()) {
+        var win = $('#' + winId);
+        var form = $('#' + winId + ' form')[0];
+        if (isFormValid(win, form, [])) {
             var name = $("#callback-name").val();
             var phone = $("#callback-phone").val();
             var data = {
@@ -196,44 +173,72 @@ $(document).ready(function() {
             };
             MessageUtils.sendRequest(data, winId);
         } else {
-            MessageUtils.showInfo("Заполнены не все поля");
+            MessageUtils.setError(winId, "* Заполнены не все поля");
         }
     });
 
+
+    function isFormValid(win, form, dataNames) {
+        var isDataValid = true;
+        for (var i = 0; i < dataNames.length; i++) {
+            var data = win.data(dataNames[i]);
+            if (!data) {
+                isDataValid = false;
+            }
+        }
+        return isDataValid && form.checkValidity();
+    }
+
+    // $("#registrationWindow form .form-control").change(function() {
+    //     debugger;
+    //     var winId = "registrationWindow";
+    //     var win = $('#' + winId);
+    //     var form = $('#' + winId + ' form')[0];
+    //     var isValid = isFormValid(win, form, []);
+    //     var btn = win.find(".reg-send-button");
+    //     btn.prop("disabled", !isValid);
+    // });
+
+    // $("#callbackWindow form .form-control").change(function() {
+    //     debugger;
+    //     var winId = "callbackWindow";
+    //     var win = $('#' + winId);
+    //     var form = $('#' + winId + ' form')[0];
+    //     var isValid = isFormValid(win, form, ['game-fulldate', 'city-name']);
+    //     var btn = win.find(".call-send-button");
+    //     btn.prop("disabled", !isValid);
+    // });
+
+    // TODO: on fields changed make validation and update send button state
     $(".reg-send-button").click(function(btn) {
         var winId = "registrationWindow";
         var win = $("#" + winId);
-        var form = $('#registrationWindow form')[0];
+        var form = $('#' + winId + ' form')[0];
         var gameId = win.data('game-id');
         var gameDate = win.data('game-fulldate');
         var gameCity = win.data('city-name');
         var gameCityId = win.data('city-id');
-        var isHiddenFieldsValid = gameCity && gameDate;
-        if (isHiddenFieldsValid) {
-            if (form.checkValidity()) {
-                var teamName = $("#reg-name").val();
-                var count = $("#reg-count").val();
-                var leader = $("#reg-capitan").val();
-                var phone = $("#reg-phone").val();
-                var email = $("#reg-email").val();
-                var data = {
-                    NotifyType: 'REGISTRATION',
-                    GameId: gameId,
-                    City: gameCity,
-                    CityId: gameCityId,
-                    Date: gameDate,
-                    TeamName: teamName,
-                    Count: count,
-                    Leader: leader,
-                    Phone: phone,
-                    Email: email
-                };
-                MessageUtils.sendRequest(data, winId);
-            } else {
-                MessageUtils.showInfo("Заполнены не все поля");
-            }
+        if (isFormValid(win, form, ['game-fulldate', 'city-name'])) {
+            var teamName = $("#reg-name").val();
+            var count = $("#reg-count").val();
+            var leader = $("#reg-capitan").val();
+            var phone = $("#reg-phone").val();
+            var email = $("#reg-email").val();
+            var data = {
+                NotifyType: 'REGISTRATION',
+                GameId: gameId,
+                City: gameCity,
+                CityId: gameCityId,
+                Date: gameDate,
+                TeamName: teamName,
+                Count: count,
+                Leader: leader,
+                Phone: phone,
+                Email: email
+            };
+            MessageUtils.sendRequest(data, winId);
         } else {
-            MessageUtils.showInfo("Заполнены не все поля");
+            MessageUtils.setError(winId, "* Заполнены не все поля");
         }
     });
 });
