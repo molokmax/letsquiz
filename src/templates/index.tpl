@@ -14,7 +14,6 @@
 
 		<link rel="stylesheet" href="https://cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css" />
 		<link href="vendor/bootstrap/bootstrap.min.css" rel="stylesheet" />
-		<link href="vendor/pnotify/pnotify.custom.min.css" media="all" rel="stylesheet" type="text/css" />
 		<link href="vendor/slick/slick.css" rel="stylesheet" />
 		<link href="vendor/slick/slick-theme.css" rel="stylesheet" />
 		<link href="style.css?{$SETTING_SYSTEM_VERSION_NUMBER}" rel="stylesheet" type="text/css" />
@@ -29,7 +28,7 @@
 
 		<nav class="quiz-menu">
 			<div class="menu-content closed">
-				<div class="collapse-button mdi mdi-menu"></div>
+				<div type="button" class="collapse-button mdi mdi-menu"></div>
 				<div class="menu-info-block">
 					<div class="menu-info-text">Интеллектуально- развлекательная битва</div>
 				</div>
@@ -40,7 +39,7 @@
 			<div class="menu-content opened">
 				<div class="menu-content-opened-container">
 					<div class="menu-header-block">
-						<div class="collapse-button mdi mdi-menu"></div>
+						<div type="button" class="collapse-button mdi mdi-menu"></div>
 						<div class="menu-header-text">Меню</div>
 					</div>
 					<div class="menu-items-block">
@@ -123,7 +122,7 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-8 offset-md-2">				
+					<div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">				
 						<div class="row list-schedule">
 {foreach from=$GAME_LIST item=game name=games}
 							<div class="quiz-game-card-container col-lg-4 col-md-6 col-sm-12" data-city-name="{$game->city}">
@@ -403,7 +402,7 @@
 							<div class="col-12 col-md-6">
 								<div class="corp-questions-buttons">
 									<a href="javascript:void(0);" target="_blank" role="button" class="quiz-button quiz-button--dark corp-questions-button">НАШ PR-KIT</a>
-									<a href="javascript:void(0);" data-toggle="modal" data-target="#callbackWindow" role="button" class="quiz-button quiz-button--dark corp-questions-button">ОБРАТНЫЙ ЗВОНОК</a>
+									<a href="javascript:void(0);" data-toggle="modal" data-target="#callbackWindow" role="button" class="quiz-button quiz-button--dark corp-questions-button callback-button">ОБРАТНЫЙ ЗВОНОК</a>
 								</div>
 							</div>
 						</div>

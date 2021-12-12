@@ -43,8 +43,6 @@ $(document).ready(function() {
         updateInterface: function(city) {
             this.currentCity = city;
             $(".selected-city-link").text(city);
-            // $('.carousel-schedule').slick('slickUnfilter');
-            // $('.carousel-schedule').slick('slickFilter', this.filterCity);
             if (this.isAnyCity()) {
                 $(".list-schedule .quiz-game-card-container").show();
                 $(".address-item").show();
@@ -76,6 +74,12 @@ $(document).ready(function() {
     
     $("nav.quiz-menu .nav-link").click(toogleMenu);
 
+    function cleanForm(dialogId) {
+        $("#" + dialogId + " .form-control").val("");
+        var errBlock = $("#" + dialogId + " .error-container");
+        errBlock.text("");
+        errBlock.hide();
+    }
     $('.registration-button a').click(function () {
         var card = $(this).parents('.quiz-game-card');
         var date = card.find('.game-date').text();
@@ -99,31 +103,16 @@ $(document).ready(function() {
         $("#registrationWindow").data("game-fulldate", fullDate);
         var gameId = card.data('game-id');
         $("#registrationWindow").data("game-id", gameId);
+        
+        cleanForm("registrationWindow");
+    });
+
+    
+    $('.callback-button a').click(function () {
+        cleanForm("callbackWindow");
     });
 
     var MessageUtils = {
-        showError: function (text) {
-            this.showMessage('Ошибка', text, 'error');
-        },
-        showInfo: function (text) {
-            this.showMessage('Информация', text, 'info');
-        },
-        showSuccess: function (text) {
-            this.showMessage('Готово', text, 'success');
-        },
-        showMessage: function (title, text, type) {
-            new PNotify({
-                title: title,
-                text: text,
-                type: type,
-                delay: 4000,
-                //styling: "bootstrap3",
-                buttons: {
-                    sticker: false
-                }
-            });
-        },
-
         setError: function (dialogId, error) {
             var errBlock = $("#" + dialogId + " .error-container");
             errBlock.text(error);
@@ -137,7 +126,6 @@ $(document).ready(function() {
                         if (resp[0] == "{") {
                             var json = JSON.parse(resp);
                             if (json.success) {
-                                // MessageUtils.showSuccess(json.message || "Запрос отправлен");
                                 if (dialogId) {
                                     $('#' + dialogId).modal('hide');
                                 }
@@ -148,12 +136,10 @@ $(document).ready(function() {
                             MessageUtils.setError(dialogId, "Не удалось отправить запрос");
                         }
                     } else {
-                        // MessageUtils.showError("Не удалось отправить запрос");
                         MessageUtils.setError(dialogId, "Не удалось отправить запрос");
                     }
                 })
                 .fail(function() {
-                    // MessageUtils.showError("Не удалось отправить запрос");
                     MessageUtils.setError(dialogId, "Не удалось отправить запрос");
                 });
         }
@@ -177,7 +163,6 @@ $(document).ready(function() {
         }
     });
 
-
     function isFormValid(win, form, dataNames) {
         var isDataValid = true;
         for (var i = 0; i < dataNames.length; i++) {
@@ -189,27 +174,6 @@ $(document).ready(function() {
         return isDataValid && form.checkValidity();
     }
 
-    // $("#registrationWindow form .form-control").change(function() {
-    //     debugger;
-    //     var winId = "registrationWindow";
-    //     var win = $('#' + winId);
-    //     var form = $('#' + winId + ' form')[0];
-    //     var isValid = isFormValid(win, form, []);
-    //     var btn = win.find(".reg-send-button");
-    //     btn.prop("disabled", !isValid);
-    // });
-
-    // $("#callbackWindow form .form-control").change(function() {
-    //     debugger;
-    //     var winId = "callbackWindow";
-    //     var win = $('#' + winId);
-    //     var form = $('#' + winId + ' form')[0];
-    //     var isValid = isFormValid(win, form, ['game-fulldate', 'city-name']);
-    //     var btn = win.find(".call-send-button");
-    //     btn.prop("disabled", !isValid);
-    // });
-
-    // TODO: on fields changed make validation and update send button state
     $(".reg-send-button").click(function(btn) {
         var winId = "registrationWindow";
         var win = $("#" + winId);
