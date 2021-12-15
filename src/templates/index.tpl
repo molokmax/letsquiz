@@ -26,7 +26,7 @@
 		<noscript><div><img src="https://mc.yandex.ru/watch/54485767" style="position:absolute; left:-9999px;" alt="" /></div></noscript> -->
 		<!-- /Yandex.Metrika counter -->
 
-		<nav class="quiz-menu">
+		<nav class="quiz-menu d-none d-md-block">
 			<div class="menu-content closed">
 				<div type="button" class="collapse-button mdi mdi-menu"></div>
 				<div class="menu-info-block">
@@ -99,19 +99,19 @@
 		<div id="main" class="main container quiz-block-container">
 			<div class="container quiz-block">
 				<div class="row main-block-desktop">
-					<div class="col-md-4 offset-md-2">
+					<div class="col-12"></div>
+					<!-- <div class="col-md-4 offset-md-2">
 					</div>
 					<div class="col-md-4">
-					</div>
+					</div> -->
 				</div>
-				<div class="row main-block-mobile">
+				<!-- <div class="row main-block-mobile">
 					<div class="logo-placeholder"></div>
-						<div class="col-12">
-						</div>
-					</div>
-				</div>
+					<div class="col-12"></div>
+				</div> -->
 			</div>
 		</div>
+		<!-- </div> -->
 {/if}
 {if $SETTING_HIDE_SCHEDULE eq 'false'}
 		<div id="schedule" class="schedule container quiz-block-container">
@@ -125,7 +125,7 @@
 					<div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">				
 						<div class="row list-schedule">
 {foreach from=$GAME_LIST item=game name=games}
-							<div class="quiz-game-card-container col-lg-4 col-md-6 col-sm-12" data-city-name="{$game->city}">
+							<div class="quiz-game-card-container col-lg-4 col-md-6 col-12" data-city-name="{$game->city}">
 								<div class="quiz-game-card game-color-{$game->color} {if $game->is_closed eq '1'}game-closed{/if}" 
 									data-game-id="{$game->id}" data-city-id="{$game->city_id}" data-city-name="{$game->city}" data-price="{$game->price}" data-game-fulldate="{$game->full_date}">
 									<div class="game-label game-name">{$game->game_name}</div>
@@ -160,14 +160,14 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-8 offset-md-2">
+					<div class="d-none d-md-block col-lg-8 offset-lg-2 col-md-10 offset-md-1">
 						<div class="quiz-schedule-ad">
 							<div class="quiz-schedule-ad-text">ТВОИ ЭМОЦИИ, КОГДА ТЫ УСПЕЛ ПОДАТЬ ЗАЯВКУ НА СВОЕ ЛЮБИМОЕ ВРЕМЯ</div>
 						</div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-8 offset-md-2">	
+					<div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">	
 						<div class="quiz-schedule-target-container">
 							<span class="quiz-schedule-target-text">Наша цель - позитивный вечер, а не взрыв мозга!</span>
 							<div class="quiz-schedule-target-tags">
@@ -305,11 +305,11 @@
 					<div class="col-md-8 offset-md-2">
 						<div class="row photo-container">
 {foreach from=$PHOTO_LIST item=url name=gallery}
-							<div class="photo-block col-lg-4 col-md-6 col-sm-12">
+							<div class="photo-block col-lg-4 col-md-6 col-12">
 								<img class="img-fluid" src="{$url}"> <!-- d-block -->
 							</div>
 {/foreach}
-							<div class="photo-gallery-link col-lg-8 col-md-6 col-sm-12">
+							<div class="photo-gallery-link col-lg-8 col-12">
 								<div class="photo-gallery-link-background">
 									<div class="photo-gallery-link-text">ЭТО, КОНЕЧНО, </br>НЕ ВСЕ ФОТОГРАФИИ... </br>ПОЛНЫЕ ФОТООТЧЁТЫ </br>СМОТРИ <a href="https://vk.com/letsquiz" target="_blank">ЗДЕСЬ</a> <a href="https://vk.com/letsquiz" target="_blank"><img class="photo-gallery-link-text-vk" src="image/vk4.png" alt="VK"></a></div>
 								</div>

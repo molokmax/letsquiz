@@ -1,8 +1,31 @@
 $(document).ready(function() {
 
+    function getSlidesToShow() {
+        if (window.innerWidth >= 1200) {
+            return 6;
+        } else if (window.innerWidth >= 992) {
+            return 4;
+        } else if (window.innerWidth >= 768) {
+            return 3;
+        } else {
+            return 2;
+        }
+    }
+    function getDotsShow() {
+        if (window.innerWidth >= 1200) {
+            return true;
+        } else if (window.innerWidth >= 992) {
+            return false;
+        } else if (window.innerWidth >= 768) {
+            return false;
+        } else {
+            return false;
+        }
+    }
+
     $('.corp-company-items').slick({
-        dots: true,
-        slidesToShow: 6,
+        dots: getDotsShow(),
+        slidesToShow: getSlidesToShow(),
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 6000
