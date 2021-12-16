@@ -225,7 +225,7 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-2 offset-md-2">
+					<div class="col-xl-2 offset-xl-2 col-lg-4 offset-lg-2 col-md-4 offset-md-2 col-10 offset-1">
 						<div class="rule rule-1">
 							<div class="rule-point">1</div>
 							<div class="rule-arrow"></div>
@@ -233,14 +233,14 @@
 							<img src="image/bluepic_1.png">
 						</div>
 					</div>
-					<div class="col-md-2">
+					<div class="col-xl-2 col-lg-4 col-md-4 offset-md-0 col-10 offset-1">
 						<div class="rule rule-2">
 							<div class="rule-point">2</div>
 							<div class="rule-arrow"></div>
 							<div class="rule-2-1">Вас ждут</div><div class="digit">2<img src="image/bluepic_2.png"></div> <div class="rule-large">часа игры</div> <div class="digit">7</div> <div class="rule-large">раундов</div><div class="rule-2-2">Каждый раунд имеет свою особенность</div>
 						</div>
 					</div>
-					<div class="col-md-2 order-md-last">
+					<div class="col-xl-3 offset-xl-0 order-xl-last col-lg-4 offset-lg-2 col-md-5 offset-md-2 col-10 offset-1">
 						<div class="rule rule-3">
 							<div class="rule-point">3</div>
 							<div class="rule-arrow"></div>
@@ -259,30 +259,37 @@
 								</ul>
 							</div>
 						</div>
-						<div class="rule rule-5">
+						<div class="rule rule-5 d-sm-block d-none">
+							<div class="rule-point">5</div>
 							<img src="image/bluepic_5.png">
 							<img src="image/bluepic_6.png">
 							<div>Награждаем победителей под овации зала!</div>
 						</div>
 					</div>
-					<div class="col-md-2">
+					<div class="col-xl-2 offset-xl-0 col-lg-4 offset-lg-0 col-md-4 offset-md-0 col-10 offset-1">
 						<div class="rule rule-4">
 							<div class="rule-point">4</div>
 							<div class="rule-arrow"></div>
 							<img src="image/bluepic_3.png">
 							<div>Думаем всей командой, затем отвечаем на специальных бланках. После каждого раунда узнаем правильные ответы и зарабатываем очки!</div>
 						</div>
+						<div class="rule rule-5 d-sm-none d-block">
+							<div class="rule-point">5</div>
+							<img src="image/bluepic_5.png">
+							<img src="image/bluepic_6.png">
+							<div>Награждаем победителей под овации зала!</div>
+						</div>
 					</div>
 				</div>
 				<div class="row faq-blocks">
-					<div class="col-12 col-md-4 offset-md-2">
+					<div class="col-lg-4 offset-lg-2 col-sm-8 offset-sm-2 col-10 offset-1">
 						<div class="faq-block good">
 							<div class="quiz-title">Возьми с собой на игру</div>
 							<div class="quiz-item">+ компанию друзей</div>
 							<div class="quiz-item">+ хорошее настроение</div>
 						</div>
 					</div>
-					<div class="col-12 col-md-4">
+					<div class="col-lg-4 offset-lg-0 col-sm-8 offset-sm-2 col-10 offset-1">
 						<div class="faq-block bad">
 							<div class="quiz-title">Точно не стоит брать на игру</div>
 							<div class="quiz-item">- энциклопедии</div>
@@ -428,7 +435,7 @@
 				<div class="row">
 					<div class="col-md-8 offset-md-2">
 						<div class="row">
-							<div class="col-6">
+							<div class="col-sm-6 offset-sm-0 col-11 offset-1">
 								<div class="footer-text phone">
 									<a href="tel:{$SETTING_PHONE}"><img class="footer-icon" src="image/phone.png"></a><a href="tel:{$SETTING_PHONE}">{$SETTING_PHONE}</a>
 								</div>
@@ -436,7 +443,7 @@
 									<a href="mailto:{$SETTING_EMAIL}"><img class="footer-icon" src="image/email.png"></a><a href="mailto:{$SETTING_EMAIL}">{$SETTING_EMAIL}</a>
 								</div>
 							</div>
-							<div class="col-6">
+							<div class="col-sm-6 offset-sm-0 col-11 offset-1">
 								<div class="footer-text social">
 									<a href="https://vk.com/letsquiz" target="_blank"><img class="footer-icon" src="image/vk4.png"></a><a href="https://vk.com/letsquiz" target="_blank">vk.com/letsquiz</a>
 								</div>

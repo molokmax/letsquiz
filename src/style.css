@@ -440,7 +440,7 @@ div.quiz-block-container.main .socialbuttons img {
 
 div.quiz-block-container.schedule .quiz-schedule-ad {
 	height: 200px;
-	background: linear-gradient(to right, transparent 60%, #492798 80%), url("image/schedule_background.jpg");
+	background: linear-gradient(to right, transparent 40%, #492798 60%), url("image/schedule_background.jpg");
 	background-repeat: no-repeat;
 	background-position: center top;
 	background-size: cover;    
@@ -550,7 +550,7 @@ div.terms div.quiz-block.details {
 }
 
 div.quiz-block.details .faq-block {
-	padding: 1.5rem 8rem;
+	padding: 1.5rem 4rem;
 	margin-bottom: 1rem;
 	background-color: rgba(73, 39, 152, 0.8);
 }
@@ -850,6 +850,10 @@ div.quiz-block-container.rules .rule.rule-5 img {
 	width: 100px;
 	margin: 1.5rem 0.5rem;
 }
+div.quiz-block-container.rules .rule.rule-5 .rule-point {
+	top: 29rem;
+    left: 16rem;
+}
 
 div.quiz-block-container.rules .faq-blocks {
 	margin-top: 3rem;
@@ -1146,6 +1150,7 @@ div.quiz-block-container.footer .quiz-block.block-footer .footer-icon {
 @media (min-width: 1441px) {
 	div.quiz-block-container.main .quiz-block {
 		background-size: 45rem;
+		background-position: center 7rem;
 	}
 	.quiz-game-card .game-label.game-name {
 		font-size: 2rem;
@@ -1183,6 +1188,17 @@ div.quiz-block-container.footer .quiz-block.block-footer .footer-icon {
 	}
 	div.quiz-block-container.footer .quiz-block.block-footer .quiz-header {
 		font-size: 4rem;
+	}
+	div.quiz-block-container.rules .rule.rule-2 .rule-arrow {
+		height: 184px;
+		width: 544px;
+		top: -3.3rem;
+	}
+	div.quiz-block.details .faq-block {
+		padding: 1.5rem 8rem;
+	}
+	div.quiz-block.details .faq-block .quiz-title {
+		font-size: 2.5rem;
 	}
 }
 
@@ -1287,9 +1303,6 @@ div.quiz-block-container.footer .quiz-block.block-footer .footer-icon {
 		padding-right: 1rem;
 		font-size: 2rem;
 	}
-	div.quiz-block-container.rules .quiz-header {
-		font-size: 5rem;
-	}
 	.gallery .photo-gallery-link .photo-gallery-link-text {
 		font-size: 1rem;
 		padding: 1rem;
@@ -1310,6 +1323,46 @@ div.quiz-block-container.footer .quiz-block.block-footer .footer-icon {
 	div.quiz-block-container.footer .quiz-block.block-footer .quiz-header {
 		font-size: 2rem;
 		line-height: 1.4;
+	}
+	div.quiz-block-container.rules .details {
+		padding-top: 70px;
+	}
+	div.quiz-block-container.rules .quiz-header {
+		font-size: 3rem;
+	}
+	div.quiz-block-container.rules .rule.rule-2 {
+		margin-top: 3rem;
+	}
+	div.quiz-block-container.rules .rule.rule-2 .rule-point {
+		top: 17rem;
+		left: 13rem;
+	}
+	/* div.quiz-block-container.rules .rule.rule-3 .rule-point {
+		top: 17rem;
+    	left: 14rem;
+	} */
+	div.quiz-block-container.rules .rule.rule-3 {
+		margin-top: 1rem;
+	}
+	div.quiz-block-container.rules .rule.rule-3 .rule-point {
+		top: 20rem;
+		left: 1rem;
+	}
+	div.quiz-block-container.rules .rule.rule-5 {
+		margin-top: 7rem;
+	}
+	div.quiz-block-container.rules .rule.rule-5 .rule-point {
+		top: 33rem;
+		left: 16rem;
+	}
+	div.quiz-block.details .faq-block {
+		padding: 1.5rem 2rem;
+	}
+	div.quiz-block.details .faq-block .quiz-title {
+		font-size: 1.5rem;
+	}
+	div.quiz-block.details .faq-block .quiz-item {
+		font-size: 1rem;
 	}
 }
 
@@ -1394,9 +1447,6 @@ div.quiz-block-container.footer .quiz-block.block-footer .footer-icon {
 		padding-right: 1rem;
 		font-size: 2rem;
 	}
-	div.quiz-block-container.rules .quiz-header {
-		font-size: 5rem;
-	}
 	.gallery .photo-gallery-link .photo-gallery-link-text {
 		font-size: 1rem;
 		padding: 1rem;
@@ -1424,6 +1474,19 @@ div.quiz-block-container.footer .quiz-block.block-footer .footer-icon {
 	div.quiz-block-container.footer .quiz-block.block-footer .footer-icon {
 		height: 1.5rem;
 		margin-right: 1rem;
+	}
+	div.quiz-block-container.rules .quiz-header {
+		font-size: 2.5rem;
+	}
+	div.quiz-block-container.rules .rule.rule-5 {
+		margin-top: 10rem;
+	}
+	div.quiz-block-container.rules .rule.rule-5 .rule-point {
+		top: 35rem;
+		left: 16rem;
+	}
+	div.quiz-block.details .faq-block {
+		padding: 1.5rem 4rem;
 	}
 }
 
@@ -1526,9 +1589,6 @@ div.quiz-block-container.footer .quiz-block.block-footer .footer-icon {
 		padding-right: 1rem;
 		font-size: 2rem;
 	}
-	div.quiz-block-container.rules .quiz-header {
-		font-size: 5rem;
-	}
 	.gallery .photo-gallery-link .photo-gallery-link-text {
 		font-size: 1rem;
 		padding: 1rem;
@@ -1564,4 +1624,62 @@ div.quiz-block-container.footer .quiz-block.block-footer .footer-icon {
 		height: 1.5rem;
 		margin-right: 1rem;
 	}
+	div.quiz-block-container.rules .quiz-header {
+		font-size: 2rem;
+	}
+	div.quiz-block-container.rules .rule.rule-1 .rule-point {
+		top: 8rem;
+		left: 14rem;
+	}
+	div.quiz-block-container.rules .rule.rule-2 .rule-point {
+		top: 23rem;
+		left: 15rem;
+	}
+	div.quiz-block-container.rules .rule.rule-3 {
+		margin-top: 6rem;
+	}
+	div.quiz-block-container.rules .rule.rule-3 .rule-point {
+		top: 23rem;
+		left: 1rem;
+	}
+	div.quiz-block-container.rules .rule.rule-4 {
+		margin-top: 6rem;
+	}
+	div.quiz-block-container.rules .rule.rule-4 .rule-point {
+		top: 16rem;
+		left: 14rem;
+	}
+	div.quiz-block-container.rules .rule.rule-5 {
+		margin-top: 6rem;
+	}
+	div.quiz-block-container.rules .rule.rule-5 .rule-point {
+		top: 33rem;
+		left: 16rem;
+	}
+	div.quiz-block.details .faq-block {
+		padding: 1.5rem 2rem;
+	}
+	div.quiz-block.details .faq-block .quiz-title {
+		font-size: 1rem;
+	}
+	div.quiz-block.details .faq-block .quiz-item {
+		font-size: 0.8rem;
+	}
+	div.quiz-block-container.corp .corp-questions-button {
+		width: 18rem;
+	}
+
+	.quiz-window .quiz-modal-body {
+		padding-left: 0rem;
+	}
+	.quiz-window .form-control {
+		width: 15rem;
+	}
+}
+
+
+
+
+div.quiz-block-container.rules .rule-arrow {
+	display: none;
 }

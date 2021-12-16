@@ -22,11 +22,13 @@ $(document).ready(function() {
             return false;
         }
     }
-
+    
+    var slidesToShow = getSlidesToShow();
     $('.corp-company-items').slick({
         dots: getDotsShow(),
-        slidesToShow: getSlidesToShow(),
+        slidesToShow: slidesToShow,
         slidesToScroll: 1,
+        arrows: slidesToShow > 2,
         autoplay: true,
         autoplaySpeed: 6000
     });
@@ -131,7 +133,7 @@ $(document).ready(function() {
     });
 
     
-    $('.callback-button a').click(function () {
+    $('.callback-button').click(function () {
         cleanForm("callbackWindow");
     });
 
