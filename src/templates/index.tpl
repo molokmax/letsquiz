@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
 	<head>
-		<!--<base href="..">-->
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -84,7 +83,6 @@
 					<div class="menu-callback-block">
 						<img class="callback-info" src="image/callback-info.png" alt="Нажми и мы перезвоним">
 						<button type="button" class="quiz-button quiz-button--light callback-button" data-toggle="modal" data-target="#callbackWindow">Обратный звонок</button>
-						<!-- <a href="javascript:void(0);" data-toggle="modal" data-target="#callbackWindow" role="button" class="quiz-button quiz-button--dark corp-questions-button">ОБРАТНЫЙ ЗВОНОК</a> -->
 					</div>
 					<div class="menu-contact-block">
 						<div><a href="https://vk.com/letsquiz" target="_blank"><img class="menu-contact-block-link" src="image/vk4.png" alt="VK"></a></div>
@@ -100,18 +98,9 @@
 			<div class="container quiz-block">
 				<div class="row main-block-desktop">
 					<div class="col-12"></div>
-					<!-- <div class="col-md-4 offset-md-2">
-					</div>
-					<div class="col-md-4">
-					</div> -->
 				</div>
-				<!-- <div class="row main-block-mobile">
-					<div class="logo-placeholder"></div>
-					<div class="col-12"></div>
-				</div> -->
 			</div>
 		</div>
-		<!-- </div> -->
 {/if}
 {if $SETTING_HIDE_SCHEDULE eq 'false'}
 		<div id="schedule" class="schedule container quiz-block-container">
@@ -141,7 +130,6 @@
 										</div>
 										<div class="game-label game-price">
 											<i class="game-label-icon game-label-svg-icon game-price-ruble"></i>
-											<!-- <i class="game-label-icon mdi mdi-currency-usd"></i> -->
 											{$game->price} руб.
 										</div>
 									</div>
@@ -149,7 +137,6 @@
 	{if $game->is_closed eq '1'}
 											<span>МЕСТ НЕТ</span>
 	{else}
-											<!-- <a href="javascript:void(0);" data-toggle="modal" data-target="#registrationWindow" role="button" class="quiz-button quiz-button--dark registration-button">РЕГИСТРАЦИЯ</a> -->
 											<a href="javascript:void(0);" data-toggle="modal" data-target="#registrationWindow">РЕГИСТРАЦИЯ</a>
 	{/if}
 									</div>
@@ -313,7 +300,7 @@
 						<div class="row photo-container">
 {foreach from=$PHOTO_LIST item=url name=gallery}
 							<div class="photo-block col-lg-4 col-md-6 col-12">
-								<img class="img-fluid" src="{$url}"> <!-- d-block -->
+								<img class="img-fluid" src="{$url}">
 							</div>
 {/foreach}
 							<div class="photo-gallery-link col-lg-8 col-12">
