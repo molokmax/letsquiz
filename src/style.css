@@ -22,6 +22,9 @@ body {
 a {
 	color: #FFFFFF;
 }
+a.underlined-link {
+	text-decoration: underline;
+}
 a:hover {
 	color: #FFFFFF;
 	cursor: pointer;
@@ -137,6 +140,9 @@ nav.quiz-menu .menu-items-block .nav-item .nav-link {
 	color: #FFFFFF;
     font-size: 1.5rem;
     text-transform: uppercase;
+}
+nav.quiz-menu .menu-items-block .nav-item .nav-link:hover {
+    font-weight: bold;
 }
 nav.quiz-menu .menu-callback-block {
 	flex-grow: 1;
@@ -641,30 +647,12 @@ div.quiz-block-container.rules .rule.rule-1 .rule-point {
 	top: 4rem;
     left: 14rem;
 }
-div.quiz-block-container.rules .rule.rule-1 .rule-arrow {
-	height: 46px;
-    width: 150px;
-    position: absolute;
-    background-image: url("image/arrow-1.png");
-    background-size: cover;
-    left: 16rem;
-    top: 2rem;
-}
 div.quiz-block-container.rules .rule.rule-2 {
 	margin-top: 6rem;
 }
 div.quiz-block-container.rules .rule.rule-2 .rule-point {
 	top: 7rem;
     left: 14rem;
-}
-div.quiz-block-container.rules .rule.rule-2 .rule-arrow {
-	height: 118px;
-    width: 350px;
-    position: absolute;
-    background-image: url("image/arrow-2.png");
-    background-size: cover;
-	left: 15.5rem;
-    top: 0.3rem;
 }
 div.quiz-block-container.rules .rule.rule-2 .digit {
 	font-size: 10rem;
@@ -701,15 +689,6 @@ div.quiz-block-container.rules .rule.rule-3 .rule-point {
 	top: 14rem;
     left: -1rem;
 }
-div.quiz-block-container.rules .rule.rule-3 .rule-arrow {    
-	height: 90px;
-    width: 120px;
-    position: absolute;
-    background-image: url("image/arrow-3.png");
-    background-size: cover;
-    left: -7.7rem;
-    top: 16rem;
-}
 
 div.quiz-block-container.rules .rule.rule-4 {
 	margin-top: 20rem;
@@ -721,15 +700,6 @@ div.quiz-block-container.rules .rule.rule-4 img {
 div.quiz-block-container.rules .rule.rule-4 .rule-point {
 	top: 26rem;
     left: 14rem;
-}
-div.quiz-block-container.rules .rule.rule-4 .rule-arrow {  
-	height: 60px;
-    width: 98px;
-    position: absolute;
-    background-image: url("image/arrow-4.png");
-    background-size: cover;
-    left: 15rem;
-    top: 28rem;
 }
 
 div.quiz-block-container.rules .rule.rule-5 {
@@ -1004,11 +974,6 @@ div.quiz-block-container.footer .quiz-block.block-footer .footer-icon {
 	}
 	div.quiz-block-container.footer .quiz-block.block-footer .quiz-header {
 		font-size: 4rem;
-	}
-	div.quiz-block-container.rules .rule.rule-2 .rule-arrow {
-		height: 184px;
-		width: 544px;
-		top: -3.3rem;
 	}
 	div.quiz-block.details .faq-block {
 		padding: 1.5rem 8rem;
@@ -1411,6 +1376,9 @@ div.quiz-block-container.footer .quiz-block.block-footer .footer-icon {
 	div.quiz-block-container.corp .corp-text {
 		font-size: 1rem;
 	}
+	div.quiz-block-container.corp .corp-company-items {
+		margin-left: 1rem;
+	}
 	div.quiz-block-container.corp .corp-item {
 		font-size: 1rem;
 	}
@@ -1435,6 +1403,13 @@ div.quiz-block-container.footer .quiz-block.block-footer .footer-icon {
 	div.quiz-block-container.footer .quiz-block.block-footer .footer-icon {
 		height: 1.5rem;
 		margin-right: 1rem;
+	}
+	div.quiz-block-container.footer .quiz-block.block-footer .footer-subheader {
+		padding-bottom: 1rem;
+	}
+	div.quiz-block-container.footer .quiz-block.block-footer {
+		padding-bottom: 4rem;
+		padding-top: 2rem;
 	}
 	div.quiz-block-container.rules .quiz-header {
 		font-size: 2rem;
@@ -1487,11 +1462,4 @@ div.quiz-block-container.footer .quiz-block.block-footer .footer-icon {
 	.quiz-window .form-control {
 		width: 15rem;
 	}
-}
-
-
-
-
-div.quiz-block-container.rules .rule-arrow {
-	display: none;
 }

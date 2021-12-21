@@ -1,37 +1,92 @@
 $(document).ready(function() {
 
-    function getSlidesToShow() {
-        if (window.innerWidth >= 1200) {
-            return 6;
-        } else if (window.innerWidth >= 992) {
-            return 4;
-        } else if (window.innerWidth >= 768) {
-            return 3;
-        } else {
-            return 2;
-        }
-    }
-    function getDotsShow() {
-        if (window.innerWidth >= 1200) {
-            return true;
-        } else if (window.innerWidth >= 992) {
-            return false;
-        } else if (window.innerWidth >= 768) {
-            return false;
-        } else {
-            return false;
-        }
-    }
-    
-    var slidesToShow = getSlidesToShow();
+    // function getSlidesToShow() {
+    //     if (window.innerWidth >= 1200) {
+    //         return 6;
+    //     } else if (window.innerWidth >= 992) {
+    //         return 4;
+    //     } else if (window.innerWidth >= 768) {
+    //         return 3;
+    //     } else {
+    //         return 2;
+    //     }
+    // }
+    // function getDotsShow() {
+    //     if (window.innerWidth >= 1200) {
+    //         return true;
+    //     } else if (window.innerWidth >= 992) {
+    //         return false;
+    //     } else if (window.innerWidth >= 768) {
+    //         return false;
+    //     } else {
+    //         return false;
+    //     }
+    // }
+    // var resizeTimeout;
+    // function resizeThrottler() {
+    //     // ignore resize events as long as an actualResizeHandler execution is in the queue
+    //     if (!resizeTimeout) {
+    //         resizeTimeout = setTimeout(function() {
+    //             resizeTimeout = null;
+    //             setupCompanyItemsSlides();
+    //         }, 100);
+    //     }
+    // }
+
+    // function setupCompanyItemsSlides() {
+    //     // handle the resize event
+    //     var slidesToShow = getSlidesToShow();
+        
+    // }
+
+    // setupCompanyItemsSlides();
+    // window.addEventListener("resize", resizeThrottler, false);
+
     $('.corp-company-items').slick({
-        dots: getDotsShow(),
-        slidesToShow: slidesToShow,
+        dots: true,
+        slidesToShow: 6,
+        arrows: true,
+        rows: 1,
+        slidesPerRow: 1,
         slidesToScroll: 1,
-        arrows: slidesToShow > 2,
         autoplay: true,
-        autoplaySpeed: 6000
+        autoplaySpeed: 1000,
+
+        responsive: [
+            {
+              breakpoint: 922,
+              settings: {
+                dots: false,
+                slidesToShow: 4,
+                arrows: true,
+                rows: 1,
+                slidesPerRow: 1
+              }
+            },
+            {
+              breakpoint: 768,
+              settings: {
+                dots: false,
+                slidesToShow: 3,
+                arrows: true,
+                rows: 1,
+                slidesPerRow: 1
+              }
+            },
+            {
+              breakpoint: 540,
+              settings: {
+                dots: false,
+                slidesToShow: 2,
+                arrows: false,
+                rows: 2,
+                slidesPerRow: 2
+              }
+            }
+        ]
     });
+    
+    
 
     var CityUtils = {
         AnyCityName: 'Все',

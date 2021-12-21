@@ -215,7 +215,6 @@
 					<div class="col-xl-2 offset-xl-2 col-lg-4 offset-lg-2 col-md-4 offset-md-2 col-10 offset-1">
 						<div class="rule rule-1">
 							<div class="rule-point">1</div>
-							<div class="rule-arrow"></div>
 							<div>Рассаживаем команды по 2-10 человек. Один стол - это одна команда</div>
 							<img src="image/bluepic_1.png">
 						</div>
@@ -223,14 +222,12 @@
 					<div class="col-xl-2 col-lg-4 col-md-4 offset-md-0 col-10 offset-1">
 						<div class="rule rule-2">
 							<div class="rule-point">2</div>
-							<div class="rule-arrow"></div>
 							<div class="rule-2-1">Вас ждут</div><div class="digit">2<img src="image/bluepic_2.png"></div> <div class="rule-large">часа игры</div> <div class="digit">7</div> <div class="rule-large">раундов</div><div class="rule-2-2">Каждый раунд имеет свою особенность</div>
 						</div>
 					</div>
 					<div class="col-xl-3 offset-xl-0 order-xl-last col-lg-4 offset-lg-2 col-md-5 offset-md-2 col-10 offset-1">
 						<div class="rule rule-3">
 							<div class="rule-point">3</div>
-							<div class="rule-arrow"></div>
 							<img src="image/bluepic_4.png">
 							<div class="rule-3-text">
 								Вопросы на различную тематику и разной сложности:
@@ -256,7 +253,6 @@
 					<div class="col-xl-2 offset-xl-0 col-lg-4 offset-lg-0 col-md-4 offset-md-0 col-10 offset-1">
 						<div class="rule rule-4">
 							<div class="rule-point">4</div>
-							<div class="rule-arrow"></div>
 							<img src="image/bluepic_3.png">
 							<div>Думаем всей командой, затем отвечаем на специальных бланках. После каждого раунда узнаем правильные ответы и зарабатываем очки!</div>
 						</div>
@@ -305,7 +301,7 @@
 {/foreach}
 							<div class="photo-gallery-link col-lg-8 col-12">
 								<div class="photo-gallery-link-background">
-									<div class="photo-gallery-link-text">ЭТО, КОНЕЧНО, </br>НЕ ВСЕ ФОТОГРАФИИ... </br>ПОЛНЫЕ ФОТООТЧЁТЫ </br>СМОТРИ <a href="https://vk.com/letsquiz" target="_blank">ЗДЕСЬ</a> <a href="https://vk.com/letsquiz" target="_blank"><img class="photo-gallery-link-text-vk" src="image/vk4.png" alt="VK"></a></div>
+									<div class="photo-gallery-link-text">ЭТО, КОНЕЧНО, </br>НЕ ВСЕ ФОТОГРАФИИ... </br>ПОЛНЫЕ ФОТООТЧЁТЫ </br>СМОТРИ <a class="underlined-link" href="https://vk.com/letsquiz" target="_blank">ЗДЕСЬ</a> <a href="https://vk.com/letsquiz" target="_blank"><img class="photo-gallery-link-text-vk" src="image/vk4.png" alt="VK"></a></div>
 								</div>
 							</div>
 						</div>
@@ -359,7 +355,7 @@
 						<div class="row">
 							<div class="col-12 col-md-6">
 								<div class="corp-item">
-									<i class="quiz-icon mdi mdi-toggle-switch"></i>Он-лайн или Офф-лайн
+									<i class="quiz-icon mdi mdi-toggle-switch"></i>Онлайн или Офлайн
 								</div>
 								<div class="corp-item">
 									<i class="quiz-icon mdi mdi-toggle-switch"></i>От 6 до бесконечности человек
@@ -410,19 +406,19 @@
 			<div class="container quiz-block block-footer">
 			
 				<div class="row">
-					<div class="col-md-4 offset-md-2">
+					<div class="col-md-4 offset-md-2 col-11 offset-1">
 						<div class="quiz-header">УЖЕ ГОТОВЫ К УВЛЕКАТЕЛЬНЫМ ИНТЕЛЛЕКТУАЛЬНЫМ БИТВАМ?</div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-8 offset-md-2">
+					<div class="col-md-8 offset-md-2 col-11 offset-1">
 						<div class="footer-text footer-subheader">Вот как с нами связаться:</div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-8 offset-md-2">
+					<div class="col-md-8 offset-md-2 col-11 offset-1">
 						<div class="row">
-							<div class="col-sm-6 offset-sm-0 col-11 offset-1">
+							<div class="col-sm-6 col-12">
 								<div class="footer-text phone">
 									<a href="tel:{$SETTING_PHONE}"><img class="footer-icon" src="image/phone.png"></a><a href="tel:{$SETTING_PHONE}">{$SETTING_PHONE}</a>
 								</div>
@@ -430,7 +426,7 @@
 									<a href="mailto:{$SETTING_EMAIL}"><img class="footer-icon" src="image/email.png"></a><a href="mailto:{$SETTING_EMAIL}">{$SETTING_EMAIL}</a>
 								</div>
 							</div>
-							<div class="col-sm-6 offset-sm-0 col-11 offset-1">
+							<div class="col-sm-6 col-12">
 								<div class="footer-text social">
 									<a href="https://vk.com/letsquiz" target="_blank"><img class="footer-icon" src="image/vk4.png"></a><a href="https://vk.com/letsquiz" target="_blank">vk.com/letsquiz</a>
 								</div>
