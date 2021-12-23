@@ -43,6 +43,15 @@ a:focus {
 	outline: none !important;
 }
 
+.page-block {
+	z-index: 900;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(30, 0, 50, 0.8);
+	display: none;
+}
+
 nav.quiz-menu {
 	background: #5935A3;
 	color: #FFFFFF;
@@ -1378,6 +1387,7 @@ div.quiz-block-container.footer .quiz-block.block-footer .footer-icon {
 	}
 	div.quiz-block-container.corp .corp-company-items {
 		margin-left: 1rem;
+		margin-right: 1rem;
 	}
 	div.quiz-block-container.corp .corp-item {
 		font-size: 1rem;
@@ -1394,8 +1404,8 @@ div.quiz-block-container.footer .quiz-block.block-footer .footer-icon {
 		margin-right: auto;
 	}
 	div.quiz-block-container.footer .quiz-block.block-footer .quiz-header {
-		font-size: 1.5rem;
-		line-height: 1.4;
+		font-size: 1.3rem;
+		line-height: 1.2;
 	}
 	div.quiz-block-container.footer .quiz-block.block-footer .footer-text {
 		font-size: 1rem;

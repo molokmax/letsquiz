@@ -1,6 +1,7 @@
 
 INSERT INTO `setting` (`id`, `name`, `prefix`, `type`, `value`) VALUES (14, 'Количество фотографий для отображения', 'PHOTO_TAKE', 'int', '4');
 INSERT INTO `setting` (`id`, `name`, `prefix`, `type`, `value`) VALUES (15, 'Скрыть раздел "Контакты"', 'HIDE_FOOTER', 'bool', 'false');
+INSERT INTO `setting` (`id`, `name`, `prefix`, `type`, `value`) VALUES (16, 'Активировать Yandex.Metrika', 'METRIKA_ENABLED', 'bool', 'false');
 
 delete from `setting` where `prefix` = 'HIDE_FRIENDS';
 delete from `setting` where `prefix` = 'HIDE_FEEDBACK';
@@ -39,3 +40,27 @@ INSERT INTO photo (id,url,`order`) VALUES
 ,(19,'photo/IMG_4942.jpg',19)
 ,(20,'photo/IMG_4943.jpg',20)
 ;
+
+
+
+
+RENAME TABLE `address` TO `place`;
+
+update `place` set `description` = 'Шизгара' where `id` = 1;
+update `place` set `description` = 'МЯСО И УГЛИ' where `id` = 2;
+update `place` set `description` = 'KVARTAL' where `id` = 4;
+update `place` set `description` = 'Мёд' where `id` = 5;
+update `place` set `description` = 'УСТРИЦЫ & ТАНЦЫ' where `id` = 6;
+insert into `place` (`id`, `description`, `city_id`) values (7, 'Онлайн', 7);
+
+ALTER TABLE `game` ADD COLUMN `place_id` int(11) NULL;
+
+!!! -- TODO: update place_id
+
+ALTER TABLE `game` DROP COLUMN `city_id`;
+ALTER TABLE `game` MODIFY `place_id` int(11) NOT NULL;
+
+ALTER TABLE `city` ADD COLUMN `is_online` tinyint(1) NULL;
+update `city` set `is_online` = 0;
+update `city` set `is_online` = 1 where `id` = 7;
+ALTER TABLE `city` MODIFY `is_online` tinyint(1) NOT NULL;

@@ -3,6 +3,7 @@
     require_once('app/auth.php');
 	require_once('app/games.php');
 	require_once('app/cities.php');
+	require_once('app/places.php');
 	require_once('app/feedbacks.php');
 	require_once('app/questions.php');
 	require_once('app/settings.php');
@@ -37,6 +38,10 @@
 	$cityRepo = new CityRepository();
 	$cities = $cityRepo->Read();
 	$smarty->assign('CITY_LIST', $cities);
+
+	$placeRepo = new PlaceRepository();
+	$places = $placeRepo->GetAll();
+	$smarty->assign('PLACE_LIST', $places);
 
 	$feedbackRepo = new FeedbackRepository();
 	$feedbacks = $feedbackRepo->Read();

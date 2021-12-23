@@ -78,9 +78,12 @@
         public $id;
         public $date;
         public $game_name;
+        public $place_id;
+        public $place;
         public $city_id;
         public $city;
         public $is_closed;
+        public $is_online;
         public $color_id;
         public $color_name;
         public $color;
@@ -97,9 +100,12 @@
         public $day_short_name;
         public $time;
         public $game_name;
+        public $place_id;
+        public $place;
         public $city_id;
         public $city;
         public $is_closed;
+        public $is_online;
         public $color;
         public $price;
 
@@ -111,10 +117,13 @@
             $this->day_name = $formatter->getDayName($db_game->date);
             $this->day_short_name = $formatter->getDayShortName($db_game->date);
             $this->time = $db_game->date->format('H:i');
+            $this->place_id = $db_game->place_id;
+            $this->place = $db_game->place;
             $this->city_id = $db_game->city_id;
             $this->city = $db_game->city;
             $this->game_name = $db_game->game_name;
             $this->is_closed = $db_game->is_closed;
+            $this->is_online = $db_game->is_online;
             $this->price = $db_game->price;
             if ($db_game->color) {
                 $this->color = $db_game->color;
@@ -133,8 +142,7 @@
             $rec->id = $data['id'];
             $rec->date = $data['date'];
             $rec->game_name = $data['name'];
-            $rec->city_id = $data['city_id'];
-            // $rec->city = $data['city'];
+            $rec->place_id = $data['place_id'];
             $rec->is_closed = $data['is_closed'];
             $rec->color_id = $data['color_id'];
             $rec->price = $data['price'];
@@ -157,7 +165,7 @@
             //$id_param = mysqli_escape_string($con, $game->id);
             $date_param = mysqli_escape_string($con, $game->date);
             $name_param = mysqli_escape_string($con, $game->game_name);
-            $city_param = mysqli_escape_string($con, $game->city_id);
+            $place_param = mysqli_escape_string($con, $game->place_id);
             $isclosed_param = mysqli_escape_string($con, $game->is_closed);
             $color_param = mysqli_escape_string($con, $game->color_id);
             $price_param = mysqli_escape_string($con, $game->price);
@@ -176,7 +184,7 @@
                 $color_param = 'NULL';
             }
 
-            $query = "INSERT INTO `game` (`date`, `name`, `city_id`, `is_closed`, `color_id`, `price`) VALUES ('{$date_param}', '{$name_param}', {$city_param}, {$isclosed_param}, {$color_param}, '{$price_param}')";
+            $query = "INSERT INTO `game` (`date`, `name`, `place_id`, `is_closed`, `color_id`, `price`) VALUES ('{$date_param}', '{$name_param}', {$place_param}, {$isclosed_param}, {$color_param}, '{$price_param}')";
 
 	        $db_result = mysqli_query($con, $query);
             
@@ -210,7 +218,7 @@
             $id_param = mysqli_escape_string($con, $game->id);
             $date_param = mysqli_escape_string($con, $game->date);
             $name_param = mysqli_escape_string($con, $game->game_name);
-            $city_param = mysqli_escape_string($con, $game->city_id);
+            $place_param = mysqli_escape_string($con, $game->place_id);
             $isclosed_param = mysqli_escape_string($con, $game->is_closed);
             $color_param = mysqli_escape_string($con, $game->color_id);
             $price_param = mysqli_escape_string($con, $game->price);
@@ -229,7 +237,7 @@
                 $color_param = 'NULL';
             }
 
-            $query = "UPDATE `game` SET `date` = '{$date_param}', `name` = '{$name_param}', `city_id` = {$city_param}, `is_closed` = {$isclosed_param}, `color_id` = {$color_param}, `price` = '{$price_param}' WHERE `id` = {$id_param}";
+            $query = "UPDATE `game` SET `date` = '{$date_param}', `name` = '{$name_param}', `place_id` = {$place_param}, `is_closed` = {$isclosed_param}, `color_id` = {$color_param}, `price` = '{$price_param}' WHERE `id` = {$id_param}";
             //print($query);
 	        $db_result = mysqli_query($con, $query);
             
@@ -282,7 +290,7 @@
             mysqli_set_charset($con, $config['DB_CONFIG_CHARSET']);
 	        mysqli_select_db($con, $config['DB_CONFIG_DATABASENAME']);
 	
-	        $query = "SELECT g.`id` AS `id`, g.`date` AS  `date`, g.`name` AS `game_name`, g.`city_id` AS `city_id`, c.`name` AS  `city`, g.`is_closed` AS `is_closed`, g.`color_id` AS `color_id`, clr.`name` AS `color_name`, clr.`prefix` AS `color_prefix`, g.`price` AS `price` FROM  `game` AS g JOIN  `city` AS c ON ( g.`city_id` = c.`id` ) LEFT JOIN `color` as clr ON (g.`color_id` = clr.`id`) ORDER BY g.`date`";
+	        $query = "SELECT g.`id` AS `id`, g.`date` AS  `date`, g.`name` AS `game_name`, g.`place_id` AS `place_id`, p.`description` AS  `place`, p.`city_id` AS `city_id`, c.`name` AS  `city`, g.`is_closed` AS `is_closed`, g.`color_id` AS `color_id`, clr.`name` AS `color_name`, clr.`prefix` AS `color_prefix`, g.`price` AS `price` FROM  `game` AS g LEFT JOIN `place` AS p ON (g.`place_id` = p.`id`) LEFT JOIN `city` AS c ON (p.`city_id` = c.`id`) LEFT JOIN `color` as clr ON (g.`color_id` = clr.`id`) ORDER BY g.`date`";
 
 	        $db_result = mysqli_query($con, $query);
             if ($db_result) {
@@ -292,6 +300,8 @@
                     $date = DateTime::createFromFormat('Y-m-d H:i:s', $row['date'], $timezone);
                     $rec->date = $date->format('Y-m-d H:i');
                     $rec->game_name = $row['game_name'];
+                    $rec->place_id = $row['place_id'];
+                    $rec->place = $row['place'];
                     $rec->city_id = $row['city_id'];
                     $rec->city = $row['city'];
                     $rec->is_closed = $row['is_closed'];
@@ -321,7 +331,7 @@
             mysqli_set_charset($con, $config['DB_CONFIG_CHARSET']);
 	        mysqli_select_db($con, $config['DB_CONFIG_DATABASENAME']);
 	
-	        $query = "SELECT g.`id` AS `id`, g.`date` AS  `date`, g.`name` AS `game_name`, g.`city_id` AS `city_id`, c.`name` AS  `city`, g.`is_closed` AS `is_closed`, g.`color_id` AS `color_id`, clr.`name` AS `color_name`, clr.`prefix` AS `color_prefix`, g.`price` AS `price` FROM  `game` AS g JOIN  `city` AS c ON ( g.`city_id` = c.`id` ) LEFT JOIN `color` as clr ON (g.`color_id` = clr.`id`) WHERE g.`date` > '{$date->format('Y-m-d H:i:s')}' ORDER BY g.`date` LIMIT 0, $limit";
+            $query = "SELECT g.`id` AS `id`, g.`date` AS  `date`, g.`name` AS `game_name`, g.`place_id` AS `place_id`, p.`description` AS `place`, p.`city_id` AS `city_id`, c.`name` AS  `city`, g.`is_closed` AS `is_closed`, c.`is_online` AS `is_online`, g.`color_id` AS `color_id`, clr.`name` AS `color_name`, clr.`prefix` AS `color_prefix`, g.`price` AS `price` FROM  `game` AS g LEFT JOIN `place` AS p ON (g.`place_id` = p.`id`) LEFT JOIN `city` AS c ON (p.`city_id` = c.`id`) LEFT JOIN `color` as clr ON (g.`color_id` = clr.`id`) WHERE g.`date` > '{$date->format('Y-m-d H:i:s')}' ORDER BY g.`date` LIMIT 0, $limit";
 
 	        $db_result = mysqli_query($con, $query);
             if ($db_result) {
@@ -330,9 +340,12 @@
                     $rec->id = $row['id'];
                     $rec->date = DateTime::createFromFormat('Y-m-d H:i:s', $row['date'], $timezone);
                     $rec->game_name = $row['game_name'];
+                    $rec->place_id = $row['place_id'];
+                    $rec->place = $row['place'];
                     $rec->city_id = $row['city_id'];
                     $rec->city = $row['city'];
                     $rec->is_closed = $row['is_closed'];
+                    $rec->is_online = $row['is_online'];
                     $rec->color_id = $row['color_id'];
                     $rec->color_name = $row['color_name'];
                     $rec->color = $row['color_prefix'];

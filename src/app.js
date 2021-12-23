@@ -1,47 +1,5 @@
 $(document).ready(function() {
 
-    // function getSlidesToShow() {
-    //     if (window.innerWidth >= 1200) {
-    //         return 6;
-    //     } else if (window.innerWidth >= 992) {
-    //         return 4;
-    //     } else if (window.innerWidth >= 768) {
-    //         return 3;
-    //     } else {
-    //         return 2;
-    //     }
-    // }
-    // function getDotsShow() {
-    //     if (window.innerWidth >= 1200) {
-    //         return true;
-    //     } else if (window.innerWidth >= 992) {
-    //         return false;
-    //     } else if (window.innerWidth >= 768) {
-    //         return false;
-    //     } else {
-    //         return false;
-    //     }
-    // }
-    // var resizeTimeout;
-    // function resizeThrottler() {
-    //     // ignore resize events as long as an actualResizeHandler execution is in the queue
-    //     if (!resizeTimeout) {
-    //         resizeTimeout = setTimeout(function() {
-    //             resizeTimeout = null;
-    //             setupCompanyItemsSlides();
-    //         }, 100);
-    //     }
-    // }
-
-    // function setupCompanyItemsSlides() {
-    //     // handle the resize event
-    //     var slidesToShow = getSlidesToShow();
-        
-    // }
-
-    // setupCompanyItemsSlides();
-    // window.addEventListener("resize", resizeThrottler, false);
-
     $('.corp-company-items').slick({
         dots: true,
         slidesToShow: 6,
@@ -51,10 +9,19 @@ $(document).ready(function() {
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 1000,
-
         responsive: [
             {
-              breakpoint: 922,
+              breakpoint: 1440,
+              settings: {
+                dots: false,
+                slidesToShow: 5,
+                arrows: true,
+                rows: 1,
+                slidesPerRow: 1
+              }
+            },
+            {
+              breakpoint: 1200,
               settings: {
                 dots: false,
                 slidesToShow: 4,
@@ -64,7 +31,7 @@ $(document).ready(function() {
               }
             },
             {
-              breakpoint: 768,
+              breakpoint: 1024,
               settings: {
                 dots: false,
                 slidesToShow: 3,
@@ -74,20 +41,17 @@ $(document).ready(function() {
               }
             },
             {
-              breakpoint: 540,
+              breakpoint: 768,
               settings: {
                 dots: false,
                 slidesToShow: 2,
                 arrows: false,
-                rows: 2,
-                slidesPerRow: 2
+                rows: 2
               }
             }
         ]
     });
     
-    
-
     var CityUtils = {
         AnyCityName: 'Все',
         OnlineCityName: 'Онлайн',
@@ -148,8 +112,10 @@ $(document).ready(function() {
     function toogleMenu(link) {
         $("nav.quiz-menu .menu-content.closed").toggle(100);
         $("nav.quiz-menu .menu-content.opened").toggle(100);
+        $(".page-block").toggle(10);
     }
     $("nav.quiz-menu .collapse-button").click(toogleMenu);
+    $(".page-block").click(toogleMenu);
 
     
     $("nav.quiz-menu .nav-link").click(toogleMenu);
@@ -162,23 +128,21 @@ $(document).ready(function() {
     }
     $('.registration-button a').click(function () {
         var card = $(this).parents('.quiz-game-card');
-        var date = card.find('.game-date').text();
+        var date = card.data("date");
         $("#registrationWindow .display-date").text(date);
-        var time = card.find('.game-time').text();
-        $("#registrationWindow .display-time").text(time);
         var price = card.data('price');
         $("#registrationWindow .display-price").text(price);
         var city = card.data('city-name');
-        $("#registrationWindow .quiz-window-title").hide();
-        if (city == CityUtils.OnlineCityName) {
-            $("#registrationWindow .quiz-window-title.online-game").show();
-        } else {
-            $("#registrationWindow .quiz-window-title.offline-game").show();
-        }
+        var place = card.data('place-name');
+        var isOnline = card.data('is-online');
         $("#registrationWindow").data("city-name", city);
-        $("#registrationWindow .display-city").text(city);
+        $("#registrationWindow").data("place-name", place);
+        var cityText = city + (isOnline ? '' : ', ' + place);
+        $("#registrationWindow .display-city").text(cityText);
         var cityId = card.data('city-id');
+        var placeId = card.data('place-id');
         $("#registrationWindow").data("city-id", cityId);
+        $("#registrationWindow").data("place-id", placeId);
         var fullDate = card.data('game-fulldate');
         $("#registrationWindow").data("game-fulldate", fullDate);
         var gameId = card.data('game-id');

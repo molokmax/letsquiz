@@ -21,10 +21,12 @@
 	</head>
 	<body data-spy="scroll" data-target=".quiz-menu">
 		<!-- Yandex.Metrika counter -->
-		<!-- <script type="text/javascript" src="metrika.js"></script>
-		<noscript><div><img src="https://mc.yandex.ru/watch/54485767" style="position:absolute; left:-9999px;" alt="" /></div></noscript> -->
+{if $SETTING_METRIKA_ENABLED eq 'true'}
+		<script type="text/javascript" src="metrika.js"></script>
+		<noscript><div><img src="https://mc.yandex.ru/watch/54485767" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+{/if}
 		<!-- /Yandex.Metrika counter -->
-
+		<div class="page-block"></div>
 		<nav class="quiz-menu d-none d-md-block">
 			<div class="menu-content closed">
 				<div type="button" class="collapse-button mdi mdi-menu"></div>
@@ -48,21 +50,21 @@
 								<a class="nav-link" href="#main">Главная</a>
 							</li>
 							{/if}
-							{if $SETTING_HIDE_MAIN eq 'false'}
+							{if $SETTING_HIDE_SCHEDULE eq 'false'}
 							<li class="nav-item">
 								<a class="nav-link" href="#schedule">Расписание игр</a>
 							</li>
 							{/if}
 						</ul>
 						<ul class="navbar-nav nav">
-							{if $SETTING_HIDE_MAIN eq 'false'}
+							{if $SETTING_HIDE_TERMS eq 'false'}
 							<li class="nav-item">
 								<a class="nav-link" href="#terms">Что такое квиз?</a>
 							</li>
 							{/if}
 							{if $SETTING_HIDE_TERMS eq 'false'}
 							<li class="nav-item">
-								<a class="nav-link" href="#terms">Как проходит игра?</a>
+								<a class="nav-link" href="#rules">Как проходит игра?</a>
 							</li>
 							{/if}
 							{if $SETTING_HIDE_GALLERY eq 'false'}
@@ -116,10 +118,10 @@
 {foreach from=$GAME_LIST item=game name=games}
 							<div class="quiz-game-card-container col-lg-4 col-md-6 col-12" data-city-name="{$game->city}">
 								<div class="quiz-game-card game-color-{$game->color} {if $game->is_closed eq '1'}game-closed{/if}" 
-									data-game-id="{$game->id}" data-city-id="{$game->city_id}" data-city-name="{$game->city}" data-price="{$game->price}" data-game-fulldate="{$game->full_date}">
+									data-game-id="{$game->id}" data-city-id="{$game->city_id}" data-city-name="{$game->city}" data-place-id="{$game->place_id}" data-place-name="{$game->place}" data-is-online="{$game->is_online}" data-price="{$game->price}" data-date="{$game->date_short}, {$game->day_short_name} в {$game->time}" data-game-fulldate="{$game->full_date}">
 									<div class="game-label game-name">{$game->game_name}</div>
 									<div class="game-label game-city">
-										<i class="game-label-icon mdi mdi-flag-outline"></i>{$game->city}
+										<i class="game-label-icon mdi mdi-flag-outline"></i>{$game->city}{if $game->is_online eq '0'}, {$game->place}{/if}
 									</div>
 									<div class="game-label game-label">
 										<i class="game-label-icon mdi mdi-calendar"></i>{$game->date_short}, {$game->day_short_name}
@@ -512,13 +514,9 @@
 					<div class="quiz-modal-body">
 						<div class="modal-body">
 							<form class="quiz-form">
-								<div class="quiz-window-title online-game">
-									Заполни форму регистрации на игру <span class="display-city"></span> <span class="display-date"></span> в <span class="display-time"></span> 
-									(<span class="display-price"></span>)
-								</div>
-								<div class="quiz-window-title offline-game">
-									Заполни форму регистрации на игру в городе <span class="display-city"></span> <span class="display-date"></span> в <span class="display-time"></span> 
-									(<span class="display-price"></span>)
+								<div class="quiz-window-title">
+									<div>Где: <span class="display-city"></span></div>
+									<div>Когда: <span class="display-date"></span></div>
 								</div>
 								<input type="text" class="form-control" id="reg-name" required aria-describedby="reg-name" placeholder="Название команды">
 								<select class="form-control" id="reg-count" required>

@@ -6,7 +6,6 @@
 	require_once('app/feedbacks.php');
 	require_once('app/games.php');
 	require_once('app/cities.php');
-	require_once('app/addresses.php');
 	require_once('app/colors.php');
 	require_once('libs/smarty/Smarty.class.php');
 
@@ -39,7 +38,24 @@
 	}
 
 	$photoRepo = new PhotoRepository();
-	$photos = $photoRepo->GetAll($photo_take);
+	$photos_all = $photoRepo->GetAll(0);
+	$photo_count = count($photos_all);
+	$photos = array();
+	if ($photo_take >= $photo_count) {
+		$photos = $photos_all;
+	} else {
+		$indexes = array();
+		while (count($indexes) < $photo_take) {
+			$index = rand(0, $photo_count);
+			if (!in_array($index, $indexes)) {
+				array_push($indexes, $index);
+			}
+		}
+		foreach ($indexes as $i) {
+			$photo = $photos_all[$i];
+			array_push($photos, $photo);
+		}
+	}
 	$smarty->assign('PHOTO_LIST', $photos);
 
 	$questionRepo = new QuestionRepository();
@@ -57,26 +73,16 @@
 	$colorRepo = new ColorRepository();
 	$colors = $colorRepo->Read();
 
-	$addressRepo = new AddressRepository();
-	$addresses = $addressRepo->GetAll();
-	$smarty->assign('ADDRESS_LIST', $addresses);
-
 	$formatter = new GameFormatter();
 	$date = new DateTime('now', $timezone);
 	$date->add(new DateInterval("PT{$game_close_hourse}H"));
 	$gameRepo = new GameRepository();
 	$games = $gameRepo->GetAfterDate($date, $game_take, $timezone);
 	$game_list = array();
-	$first_game_found = false;
 	foreach ($games as $item) {
 		$rec = new GameViewModel($item, $formatter, $colors);
         array_push($game_list, $rec);
-		if (!$first_game_found) {
-			$first_game_found = true;
-			$smarty->assign('NEXT_GAME', $formatter->getGameDate($item->date));
-		}
 	}
-
 	$smarty->assign('GAME_LIST', $game_list);
 
 	//** раскомментируйте следующую строку для отображения отладочной консоли

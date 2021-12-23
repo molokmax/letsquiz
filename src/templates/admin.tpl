@@ -69,7 +69,7 @@
 					<tr>
 						<th scope="col">Дата</th>
 						<th scope="col">Номер</th>
-						<th scope="col">Город</th>
+						<th scope="col">Место</th>
 						<th scope="col">Цена</th>
 						<th scope="col">Закрыто</th>
 						<th scope="col">Действие</th>
@@ -81,8 +81,8 @@
 						data-record-id='{$game->id}' 
 						data-record-date='{$game->date}' 
 						data-record-name='{$game->game_name}' 
-						data-record-city_id='{$game->city_id}' 
-						data-record-city='{$game->city}'
+						data-record-place_id='{$game->place_id}' 
+						data-record-place='{$game->place}'
 						data-record-price='{$game->price}'
 						data-record-color_id='{$game->color_id}' 
 						data-record-color_name='{$game->color_name}' 
@@ -90,7 +90,7 @@
 						data-record-is_closed='{$game->is_closed}'>
 						<td>{$game->date}</td>
 						<td>{$game->game_name}</td>
-						<td>{$game->city}</td>
+						<td>{$game->place}</td>
 						<td>{$game->price}</td>
 						<td>{$game->is_closed}</td>
 						<td class="action-column">
@@ -234,10 +234,10 @@
 								<input type="text" class="form-control field" id="game-name" required name="name" aria-describedby="game-name" placeholder="">
 							</div>
 							<div class="form-group">
-								<label for="game-city">Город</label>
-								<select class="form-control field" id="game-city" required name="city_id">
-	{foreach from=$CITY_LIST item=city name=selector_cities}
-									<option value="{$city->id}">{$city->name}</option>
+								<label for="game-place">Место</label>
+								<select class="form-control field" id="game-place" required name="place_id">
+	{foreach from=$PLACE_LIST item=place name=selector_cities}
+									<option value="{$place->id}">{$place->description}</option>
 	{/foreach}
 								</select>
 							</div>
