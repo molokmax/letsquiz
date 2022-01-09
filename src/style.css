@@ -634,97 +634,13 @@ div.quiz-block-container.rules .details {
 	padding-bottom: 8rem;
 }
 div.quiz-block-container.rules .rule {
-	font-size: 1rem;
+	font-size: 1.5rem;
+	margin-bottom: 3rem;
 }
-div.quiz-block-container.rules .rule .rule-point {
-	position: absolute;
-    width: 1.5rem;
-    height: 1.5rem;
-    background-color: #04A9ED;
-    border-radius: 1.5rem;
-    border-color: #FFFFFF;
-    border-style: solid;
-    border-width: 2px;
-    text-align: center;
-    font-size: 0.9rem;
-}
-div.quiz-block-container.rules .rule.rule-1 img {
-	padding-top: 2rem;
-	width: 150px;
-}
-div.quiz-block-container.rules .rule.rule-1 .rule-point {
-	top: 4rem;
-    left: 14rem;
-}
-div.quiz-block-container.rules .rule.rule-2 {
-	margin-top: 6rem;
-}
-div.quiz-block-container.rules .rule.rule-2 .rule-point {
-	top: 7rem;
-    left: 14rem;
-}
-div.quiz-block-container.rules .rule.rule-2 .digit {
-	font-size: 10rem;
-	font-weight: bold;
-	line-height: 1;
-}
-div.quiz-block-container.rules .rule.rule-2 img {
-	width: 80px;
-    position: relative;
-    top: -0.5rem;
-    margin-left: 1rem;
-}
-div.quiz-block-container.rules .rule.rule-2 .rule-large {
-	font-size: 2rem;
-	line-height: 0;
-	text-transform: uppercase;
+div.quiz-block-container.rules .rule img {
 	margin-bottom: 2rem;
-}
-div.quiz-block-container.rules .rule.rule-2 .rule-2-1 {
-	width: 100px;
-}
-div.quiz-block-container.rules .rule.rule-2 .rule-2-2 {
-	width: 200px;
-}
-
-div.quiz-block-container.rules .rule.rule-3 img {
-	width: 120px;
-	margin-bottom: 1.5rem;
-}
-div.quiz-block-container.rules .rule.rule-3 .rule-3-text {
-	margin-left: 2rem;
-}
-div.quiz-block-container.rules .rule.rule-3 .rule-point {
-	top: 14rem;
-    left: -1rem;
-}
-
-div.quiz-block-container.rules .rule.rule-4 {
-	margin-top: 20rem;
-}
-div.quiz-block-container.rules .rule.rule-4 img {
-	width: 180px;
-	margin-bottom: 1.5rem;
-}
-div.quiz-block-container.rules .rule.rule-4 .rule-point {
-	top: 26rem;
-    left: 14rem;
-}
-
-div.quiz-block-container.rules .rule.rule-5 {
-	margin-top: 3rem;
-}
-div.quiz-block-container.rules .rule.rule-5 img {
-	width: 100px;
-	margin: 1.5rem 0.5rem;
-}
-div.quiz-block-container.rules .rule.rule-5 .rule-point {
-	top: 29rem;
-    left: 16rem;
-}
-
-div.quiz-block-container.rules .faq-blocks {
-	margin-top: 3rem;
+	margin-left: 1rem;
+	height: 150px;
 }
 
 div.quiz-block-container.rules .quiz-header {
@@ -971,6 +887,12 @@ div.quiz-block-container.footer .quiz-block.block-footer .footer-icon {
 	div.terms div.quiz-block.intro .quiz-terms-header {
 		font-size: 8rem;
 	}
+	div.quiz-block-container.rules .rule {
+		font-size: 2rem;
+	}
+	div.quiz-block-container.rules .rule img {
+		margin-left: 2rem;
+	}
 	div.quiz-block-container.rules .quiz-header {
 		font-size: 5rem;
 	}
@@ -985,10 +907,10 @@ div.quiz-block-container.footer .quiz-block.block-footer .footer-icon {
 		font-size: 4rem;
 	}
 	div.quiz-block.details .faq-block {
-		padding: 1.5rem 8rem;
+		padding: 1.5rem 7rem;
 	}
 	div.quiz-block.details .faq-block .quiz-title {
-		font-size: 2.5rem;
+		font-size: 2rem;
 	}
 }
 
@@ -1120,27 +1042,6 @@ div.quiz-block-container.footer .quiz-block.block-footer .footer-icon {
 	div.quiz-block-container.rules .quiz-header {
 		font-size: 3rem;
 	}
-	div.quiz-block-container.rules .rule.rule-2 {
-		margin-top: 3rem;
-	}
-	div.quiz-block-container.rules .rule.rule-2 .rule-point {
-		top: 17rem;
-		left: 13rem;
-	}
-	div.quiz-block-container.rules .rule.rule-3 {
-		margin-top: 1rem;
-	}
-	div.quiz-block-container.rules .rule.rule-3 .rule-point {
-		top: 20rem;
-		left: 1rem;
-	}
-	div.quiz-block-container.rules .rule.rule-5 {
-		margin-top: 7rem;
-	}
-	div.quiz-block-container.rules .rule.rule-5 .rule-point {
-		top: 33rem;
-		left: 16rem;
-	}
 	div.quiz-block.details .faq-block {
 		padding: 1.5rem 2rem;
 	}
@@ -1261,15 +1162,11 @@ div.quiz-block-container.footer .quiz-block.block-footer .footer-icon {
 		height: 1.5rem;
 		margin-right: 1rem;
 	}
+	div.quiz-block-container.rules .rule {
+		font-size: 1rem;
+	}
 	div.quiz-block-container.rules .quiz-header {
 		font-size: 2.5rem;
-	}
-	div.quiz-block-container.rules .rule.rule-5 {
-		margin-top: 10rem;
-	}
-	div.quiz-block-container.rules .rule.rule-5 .rule-point {
-		top: 35rem;
-		left: 16rem;
 	}
 	div.quiz-block.details .faq-block {
 		padding: 1.5rem 4rem;
@@ -1421,37 +1318,11 @@ div.quiz-block-container.footer .quiz-block.block-footer .footer-icon {
 		padding-bottom: 4rem;
 		padding-top: 2rem;
 	}
+	div.quiz-block-container.rules .rule {
+		font-size: 1rem;
+	}
 	div.quiz-block-container.rules .quiz-header {
 		font-size: 2rem;
-	}
-	div.quiz-block-container.rules .rule.rule-1 .rule-point {
-		top: 8rem;
-		left: 14rem;
-	}
-	div.quiz-block-container.rules .rule.rule-2 .rule-point {
-		top: 23rem;
-		left: 15rem;
-	}
-	div.quiz-block-container.rules .rule.rule-3 {
-		margin-top: 6rem;
-	}
-	div.quiz-block-container.rules .rule.rule-3 .rule-point {
-		top: 23rem;
-		left: 1rem;
-	}
-	div.quiz-block-container.rules .rule.rule-4 {
-		margin-top: 6rem;
-	}
-	div.quiz-block-container.rules .rule.rule-4 .rule-point {
-		top: 16rem;
-		left: 14rem;
-	}
-	div.quiz-block-container.rules .rule.rule-5 {
-		margin-top: 6rem;
-	}
-	div.quiz-block-container.rules .rule.rule-5 .rule-point {
-		top: 33rem;
-		left: 16rem;
 	}
 	div.quiz-block.details .faq-block {
 		padding: 1.5rem 2rem;

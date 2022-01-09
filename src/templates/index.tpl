@@ -214,24 +214,22 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-xl-2 offset-xl-2 col-lg-4 offset-lg-2 col-md-4 offset-md-2 col-10 offset-1">
+					<div class="col-xl-2 offset-xl-1 col-lg-4 offset-lg-2 col-md-4 offset-md-2 col-10 offset-1">
 						<div class="rule rule-1">
-							<div class="rule-point">1</div>
-							<div>Рассаживаем команды по 2-10 человек. Один стол - это одна команда</div>
 							<img src="image/bluepic_1.png">
+							<div>Рассаживаем команды по 2-10 человек. Один стол - это одна команда</div>
 						</div>
 					</div>
-					<div class="col-xl-2 col-lg-4 col-md-4 offset-md-0 col-10 offset-1">
+					<div class="col-xl-2 offset-xl-0 col-lg-4 offset-lg-0 col-md-4 offset-md-0 col-10 offset-1">
 						<div class="rule rule-2">
-							<div class="rule-point">2</div>
-							<div class="rule-2-1">Вас ждут</div><div class="digit">2<img src="image/bluepic_2.png"></div> <div class="rule-large">часа игры</div> <div class="digit">7</div> <div class="rule-large">раундов</div><div class="rule-2-2">Каждый раунд имеет свою особенность</div>
+							<img src="image/bluepic_2.png">
+							<div>Вас ждут 2 часа игры, 7 раундов. Каждый раунд имеет свою особенность</div>
 						</div>
 					</div>
-					<div class="col-xl-3 offset-xl-0 order-xl-last col-lg-4 offset-lg-2 col-md-5 offset-md-2 col-10 offset-1">
+					<div class="col-xl-2 offset-xl-0 col-lg-4 offset-lg-2 col-md-4 offset-md-2 col-10 offset-1">
 						<div class="rule rule-3">
-							<div class="rule-point">3</div>
 							<img src="image/bluepic_4.png">
-							<div class="rule-3-text">
+							<div>
 								Вопросы на различную тематику и разной сложности:
 								<ul>
 									<li>Музыка</li>
@@ -245,23 +243,16 @@
 								</ul>
 							</div>
 						</div>
-						<div class="rule rule-5 d-sm-block d-none">
-							<div class="rule-point">5</div>
-							<img src="image/bluepic_5.png">
-							<img src="image/bluepic_6.png">
-							<div>Награждаем победителей под овации зала!</div>
-						</div>
 					</div>
 					<div class="col-xl-2 offset-xl-0 col-lg-4 offset-lg-0 col-md-4 offset-md-0 col-10 offset-1">
 						<div class="rule rule-4">
-							<div class="rule-point">4</div>
 							<img src="image/bluepic_3.png">
 							<div>Думаем всей командой, затем отвечаем на специальных бланках. После каждого раунда узнаем правильные ответы и зарабатываем очки!</div>
 						</div>
-						<div class="rule rule-5 d-sm-none d-block">
-							<div class="rule-point">5</div>
+					</div>
+					<div class="col-xl-2 offset-xl-0 col-lg-4 offset-lg-2 col-md-4 offset-md-2 col-10 offset-1">
+						<div class="rule rule-5">
 							<img src="image/bluepic_5.png">
-							<img src="image/bluepic_6.png">
 							<div>Награждаем победителей под овации зала!</div>
 						</div>
 					</div>
