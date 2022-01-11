@@ -99,7 +99,9 @@
 		<div id="main" class="main container quiz-block-container">
 			<div class="container quiz-block">
 				<div class="row main-block-desktop">
-					<div class="col-12"></div>
+					<div class="col-12 text-center">
+						<a href="#schedule" role="button" class="btn quiz-button quiz-button--pink schedule-button">ХОЧУ ИГРАТЬ</a>
+					</div>
 				</div>
 			</div>
 		</div>

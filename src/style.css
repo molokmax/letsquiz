@@ -357,6 +357,12 @@ div.quiz-block-container.main .quiz-block {
 .main-block-desktop {
 	height: 85vh;
 }
+div.quiz-block-container.main .schedule-button {
+	width: 20rem;
+	position: absolute;
+    right: 10rem;
+    bottom: 5rem;
+}
 
 div.quiz-block-container.main .main-header {
 	text-align: center;
@@ -1178,6 +1184,12 @@ div.quiz-block-container.footer .quiz-block.block-footer .footer-icon {
 	.main-block-desktop {
 		height: 100vw;
 	}
+	div.quiz-block-container.main .schedule-button {
+		position: inherit;
+		right: inherit;
+		bottom: inherit;
+		top: 100vw;
+	}
 	div.quiz-block-container.main .quiz-block {
 		background-position: center 5rem;
 		background-size: 20rem;
@@ -1271,6 +1283,10 @@ div.quiz-block-container.footer .quiz-block.block-footer .footer-icon {
 	div.terms div.quiz-block.intro .quiz-terms-details .quiz-terms-details-item .quiz-icon {
 		padding-right: 1rem;
 		font-size: 2rem;
+	}
+	div.quiz-block-container.rules .details {
+		padding-top: 5rem;
+		padding-bottom: 5rem;
 	}
 	.gallery .photo-gallery-link .photo-gallery-link-text {
 		font-size: 1rem;
