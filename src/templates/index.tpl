@@ -27,8 +27,8 @@
 {/if}
 		<!-- /Yandex.Metrika counter -->
 		<div class="page-block"></div>
-		<nav class="quiz-menu d-none d-md-block">
-			<div class="menu-content closed">
+		<nav class="quiz-menu">
+			<div class="menu-content closed"> <!--  d-none d-md-block  -->
 				<div type="button" class="collapse-button mdi mdi-menu"></div>
 				<div class="menu-info-block">
 					<div class="menu-info-text">Интеллектуально- развлекательная битва</div>

@@ -1182,32 +1182,53 @@ div.quiz-block-container.footer .quiz-block.block-footer .footer-icon {
 
 @media (max-width: 540px) {
 	.main-block-desktop {
-		height: 100vw;
+		height: 110vw;
 	}
 	div.quiz-block-container.main .schedule-button {
 		position: inherit;
 		right: inherit;
 		bottom: inherit;
-		top: 100vw;
+		top: 110vw;
+		padding: 5px 15px;
 	}
 	div.quiz-block-container.main .quiz-block {
 		background-position: center 5rem;
 		background-size: 20rem;
+	}
+	nav.quiz-menu {
+		height: 4rem;
+		width: 100%;
 	}
 	nav.quiz-menu .collapse-button {
 		font-size: 2.5rem;
 		width: 4rem;
 	}
 	nav.quiz-menu .menu-content.closed {
-		width: 4rem;
+		width: 100%;
+    	flex-direction: row;
 	}
 	nav.quiz-menu .menu-content.opened {
-		width: 17rem;
+		width: 100%;
+		height: 100%;
+		position: fixed;
+	}
+	nav.quiz-menu .menu-content.opened .menu-header-block {
+		height: 4rem;
+		background: inherit;
+	}
+	nav.quiz-menu .menu-content.opened .menu-content-opened-container {
+		background: #5935A3;
+    	height: 100%;
 	}
 	nav.quiz-menu .menu-info-text {
+		-webkit-transform-origin: inherit;
+		transform-origin: inherit;
+		-webkit-transform: inherit;
+		transform: inherit;
+		top: 1rem;
+		width: 250px;
 		font-size: 1rem;
 		line-height: 1.1rem;
-		width: 350px;
 	}
 	nav.quiz-menu .menu-content.opened .menu-header-block .menu-header-text {
 		font-size: 1.3rem;
@@ -1221,17 +1242,17 @@ div.quiz-block-container.footer .quiz-block.block-footer .footer-icon {
 		padding-bottom: 0.5rem;
 	}
 	nav.quiz-menu .menu-title-block {
-		height: 230px;
-	}
-	nav.quiz-menu .menu-title-text {
-		font-size: 2rem;
-		width: 200px;
+		display: none;
 	}
 	nav.quiz-menu .nav-link {
 		padding: 0.1rem 1rem;
 	}
+	nav.quiz-menu .menu-callback-block {
+		padding-left: 2rem;
+    	padding-right: 2rem;
+	}
 	nav.quiz-menu .menu-contact-block {
-		font-size: 1.1rem;
+		padding-left: 2rem;
 	}
 	nav.quiz-menu .menu-contact-block .menu-contact-block-link {
 		height: 1.5rem;

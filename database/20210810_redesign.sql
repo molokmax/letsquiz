@@ -56,6 +56,12 @@ insert into `place` (`id`, `description`, `city_id`) values (7, 'Онлайн', 
 ALTER TABLE `game` ADD COLUMN `place_id` int(11) NULL;
 
 !!! -- TODO: update place_id
+/*
+select concat('update `game` set `place_id` = ', p.`id`, ' where `id` = ', g.`id`, ';') 
+from `game` as g 
+join `city` as c on (g.`city_id` = c.`id`)
+join `place` as p on (c.`id` = p.`city_id`);
+*/
 
 ALTER TABLE `game` DROP COLUMN `city_id`;
 ALTER TABLE `game` MODIFY `place_id` int(11) NOT NULL;
