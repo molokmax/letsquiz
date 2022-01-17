@@ -78,25 +78,16 @@ $(document).ready(function() {
                 $('#selectCityWindow').modal('show');
             }
         },
-        filterCity(index) {
-            var item = $(this).find(".quiz-game-card");
-            var cityName = item.data("city-name")
-            var result = CityUtils.isAnyCity() || cityName === CityUtils.OnlineCityName || cityName === CityUtils.currentCity;
-            return result;
-        },
         updateInterface: function(city) {
             this.currentCity = city;
-            $(".selected-city-link").text(city);
             if (this.isAnyCity()) {
                 $(".list-schedule .quiz-game-card-container").show();
-                $(".address-item").show();
+                $("div.quiz-block-container.main .city-button .city-name").text("Выбрать город");
             } else {
+                $("div.quiz-block-container.main .city-button .city-name").text(city);
                 $(".list-schedule .quiz-game-card-container").hide();
                 $(".list-schedule .quiz-game-card-container[data-city-name='"+city+"']").show();
                 $(".list-schedule .quiz-game-card-container[data-city-name='"+CityUtils.OnlineCityName+"']").show();
-                $(".address-item").hide();
-                $(".address-item[data-city-name='"+city+"']").show();
-                $(".address-item[data-city-name='"+CityUtils.OnlineCityName+"']").show();
             }
         }
     }

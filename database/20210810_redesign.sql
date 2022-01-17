@@ -70,3 +70,10 @@ ALTER TABLE `city` ADD COLUMN `is_online` tinyint(1) NULL;
 update `city` set `is_online` = 0;
 update `city` set `is_online` = 1 where `id` = 7;
 ALTER TABLE `city` MODIFY `is_online` tinyint(1) NOT NULL;
+
+
+update `color` set `name` = 'Черный', `prefix` = 'black' where `id` = 1;
+update `color` set `name` = 'Голубой', `prefix` = 'blue' where `id` = 2;
+update `color` set `name` = 'Синий', `prefix` = 'darkblue' where `id` = 3;
+update `color` set `name` = 'Желный', `prefix` = 'yellow' where `id` = 4;
+insert into `color` (`id`, `name`, `prefix`) values (5, 'Розовый', 'pink');

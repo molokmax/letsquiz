@@ -216,36 +216,6 @@ nav.quiz-menu .menu-contact-block .menu-contact-block-phone {
 	font-weight: bold;
 }
 
-.navbar-nav .selected-city {
-	font-size: 0.9rem;
-	color: #FFFFFF;
-	padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-	padding-left: 1rem;
-}
-.navbar-nav .selected-city i {
-	font-size: 1.3rem;
-	padding-right: 0.2rem;
-}
-.navbar-nav .selected-city .selected-city-link {
-	text-decoration: underline;
-	color: #FFFFFF;
-	font-size: 0.8rem;
-}
-.navbar-nav .selected-city .selected-city-link:focus {
-	outline: none !important;
-}
-.navbar-nav .selected-city .selected-city-link:hover {
-	text-decoration: none;
-}
-#city {
-	margin-top: 1rem;
-}
-nav.quiz-menu .selectCityBlock ul.navbar-nav {
-	padding-left: 2rem;
-	padding-right: 5rem;
-}
-
 nav.quiz-menu .quiz-menu-button {
 	color: #FFFFFF;
 	font-size: 3rem;
@@ -357,10 +327,15 @@ div.quiz-block-container.main .quiz-block {
 .main-block-desktop {
 	height: 85vh;
 }
-div.quiz-block-container.main .schedule-button {
+div.quiz-block-container.main .main-page-button {
 	width: 20rem;
-	position: absolute;
+    position: absolute;
     right: 10rem;
+}
+div.quiz-block-container.main .city-button {
+    top: 5rem;
+}
+div.quiz-block-container.main .schedule-button {
     bottom: 5rem;
 }
 
@@ -767,6 +742,11 @@ div.quiz-block-container.footer .quiz-block.block-footer .footer-icon {
 	padding: 0.5rem 2rem;
 }
 
+.select-city-button {
+	margin-bottom: 1.5rem;
+	padding: 0.5rem 2rem;
+}
+
 .quiz-game-card {
 	padding: 1.2rem;
 	margin-bottom: 2rem;
@@ -816,6 +796,15 @@ div.quiz-block-container.footer .quiz-block.block-footer .footer-icon {
 }
 .quiz-game-card.game-color-pink .game-label-svg-icon {
 	filter: invert(21%) sepia(83%) saturate(5746%) hue-rotate(315deg) brightness(87%) contrast(109%);
+}
+.quiz-game-card.game-color-yellow {
+	color: #F37C04;
+}
+.quiz-game-card.game-color-yellow .registration-button {
+	background-color: #F37C04;
+}
+.quiz-game-card.game-color-yellow .game-label-svg-icon {
+	filter: invert(63%) sepia(47%) saturate(4412%) hue-rotate(357deg) brightness(94%) contrast(101%);
 }
 .quiz-game-card .game-label {
 	font-size: 1rem;
@@ -1184,15 +1173,24 @@ div.quiz-block-container.footer .quiz-block.block-footer .footer-icon {
 	.main-block-desktop {
 		height: 110vw;
 	}
-	div.quiz-block-container.main .schedule-button {
+	div.quiz-block-container.main .main-page-button {
+		display: block;
 		position: inherit;
 		right: inherit;
 		bottom: inherit;
-		top: 110vw;
 		padding: 5px 15px;
+		margin-left: auto;
+		margin-right: auto;
+		width: 15rem;
+	}
+	div.quiz-block-container.main .city-button {
+		top: 15vw;
+	}
+	div.quiz-block-container.main .schedule-button {
+		top: 100vw;
 	}
 	div.quiz-block-container.main .quiz-block {
-		background-position: center 5rem;
+		background-position: center 9rem;
 		background-size: 20rem;
 	}
 	nav.quiz-menu {

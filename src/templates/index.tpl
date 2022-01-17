@@ -100,7 +100,8 @@
 			<div class="container quiz-block">
 				<div class="row main-block-desktop">
 					<div class="col-12 text-center">
-						<a href="#schedule" role="button" class="btn quiz-button quiz-button--pink schedule-button">ХОЧУ ИГРАТЬ</a>
+						<button type="button" class="quiz-button quiz-button--light main-page-button city-button" data-toggle="modal" data-target="#selectCityWindow"><i class="select-city-icon mdi mdi-map-marker-outline"></i> <span class="city-name">Выбрать город</span></button>
+						<a href="#schedule" role="button" class="btn quiz-button quiz-button--pink main-page-button schedule-button">ХОЧУ ИГРАТЬ</a>
 					</div>
 				</div>
 			</div>
@@ -115,7 +116,7 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">				
+					<div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
 						<div class="row list-schedule">
 {foreach from=$GAME_LIST item=game name=games}
 							<div class="quiz-game-card-container col-lg-4 col-md-6 col-12" data-city-name="{$game->city}">
@@ -445,23 +446,24 @@
 			<div class="modal-dialog modal-dialog-centered" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="selectCityWindowTitle">Город</h5>
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 							<span class="mdi mdi-close" aria-hidden="true"></span>
 						</button>
+						<h5 class="modal-title" id="selectCityWindowTitle">ГОРОД</h5>
 					</div>
-					<div class="modal-body">
-						<div class="quiz-window-title">Выбери свой город</div>
-						<select class="form-control" id="city" aria-describedby="city">
-							<option>Все</option>
-{foreach from=$CITY_LIST item=city name=cities}
-							<option>{$city}</option>
-{/foreach}
-						</select>
-					</div>
-					<div class="modal-footer">
-						<!--data-dismiss="modal"-->
-						<button type="button" class="quiz-button quiz-button--light select-city-button">Выбрать</button>
+					<div class="quiz-modal-body">
+						<div class="modal-body">
+							<div class="quiz-window-title">Выбери свой город</div>
+							<select class="form-control" id="city" aria-describedby="city">
+								<option>Все</option>
+	{foreach from=$CITY_LIST item=city name=cities}
+								<option>{$city}</option>
+	{/foreach}
+							</select>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="quiz-button quiz-button--pink select-city-button">Выбрать</button>
+						</div>
 					</div>
 				</div>
 			</div>
