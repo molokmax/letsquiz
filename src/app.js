@@ -148,6 +148,11 @@ $(document).ready(function() {
         cleanForm("callbackWindow");
     });
 
+    $('.gallery .photo-block img').click(function () {
+        $('#photoWindow img').attr('src', $(this).attr('src'));
+        $('#photoWindow').modal('show');
+    });
+
     var MessageUtils = {
         setError: function (dialogId, error) {
             MessageUtils.setLoading(dialogId, false);

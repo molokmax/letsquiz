@@ -25,7 +25,7 @@ const paths = {
     // dist: 'D:/develop/denwer/home/test1.ru/www',
     // build_dir: './build',
     src: {
-        root: ['*.{js,php}', '.htaccess', '!gulpfile.js', '!secret.config.js'],
+        root: ['*.{js,php,pdf}', '.htaccess', '!gulpfile.js', '!secret.config.js'],
         libs: {
           smarty: './libs/smarty/**/*', 
           mailer: './libs/PHPMailer/**/*', 

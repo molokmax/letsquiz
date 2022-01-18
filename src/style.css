@@ -175,6 +175,9 @@ nav.quiz-menu .menu-callback-block {
 	cursor: pointer;
 	text-decoration: none;
 }
+a.btn.quiz-button:hover {
+	color: inherit;
+}
 button:focus {
     outline: none;
 }
@@ -330,10 +333,10 @@ div.quiz-block-container.main .quiz-block {
 div.quiz-block-container.main .main-page-button {
 	width: 20rem;
     position: absolute;
-    right: 10rem;
+    right: 5rem;
 }
 div.quiz-block-container.main .city-button {
-    top: 5rem;
+    top: 2rem;
 }
 div.quiz-block-container.main .schedule-button {
     bottom: 5rem;
@@ -500,10 +503,13 @@ div.quiz-block.details .faq-block .quiz-item {
 }
 
 .gallery .block-dark {
-	background-image: url('image/question_background_2.jpg');
+	background-image: url('image/background2.jpg');
 }
 .gallery .photo-block {
 	margin-bottom: 1.5rem;
+}
+.gallery .photo-block img:hover {
+	cursor: pointer;
 }
 .gallery .photo-gallery-link {
     margin-bottom: 1.5rem;
@@ -532,6 +538,12 @@ div.quiz-block.details .faq-block .quiz-item {
 	height: 2rem;
 	margin-bottom: 5px;
     margin-left: 10px;
+}
+#photoWindow .modal-body {
+	padding-top: 0.2rem;
+}
+#photoWindow img {
+	width: 100%;
 }
 
 div.quiz-block-container.footer .quiz-block.block-footer {
@@ -896,7 +908,7 @@ div.quiz-block-container.footer .quiz-block.block-footer .footer-icon {
 		font-size: 8rem;
 	}
 	div.quiz-block-container.rules .rule {
-		font-size: 2rem;
+		font-size: 1.7rem;
 	}
 	div.quiz-block-container.rules .rule img {
 		margin-left: 2rem;
@@ -1064,8 +1076,8 @@ div.quiz-block-container.footer .quiz-block.block-footer .footer-icon {
 
 @media (max-width: 768px) and (min-width: 541px) {
 	div.quiz-block-container.main .quiz-block {
-		background-position: center 2rem;
-		background-size: 20rem;
+		background-position: center 6rem;
+    	background-size: 30rem;
 	}
 	nav.quiz-menu .collapse-button {
 		font-size: 2.5rem;

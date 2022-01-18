@@ -2,8 +2,6 @@
 
     require_once('app/auth.php');
 	require_once('app/games.php');
-	require_once('app/feedbacks.php');
-	require_once('app/questions.php');
 	require_once('app/settings.php');
 	require_once('app/photos.php');
 
@@ -15,10 +13,6 @@
 	function GetRepository($entityType) {
 		if ($entityType == "GAME") {
 			return new GameRepository();
-		} else if ($entityType == "FEEDBACK") {
-			return new FeedbackRepository();
-		} else if ($entityType == "QUESTION") {
-			return new QuestionRepository();
 		} else if ($entityType == "SETTING") {
 			return new SettingRepository();
 		} else if ($entityType == "PHOTO") {

@@ -387,7 +387,7 @@
 							</div>
 							<div class="col-12 col-md-6">
 								<div class="corp-questions-buttons">
-									<a href="javascript:void(0);" target="_blank" role="button" class="quiz-button quiz-button--dark corp-questions-button">НАШ PR-KIT</a>
+									<a href="/letsquiz-pr-kit.pdf" target="_blank" role="button" class="quiz-button quiz-button--dark corp-questions-button">НАШ PR-KIT</a>
 									<a href="javascript:void(0);" data-toggle="modal" data-target="#callbackWindow" role="button" class="quiz-button quiz-button--dark corp-questions-button callback-button">ОБРАТНЫЙ ЗВОНОК</a>
 								</div>
 							</div>
@@ -440,6 +440,18 @@
 
 
 <!--  Modal windows  -->
+
+		<!-- Photo popup Window -->
+		<div id="photoWindow" class="modal fade" aria-labelledby="PhotoWindowLabel" aria-hidden="true" tabindex="-1" role="dialog">
+			<div class="modal-dialog modal-xl" data-dismiss="modal">
+				<div class="modal-content"  >              
+					<div class="modal-body">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+						<img src="">
+					</div> 
+				</div>
+			</div>
+		</div>
 
 		<!-- Select City Window -->
 		<div class="quiz-window modal fade" id="selectCityWindow" tabindex="-1" role="dialog" aria-labelledby="SelectCityWindowTitle" aria-hidden="true">

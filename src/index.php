@@ -2,8 +2,6 @@
 
 	require_once('app/settings.php');
 	require_once('app/photos.php');
-	require_once('app/questions.php');
-	require_once('app/feedbacks.php');
 	require_once('app/games.php');
 	require_once('app/cities.php');
 	require_once('app/colors.php');
@@ -46,7 +44,7 @@
 	} else {
 		$indexes = array();
 		while (count($indexes) < $photo_take) {
-			$index = rand(0, $photo_count);
+			$index = rand(0, $photo_count-1);
 			if (!in_array($index, $indexes)) {
 				array_push($indexes, $index);
 			}
@@ -57,14 +55,6 @@
 		}
 	}
 	$smarty->assign('PHOTO_LIST', $photos);
-
-	$questionRepo = new QuestionRepository();
-	$questions = $questionRepo->Read();
-	$smarty->assign('QUESTION_LIST', $questions);
-
-	$feedbackRepo = new FeedbackRepository();
-	$feedbacks = $feedbackRepo->Read();
-	$smarty->assign('FEEDBACK_LIST', $feedbacks);
 
 	$cityRepo = new CityRepository();
 	$cities = $cityRepo->GetAll();

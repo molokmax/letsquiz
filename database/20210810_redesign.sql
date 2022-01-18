@@ -77,3 +77,7 @@ update `color` set `name` = 'Голубой', `prefix` = 'blue' where `id` = 2;
 update `color` set `name` = 'Синий', `prefix` = 'darkblue' where `id` = 3;
 update `color` set `name` = 'Желный', `prefix` = 'yellow' where `id` = 4;
 insert into `color` (`id`, `name`, `prefix`) values (5, 'Розовый', 'pink');
+
+
+drop table `feedback`;
+drop table `question`;
