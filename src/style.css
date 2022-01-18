@@ -721,6 +721,19 @@ div.quiz-block-container.footer .quiz-block.block-footer .footer-icon {
 	border: none;
 	justify-content: left;
 }
+.quiz-window .quiz-button {
+	width: 15rem;
+}
+.quiz-window .quiz-button:disabled {
+	color: rgba(255,255,255, 0.5);
+	background-color: rgba(233,54,156, 0.3);
+}
+.quiz-window .quiz-button .loading {
+	width: 1.5rem;
+    height: 1.5rem;
+    margin-bottom: 0.2rem;
+    display: none;
+}
 
 .quiz-window button {
 	margin-top: 0;

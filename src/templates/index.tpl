@@ -462,7 +462,9 @@
 							</select>
 						</div>
 						<div class="modal-footer">
-							<button type="button" class="quiz-button quiz-button--pink select-city-button">Выбрать</button>
+							<button type="button" class="quiz-button quiz-button--pink select-city-button">
+								Выбрать
+							</button>
 						</div>
 					</div>
 				</div>
@@ -489,7 +491,10 @@
 							</form>
 						</div>
 						<div class="modal-footer">
-							<button type="button" class="quiz-button quiz-button--pink call-send-button">Отправить</button>
+							<button type="button" class="quiz-button quiz-button--pink call-send-button">
+								<span class="button-label">Отправить</span>
+								<span class="loading spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> 
+							</button>
 						</div>
 					</div>
 				</div>
@@ -532,7 +537,10 @@
 							</form>
 						</div>
 						<div class="modal-footer">
-							<button type="button" class="quiz-button quiz-button--pink reg-send-button">Отправить</button>
+							<button type="button" class="quiz-button quiz-button--pink reg-send-button">
+								<span class="button-label">Отправить</span>
+								<span class="loading spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> 
+							</button>
 						</div>
 					</div>
 				</div>

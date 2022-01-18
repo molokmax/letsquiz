@@ -116,6 +116,7 @@ $(document).ready(function() {
         var errBlock = $("#" + dialogId + " .error-container");
         errBlock.text("");
         errBlock.hide();
+        MessageUtils.setLoading(dialogId, false);
     }
     $('.registration-button a').click(function () {
         var card = $(this).parents('.quiz-game-card');
@@ -149,12 +150,24 @@ $(document).ready(function() {
 
     var MessageUtils = {
         setError: function (dialogId, error) {
+            MessageUtils.setLoading(dialogId, false);
+
             var errBlock = $("#" + dialogId + " .error-container");
             errBlock.text(error);
             errBlock.show();
         },
 
+        setLoading: function(dialogId, val) {
+            $('#' + dialogId + ' button.quiz-button').prop('disabled', val);
+            var displayLoading = val ? 'inline-block' : 'none';
+            var displayLabel = val ? 'none' : 'inline-block';
+            $('#' + dialogId + ' button.quiz-button .loading').css('display', displayLoading);
+            $('#' + dialogId + ' button.quiz-button .button-label').css('display', displayLabel);
+        },
+
         sendRequest: function(data, dialogId) {
+            MessageUtils.setLoading(dialogId, true);
+
             $.post('send.php', data)
                 .done(function(resp) {
                     if (resp) {
@@ -162,6 +175,7 @@ $(document).ready(function() {
                             var json = JSON.parse(resp);
                             if (json.success) {
                                 if (dialogId) {
+                                    MessageUtils.setLoading(dialogId, false);
                                     $('#' + dialogId).modal('hide');
                                 }
                             } else {
