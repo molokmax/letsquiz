@@ -113,7 +113,7 @@ $(document).ready(function() {
             editorWin.data('action', action);
         },
         delete: function() {
-            var action = 'update';
+            var action = 'delete';
             var entityContainer = $(this).parents('.container');
             var entityType = entityContainer.data('entity-type');
             var recordElement = $(this).parents('tr.record');

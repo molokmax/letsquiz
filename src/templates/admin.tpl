@@ -15,8 +15,6 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/2.1.19/css/materialdesignicons.min.css" integrity="sha256-L3NrnCWf0Pw+HvXutUdR0Vlj4pI5pM2s7tijm55+DzU=" crossorigin="anonymous" />
 		
   		<link href="vendor/bootstrap/bootstrap.min.css" rel="stylesheet" />
-		<link href="vendor/pnotify/pnotify.custom.min.css" media="all" rel="stylesheet" type="text/css" />
-		<!-- <link href="vendor/datetimepicker/jquery.datetimepicker.min.css" media="all" rel="stylesheet" type="text/css" /> -->
 
 		<link href="style-admin.css?{$SETTING_SYSTEM_VERSION_NUMBER}" rel="stylesheet" type="text/css" />
 		
@@ -271,7 +269,6 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment-with-locales.min.js" integrity="sha256-ZykW30UBCXWkPGsVyVPdJlUrce9/PawgYCEzinA4pnU=" crossorigin="anonymous"></script>
 		
 		<script src="vendor/bootstrap/bootstrap.min.js"></script>
-		<script src="vendor/pnotify/pnotify.custom.min.js"></script>
 		
 		<script src="admin.js?{$SETTING_SYSTEM_VERSION_NUMBER}"></script>
 		

@@ -322,8 +322,8 @@ div.quiz-block-container.main {
 div.quiz-block-container.main .quiz-block {
 	background-image: url("image/main-logo.png");
 	background-repeat: no-repeat;
-	background-position: center 7rem;
-    background-size: 40rem;
+	background-position: center 10vh;
+    background-size: 70vh;
 	width: 100%;
 	height: 100%;
 }
@@ -879,23 +879,19 @@ div.quiz-block-container.footer .quiz-block.block-footer .footer-icon {
 
 
 @media (min-width: 1441px) {
-	div.quiz-block-container.main .quiz-block {
-		background-size: 45rem;
-		background-position: center 7rem;
-	}
 	.quiz-game-card .game-label.game-name {
 		font-size: 2rem;
 	}
 	.quiz-game-card .game-label {
-		font-size: 1.5rem;
+		font-size: 1.2rem;
 	}
 	.quiz-game-card .game-label .game-label-icon {
-		font-size: 1.5rem;
+		font-size: 1.2rem;
 		margin-right: 1rem;
 	}
 	.quiz-game-card .game-label .game-label-svg-icon {
-		height: 1.4rem;
-		width: 1.4rem;
+		height: 1.2rem;
+		width: 1.2rem;
 		top: 3px;
 	}
 	.quiz-game-card .registration-button {
@@ -936,9 +932,6 @@ div.quiz-block-container.footer .quiz-block.block-footer .footer-icon {
 
 
 @media (max-width: 1024px) and (min-width: 769px) {
-	div.quiz-block-container.main .quiz-block {
-		background-position: center 2rem;
-	}
 	nav.quiz-menu .collapse-button {
 		font-size: 2.5rem;
 		width: 4rem;
@@ -1075,10 +1068,6 @@ div.quiz-block-container.footer .quiz-block.block-footer .footer-icon {
 
 
 @media (max-width: 768px) and (min-width: 541px) {
-	div.quiz-block-container.main .quiz-block {
-		background-position: center 6rem;
-    	background-size: 30rem;
-	}
 	nav.quiz-menu .collapse-button {
 		font-size: 2.5rem;
 		width: 4rem;
@@ -1209,7 +1198,7 @@ div.quiz-block-container.footer .quiz-block.block-footer .footer-icon {
 		width: 15rem;
 	}
 	div.quiz-block-container.main .city-button {
-		top: 15vw;
+		top: 5vw;
 	}
 	div.quiz-block-container.main .schedule-button {
 		top: 100vw;
@@ -1380,6 +1369,11 @@ div.quiz-block-container.footer .quiz-block.block-footer .footer-icon {
 	}
 	div.quiz-block-container.rules .rule {
 		font-size: 1rem;
+	}
+	div.quiz-block-container.rules .rule img {
+		margin-bottom: 1rem;
+		margin-left: inherit;
+		height: 100px;
 	}
 	div.quiz-block-container.rules .quiz-header {
 		font-size: 2rem;

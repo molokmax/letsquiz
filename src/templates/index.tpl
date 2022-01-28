@@ -541,6 +541,7 @@
 									<option value="7">7</option>
 									<option value="8">8</option>
 									<option value="9">9</option>
+									<option value="10">10</option>
 								</select>
 								<input type="text" class="form-control" id="reg-capitan" required aria-describedby="reg-capitan" placeholder="Капитан">
 								<input type="tel" class="form-control" id="reg-phone" required aria-describedby="reg-phone" placeholder="Телефон">

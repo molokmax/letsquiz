@@ -46,10 +46,10 @@ INSERT INTO photo (id,url,`order`) VALUES
 
 RENAME TABLE `address` TO `place`;
 
-update `place` set `description` = 'Шизгара' where `id` = 1;
+update `place` set `description` = 'SHiZGARA' where `id` = 1;
 update `place` set `description` = 'МЯСО И УГЛИ' where `id` = 2;
-update `place` set `description` = 'KVARTAL' where `id` = 4;
-update `place` set `description` = 'Мёд' where `id` = 5;
+-- update `place` set `description` = 'KVARTAL' where `id` = 4;
+-- update `place` set `description` = 'Мёд' where `id` = 5;
 update `place` set `description` = 'УСТРИЦЫ & ТАНЦЫ' where `id` = 6;
 insert into `place` (`id`, `description`, `city_id`) values (7, 'Онлайн', 7);
 
@@ -70,12 +70,13 @@ ALTER TABLE `city` ADD COLUMN `is_online` tinyint(1) NULL;
 update `city` set `is_online` = 0;
 update `city` set `is_online` = 1 where `id` = 7;
 ALTER TABLE `city` MODIFY `is_online` tinyint(1) NOT NULL;
+delete from `city` where `id` in (4, 5);
 
 
 update `color` set `name` = 'Черный', `prefix` = 'black' where `id` = 1;
 update `color` set `name` = 'Голубой', `prefix` = 'blue' where `id` = 2;
 update `color` set `name` = 'Синий', `prefix` = 'darkblue' where `id` = 3;
-update `color` set `name` = 'Желный', `prefix` = 'yellow' where `id` = 4;
+update `color` set `name` = 'Желтый', `prefix` = 'yellow' where `id` = 4;
 insert into `color` (`id`, `name`, `prefix`) values (5, 'Розовый', 'pink');
 
 

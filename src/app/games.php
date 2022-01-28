@@ -265,7 +265,7 @@
     
             $id_param = mysqli_escape_string($con, $game->id);
             $query = "DELETE FROM `game` WHERE `id` = {$id_param}";
-//print($query);
+// print($query);
 	        $db_result = mysqli_query($con, $query);
             
             mysqli_close($con);
