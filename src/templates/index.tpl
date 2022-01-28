@@ -9,7 +9,7 @@
 		<link rel="icon" type="image/png" href="image/favicon64.png" sizes="64x64">
 
 		<meta property="og:title" content="LET'S КВИЗ!" />
-		<meta property="og:image" content="https://letsquiz.ru/photo/Jzscf5qA8Nw.jpg" />
+		<meta property="og:image" content="https://letsquiz.ru/photo/preview.jpg" />
 
 		<link rel="stylesheet" href="https://cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css" />
 		<link href="vendor/bootstrap/bootstrap.min.css" rel="stylesheet" />
