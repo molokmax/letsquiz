@@ -28,8 +28,8 @@
 		<!-- /Yandex.Metrika counter -->
 		<div class="page-block"></div>
 		<nav class="quiz-menu">
-			<div class="menu-content closed"> <!--  d-none d-md-block  -->
-				<div type="button" class="collapse-button mdi mdi-menu"></div>
+			<div class="menu-content closed">
+				<button type="button" class="btn collapse-button mdi mdi-menu"></button>
 				<div class="menu-info-block">
 					<div class="menu-info-text">Интеллектуально- развлекательная битва</div>
 				</div>
@@ -40,7 +40,7 @@
 			<div class="menu-content opened">
 				<div class="menu-content-opened-container">
 					<div class="menu-header-block">
-						<div type="button" class="collapse-button mdi mdi-menu"></div>
+						<button type="button" class="btn collapse-button mdi mdi-menu"></button>
 						<div class="menu-header-text">Меню</div>
 					</div>
 					<div class="menu-items-block">
@@ -198,7 +198,7 @@
 												<i class="quiz-icon mdi mdi-record-circle"></i>Универсальная игра для всех возрастов
 											</div>
 											<div class="quiz-terms-details-item">
-												<i class="quiz-icon mdi mdi-record-circle"></i>Пригодятся любые знания (даже те, о которых вы забыли ;)
+												<i class="quiz-icon mdi mdi-record-circle"></i>Пригодятся любые знания (даже те, о которых вы забыли;)
 											</div>
 										</div>
 									</div>

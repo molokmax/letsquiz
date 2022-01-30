@@ -42,6 +42,13 @@ div.quiz-header {
 a:focus {
 	outline: none !important;
 }
+button.btn {
+    border-radius: 0;
+}
+button.btn:focus {
+	outline: inherit;
+    box-shadow: inherit;
+}
 
 .page-block {
 	z-index: 900;
@@ -96,11 +103,17 @@ nav.quiz-menu .menu-content.opened .menu-header-block .menu-header-text {
 	display: flex;
     align-items: center;
 }
+nav.quiz-menu .collapse-button::before {
+	top: -5px;
+	position: relative;
+}
 nav.quiz-menu .collapse-button {
 	background: #7A5CB6;
+	color: #FFFFFF;
 	font-size: 3rem;
 	text-align: center;
 	width: 5rem;
+	height: 5rem;
 }
 nav.quiz-menu .collapse-button:hover {
 	cursor: pointer;
@@ -879,7 +892,7 @@ div.quiz-block-container.footer .quiz-block.block-footer .footer-icon {
 
 
 @media (min-width: 1441px) {
-	.quiz-game-card .game-label.game-name {
+	/* .quiz-game-card .game-label.game-name {
 		font-size: 2rem;
 	}
 	.quiz-game-card .game-label {
@@ -893,7 +906,7 @@ div.quiz-block-container.footer .quiz-block.block-footer .footer-icon {
 		height: 1.2rem;
 		width: 1.2rem;
 		top: 3px;
-	}
+	} */
 	.quiz-game-card .registration-button {
 		font-size: 1.5rem;
 	}
@@ -935,6 +948,7 @@ div.quiz-block-container.footer .quiz-block.block-footer .footer-icon {
 	nav.quiz-menu .collapse-button {
 		font-size: 2.5rem;
 		width: 4rem;
+		height: 4rem;
 	}
 	nav.quiz-menu .menu-content.closed {
 		width: 4rem;
@@ -1071,6 +1085,7 @@ div.quiz-block-container.footer .quiz-block.block-footer .footer-icon {
 	nav.quiz-menu .collapse-button {
 		font-size: 2.5rem;
 		width: 4rem;
+		height: 4rem;
 	}
 	nav.quiz-menu .menu-content.closed {
 		width: 4rem;
@@ -1214,6 +1229,7 @@ div.quiz-block-container.footer .quiz-block.block-footer .footer-icon {
 	nav.quiz-menu .collapse-button {
 		font-size: 2.5rem;
 		width: 4rem;
+		height: 4rem;
 	}
 	nav.quiz-menu .menu-content.closed {
 		width: 100%;
