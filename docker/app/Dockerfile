@@ -22,6 +22,7 @@ RUN apt-get update && apt-get install -y mc
 # RUN apt-get update && apt-get install -y mc
 
 ADD php.ini /usr/local/etc/php/conf.d/40-custom.ini
+ADD xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
 # ADD htaccess /var/www/html/.htaccess
 
 RUN chmod -R 777 /var/www/html/

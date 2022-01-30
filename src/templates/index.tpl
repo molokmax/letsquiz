@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
 	<head>
-		<!--<base href="..">-->
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -10,107 +9,99 @@
 		<link rel="icon" type="image/png" href="image/favicon64.png" sizes="64x64">
 
 		<meta property="og:title" content="LET'S КВИЗ!" />
-		<meta property="og:image" content="https://letsquiz.ru/photo/Jzscf5qA8Nw.jpg" />
+		<meta property="og:image" content="https://letsquiz.ru/photo/preview.jpg" />
 
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/2.1.19/css/materialdesignicons.min.css" integrity="sha256-L3NrnCWf0Pw+HvXutUdR0Vlj4pI5pM2s7tijm55+DzU=" crossorigin="anonymous" />
+		<link rel="stylesheet" href="https://cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css" />
 		<link href="vendor/bootstrap/bootstrap.min.css" rel="stylesheet" />
-		<link href="vendor/pnotify/pnotify.custom.min.css" media="all" rel="stylesheet" type="text/css" />
 		<link href="vendor/slick/slick.css" rel="stylesheet" />
 		<link href="vendor/slick/slick-theme.css" rel="stylesheet" />
 		<link href="style.css?{$SETTING_SYSTEM_VERSION_NUMBER}" rel="stylesheet" type="text/css" />
 		
-		<title>LET'S КВИЗ!</title>
+		<title>ЛЕТС КВИЗ!</title>
 	</head>
 	<body data-spy="scroll" data-target=".quiz-menu">
 		<!-- Yandex.Metrika counter -->
+{if $SETTING_METRIKA_ENABLED eq 'true'}
 		<script type="text/javascript" src="metrika.js"></script>
-		<noscript><div><img src="https://mc.yandex.ru/watch/54485767" style="position:absolute; left:-9999px;" alt="" /></div></noscript> 
+		<noscript><div><img src="https://mc.yandex.ru/watch/54485767" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+{/if}
 		<!-- /Yandex.Metrika counter -->
-
-		<nav class="quiz-menu navbar navbar-expand-lg sticky-top">
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="quiz-menu-button mdi mdi-menu"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarNav">
-				<ul class="navbar-nav nav">
-{if $SETTING_HIDE_MAIN eq 'false'}
-					<li class="nav-item">
-						<a class="nav-link" href="#main">Главная</a>
-					</li>
-{/if}
-{if $SETTING_HIDE_TERMS eq 'false'}
-					<li class="nav-item">
-						<a class="nav-link" href="#terms">Правила</a>
-					</li>
-{/if}
-{if $SETTING_HIDE_GALLERY eq 'false'}
-					<li class="nav-item">
-						<a class="nav-link" href="#gallery">Галерея</a>
-					</li>
-{/if}
-{if $SETTING_HIDE_FRIENDS eq 'false'}
-					<li class="nav-item">
-						<a class="nav-link" href="#friends">Друзья и партнеры</a>
-					</li>
-{/if}
-{if $SETTING_HIDE_CORP eq 'false'}
-					<li class="nav-item">
-						<a class="nav-link" href="#corp">Корпоративы</a>
-					</li>
-{/if}
-{if $SETTING_HIDE_FEEDBACK eq 'false'}
-					<li class="nav-item">
-						<a class="nav-link" href="#feedback">Отзывы</a>
-					</li>
-{/if}
-					<li class="nav-item">
-						<a class="nav-link" href="#footer">Контакты</a>
-					</li>
-				</ul>
+		<div class="page-block"></div>
+		<nav class="quiz-menu">
+			<div class="menu-content closed">
+				<button type="button" class="btn collapse-button mdi mdi-menu"></button>
+				<div class="menu-info-block">
+					<div class="menu-info-text">Интеллектуально- развлекательная битва</div>
+				</div>
+				<div class="menu-title-block">
+					<div class="menu-title-text">ЛЕТС КВИЗ</div>
+				</div>
 			</div>
-			<div class="selectCityBlock">
-				<ul class="navbar-nav nav">
-					<li class="selected-city">
-						<i class="mdi mdi-city"></i> <a class="selected-city-link" href="javascript:void(0);" data-toggle="modal" data-target="#selectCityWindow">Все</a>
-					</li>
-				</ul>
+			<div class="menu-content opened">
+				<div class="menu-content-opened-container">
+					<div class="menu-header-block">
+						<button type="button" class="btn collapse-button mdi mdi-menu"></button>
+						<div class="menu-header-text">Меню</div>
+					</div>
+					<div class="menu-items-block">
+						<ul class="navbar-nav nav">
+							{if $SETTING_HIDE_MAIN eq 'false'}
+							<li class="nav-item">
+								<a class="nav-link" href="#main">Главная</a>
+							</li>
+							{/if}
+							{if $SETTING_HIDE_SCHEDULE eq 'false'}
+							<li class="nav-item">
+								<a class="nav-link" href="#schedule">Расписание игр</a>
+							</li>
+							{/if}
+						</ul>
+						<ul class="navbar-nav nav">
+							{if $SETTING_HIDE_TERMS eq 'false'}
+							<li class="nav-item">
+								<a class="nav-link" href="#terms">Что такое квиз?</a>
+							</li>
+							{/if}
+							{if $SETTING_HIDE_TERMS eq 'false'}
+							<li class="nav-item">
+								<a class="nav-link" href="#rules">Как проходит игра?</a>
+							</li>
+							{/if}
+							{if $SETTING_HIDE_GALLERY eq 'false'}
+							<li class="nav-item">
+								<a class="nav-link" href="#gallery">Фото</a>
+							</li>
+							{/if}
+							{if $SETTING_HIDE_CORP eq 'false'}
+							<li class="nav-item">
+								<a class="nav-link" href="#corp">Корпоративы</a>
+							</li>
+							{/if}
+							<li class="nav-item">
+								<a class="nav-link" href="#footer">Контакты</a>
+							</li>
+						</ul>
+					</div>
+					<div class="menu-callback-block">
+						<img class="callback-info" src="image/callback-info.png" alt="Нажми и мы перезвоним">
+						<button type="button" class="quiz-button quiz-button--light callback-button" data-toggle="modal" data-target="#callbackWindow">Обратный звонок</button>
+					</div>
+					<div class="menu-contact-block">
+						<div><a href="https://vk.com/letsquiz" target="_blank"><img class="menu-contact-block-link" src="image/vk4.png" alt="VK"></a></div>
+						<div><a href="https://instagram.com/lets_quiz" target="_blank"><img class="menu-contact-block-link" src="image/instagram2.png" alt="Instagram"></a></div>
+						<div class="menu-contact-block-phone"><a href="tel:{$SETTING_PHONE}">{$SETTING_PHONE}</a></div>
+					</div>
+				</div>
 			</div>
 		</nav>
+
 {if $SETTING_HIDE_MAIN eq 'false'}
 		<div id="main" class="main container quiz-block-container">
 			<div class="container quiz-block">
-				<div class="row">
-					<div class="col-md-12">
-						<div class="main-header">ИНТЕЛЛЕКТУАЛЬНО-РАЗВЛЕКАТЕЛЬНАЯ </br> БИТВА</div>
-					</div>
-				</div>
 				<div class="row main-block-desktop">
-					<div class="col-md-4 offset-md-2">
-						<div class="contacts">
-							<div class="quiz-main-text phone">{$SETTING_PHONE}</div>
-							<button type="button" class="btn btn-light quiz-button" data-toggle="modal" data-target="#callbackWindow">Обратный звонок</button>
-						</div>
-						<div class="socialbuttons">
-							<a href="https://vk.com/letsquiz" target="_blank"><img src="image/vk.png"></a>
-							<a href="https://www.instagram.com/lets_quiz/" target="_blank"><img src="image/instagram.png"></a>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="signup">
-							<div class="quiz-main-text text text-right">Расписание игр и регистрация</div>
-							<a class="btn btn-light quiz-button float-right" href="#schedule">Хочу играть</a>
-						</div>
-						<div class="cert">
-							<div class="quiz-main-text text text-right">Подарочный сертификат</div>
-							<button type="button" class="btn btn-light quiz-button float-right" data-toggle="modal" data-target="#certificateWindow">Приобрести</button>
-						</div>
-					</div>
-				</div>
-				<div class="row main-block-mobile">
-					<div class="logo-placeholder"></div>
-					<div class="col-12">
-							<a class="btn btn-light quiz-button d-block mx-auto" href="#schedule">Хочу играть</a>
-						</div>
+					<div class="col-12 text-center">
+						<button type="button" class="quiz-button quiz-button--light main-page-button city-button" data-toggle="modal" data-target="#selectCityWindow"><i class="select-city-icon mdi mdi-map-marker-outline"></i> <span class="city-name">Выбрать город</span></button>
+						<a href="#schedule" role="button" class="btn quiz-button quiz-button--pink main-page-button schedule-button">ХОЧУ ИГРАТЬ</a>
 					</div>
 				</div>
 			</div>
@@ -118,41 +109,63 @@
 {/if}
 {if $SETTING_HIDE_SCHEDULE eq 'false'}
 		<div id="schedule" class="schedule container quiz-block-container">
-			<div class="photos container quiz-block block-light">
+			<div class="container quiz-block block-light">
 				<div class="row">
 					<div class="col-12">
 						<div class="quiz-header">РАСПИСАНИЕ ИГР</div>
 					</div>
 				</div>
-				<div class="row address-list">
-{foreach from=$ADDRESS_LIST item=address name=addresses}
-					<div class="col-12">
-						<div class="address-item" data-city-name="{$address->city_name}">{$address->city_name}, {$address->description}</div>
-					</div>
-{/foreach}
-				</div>
 				<div class="row">
-					<div class="col-md-8 offset-md-2">				
+					<div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
 						<div class="row list-schedule">
 {foreach from=$GAME_LIST item=game name=games}
-							<div class="quiz-game-card-container col-lg-4 col-md-6 col-sm-12" data-city-name="{$game->city}">
-								<div class="quiz-game-card border-{$game->color} {if $game->is_closed eq '1'}game-closed{/if}" 
-									data-game-id="{$game->id}" data-city-id="{$game->city_id}" data-city-name="{$game->city}" data-price="{$game->price}" data-game-fulldate="{$game->full_date}">
-									<div class="game-city">{$game->city}</div>
-									<div class="game-name">Игра <b>{$game->game_name}</b></div>
-									<div class="game-date">{$game->date}</div>
-									<div class="game-day">{$game->day_name}</div>
-									<div class="game-time">{$game->time}</div>
-									<div class="registration-btn">
+							<div class="quiz-game-card-container col-lg-4 col-md-6 col-12" data-city-name="{$game->city}">
+								<div class="quiz-game-card game-color-{$game->color} {if $game->is_closed eq '1'}game-closed{/if}" 
+									data-game-id="{$game->id}" data-city-id="{$game->city_id}" data-city-name="{$game->city}" data-place-id="{$game->place_id}" data-place-name="{$game->place}" data-is-online="{$game->is_online}" data-price="{$game->price}" data-date="{$game->date_short}, {$game->day_short_name} в {$game->time}" data-game-fulldate="{$game->full_date}">
+									<div class="game-label game-name">{$game->game_name}</div>
+									<div class="game-label game-city">
+										<i class="game-label-icon mdi mdi-flag-outline"></i>{$game->city}{if $game->is_online eq '0'}, {$game->place}{/if}
+									</div>
+									<div class="game-label game-label">
+										<i class="game-label-icon mdi mdi-calendar"></i>{$game->date_short}, {$game->day_short_name}
+									</div>
+									<div class="game-label game-date-block"> 
+										<div class="game-label game-time">
+											<i class="game-label-icon mdi mdi-clock-time-three-outline"></i>{$game->time}
+										</div>
+										<div class="game-label game-price">
+											<i class="game-label-icon game-label-svg-icon game-price-ruble"></i>
+											{$game->price} руб.
+										</div>
+									</div>
+									<div class="registration-button">
 	{if $game->is_closed eq '1'}
-											<span>Мест нет</span>
+											<span>МЕСТ НЕТ</span>
 	{else}
-											<a href="javascript:void(0);" data-toggle="modal" data-target="#registrationWindow">Регистрация</a>
+											<a href="javascript:void(0);" data-toggle="modal" data-target="#registrationWindow">РЕГИСТРАЦИЯ</a>
 	{/if}
 									</div>
 								</div>
 							</div>
 {/foreach}
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="d-none d-md-block col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+						<div class="quiz-schedule-ad">
+							<div class="quiz-schedule-ad-text">ТВОИ ЭМОЦИИ, КОГДА ТЫ УСПЕЛ ПОДАТЬ ЗАЯВКУ НА СВОЕ ЛЮБИМОЕ ВРЕМЯ</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">	
+						<div class="quiz-schedule-target-container">
+							<span class="quiz-schedule-target-text">Наша цель - позитивный вечер, а не взрыв мозга!</span>
+							<div class="quiz-schedule-target-tags">
+								<div class="quiz-schedule-target-tag">#ноэтонеточно</div>
+								<div class="quiz-schedule-target-tag">(с) Организаторы</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -163,113 +176,103 @@
 		<div id="terms" class="terms container quiz-block-container">
 			<div class="intro container quiz-block block-dark">
 				<div class="row">
-					<div class="col-12">
-						<div class="quiz-header">ЧТО ТАКОЕ LET'S КВИЗ?</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-12 col-sm-10 offset-sm-1 col-md-6 offset-md-3">
-						<div class="quiz-item"><i class="quiz-icon mdi mdi-timer"></i>2,5 часа игры каждые 2 недели</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-12 col-sm-10 offset-sm-1 col-md-6 offset-md-3">
-						<div class="quiz-item"><i class="quiz-icon mdi mdi-account-multiple-outline"></i>От 2 до 9 человек в команде</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-12 col-sm-10 offset-sm-1 col-md-6 offset-md-3">
-						<div class="quiz-item"><i class="quiz-icon mdi mdi-comment-question-outline"></i>7 раундов с интересными вопросами на логику, интуицию и удачу!</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-12 col-sm-10 offset-sm-1 col-md-6 offset-md-3">
-						<div class="quiz-item"><i class="quiz-icon mdi mdi-gift"></i>Крутые призы от наших партнеров для победителей и призеров</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-12 col-sm-10 offset-sm-1 col-md-6 offset-md-3">
-						<div class="quiz-item"><i class="quiz-icon mdi mdi-food"></i>Еда, напитки, неповторимая атмосфера и заряд позитива</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-12 col-sm-10 offset-sm-1 col-md-6 offset-md-3">
-						<div class="quiz-item"><i class="quiz-icon mdi mdi-cake"></i>Повод встретиться с друзьями не только на День Рождения</div>
-					</div>
-				</div>
-			</div>
-			<div class="container quiz-block block-light">
-				<div class="row">
-					<!--<div class="col-md-4"></div>-->
-					<div class="col-12">
-						<div class="main-text">Наша цель - позитивный вечер, а не взрыв мозга!</div>
-					</div>
-					<!--<div class="col-md-4"></div>-->
-				</div>
-				<div class="row">
-					<div class="col-12 col-md-10 text-right">
-						<div class="text">Хочешь сыграть в LET'S КВИЗ?</div>
-						<a class="btn btn-dark quiz-button float-right" href="#schedule">Онлайн-регистрация</a>
-					</div>
-					<div class="hidden-md-down col-md-2"></div>
-				</div>
-			</div>
-			<div class="details container quiz-block block-dark">
-				<div class="row">
-					<div class="col-12">
-						<div class="quiz-header light">А ТЕПЕРЬ ПОДРОБНЕЕ</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-12 col-sm-10 offset-sm-1 col-md-6 offset-md-3">
-						<div class="quiz-item"><i class="quiz-icon mdi mdi-lead-pencil"></i> Для вашей команды забронирован стол, на котором лежит все необходимое для игры</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-12 col-sm-10 offset-sm-1 col-md-6 offset-md-3">
-						<div class="quiz-item"><i class="quiz-icon mdi mdi-account-multiple-plus-outline"></i> В зале находится более 15-ти команд</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-12 col-sm-10 offset-sm-1 col-md-6 offset-md-3">
-						<div class="quiz-item"><i class="quiz-icon mdi mdi-emoticon-excited"></i> Вы думаете, пьёте, кушаете и весело проводите время в компании друзей</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-12 col-sm-10 offset-sm-1 col-md-6 offset-md-3">
-						<div class="quiz-item"><i class="quiz-icon mdi mdi-voice"></i> Ведущий зачитывает вопросы, которые дублируются на экранах</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-12 col-sm-10 offset-sm-1 col-md-6 offset-md-3">
-						<div class="quiz-item"><i class="quiz-icon mdi mdi-wallet-membership"></i> После жаркого командного обсуждения, правильный ответ записывается в бланк</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-12 col-sm-10 offset-sm-1 col-md-6 offset-md-3">
-						<div class="quiz-item"><i class="quiz-icon mdi mdi-information-outline"></i> Сдаем бланки и узнаем правильные ответы</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-12 col-sm-10 offset-sm-1 col-md-6 offset-md-3">
-						<div class="quiz-item"><i class="quiz-icon mdi mdi-trophy-outline"></i> Победитель определяется после 7-ми раундов игры (39 вопросов)</div>
-					</div>
-				</div>
-			</div>
-			<div class="faq container quiz-block block-light">
-				<div class="row">
-					<div class="col-12 col-md-4 offset-md-2">
-						<div class="faq-block good">
-							<div class="quiz-title"></i>Что нужно взять с собой?</div>  <!-- <i class="quiz-icon mdi mdi-check-circle-outline"> -->
-							<div class="quiz-item"><i class="quiz-icon mdi mdi-plus"></i>компанию друзей</div>
-							<div class="quiz-item"><i class="quiz-icon mdi mdi-plus"></i>хорошее настроение</div>
+					<div class="col-md-8 offset-md-2">
+						<div class="row row-cols-2">		
+							<div class="col">
+								<div class="quiz-terms-header">ЧТО ТАКОЕ ЛЕТС КВИЗ?</div>
+							</div>	
+							<div class="col">
+								<div class="quiz-terms-details">
+									<div class="row">		
+										<div class="col-12 quiz-terms-details-text">
+											"ЛЕТС КВИЗ" - это интеллектуально- развлекательная викторина, цель которой - дружный и веселый праздник, а не взрыв мозга.
+										</div>	
+										<div class="col-12">
+											<div class="quiz-terms-details-item">
+												<i class="quiz-icon mdi mdi-record-circle"></i>2 часа интересного времяпрепровождения
+											</div>
+											<div class="quiz-terms-details-item">
+												<i class="quiz-icon mdi mdi-record-circle"></i>Призы и подарки победителям
+											</div>
+											<div class="quiz-terms-details-item">
+												<i class="quiz-icon mdi mdi-record-circle"></i>Универсальная игра для всех возрастов
+											</div>
+											<div class="quiz-terms-details-item">
+												<i class="quiz-icon mdi mdi-record-circle"></i>Пригодятся любые знания (даже те, о которых вы забыли;)
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
-					<div class="col-12 col-md-4">
+				</div>
+			</div>
+		</div>
+		<div id="rules" class="rules container quiz-block-container">
+			<div class="details container quiz-block block-dark">
+				<div class="row">
+					<div class="col-md-5 offset-md-2">
+						<div class="quiz-header light">КАК ВСЕ ЭТО ПРОИСХОДИТ?</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xl-2 offset-xl-1 col-lg-4 offset-lg-2 col-md-4 offset-md-2 col-10 offset-1">
+						<div class="rule rule-1">
+							<img src="image/bluepic_1.png">
+							<div>Рассаживаем команды по 2-10 человек. Один стол - это одна команда</div>
+						</div>
+					</div>
+					<div class="col-xl-2 offset-xl-0 col-lg-4 offset-lg-0 col-md-4 offset-md-0 col-10 offset-1">
+						<div class="rule rule-2">
+							<img src="image/bluepic_2.png">
+							<div>Вас ждут 2 часа игры, 7 раундов. Каждый раунд имеет свою особенность</div>
+						</div>
+					</div>
+					<div class="col-xl-2 offset-xl-0 col-lg-4 offset-lg-2 col-md-4 offset-md-2 col-10 offset-1">
+						<div class="rule rule-3">
+							<img src="image/bluepic_4.png">
+							<div>
+								Вопросы на различную тематику и разной сложности:
+								<ul>
+									<li>Музыка</li>
+									<li>Кино</li>
+									<li>Спорт</li>
+									<li>Общие знания</li>
+									<li>Эрудиция</li>
+									<li>Удача</li>
+									<li>Логика</li>
+									<li>... да что угодно!</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-2 offset-xl-0 col-lg-4 offset-lg-0 col-md-4 offset-md-0 col-10 offset-1">
+						<div class="rule rule-4">
+							<img src="image/bluepic_3.png">
+							<div>Думаем всей командой, затем отвечаем на специальных бланках. После каждого раунда узнаем правильные ответы и зарабатываем очки!</div>
+						</div>
+					</div>
+					<div class="col-xl-2 offset-xl-0 col-lg-4 offset-lg-2 col-md-4 offset-md-2 col-10 offset-1">
+						<div class="rule rule-5">
+							<img src="image/bluepic_5.png">
+							<div>Награждаем победителей под овации зала!</div>
+						</div>
+					</div>
+				</div>
+				<div class="row faq-blocks">
+					<div class="col-lg-4 offset-lg-2 col-sm-8 offset-sm-2 col-10 offset-1">
+						<div class="faq-block good">
+							<div class="quiz-title">Возьми с собой на игру</div>
+							<div class="quiz-item">+ компанию друзей</div>
+							<div class="quiz-item">+ хорошее настроение</div>
+						</div>
+					</div>
+					<div class="col-lg-4 offset-lg-0 col-sm-8 offset-sm-2 col-10 offset-1">
 						<div class="faq-block bad">
-							<div class="quiz-title"></i>Что не нужно брать с собой?</div> <!-- <i class="quiz-icon mdi mdi-close-circle-outline"> -->
-							<div class="quiz-item"><i class="quiz-icon mdi mdi-minus"></i>энциклопедии</div>
-							<div class="quiz-item"><i class="quiz-icon mdi mdi-minus"></i>успокоительные</div>
+							<div class="quiz-title">Точно не стоит брать на игру</div>
+							<div class="quiz-item">- энциклопедии</div>
+							<div class="quiz-item">- успокоительные</div>
 						</div>
 					</div>
 				</div>
@@ -278,75 +281,26 @@
 {/if}
 {if $SETTING_HIDE_GALLERY eq 'false'}
 		<div id="gallery" class="gallery container quiz-block-container">
-			<div class="photos container quiz-block block-dark">
-				<div class="row">
-					<div class="col-md-8 offset-md-2">
-						<div id="carousel-gallery" class="carousel slide" data-ride="carousel" data-interval=10000>
-							<div class="carousel-inner" role="listbox">
-{foreach from=$PHOTO_LIST item=url name=gallery}
-								<div class="carousel-item {if $smarty.foreach.gallery.first}active{/if}">
-									<img class="d-block img-fluid" src="{$url}">
-								</div>
-{/foreach}
-							</div>
-							<a class="carousel-control-prev" href="#carousel-gallery" role="button" data-slide="prev">
-								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-								<span class="sr-only">Previous</span>
-							</a>
-							<a class="carousel-control-next" href="#carousel-gallery" role="button" data-slide="next">
-								<span class="carousel-control-next-icon" aria-hidden="true"></span>
-								<span class="sr-only">Next</span>
-							</a>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-12 col-md-10">
-						<button type="button" class="btn btn-light quiz-button float-right" data-toggle="modal" data-target="#questionWindow">Примеры вопросов</button>
-					</div>
-					<div class="hidden-md-down col-md-2"></div>
-				</div>
-			</div>
-		</div>
-{/if}
-{if $SETTING_HIDE_FRIENDS eq 'false'}
-		<div id="friends" class="friends container quiz-block-container">
-			<div class="friends-block container quiz-block block-light">
+			<div class="photos container quiz-block block-light">
 				<div class="row">
 					<div class="col-12">
-						<div class="quiz-header dark">НАШИ ДРУЗЬЯ И ПАРТНЕРЫ</div>
+						<div class="quiz-header">ФОТОГРАФИИ</div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-12 col-sm-4 offset-sm-2 col-md-3 offset-md-3">
-						<div class="quiz-panel panel-light"><a href="https://stupino.mosigra.ru/" target="_blank"><img src="image/logo-mosigra.png"></a></div>
-					</div>
-					<div class="col-12 col-sm-4 col-md-3">
-						<div class="quiz-panel panel-light"><a href="https://vk.com/shizgarastupino" target="_blank"><img src="image/logo-shizgara.png"></a></div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-12 col-sm-4 offset-sm-2 col-md-3 offset-md-3">
-						<div class="quiz-panel panel-light"><a href="https://vk.com/m.ugli" target="_blank"><img src="image/logo-mugli.png"></a></div>
-					</div>
-					<div class="col-12 col-sm-4 col-md-3">
-						<div class="quiz-panel panel-light"><a href="https://www.instagram.com/artiko_print/" target="_blank"><img src="image/logo-artiko.png"></a></div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-12 col-sm-4 offset-sm-2 col-md-3 offset-md-3">
-						<div class="quiz-panel panel-light"><a href="https://fotopodarkist.ru/" target="_blank"><img src="image/logo-photo.png"></a></div>
-					</div>
-					<div class="col-12 col-sm-4 col-md-3">
-						<div class="quiz-panel panel-light"><a href="https://www.perspektiva-pravo.ru/" target="_blank"><img src="image/logo-pravo.png"></a></div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-12 col-sm-4 offset-sm-2 col-md-3 offset-md-3">
-						<div class="quiz-panel panel-light"><a href="https://yatort.ru/" target="_blank"><img src="image/logo-yatort.png"></a></div>
-					</div>
-					<div class="col-12 col-sm-4 col-md-3">
-						<div class="quiz-panel panel-light"><a href="https://vk.com/kvartalbutovo" target="_blank"><img src="image/logo-kvartal.png"></a></div>
+					<div class="col-md-8 offset-md-2">
+						<div class="row photo-container">
+{foreach from=$PHOTO_LIST item=url name=gallery}
+							<div class="photo-block col-lg-4 col-md-6 col-12">
+								<img class="img-fluid" src="{$url}">
+							</div>
+{/foreach}
+							<div class="photo-gallery-link col-lg-8 col-12">
+								<div class="photo-gallery-link-background">
+									<div class="photo-gallery-link-text">ЭТО, КОНЕЧНО, </br>НЕ ВСЕ ФОТОГРАФИИ... </br>ПОЛНЫЕ ФОТООТЧЁТЫ </br>СМОТРИ <a class="underlined-link" href="https://vk.com/letsquiz" target="_blank">ЗДЕСЬ</a> <a href="https://vk.com/letsquiz" target="_blank"><img class="photo-gallery-link-text-vk" src="image/vk4.png" alt="VK"></a></div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -354,161 +308,147 @@
 {/if}
 {if $SETTING_HIDE_CORP eq 'false'}
 		<div id="corp" class="corp container quiz-block-container">
-			<div class="corp-block container quiz-block block-dark">
+			<div class="corp-block container quiz-block block-light">
 				<div class="row">
 					<div class="col-12">
-						<div class="quiz-header">КВИЗ НА КОРПОРАТИВ</div>
+						<div class="quiz-header">КОРПОРАТИВЫ</div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-12 col-sm-10 offset-sm-1 col-md-6 offset-md-3">
-						<div class="main-text">LET'S КВИЗ - отличный вариант для корпоратива или сплочения команды (team building)! Это могут подтвердить компании, которые уже работали с нами:</div>
+					<div class="col-md-6 offset-md-3">
+						<div class="corp-text">Уже сделали интеллектуально и весело таким компаниям как:</div>
+						<div class="corp-company-items">
+							<div class="corp-company-item"><img src="/image/corp-logo-1.jpg"></div>
+							<div class="corp-company-item"><img src="/image/corp-logo-2.jpg"></div>
+							<div class="corp-company-item"><img src="/image/corp-logo-3.jpg"></div>
+							<div class="corp-company-item"><img src="/image/corp-logo-4.jpg"></div>
+							<div class="corp-company-item"><img src="/image/corp-logo-5.jpg"></div>
+							<div class="corp-company-item"><img src="/image/corp-logo-6.jpg"></div>
+							<div class="corp-company-item"><img src="/image/corp-logo-7.jpg"></div>
+							<div class="corp-company-item"><img src="/image/corp-logo-8.jpg"></div>
+							<div class="corp-company-item"><img src="/image/corp-logo-9.jpg"></div>
+							<div class="corp-company-item"><img src="/image/corp-logo-10.jpg"></div>
+							<div class="corp-company-item"><img src="/image/corp-logo-11.jpg"></div>
+							<div class="corp-company-item"><img src="/image/corp-logo-12.jpg"></div>
+							<div class="corp-company-item"><img src="/image/corp-logo-13.jpg"></div>
+							<div class="corp-company-item"><img src="/image/corp-logo-14.jpg"></div>
+							<div class="corp-company-item"><img src="/image/corp-logo-15.jpg"></div>
+							<div class="corp-company-item"><img src="/image/corp-logo-16.jpg"></div>
+							<div class="corp-company-item"><img src="/image/corp-logo-17.jpg"></div>
+							<div class="corp-company-item"><img src="/image/corp-logo-18.jpg"></div>
+							<div class="corp-company-item"><img src="/image/corp-logo-19.jpg"></div>
+							<div class="corp-company-item"><img src="/image/corp-logo-20.jpg"></div>
+						</div>
 					</div>
 				</div>
-				<div class="row">
-					<div class="col-12 col-sm-4 offset-sm-2 col-md-3 offset-md-3">
-						<div class="quiz-panel quiz-panel-no-img panel-dark"><a href="#">MARS Chocolate</a></div>
-					</div>
-					<div class="col-12 col-sm-4 col-md-3">
-						<div class="quiz-panel quiz-panel-no-img panel-dark"><a href="#">Kimberly-Clark</a></div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-12 col-sm-4 offset-sm-2 col-md-3 offset-md-3">
-						<div class="quiz-panel quiz-panel-no-img panel-dark"><a href="#">ДОЛ им. Ю.А. Гагарина</a></div>
-					</div>
-					<div class="col-12 col-sm-4 col-md-3">
-						<div class="quiz-panel quiz-panel-no-img panel-dark"><a href="#">MARS Food</a></div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-12 col-sm-4 offset-sm-2 col-md-3 offset-md-3">
-						<div class="quiz-panel quiz-panel-no-img panel-dark"><a href="#">Мастокройф</a></div>
-					</div>
-					<div class="col-12 col-sm-4 col-md-3">
-						<div class="quiz-panel quiz-panel-no-img panel-dark"><a href="#">Радиал-С</a></div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-12 col-md-10">
-						<div class="text text-right">Оставь заявку чтобы узнать подробности</div>
-						<button type="button" class="btn btn-light quiz-button float-right" data-toggle="modal" data-target="#callbackWindow">Обратный звонок</button>
-					</div>
-					<div class="hidden-md-down col-md-2"></div>
-				</div>
-			</div>
-		</div>
-{/if}
-{if $SETTING_HIDE_FEEDBACK eq 'false'}
-		<div id="feedback" class="feedback container quiz-block-container">
-			<div class="container quiz-block block-dark">
 				<div class="row">
 					<div class="col-12">
-						<div class="quiz-header">ОТЗЫВЫ НАШИХ УЧАСТНИКОВ</div>
+						<div class="quiz-header we-can-do">ЧТО МЫ МОЖЕМ СДЕЛАТЬ?</div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-12 col-sm-10 offset-sm-1 col-md-6 offset-md-3">
-						<div id="carousel-feedback" class="carousel slide" data-ride="carousel" data-interval=10000>
-							<div class="carousel-inner" role="listbox">
-{foreach from=$FEEDBACK_LIST item=feedback name=feedbacks}
-								<div class="carousel-item {if $smarty.foreach.feedbacks.first}active{/if}">
-									<div class="d-block">
-										<div class="feedback-item">
-											<div class="feedback-text">{$feedback->text}</div>
-											<div class="feedback-author">{$feedback->author}</div>
-										</div>
-									</div>
+					<div class="col-md-6 offset-md-3">		
+						<div class="row">
+							<div class="col-12 col-md-6">
+								<div class="corp-item">
+									<i class="quiz-icon mdi mdi-toggle-switch"></i>Онлайн или Офлайн
 								</div>
-{/foreach}
+								<div class="corp-item">
+									<i class="quiz-icon mdi mdi-toggle-switch"></i>От 6 до бесконечности человек
+								</div>
+								<div class="corp-item">
+									<i class="quiz-icon mdi mdi-toggle-switch"></i>Сложность Вы выбираете сами
+								</div>
+								<div class="corp-item">
+									<i class="quiz-icon mdi mdi-toggle-switch"></i>Офис, бар, поле - приедем куда угодно
+								</div>
 							</div>
-							<a class="carousel-control-prev" href="#carousel-feedback" role="button" data-slide="prev">
-								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-								<span class="sr-only">Previous</span>
-							</a>
-							<a class="carousel-control-next" href="#carousel-feedback" role="button" data-slide="next">
-								<span class="carousel-control-next-icon" aria-hidden="true"></span>
-								<span class="sr-only">Next</span>
-							</a>
+							<div class="col-12 col-md-6">
+								<div class="corp-item">
+									<i class="quiz-icon mdi mdi-toggle-switch"></i>Тематическая игра или раунд
+								</div>
+								<div class="corp-item">
+									<i class="quiz-icon mdi mdi-toggle-switch"></i>Элементы игры в Вашем фирменном стиле
+								</div>
+								<div class="corp-item">
+									<i class="quiz-icon mdi mdi-toggle-switch"></i>Можем организовать мероприятие "под ключ"
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6 offset-md-3">		
+						<div class="row">
+							<div class="col-12 col-md-6">
+								<div class="corp-questions-text">
+									<img src="image/questions-text.png" alt="Остались вопросы?">
+								</div>
+							</div>
+							<div class="col-12 col-md-6">
+								<div class="corp-questions-buttons">
+									<a href="/letsquiz-pr-kit.pdf" target="_blank" role="button" class="quiz-button quiz-button--dark corp-questions-button">НАШ PR-KIT</a>
+									<a href="javascript:void(0);" data-toggle="modal" data-target="#callbackWindow" role="button" class="quiz-button quiz-button--dark corp-questions-button callback-button">ОБРАТНЫЙ ЗВОНОК</a>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 {/if}
+{if $SETTING_HIDE_FOOTER eq 'false'}
 		<div id="footer" class="footer container quiz-block-container">
 			<div class="container quiz-block block-footer">
 			
 				<div class="row">
-					<div class="col-12">
-						<div class="footer-text text">Наши контакты:</div>
+					<div class="col-md-4 offset-md-2 col-11 offset-1">
+						<div class="quiz-header">УЖЕ ГОТОВЫ К УВЛЕКАТЕЛЬНЫМ ИНТЕЛЛЕКТУАЛЬНЫМ БИТВАМ?</div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-12">
-						<div class="footer-text phone">{$SETTING_PHONE}</div>
+					<div class="col-md-8 offset-md-2 col-11 offset-1">
+						<div class="footer-text footer-subheader">Вот как с нами связаться:</div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-12">
-						<div class="footer-text email"><a href="mailto:{$SETTING_EMAIL}">{$SETTING_EMAIL}</a></div>
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="col-12">
-						<!-- <div class="main-text">Заявки, вопросы, предложения, корпоративные и выездные игры!</div> -->
-						<div class="footer-text text">Заявки, вопросы, предложения, корпоративные и выездные игры!</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-12">
-						<div class="footer-text text">Работаем круглосуточно и без выходных :)</div>
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="col-12">
-						<div class="footer-text text">Мы в соц. сетях:</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-12">
-						<div class="socialbuttons footer-text">
-							<a href="https://vk.com/letsquiz" target="_blank"><img src="image/vk.png"></a>
-							<a href="https://www.instagram.com/lets_quiz/" target="_blank"><img src="image/instagram.png"></a>
+					<div class="col-md-8 offset-md-2 col-11 offset-1">
+						<div class="row">
+							<div class="col-sm-6 col-12">
+								<div class="footer-text phone">
+									<a href="tel:{$SETTING_PHONE}"><img class="footer-icon" src="image/phone.png"></a><a href="tel:{$SETTING_PHONE}">{$SETTING_PHONE}</a>
+								</div>
+								<div class="footer-text email">
+									<a href="mailto:{$SETTING_EMAIL}"><img class="footer-icon" src="image/email.png"></a><a href="mailto:{$SETTING_EMAIL}">{$SETTING_EMAIL}</a>
+								</div>
+							</div>
+							<div class="col-sm-6 col-12">
+								<div class="footer-text social">
+									<a href="https://vk.com/letsquiz" target="_blank"><img class="footer-icon" src="image/vk4.png"></a><a href="https://vk.com/letsquiz" target="_blank">vk.com/letsquiz</a>
+								</div>
+								<div class="footer-text social">
+									<a href="https://www.instagram.com/lets_quiz/" target="_blank"><img class="footer-icon" src="image/instagram2.png"></a><a href="https://www.instagram.com/lets_quiz/" target="_blank">@lets_quiz</a>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+{/if}
 
 
 
 <!--  Modal windows  -->
 
-		<!-- Callback Window -->
-		<div class="quiz-window modal fade" id="callbackWindow" tabindex="-1" role="dialog" aria-labelledby="CallbackWindowTitle" aria-hidden="true">
-			<div class="modal-dialog modal-dialog-centered" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="callbackWindowTitle">ОБРАТНЫЙ ЗВОНОК</h5>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span class="mdi mdi-close" aria-hidden="true"></span>
-						</button>
-					</div>
+		<!-- Photo popup Window -->
+		<div id="photoWindow" class="modal fade" aria-labelledby="PhotoWindowLabel" aria-hidden="true" tabindex="-1" role="dialog">
+			<div class="modal-dialog modal-xl" data-dismiss="modal">
+				<div class="modal-content"  >              
 					<div class="modal-body">
-						<form>
-							<div class="quiz-window-title">Оставь номер телефона и мы перезвоним</div>
-							<label for="callback-name">Имя:</label>
-							<input type="text" class="form-control" id="callback-name" required aria-describedby="callback-name" placeholder="Как к тебе обращаться">
-							<label for="callback-phone">Телефон:</label>
-							<input type="tel" class="form-control" id="callback-phone" required aria-describedby="callback-phone" placeholder="Как с тобой связаться">
-						</form>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-light quiz-button call-send-button">Отправить</button>
-					</div>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+						<img src="">
+					</div> 
 				</div>
 			</div>
 		</div>
@@ -518,88 +458,55 @@
 			<div class="modal-dialog modal-dialog-centered" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="selectCityWindowTitle">Город</h5>
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 							<span class="mdi mdi-close" aria-hidden="true"></span>
 						</button>
+						<h5 class="modal-title" id="selectCityWindowTitle">ГОРОД</h5>
 					</div>
-					<div class="modal-body">
-						<div class="quiz-window-title">Выбери свой город</div>
-						<select class="form-control" id="city" aria-describedby="city">
-							<option>Все</option>
-{foreach from=$CITY_LIST item=city name=cities}
-							<option>{$city}</option>
-{/foreach}
-						</select>
-					</div>
-					<div class="modal-footer">
-						<!--data-dismiss="modal"-->
-						<button type="button" class="btn btn-light quiz-button select-city-button">Выбрать</button>
+					<div class="quiz-modal-body">
+						<div class="modal-body">
+							<div class="quiz-window-title">Выбери свой город</div>
+							<select class="form-control" id="city" aria-describedby="city">
+								<option>Все</option>
+	{foreach from=$CITY_LIST item=city name=cities}
+								<option>{$city}</option>
+	{/foreach}
+							</select>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="quiz-button quiz-button--pink select-city-button">
+								Выбрать
+							</button>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<!-- Certificate Window -->
-		<div class="quiz-window modal fade" id="certificateWindow" tabindex="-1" role="dialog" aria-labelledby="CertificateWindowTitle" aria-hidden="true">
+		<!-- Callback Window -->
+		<div class="quiz-window modal fade" id="callbackWindow" tabindex="-1" role="dialog" aria-labelledby="CallbackWindowTitle" aria-hidden="true">
 			<div class="modal-dialog modal-dialog-centered" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="certificateWindowTitle">СЕРТИФИКАТЫ</h5>
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 							<span class="mdi mdi-close" aria-hidden="true"></span>
 						</button>
+						<h5 class="modal-title" id="callbackWindowTitle">ЗВОНОК</h5>
 					</div>
-					<div class="modal-body">
-						<form>
-							<div class="quiz-window-title">Ты можешь приобрести подарочный сертификат. Оставь заявку и мы перезвоним</div>
-							<label for="cert-name">Имя:</label>
-							<input type="text" class="form-control" id="cert-name" required aria-describedby="cert-name" placeholder="Как к тебе обращаться">
-							<label for="cert-phone">Телефон:</label>
-							<input type="tel" class="form-control" id="cert-phone" required aria-describedby="cert-phone" placeholder="Как с тобой связаться">
-						</form>
-					</div>
-					<div class="modal-footer">
-						<!--data-dismiss="modal"-->
-						<button type="button" class="btn btn-light quiz-button cert-send-button" >Отправить</button>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<!-- Question Example Window -->
-		<div class="quiz-window modal fade" id="questionWindow" tabindex="-1" role="dialog" aria-labelledby="QuestionWindowTitle" aria-hidden="true">
-			<div class="modal-dialog modal-dialog-centered" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="questionWindowTitle">ПРИМЕРЫ ВОПРОСОВ</h5>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span class="mdi mdi-close" aria-hidden="true"></span>
-						</button>
-					</div>
-					<div class="modal-body">
-						<div id="carousel-question" class="carousel slide" data-ride="carousel" data-interval=10000>
-							<div class="carousel-inner" role="listbox">
-{foreach from=$QUESTION_LIST item=question name=questions}
-								<div class="carousel-item {if $smarty.foreach.questions.first}active{/if}">
-									<div class="d-block">
-										<div class="question-item">
-											<div class="question-text">{$question->question}</div>
-											<div class="question-answer-link-wrapper"><span class="question-answer-link">Ответ</span></div>
-											<div class="question-answer-text-wrapper"><div class="question-answer-text">{$question->answer}</div></div>
-										</div>
-									</div>
-								</div>
-{/foreach}
-							</div>
-							<a class="carousel-control-prev" href="#carousel-question" role="button" data-slide="prev">
-								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-								<span class="sr-only">Previous</span>
-							</a>
-							<a class="carousel-control-next" href="#carousel-question" role="button" data-slide="next">
-								<span class="carousel-control-next-icon" aria-hidden="true"></span>
-								<span class="sr-only">Next</span>
-							</a>
+					<div class="quiz-modal-body">
+						<div class="modal-body">
+							<form>
+								<div class="quiz-window-title">Заполни форму и мы перезвоним Вам ;)</div>
+								<input type="text" class="form-control" id="callback-name" required aria-describedby="callback-name" placeholder="Как к Вам обращаться">
+								<input type="tel" class="form-control" id="callback-phone" required aria-describedby="callback-phone" placeholder="Телефон">
+								<div class="error-container"></div>
+							</form>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="quiz-button quiz-button--pink call-send-button">
+								<span class="button-label">Отправить</span>
+								<span class="loading spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> 
+							</button>
 						</div>
 					</div>
 				</div>
@@ -611,45 +518,43 @@
 			<div class="modal-dialog modal-dialog-centered" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="registrationWindowTitle">ЗАПИСАТЬСЯ<span class="d-none d-md-inline"> НА ИГРУ</span></h5>
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 							<span class="mdi mdi-close" aria-hidden="true"></span>
 						</button>
+						<h5 class="modal-title" id="registrationWindowTitle">ЗАПИСАТЬСЯ<span class="d-none d-md-inline"> НА ИГРУ</span></h5>
 					</div>
-					<div class="modal-body">
-						<form class="quiz-form">
-							<div class="quiz-window-title online-game">
-								Заполни форму регистрации на игру <span class="display-city"></span> <span class="display-date"></span> в <span class="display-time"></span> 
-								(стоимость - <span class="display-price"></span>)
-							</div>
-							<div class="quiz-window-title offline-game">
-								Заполни форму регистрации на игру в городе <span class="display-city"></span> <span class="display-date"></span> в <span class="display-time"></span> 
-								(стоимость - <span class="display-price"></span>)
-							</div>
-							<!--<label for="reg-name">Название команды</label>-->
-							<input type="text" class="form-control" id="reg-name" required aria-describedby="reg-name" placeholder="Название команды">
-							<!--<label for="reg-count">Количество человек</label>-->
-							<select class="form-control" id="reg-count" required>
-								<option disabled selected value>Количество человек</option>
-								<option value="2">2</option>
-								<option value="3">3</option>
-								<option value="4">4</option>
-								<option value="5">5</option>
-								<option value="6">6</option>
-								<option value="7">7</option>
-								<option value="8">8</option>
-								<option value="9">9</option>
-							</select>
-							<!--<label for="reg-capitan">Капитан</label>-->
-							<input type="text" class="form-control" id="reg-capitan" required aria-describedby="reg-capitan" placeholder="Капитан">
-							<!--<label for="reg-phone">Телефон</label>-->
-							<input type="tel" class="form-control" id="reg-phone" required aria-describedby="reg-phone" placeholder="Телефон">
-							<input type="email" class="form-control" id="reg-email" required aria-describedby="reg-email" placeholder="Email">
-							<!--<div class="quiz-window-text">Стоимость участия - 300 руб/чел</div>-->
-						</form>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-light quiz-button reg-send-button">Отправить</button>
+					<div class="quiz-modal-body">
+						<div class="modal-body">
+							<form class="quiz-form">
+								<div class="quiz-window-title">
+									<div>Где: <span class="display-city"></span></div>
+									<div>Когда: <span class="display-date"></span></div>
+								</div>
+								<input type="text" class="form-control" id="reg-name" required aria-describedby="reg-name" placeholder="Название команды">
+								<select class="form-control" id="reg-count" required>
+									<option disabled selected value>Количество человек</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+									<option value="10">10</option>
+								</select>
+								<input type="text" class="form-control" id="reg-capitan" required aria-describedby="reg-capitan" placeholder="Капитан">
+								<input type="tel" class="form-control" id="reg-phone" required aria-describedby="reg-phone" placeholder="Телефон">
+								<input type="email" class="form-control" id="reg-email" required aria-describedby="reg-email" placeholder="Email">
+								<div class="error-container"></div>
+							</form>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="quiz-button quiz-button--pink reg-send-button">
+								<span class="button-label">Отправить</span>
+								<span class="loading spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> 
+							</button>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -660,7 +565,6 @@
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 		<script src="vendor/jquery/jquery-3.3.1.min.js"></script>
 		<script src="vendor/bootstrap/bootstrap.min.js"></script>
-		<script src="vendor/pnotify/pnotify.custom.min.js"></script>
 		<script src="vendor/slick/slick.js"></script>
 		<script src="app.js?{$SETTING_SYSTEM_VERSION_NUMBER}"></script>
 	</body>

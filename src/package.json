@@ -5,6 +5,7 @@
   "main": "index.php",
   "scripts": {
     "build": "gulp build",
+    "watch": "gulp watch",
     "deploy:dev": "gulp dev-deploy",
     "deploy:prod": "gulp prod-deploy"
   },

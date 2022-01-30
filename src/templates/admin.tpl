@@ -9,18 +9,13 @@
 		<link rel="icon" type="image/png" href="image/favicon32.png" sizes="32x32">
 		<link rel="icon" type="image/png" href="image/favicon64.png" sizes="64x64">
 
-		<meta property="og:title" content="LET'S КВИЗ!" />
-		<meta property="og:image" content="https://letsquiz.ru/photo/Jzscf5qA8Nw.jpg" />
-
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/2.1.19/css/materialdesignicons.min.css" integrity="sha256-L3NrnCWf0Pw+HvXutUdR0Vlj4pI5pM2s7tijm55+DzU=" crossorigin="anonymous" />
 		
   		<link href="vendor/bootstrap/bootstrap.min.css" rel="stylesheet" />
-		<link href="vendor/pnotify/pnotify.custom.min.css" media="all" rel="stylesheet" type="text/css" />
-		<!-- <link href="vendor/datetimepicker/jquery.datetimepicker.min.css" media="all" rel="stylesheet" type="text/css" /> -->
 
 		<link href="style-admin.css?{$SETTING_SYSTEM_VERSION_NUMBER}" rel="stylesheet" type="text/css" />
 		
-		<title>LET'S КВИЗ! (Админка)</title>
+		<title>ЛЕТС КВИЗ! (Админка)</title>
 	</head>
 	<body >
 		
@@ -69,7 +64,7 @@
 					<tr>
 						<th scope="col">Дата</th>
 						<th scope="col">Номер</th>
-						<th scope="col">Город</th>
+						<th scope="col">Место</th>
 						<th scope="col">Цена</th>
 						<th scope="col">Закрыто</th>
 						<th scope="col">Действие</th>
@@ -81,8 +76,8 @@
 						data-record-id='{$game->id}' 
 						data-record-date='{$game->date}' 
 						data-record-name='{$game->game_name}' 
-						data-record-city_id='{$game->city_id}' 
-						data-record-city='{$game->city}'
+						data-record-place_id='{$game->place_id}' 
+						data-record-place='{$game->place}'
 						data-record-price='{$game->price}'
 						data-record-color_id='{$game->color_id}' 
 						data-record-color_name='{$game->color_name}' 
@@ -90,7 +85,7 @@
 						data-record-is_closed='{$game->is_closed}'>
 						<td>{$game->date}</td>
 						<td>{$game->game_name}</td>
-						<td>{$game->city}</td>
+						<td>{$game->place}</td>
 						<td>{$game->price}</td>
 						<td>{$game->is_closed}</td>
 						<td class="action-column">
@@ -137,70 +132,6 @@
 		</div>
 
 
-		<div class="container letsquiz-grid" data-entity-type='FEEDBACK'>
-			<h2>Отзывы</h2>
-			<button type="button" class="btn btn-success crud-create" data-toggle="modal" data-target="#feedbackEditor">Создать</button>
-			<table class="table">
-				<thead class="thead-dark">
-					<tr>
-						<th scope="col">Текст</th>
-						<th scope="col">Автор</th>
-						<th scope="col">Действие</th>
-					</tr>
-				</thead>
-				<tbody>
-	{foreach from=$FEEDBACK_LIST item=feedback name=feedbacks}
-					<tr class="record"
-						data-record-id='{$feedback->id}' 
-						data-record-text='{$feedback->text}' 
-						data-record-author='{$feedback->author}'>
-						<td>{$feedback->text}</td>
-						<td>{$feedback->author}</td>
-						<td class="action-column">
-							<button type="button" class="btn btn-primary btn-sm crud-update" data-toggle="modal" data-target="#feedbackEditor">Изменить</button>
-							<button type="button" class="btn btn-danger btn-sm crud-delete">Удалить</button>
-						</td>
-					</tr>
-	{/foreach}
-				</tbody>
-			</table>
-		</div>
-
-
-		<div class="container letsquiz-grid" data-entity-type='QUESTION'>
-			<h2>Вопросы</h2>
-			<button type="button" class="btn btn-success crud-create" data-toggle="modal" data-target="#questionEditor">Создать</button>
-			<table class="table">
-				<thead class="thead-dark">
-					<tr>
-						<th scope="col">Вопрос</th>
-						<th scope="col">Ответ</th>
-						<th scope="col">Порядок</th>
-						<th scope="col">Действие</th>
-					</tr>
-				</thead>
-				<tbody>
-	{foreach from=$QUESTION_LIST item=question name=questions}
-					<tr class="record"
-						data-record-id='{$question->id}' 
-						data-record-question='{$question->question}' 
-						data-record-answer='{$question->answer}' 
-						data-record-order='{$question->order}'>
-						<td>{$question->question}</td>
-						<td>{$question->answer}</td>
-						<td>{$question->order}</td>
-						<td class="action-column">
-							<button type="button" class="btn btn-primary btn-sm crud-update" data-toggle="modal" data-target="#questionEditor">Изменить</button>
-							<button type="button" class="btn btn-danger btn-sm crud-delete">Удалить</button>
-						</td>
-					</tr>
-	{/foreach}
-				</tbody>
-			</table>
-		</div>
-
-
-
 		<!-- Modal windows -->
 
 		<!-- Game editor -->
@@ -234,10 +165,10 @@
 								<input type="text" class="form-control field" id="game-name" required name="name" aria-describedby="game-name" placeholder="">
 							</div>
 							<div class="form-group">
-								<label for="game-city">Город</label>
-								<select class="form-control field" id="game-city" required name="city_id">
-	{foreach from=$CITY_LIST item=city name=selector_cities}
-									<option value="{$city->id}">{$city->name}</option>
+								<label for="game-place">Место</label>
+								<select class="form-control field" id="game-place" required name="place_id">
+	{foreach from=$PLACE_LIST item=place name=selector_cities}
+									<option value="{$place->id}">{$place->description}</option>
 	{/foreach}
 								</select>
 							</div>
@@ -256,71 +187,6 @@
 							<div class="form-group">
 								<label for="game-is_closed">Закрыто</label>
 								<input type="checkbox" class="form-control field" id="game-is_closed" name="is_closed" aria-describedby="game-is_closed" placeholder="">
-							</div>
-						</form>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-primary save-button">Сохранить</button>
-					</div>
-				</div>
-			</div>
-		</div>
-
-
-		<!-- Feedback editor -->
-		<div class="editorWindow modal fade" id="feedbackEditor" tabindex="-1" role="dialog" aria-labelledby="FeedbackEditorTitle" aria-hidden="true">
-			<div class="modal-dialog modal-dialog-centered" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="feedbackEditorTitle">ОТЗЫВ</h5>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span class="mdi mdi-close" aria-hidden="true"></span>
-						</button>
-					</div>
-					<div class="modal-body">
-						<form>
-							<input class="field" type="hidden" name="id">
-							<div class="form-group">
-								<label for="feedback-text">Текст</label>
-								<textarea rows="5" class="form-control field" id="feedback-text" required name="text" aria-describedby="feedback-text" placeholder=""></textarea>
-							</div>
-							<div class="form-group">
-								<label for="feedback-author">Автор</label>
-								<input type="text" class="form-control field" id="feedback-author" name="author" aria-describedby="feedback-author" placeholder="">
-							</div>
-						</form>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-primary save-button">Сохранить</button>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<!-- Question editor -->
-		<div class="editorWindow modal fade" id="questionEditor" tabindex="-1" role="dialog" aria-labelledby="QuestionEditorTitle" aria-hidden="true">
-			<div class="modal-dialog modal-dialog-centered" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="questionEditorTitle">ВОПРОС</h5>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span class="mdi mdi-close" aria-hidden="true"></span>
-						</button>
-					</div>
-					<div class="modal-body">
-						<form>
-							<input class="field" type="hidden" name="id">
-							<div class="form-group">
-								<label for="question-question">Вопрос</label>
-								<textarea rows="5" class="form-control field" id="question-question" required name="question" aria-describedby="question-question" placeholder=""></textarea>
-							</div>
-							<div class="form-group">
-								<label for="question-answer">Ответ</label>
-								<input type="text" class="form-control field" id="question-answer" required name="answer" aria-describedby="question-answer" placeholder="">
-							</div>
-							<div class="form-group">
-								<label for="question-order">Порядок</label>
-								<input type="number" class="form-control field" id="question-order" required name="order" aria-describedby="question-order" placeholder="">
 							</div>
 						</form>
 					</div>
@@ -400,7 +266,6 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment-with-locales.min.js" integrity="sha256-ZykW30UBCXWkPGsVyVPdJlUrce9/PawgYCEzinA4pnU=" crossorigin="anonymous"></script>
 		
 		<script src="vendor/bootstrap/bootstrap.min.js"></script>
-		<script src="vendor/pnotify/pnotify.custom.min.js"></script>
 		
 		<script src="admin.js?{$SETTING_SYSTEM_VERSION_NUMBER}"></script>
 		
