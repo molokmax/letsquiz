@@ -218,6 +218,7 @@ $(document).ready(function() {
     });
 
     function isFormValid(win, form, dataNames) {
+        $(form).children(".form-control").addClass("dirty");
         var isDataValid = true;
         for (var i = 0; i < dataNames.length; i++) {
             var data = win.data(dataNames[i]);

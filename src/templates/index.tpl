@@ -138,13 +138,17 @@
 											{$game->price} руб.
 										</div>
 									</div>
-									<div class="registration-button">
-	{if $game->is_closed eq '1'}
-											<span>МЕСТ НЕТ</span>
-	{else}
-											<a href="javascript:void(0);" data-toggle="modal" data-target="#registrationWindow">РЕГИСТРАЦИЯ</a>
-	{/if}
-									</div>
+									<a class="registration-button" href="javascript:void(0);" data-target="#registrationWindow"
+										{if $game->is_closed eq '0'}
+											data-toggle="modal"
+										{/if}
+										>
+										{if $game->is_closed eq '1'}
+											МЕСТ НЕТ
+										{else}
+											РЕГИСТРАЦИЯ
+										{/if}
+									</a>
 								</div>
 							</div>
 {/foreach}
