@@ -63,6 +63,7 @@
 				<thead class="thead-dark">
 					<tr>
 						<th scope="col">Дата</th>
+						<th scope="col">Регистрация с</th>
 						<th scope="col">Номер</th>
 						<th scope="col">Место</th>
 						<th scope="col">Цена</th>
@@ -74,6 +75,7 @@
 	{foreach from=$GAME_LIST item=game name=games}
 					<tr class="record"
 						data-record-id='{$game->id}' 
+						data-record-open_date='{$game->open_date}' 
 						data-record-date='{$game->date}' 
 						data-record-name='{$game->game_name}' 
 						data-record-place_id='{$game->place_id}' 
@@ -84,6 +86,7 @@
 						data-record-color='{$game->color}' 
 						data-record-is_closed='{$game->is_closed}'>
 						<td>{$game->date}</td>
+						<td>{$game->open_date}</td>
 						<td>{$game->game_name}</td>
 						<td>{$game->place}</td>
 						<td>{$game->price}</td>
@@ -159,6 +162,10 @@
 							<div class="form-group">
 								<label for="game-date">Дата</label>
 								<input type="text" class="form-control field" id="game-date" required pattern="\d\d\d\d-\d\d-\d\d \d\d:\d\d" name="date" aria-describedby="game-date" placeholder="yyyy-MM-dd HH:mm">
+							</div>
+							<div class="form-group">
+								<label for="game-open_date">Дата начала регистрации</label>
+								<input type="text" class="form-control field" id="game-open_date" required pattern="\d\d\d\d-\d\d-\d\d \d\d:\d\d" name="open_date" aria-describedby="game-open_date" placeholder="yyyy-MM-dd HH:mm">
 							</div>
 							<div class="form-group">
 								<label for="game-name">Название</label>
