@@ -84,7 +84,7 @@ gulp.task('prod-deploy', function() {
 
 gulp.task('dev-deploy', function() {
   var htmlDir = '/var/www/html/';
-  var cmd = 'docker cp ' + paths.dist + '/. letsquiz-app:' + htmlDir + ' && docker exec letsquiz-app chmod -R 777 ' + htmlDir
+  var cmd = `docker cp ${paths.dist}/. letsquiz-app:${htmlDir} && docker exec letsquiz-app chmod -R 777 ${htmlDir}`;
   exec(cmd, function(err) {
     if (err) {
       console.error(err)

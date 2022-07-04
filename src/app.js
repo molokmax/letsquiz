@@ -1,4 +1,10 @@
 $(document).ready(function() {
+    toastr.options = {
+        closeButton: false,
+        progressBar: true,
+        timeOut: 5000,
+        extendedTimeOut: 1000
+    };
 
     $('.corp-company-items').slick({
         dots: true,
@@ -182,6 +188,7 @@ $(document).ready(function() {
                                 if (dialogId) {
                                     MessageUtils.setLoading(dialogId, false);
                                     $('#' + dialogId).modal('hide');
+                                    toastr.success(json.message || 'Запрос отправлен. Ждите подтверждения');
                                 }
                             } else {
                                 MessageUtils.setError(dialogId, json.message || "Не удалось отправить запрос");

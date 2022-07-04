@@ -903,6 +903,19 @@ div.quiz-block-container.footer .quiz-block.block-footer .footer-icon {
 	cursor: default;
 }
 
+#toast-container > div {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+#toast-container > div:hover {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.toast-success {
+    background-color: #492798;
+}
 
 @media (min-width: 1441px) {
 	/* .quiz-game-card .game-label.game-name {
