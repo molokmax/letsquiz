@@ -124,7 +124,7 @@ $(document).ready(function() {
         errBlock.hide();
         MessageUtils.setLoading(dialogId, false);
     }
-    $('.registration-button a').click(function () {
+    $('a.registration-button').click(function () {
         var card = $(this).parents('.quiz-game-card');
         var date = card.data("date");
         $("#registrationWindow .display-date").text(date);
