@@ -22,14 +22,14 @@
 
 	$photo_take = 4;
 	$game_take = 8;
-	$game_close_hourse = 4;
+	$game_close_hours = 4;
 	foreach ($settings as $item) {
 		$smarty->assign('SETTING_' . $item->prefix, $item->value);
 
 		if ($item->prefix == 'GAME_TAKE') {
 			$game_take = (int) $item->value;
 		} else if ($item->prefix == 'GAME_CLOSE') {
-			$game_close_hourse = (int) $item->value;
+			$game_close_hours = (int) $item->value;
 		} else if ($item->prefix == 'PHOTO_TAKE') {
 			$photo_take = (int) $item->value;
 		}
@@ -64,10 +64,8 @@
 	$colors = $colorRepo->Read();
 
 	$formatter = new GameFormatter();
-	$date = new DateTime('now', $timezone);
-	$date->add(new DateInterval("PT{$game_close_hourse}H"));
 	$gameRepo = new GameRepository();
-	$games = $gameRepo->GetAfterDate($date, $game_take, $timezone);
+	$games = $gameRepo->GetActive($game_close_hours, $game_take, $timezone);
 	$game_list = array();
 	foreach ($games as $item) {
 		$rec = new GameViewModel($item, $formatter, $colors);

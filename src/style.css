@@ -737,6 +737,17 @@ div.quiz-block-container.footer .quiz-block.block-footer .footer-icon {
 .quiz-form {
 	padding-bottom: 1rem;
 }
+.quiz-form .form-control.dirty:invalid {
+	background-color: #E9369C;
+	color: #FFFFFF;
+}
+.quiz-form .form-control.dirty:invalid option {
+	background-color: #FFFFFF;
+	color: #495057;
+}
+.quiz-form .form-control.dirty:invalid::placeholder {
+	color: #FFFFFF;
+}
 .quiz-window .modal-body {
 	font-size: 1.1rem;
 	padding-top: 2.5rem;
@@ -882,12 +893,14 @@ div.quiz-block-container.footer .quiz-block.block-footer .footer-icon {
 	text-transform: uppercase;
 	padding-top: 0.2rem;
 	padding-bottom: 0.2rem;
+	color: #EBEBEB;
+	display: block;
 }
-.quiz-game-card .registration-button a {
-	color: #ebebeb;
-}
-.quiz-game-card .registration-button a:hover {
+.quiz-game-card a.registration-button:hover {
 	text-decoration: none;
+}
+.quiz-game-card a.registration-button:hover:not([data-toggle]) {
+	cursor: default;
 }
 
 #toast-container > div {
