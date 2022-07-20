@@ -904,6 +904,7 @@ div.quiz-block-container.footer .quiz-block.block-footer .footer-icon {
 }
 
 #toast-container > div {
+	opacity: 1;
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -915,6 +916,9 @@ div.quiz-block-container.footer .quiz-block.block-footer .footer-icon {
 }
 .toast-success {
     background-color: #492798;
+}
+.toast-top-center {
+	top: 40%;
 }
 
 @media (min-width: 1441px) {

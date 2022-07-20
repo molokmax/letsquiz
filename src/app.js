@@ -1,6 +1,7 @@
 $(document).ready(function() {
     toastr.options = {
-        closeButton: false,
+        closeButton: true,
+        positionClass: 'toast-top-center',
         progressBar: true,
         timeOut: 5000,
         extendedTimeOut: 1000
@@ -176,7 +177,7 @@ $(document).ready(function() {
             $('#' + dialogId + ' button.quiz-button .button-label').css('display', displayLabel);
         },
 
-        sendRequest: function(data, dialogId) {
+        sendRequest: function(data, dialogId, successMessage) {
             MessageUtils.setLoading(dialogId, true);
 
             $.post('send.php', data)
@@ -188,7 +189,7 @@ $(document).ready(function() {
                                 if (dialogId) {
                                     MessageUtils.setLoading(dialogId, false);
                                     $('#' + dialogId).modal('hide');
-                                    toastr.success(json.message || 'Запрос отправлен. Ждите подтверждения');
+                                    toastr.success((json.message || 'Запрос отправлен') + '. ' + successMessage);
                                 }
                             } else {
                                 MessageUtils.setError(dialogId, json.message || "Не удалось отправить запрос");
@@ -218,7 +219,7 @@ $(document).ready(function() {
                 Name: name,
                 Phone: phone
             };
-            MessageUtils.sendRequest(data, winId);
+            MessageUtils.sendRequest(data, winId, 'Мы с Вами свяжемся');
         } else {
             MessageUtils.setError(winId, "* Заполнены не все поля");
         }
@@ -262,7 +263,7 @@ $(document).ready(function() {
                 Phone: phone,
                 Email: email
             };
-            MessageUtils.sendRequest(data, winId);
+            MessageUtils.sendRequest(data, winId, 'Мы с Вами свяжемся для подтверждения');
         } else {
             MessageUtils.setError(winId, "* Заполнены не все поля");
         }
